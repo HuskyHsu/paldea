@@ -1,11 +1,7 @@
-import React from "react";
+import { Router } from "./Router";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">XD</header>
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;
