@@ -1,0 +1,3202 @@
+[
+  {
+    "Paldea": 1,
+    "National": 906,
+    "NameZh": "新葉喵",
+    "NameJp": "ニャオハ",
+    "NameEn": "Sprigatito",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 2,
+    "National": 907,
+    "NameZh": "蒂蕾喵",
+    "NameJp": "ニャローテ",
+    "NameEn": "Floragato",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 3,
+    "National": 908,
+    "NameZh": "魔幻假面喵",
+    "NameJp": "マスカーニャ",
+    "NameEn": "Meowscarada",
+    "types": ["Grass", "Dark"]
+  },
+  {
+    "Paldea": 4,
+    "National": 909,
+    "NameZh": "呆火鱷",
+    "NameJp": "ホゲータ",
+    "NameEn": "Fuecoco",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 5,
+    "National": 910,
+    "NameZh": "炙燙鱷",
+    "NameJp": "アチゲータ",
+    "NameEn": "Crocalor",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 6,
+    "National": 911,
+    "NameZh": "骨紋巨聲鱷",
+    "NameJp": "ラウドボーン",
+    "NameEn": "Skeledirge",
+    "types": ["Fire", "Ghost"]
+  },
+  {
+    "Paldea": 7,
+    "National": 912,
+    "NameZh": "潤水鴨",
+    "NameJp": "クワッス",
+    "NameEn": "Quaxly",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 8,
+    "National": 913,
+    "NameZh": "涌躍鴨",
+    "NameJp": "ウェルカモ",
+    "NameEn": "Quaxwell",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 9,
+    "National": 914,
+    "NameZh": "狂歡浪舞鴨",
+    "NameJp": "ウェーニバル",
+    "NameEn": "Quaquaval",
+    "types": ["Water", "Fighting"]
+  },
+  {
+    "Paldea": 10,
+    "National": 915,
+    "NameZh": "愛吃豚",
+    "NameJp": "グルトン",
+    "NameEn": "Lechonk",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 11,
+    "National": 916,
+    "NameZh": "飄香豚",
+    "NameJp": "パフュートン",
+    "NameEn": "Oinkologne",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 12,
+    "National": 918,
+    "NameZh": "團珠蛛",
+    "NameJp": "タマンチュラ",
+    "NameEn": "Tarountula",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 13,
+    "National": 919,
+    "NameZh": "操陷蛛",
+    "NameJp": "ワナイダー",
+    "NameEn": "Spidops",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 14,
+    "National": 920,
+    "NameZh": "豆蟋蟀",
+    "NameJp": "マメバッタ",
+    "NameEn": "Nymble",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 15,
+    "National": 921,
+    "NameZh": "烈腿蝗",
+    "NameJp": "エクスレッグ",
+    "NameEn": "Lokix",
+    "types": ["Bug", "Dark"]
+  },
+  {
+    "Paldea": 16,
+    "National": 187,
+    "NameZh": "毽子草",
+    "NameJp": "ハネッコ",
+    "NameEn": "Hoppip",
+    "types": ["Grass", "Flying"]
+  },
+  {
+    "Paldea": 17,
+    "National": 188,
+    "NameZh": "毽子花",
+    "NameJp": "ポポッコ",
+    "NameEn": "Skiploom",
+    "types": ["Grass", "Flying"]
+  },
+  {
+    "Paldea": 18,
+    "National": 189,
+    "NameZh": "毽子棉",
+    "NameJp": "ワタッコ",
+    "NameEn": "Jumpluff",
+    "types": ["Grass", "Flying"]
+  },
+  {
+    "Paldea": 19,
+    "National": 661,
+    "NameZh": "小箭雀",
+    "NameJp": "ヤヤコマ",
+    "NameEn": "Fletchling",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 20,
+    "National": 662,
+    "NameZh": "火箭雀",
+    "NameJp": "ヒノヤコマ",
+    "NameEn": "Fletchinder",
+    "types": ["Fire", "Flying"]
+  },
+  {
+    "Paldea": 21,
+    "National": 663,
+    "NameZh": "烈箭鷹",
+    "NameJp": "ファイアロー",
+    "NameEn": "Talonflame",
+    "types": ["Fire", "Flying"]
+  },
+  {
+    "Paldea": 22,
+    "National": 954,
+    "NameZh": "布撥",
+    "NameJp": "パモ",
+    "NameEn": "Pawmi",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 23,
+    "National": 955,
+    "NameZh": "布土撥",
+    "NameJp": "パモット",
+    "NameEn": "Pawmo",
+    "types": ["Electric", "Fighting"]
+  },
+  {
+    "Paldea": 24,
+    "National": 956,
+    "NameZh": "巴布土撥",
+    "NameJp": "パーモット",
+    "NameEn": "Pawmot",
+    "types": ["Electric", "Fighting"]
+  },
+  {
+    "Paldea": 25,
+    "National": 228,
+    "NameZh": "戴魯比",
+    "NameJp": "デルビル",
+    "NameEn": "Houndour",
+    "types": ["Dark", "Fire"]
+  },
+  {
+    "Paldea": 26,
+    "National": 229,
+    "NameZh": "黑魯加",
+    "NameJp": "ヘルガー",
+    "NameEn": "Houndoom",
+    "types": ["Dark", "Fire"]
+  },
+  {
+    "Paldea": 27,
+    "National": 734,
+    "NameZh": "貓鼬少",
+    "NameJp": "ヤングース",
+    "NameEn": "Yungoos",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 28,
+    "National": 735,
+    "NameZh": "貓鼬探長",
+    "NameJp": "デカグース",
+    "NameEn": "Gumshoos",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 29,
+    "National": 819,
+    "NameZh": "貪心栗鼠",
+    "NameJp": "ホシガリス",
+    "NameEn": "Skwovet",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 30,
+    "National": 820,
+    "NameZh": "藏飽栗鼠",
+    "NameJp": "ヨクバリス",
+    "NameEn": "Greedent",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 31,
+    "National": 191,
+    "NameZh": "向日種子",
+    "NameJp": "ヒマナッツ",
+    "NameEn": "Sunkern",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 32,
+    "National": 192,
+    "NameZh": "向日花怪",
+    "NameJp": "キマワリ",
+    "NameEn": "Sunflora",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 33,
+    "National": 401,
+    "NameZh": "圓法師",
+    "NameJp": "コロボーシ",
+    "NameEn": "Kricketot",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 34,
+    "National": 402,
+    "NameZh": "音箱蟀",
+    "NameJp": "コロトック",
+    "NameEn": "Kricketune",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 35,
+    "National": 664,
+    "NameZh": "粉蝶蟲",
+    "NameJp": "コフキムシ",
+    "NameEn": "Scatterbug",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 36,
+    "National": 665,
+    "NameZh": "粉蝶蛹",
+    "NameJp": "コフーライ",
+    "NameEn": "Spewpa",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 37,
+    "National": 666,
+    "NameZh": "彩粉蝶",
+    "NameJp": "ビビヨン",
+    "NameEn": "Vivillon",
+    "types": ["Bug", "Flying"]
+  },
+  {
+    "Paldea": 38,
+    "National": 415,
+    "NameZh": "三蜜蜂",
+    "NameJp": "ミツハニー",
+    "NameEn": "Combee",
+    "types": ["Bug", "Flying"]
+  },
+  {
+    "Paldea": 39,
+    "National": 416,
+    "NameZh": "蜂女王",
+    "NameJp": "ビークイン",
+    "NameEn": "Vespiquen",
+    "types": ["Bug", "Flying"]
+  },
+  {
+    "Paldea": 40,
+    "National": 821,
+    "NameZh": "稚山雀",
+    "NameJp": "ココガラ",
+    "NameEn": "Rookidee",
+    "types": ["Flying"]
+  },
+  {
+    "Paldea": 41,
+    "National": 822,
+    "NameZh": "藍鴉",
+    "NameJp": "アオガラス",
+    "NameEn": "Corvisquire",
+    "types": ["Flying"]
+  },
+  {
+    "Paldea": 42,
+    "National": 823,
+    "NameZh": "鋼鎧鴉",
+    "NameJp": "アーマーガア",
+    "NameEn": "Corviknight",
+    "types": ["Flying", "Steel"]
+  },
+  {
+    "Paldea": 43,
+    "National": 440,
+    "NameZh": "小福蛋",
+    "NameJp": "ピンプク",
+    "NameEn": "Happiny",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 44,
+    "National": 113,
+    "NameZh": "吉利蛋",
+    "NameJp": "ラッキー",
+    "NameEn": "Chansey",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 45,
+    "National": 242,
+    "NameZh": "幸福蛋",
+    "NameJp": "ハピナス",
+    "NameEn": "Blissey",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 46,
+    "National": 298,
+    "NameZh": "露力麗",
+    "NameJp": "ルリリ",
+    "NameEn": "Azurill",
+    "types": ["Normal", "Fairy"]
+  },
+  {
+    "Paldea": 47,
+    "National": 183,
+    "NameZh": "瑪力露",
+    "NameJp": "マリル",
+    "NameEn": "Marill",
+    "types": ["Water", "Fairy"]
+  },
+  {
+    "Paldea": 48,
+    "National": 184,
+    "NameZh": "瑪力露麗",
+    "NameJp": "マリルリ",
+    "NameEn": "Azumarill",
+    "types": ["Water", "Fairy"]
+  },
+  {
+    "Paldea": 49,
+    "National": 283,
+    "NameZh": "溜溜糖球",
+    "NameJp": "アメタマ",
+    "NameEn": "Surskit",
+    "types": ["Bug", "Water"]
+  },
+  {
+    "Paldea": 50,
+    "National": 284,
+    "NameZh": "雨翅蛾",
+    "NameJp": "アメモース",
+    "NameEn": "Masquerain",
+    "types": ["Bug", "Flying"]
+  },
+  {
+    "Paldea": 51,
+    "National": 418,
+    "NameZh": "泳圈鼬",
+    "NameJp": "ブイゼル",
+    "NameEn": "Buizel",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 52,
+    "National": 419,
+    "NameZh": "浮潛鼬",
+    "NameJp": "フローゼル",
+    "NameEn": "Floatzel",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 53,
+    "National": 194,
+    "NameZh": "烏波",
+    "NameJp": "ウパー",
+    "NameEn": "Wooper",
+    "types": ["Water", "Ground"]
+  },
+  {
+    "Paldea": 54,
+    "National": 1009,
+    "NameZh": "土王",
+    "NameJp": "ドオー",
+    "NameEn": "Clodsire",
+    "types": ["Poison", "Ground"]
+  },
+  {
+    "Paldea": 55,
+    "National": "054",
+    "NameZh": "可達鴨",
+    "NameJp": "コダック",
+    "NameEn": "Psyduck",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 56,
+    "National": "055",
+    "NameZh": "哥達鴨",
+    "NameJp": "ゴルダック",
+    "NameEn": "Golduck",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 57,
+    "National": 833,
+    "NameZh": "咬咬龜",
+    "NameJp": "カムカメ",
+    "NameEn": "Chewtle",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 58,
+    "National": 834,
+    "NameZh": "暴噬龜",
+    "NameJp": "カジリガメ",
+    "NameEn": "Drednaw",
+    "types": ["Water", "Rock"]
+  },
+  {
+    "Paldea": 59,
+    "National": 174,
+    "NameZh": "寶寶丁",
+    "NameJp": "ププリン",
+    "NameEn": "Igglybuff",
+    "types": ["Normal", "Fairy"]
+  },
+  {
+    "Paldea": 60,
+    "National": "039",
+    "NameZh": "胖丁",
+    "NameJp": "プリン",
+    "NameEn": "Jigglypuff",
+    "types": ["Normal", "Fairy"]
+  },
+  {
+    "Paldea": 61,
+    "National": "040",
+    "NameZh": "胖可丁",
+    "NameJp": "プクリン",
+    "NameEn": "Wigglytuff",
+    "types": ["Normal", "Fairy"]
+  },
+  {
+    "Paldea": 62,
+    "National": 280,
+    "NameZh": "拉魯拉絲",
+    "NameJp": "ラルトス",
+    "NameEn": "Ralts",
+    "types": ["Psychic", "Fairy"]
+  },
+  {
+    "Paldea": 63,
+    "National": 281,
+    "NameZh": "奇魯莉安",
+    "NameJp": "キルリア",
+    "NameEn": "Kirlia",
+    "types": ["Psychic", "Fairy"]
+  },
+  {
+    "Paldea": 64,
+    "National": 282,
+    "NameZh": "沙奈朵",
+    "NameJp": "サーナイト",
+    "NameEn": "Gardevoir",
+    "types": ["Psychic", "Fairy"]
+  },
+  {
+    "Paldea": 65,
+    "National": 475,
+    "NameZh": "艾路雷朵",
+    "NameJp": "エルレイド",
+    "NameEn": "Gallade",
+    "types": ["Psychic", "Fighting"]
+  },
+  {
+    "Paldea": 66,
+    "National": "096",
+    "NameZh": "催眠貘",
+    "NameJp": "スリープ",
+    "NameEn": "Drowzee",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 67,
+    "National": "097",
+    "NameZh": "引夢貘人",
+    "NameJp": "スリーパー",
+    "NameEn": "Hypno",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 68,
+    "National": "092",
+    "NameZh": "鬼斯",
+    "NameJp": "ゴース",
+    "NameEn": "Gastly",
+    "types": ["Ghost", "Poison"]
+  },
+  {
+    "Paldea": 69,
+    "National": "093",
+    "NameZh": "鬼斯通",
+    "NameJp": "ゴースト",
+    "NameEn": "Haunter",
+    "types": ["Ghost", "Poison"]
+  },
+  {
+    "Paldea": 70,
+    "National": "094",
+    "NameZh": "耿鬼",
+    "NameJp": "ゲンガー",
+    "NameEn": "Gengar",
+    "types": ["Ghost", "Poison"]
+  },
+  {
+    "Paldea": 71,
+    "National": 945,
+    "NameZh": "一對鼠",
+    "NameJp": "ワッカネズミ",
+    "NameEn": "Tandemaus",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 72,
+    "National": 946,
+    "NameZh": "一家鼠",
+    "NameJp": "イッカネズミ",
+    "NameEn": "Maushold",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 73,
+    "National": 172,
+    "NameZh": "皮丘",
+    "NameJp": "ピチュー",
+    "NameEn": "Pichu",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 74,
+    "National": "025",
+    "NameZh": "皮卡丘",
+    "NameJp": "ピカチュウ",
+    "NameEn": "Pikachu",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 75,
+    "National": "026",
+    "NameZh": "雷丘",
+    "NameJp": "ライチュウ",
+    "NameEn": "Raichu",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 76,
+    "National": 970,
+    "NameZh": "狗仔包",
+    "NameJp": "パピモッチ",
+    "NameEn": "Fidough",
+    "types": ["Fairy"]
+  },
+  {
+    "Paldea": 77,
+    "National": 971,
+    "NameZh": "麻花犬",
+    "NameJp": "バウッツェル",
+    "NameEn": "Dachsbun",
+    "types": ["Fairy"]
+  },
+  {
+    "Paldea": 78,
+    "National": 287,
+    "NameZh": "懶人獺",
+    "NameJp": "ナマケロ",
+    "NameEn": "Slakoth",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 79,
+    "National": 288,
+    "NameZh": "過動猿",
+    "NameJp": "ヤルキモノ",
+    "NameEn": "Vigoroth",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 80,
+    "National": 289,
+    "NameZh": "請假王",
+    "NameJp": "ケッキング",
+    "NameEn": "Slaking",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 81,
+    "National": 761,
+    "NameZh": "甜竹竹",
+    "NameJp": "アマカジ",
+    "NameEn": "Bounsweet",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 82,
+    "National": 762,
+    "NameZh": "甜舞妮",
+    "NameJp": "アママイコ",
+    "NameEn": "Steenee",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 83,
+    "National": 763,
+    "NameZh": "甜冷美后",
+    "NameJp": "アマージョ",
+    "NameEn": "Tsareena",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 84,
+    "National": 935,
+    "NameZh": "迷你芙",
+    "NameJp": "ミニーブ",
+    "NameEn": "Smoliv",
+    "types": ["Grass", "Normal"]
+  },
+  {
+    "Paldea": 85,
+    "National": 936,
+    "NameZh": "奧利紐",
+    "NameJp": "オリーニョ",
+    "NameEn": "Dolliv",
+    "types": ["Grass", "Normal"]
+  },
+  {
+    "Paldea": 86,
+    "National": 937,
+    "NameZh": "奧利瓦",
+    "NameJp": "オリーヴァ",
+    "NameEn": "Arboliva",
+    "types": ["Grass", "Normal"]
+  },
+  {
+    "Paldea": 87,
+    "National": 438,
+    "NameZh": "盆才怪",
+    "NameJp": "ウソハチ",
+    "NameEn": "Bonsly",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 88,
+    "National": 185,
+    "NameZh": "樹才怪",
+    "NameJp": "ウソッキー",
+    "NameEn": "Sudowoodo",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 89,
+    "National": 744,
+    "NameZh": "岩狗狗",
+    "NameJp": "イワンコ",
+    "NameEn": "Rockruff",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 90,
+    "National": 745,
+    "NameZh": "鬃岩狼人",
+    "NameJp": "ルガルガン",
+    "NameEn": "Lycanroc",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 91,
+    "National": 837,
+    "NameZh": "小炭仔",
+    "NameJp": "タンドン",
+    "NameEn": "Rolycoly",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 92,
+    "National": 838,
+    "NameZh": "大炭車",
+    "NameJp": "トロッゴン",
+    "NameEn": "Carkol",
+    "types": ["Rock", "Fire"]
+  },
+  {
+    "Paldea": 93,
+    "National": 839,
+    "NameZh": "巨炭山",
+    "NameJp": "セキタンザン",
+    "NameEn": "Coalossal",
+    "types": ["Rock", "Fire"]
+  },
+  {
+    "Paldea": 94,
+    "National": 403,
+    "NameZh": "小貓怪",
+    "NameJp": "コリンク",
+    "NameEn": "Shinx",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 95,
+    "National": 404,
+    "NameZh": "勒克貓",
+    "NameJp": "ルクシオ",
+    "NameEn": "Luxio",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 96,
+    "National": 405,
+    "NameZh": "倫琴貓",
+    "NameJp": "レントラー",
+    "NameEn": "Luxray",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 97,
+    "National": 396,
+    "NameZh": "姆克兒",
+    "NameJp": "ムックル",
+    "NameEn": "Starly",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 98,
+    "National": 397,
+    "NameZh": "姆克鳥",
+    "NameJp": "ムクバード",
+    "NameEn": "Staravia",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 99,
+    "National": 398,
+    "NameZh": "姆克鷹",
+    "NameJp": "ムクホーク",
+    "NameEn": "Staraptor",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 10,
+    "National": 741,
+    "NameZh": "花舞鳥",
+    "NameJp": "オドリドリ",
+    "NameEn": "Oricorio",
+    "types": ["Fire", "Flying"]
+  },
+  {
+    "Paldea": 101,
+    "National": 179,
+    "NameZh": "咩利羊",
+    "NameJp": "メリープ",
+    "NameEn": "Mareep",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 102,
+    "National": 180,
+    "NameZh": "茸茸羊",
+    "NameJp": "モココ",
+    "NameEn": "Flaaffy",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 103,
+    "National": 181,
+    "NameZh": "電龍",
+    "NameJp": "デンリュウ",
+    "NameEn": "Ampharos",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 104,
+    "National": 548,
+    "NameZh": "百合根娃娃",
+    "NameJp": "チュリネ",
+    "NameEn": "Petilil",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 105,
+    "National": 549,
+    "NameZh": "裙兒小姐",
+    "NameJp": "ドレディア",
+    "NameEn": "Lilligant",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 106,
+    "National": 285,
+    "NameZh": "蘑蘑菇",
+    "NameJp": "キノココ",
+    "NameEn": "Shroomish",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 107,
+    "National": 286,
+    "NameZh": "斗笠菇",
+    "NameJp": "キノガッサ",
+    "NameEn": "Breloom",
+    "types": ["Grass", "Fighting"]
+  },
+  {
+    "Paldea": 108,
+    "National": 840,
+    "NameZh": "啃果蟲",
+    "NameJp": "カジッチュ",
+    "NameEn": "Applin",
+    "types": ["Grass", "Dragon"]
+  },
+  {
+    "Paldea": 109,
+    "National": 841,
+    "NameZh": "蘋裹龍",
+    "NameJp": "アップリュー",
+    "NameEn": "Flapple",
+    "types": ["Grass", "Dragon"]
+  },
+  {
+    "Paldea": 110,
+    "National": 842,
+    "NameZh": "豐蜜龍",
+    "NameJp": "タルップル",
+    "NameEn": "Appletun",
+    "types": ["Grass", "Dragon"]
+  },
+  {
+    "Paldea": 111,
+    "National": 325,
+    "NameZh": "跳跳豬",
+    "NameJp": "バネブー",
+    "NameEn": "Spoink",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 112,
+    "National": 326,
+    "NameZh": "噗噗豬",
+    "NameJp": "ブーピッグ",
+    "NameEn": "Grumpig",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 113,
+    "National": 960,
+    "NameZh": "怒鸚哥",
+    "NameJp": "イキリンコ",
+    "NameEn": "Squawkabilly",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 114,
+    "National": 200,
+    "NameZh": "夢妖",
+    "NameJp": "ムウマ",
+    "NameEn": "Misdreavus",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 115,
+    "National": 429,
+    "NameZh": "夢妖魔",
+    "NameJp": "ムウマージ",
+    "NameEn": "Mismagius",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 116,
+    "National": 296,
+    "NameZh": "幕下力士",
+    "NameJp": "マクノシタ",
+    "NameEn": "Makuhita",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 117,
+    "National": 297,
+    "NameZh": "鐵掌力士",
+    "NameJp": "ハリテヤマ",
+    "NameEn": "Hariyama",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 118,
+    "National": 739,
+    "NameZh": "好勝蟹",
+    "NameJp": "マケンカニ",
+    "NameEn": "Crabrawler",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 119,
+    "National": 740,
+    "NameZh": "好勝毛蟹",
+    "NameJp": "ケケンカニ",
+    "NameEn": "Crabominable",
+    "types": ["Fighting", "Ice"]
+  },
+  {
+    "Paldea": 120,
+    "National": 757,
+    "NameZh": "夜盜火蜥",
+    "NameJp": "ヤトウモリ",
+    "NameEn": "Salandit",
+    "types": ["Poison", "Fire"]
+  },
+  {
+    "Paldea": 121,
+    "National": 758,
+    "NameZh": "焰后蜥",
+    "NameJp": "エンニュート",
+    "NameEn": "Salazzle",
+    "types": ["Poison", "Fire"]
+  },
+  {
+    "Paldea": 122,
+    "National": 231,
+    "NameZh": "小小象",
+    "NameJp": "ゴマゾウ",
+    "NameEn": "Phanpy",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 123,
+    "National": 232,
+    "NameZh": "頓甲",
+    "NameJp": "ドンファン",
+    "NameEn": "Donphan",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 124,
+    "National": 878,
+    "NameZh": "銅象",
+    "NameJp": "ゾウドウ",
+    "NameEn": "Cufant",
+    "types": ["Steel"]
+  },
+  {
+    "Paldea": 125,
+    "National": 879,
+    "NameZh": "大王銅象",
+    "NameJp": "ダイオウドウ",
+    "NameEn": "Copperajah",
+    "types": ["Steel"]
+  },
+  {
+    "Paldea": 126,
+    "National": 443,
+    "NameZh": "圓陸鯊",
+    "NameJp": "フカマル",
+    "NameEn": "Gible",
+    "types": ["Dragon", "Ground"]
+  },
+  {
+    "Paldea": 127,
+    "National": 444,
+    "NameZh": "尖牙陸鯊",
+    "NameJp": "ガバイト",
+    "NameEn": "Gabite",
+    "types": ["Dragon", "Ground"]
+  },
+  {
+    "Paldea": 128,
+    "National": 445,
+    "NameZh": "烈咬陸鯊",
+    "NameJp": "ガブリアス",
+    "NameEn": "Garchomp",
+    "types": ["Dragon", "Ground"]
+  },
+  {
+    "Paldea": 129,
+    "National": 963,
+    "NameZh": "鹽石寶",
+    "NameJp": "コジオ",
+    "NameEn": "Nacli",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 130,
+    "National": 964,
+    "NameZh": "鹽石壘",
+    "NameJp": "ジオヅム",
+    "NameEn": "Naclstack",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 131,
+    "National": 965,
+    "NameZh": "鹽石巨靈",
+    "NameJp": "キョジオーン",
+    "NameEn": "Garganacl",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 132,
+    "National": 278,
+    "NameZh": "長翅鷗",
+    "NameJp": "キャモメ",
+    "NameEn": "Wingull",
+    "types": ["Water", "Flying"]
+  },
+  {
+    "Paldea": 133,
+    "National": 279,
+    "NameZh": "大嘴鷗",
+    "NameJp": "ペリッパー",
+    "NameEn": "Pelipper",
+    "types": ["Water", "Flying"]
+  },
+  {
+    "Paldea": 134,
+    "National": 129,
+    "NameZh": "鯉魚王",
+    "NameJp": "コイキング",
+    "NameEn": "Magikarp",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 135,
+    "National": 130,
+    "NameZh": "暴鯉龍",
+    "NameJp": "ギャラドス",
+    "NameEn": "Gyarados",
+    "types": ["Water", "Flying"]
+  },
+  {
+    "Paldea": 136,
+    "National": 846,
+    "NameZh": "刺梭魚",
+    "NameJp": "サシカマス",
+    "NameEn": "Arrokuda",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 137,
+    "National": 847,
+    "NameZh": "戽斗尖梭",
+    "NameJp": "カマスジョー",
+    "NameEn": "Barraskewda",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 138,
+    "National": 550,
+    "NameZh": "野蠻鱸魚",
+    "NameJp": "バスラオ",
+    "NameEn": "Basculin",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 139,
+    "National": 316,
+    "NameZh": "溶食獸",
+    "NameJp": "ゴクリン",
+    "NameEn": "Gulpin",
+    "types": ["Poison"]
+  },
+  {
+    "Paldea": 140,
+    "National": 317,
+    "NameZh": "吞食獸",
+    "NameJp": "マルノーム",
+    "NameEn": "Swalot",
+    "types": ["Poison"]
+  },
+  {
+    "Paldea": 141,
+    "National": "052",
+    "NameZh": "喵喵",
+    "NameJp": "ニャース",
+    "NameEn": "Meowth",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 142,
+    "National": "053",
+    "NameZh": "貓老大",
+    "NameJp": "ペルシアン",
+    "NameEn": "Persian",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 143,
+    "National": 425,
+    "NameZh": "飄飄球",
+    "NameJp": "フワンテ",
+    "NameEn": "Drifloon",
+    "types": ["Ghost", "Flying"]
+  },
+  {
+    "Paldea": 144,
+    "National": 426,
+    "NameZh": "隨風球",
+    "NameJp": "フワライド",
+    "NameEn": "Drifblim",
+    "types": ["Ghost", "Flying"]
+  },
+  {
+    "Paldea": 145,
+    "National": 669,
+    "NameZh": "花蓓蓓",
+    "NameJp": "フラベベ",
+    "NameEn": "Flabébé",
+    "types": ["Fairy"]
+  },
+  {
+    "Paldea": 146,
+    "National": 670,
+    "NameZh": "花葉蒂",
+    "NameJp": "フラエッテ",
+    "NameEn": "Floette",
+    "types": ["Fairy"]
+  },
+  {
+    "Paldea": 147,
+    "National": 671,
+    "NameZh": "花潔夫人",
+    "NameJp": "フラージェス",
+    "NameEn": "Florges",
+    "types": ["Fairy"]
+  },
+  {
+    "Paldea": 148,
+    "National": "050",
+    "NameZh": "地鼠",
+    "NameJp": "ディグダ",
+    "NameEn": "Diglett",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 149,
+    "National": "051",
+    "NameZh": "三地鼠",
+    "NameJp": "ダグトリオ",
+    "NameEn": "Dugtrio",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 150,
+    "National": 324,
+    "NameZh": "煤炭龜",
+    "NameJp": "コータス",
+    "NameEn": "Torkoal",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 151,
+    "National": 322,
+    "NameZh": "呆火駝",
+    "NameJp": "ドンメル",
+    "NameEn": "Numel",
+    "types": ["Fire", "Ground"]
+  },
+  {
+    "Paldea": 152,
+    "National": 323,
+    "NameZh": "噴火駝",
+    "NameJp": "バクーダ",
+    "NameEn": "Camerupt",
+    "types": ["Fire", "Ground"]
+  },
+  {
+    "Paldea": 153,
+    "National": 436,
+    "NameZh": "銅鏡怪",
+    "NameJp": "ドーミラー",
+    "NameEn": "Bronzor",
+    "types": ["Steel", "Psychic"]
+  },
+  {
+    "Paldea": 154,
+    "National": 437,
+    "NameZh": "青銅鐘",
+    "NameJp": "ドータクン",
+    "NameEn": "Bronzong",
+    "types": ["Steel", "Psychic"]
+  },
+  {
+    "Paldea": 155,
+    "National": 610,
+    "NameZh": "牙牙",
+    "NameJp": "キバゴ",
+    "NameEn": "Axew",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 156,
+    "National": 611,
+    "NameZh": "斧牙龍",
+    "NameJp": "オノンド",
+    "NameEn": "Fraxure",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 157,
+    "National": 612,
+    "NameZh": "雙斧戰龍",
+    "NameJp": "オノノクス",
+    "NameEn": "Haxorus",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 158,
+    "National": "056",
+    "NameZh": "猴怪",
+    "NameJp": "マンキー",
+    "NameEn": "Mankey",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 159,
+    "National": "057",
+    "NameZh": "火爆猴",
+    "NameJp": "オコリザル",
+    "NameEn": "Primeape",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 160,
+    "National": 1010,
+    "NameZh": "棄世猴",
+    "NameJp": "コノヨザル",
+    "NameEn": "Annihilape",
+    "types": ["Fighting", "Ghost"]
+  },
+  {
+    "Paldea": 161,
+    "National": 307,
+    "NameZh": "瑪沙那",
+    "NameJp": "アサナン",
+    "NameEn": "Meditite",
+    "types": ["Fighting", "Psychic"]
+  },
+  {
+    "Paldea": 162,
+    "National": 308,
+    "NameZh": "恰雷姆",
+    "NameJp": "チャーレム",
+    "NameEn": "Medicham",
+    "types": ["Fighting", "Psychic"]
+  },
+  {
+    "Paldea": 163,
+    "National": 447,
+    "NameZh": "利歐路",
+    "NameJp": "リオル",
+    "NameEn": "Riolu",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 164,
+    "National": 448,
+    "NameZh": "路卡利歐",
+    "NameJp": "ルカリオ",
+    "NameEn": "Lucario",
+    "types": ["Fighting", "Steel"]
+  },
+  {
+    "Paldea": 165,
+    "National": 1003,
+    "NameZh": "炭小侍",
+    "NameJp": "カルボウ",
+    "NameEn": "Charcadet",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 166,
+    "National": 1004,
+    "NameZh": "紅蓮鎧騎",
+    "NameJp": "グレンアルマ",
+    "NameEn": "Armarouge",
+    "types": ["Fire", "Psychic"]
+  },
+  {
+    "Paldea": 167,
+    "National": 1005,
+    "NameZh": "蒼炎刃鬼",
+    "NameJp": "ソウブレイズ",
+    "NameEn": "Ceruledge",
+    "types": ["Fire", "Ghost"]
+  },
+  {
+    "Paldea": 168,
+    "National": 339,
+    "NameZh": "泥泥鰍",
+    "NameJp": "ドジョッチ",
+    "NameEn": "Barboach",
+    "types": ["Water", "Ground"]
+  },
+  {
+    "Paldea": 169,
+    "National": 340,
+    "NameZh": "鯰魚王",
+    "NameJp": "ナマズン",
+    "NameEn": "Whiscash",
+    "types": ["Water", "Ground"]
+  },
+  {
+    "Paldea": 170,
+    "National": 940,
+    "NameZh": "光蚪仔",
+    "NameJp": "ズピカ",
+    "NameEn": "Tadbulb",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 171,
+    "National": 941,
+    "NameZh": "電肚蛙",
+    "NameJp": "ハラバリー",
+    "NameEn": "Bellibolt",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 172,
+    "National": 704,
+    "NameZh": "黏黏寶",
+    "NameJp": "ヌメラ",
+    "NameEn": "Goomy",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 173,
+    "National": 705,
+    "NameZh": "黏美兒",
+    "NameJp": "ヌメイル",
+    "NameEn": "Sliggoo",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 174,
+    "National": 706,
+    "NameZh": "黏美龍",
+    "NameJp": "ヌメルゴン",
+    "NameEn": "Goodra",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 175,
+    "National": 453,
+    "NameZh": "不良蛙",
+    "NameJp": "グレッグル",
+    "NameEn": "Croagunk",
+    "types": ["Poison", "Fighting"]
+  },
+  {
+    "Paldea": 176,
+    "National": 454,
+    "NameZh": "毒骷蛙",
+    "NameJp": "ドクロッグ",
+    "NameEn": "Toxicroak",
+    "types": ["Poison", "Fighting"]
+  },
+  {
+    "Paldea": 177,
+    "National": 957,
+    "NameZh": "電海燕",
+    "NameJp": "カイデン",
+    "NameEn": "Wattrel",
+    "types": ["Electric", "Flying"]
+  },
+  {
+    "Paldea": 178,
+    "National": 958,
+    "NameZh": "大電海燕",
+    "NameJp": "タイカイデン",
+    "NameEn": "Kilowattrel",
+    "types": ["Electric", "Flying"]
+  },
+  {
+    "Paldea": 179,
+    "National": 133,
+    "NameZh": "伊布",
+    "NameJp": "イーブイ",
+    "NameEn": "Eevee",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 180,
+    "National": 134,
+    "NameZh": "水伊布",
+    "NameJp": "シャワーズ",
+    "NameEn": "Vaporeon",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 181,
+    "National": 135,
+    "NameZh": "雷伊布",
+    "NameJp": "サンダース",
+    "NameEn": "Jolteon",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 182,
+    "National": 136,
+    "NameZh": "火伊布",
+    "NameJp": "ブースター",
+    "NameEn": "Flareon",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 183,
+    "National": 196,
+    "NameZh": "太陽伊布",
+    "NameJp": "エーフィ",
+    "NameEn": "Espeon",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 184,
+    "National": 197,
+    "NameZh": "月亮伊布",
+    "NameJp": "ブラッキー",
+    "NameEn": "Umbreon",
+    "types": ["Dark"]
+  },
+  {
+    "Paldea": 185,
+    "National": 470,
+    "NameZh": "葉伊布",
+    "NameJp": "リーフィア",
+    "NameEn": "Leafeon",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 186,
+    "National": 471,
+    "NameZh": "冰伊布",
+    "NameJp": "グレイシア",
+    "NameEn": "Glaceon",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 187,
+    "National": 700,
+    "NameZh": "仙子伊布",
+    "NameJp": "ニンフィア",
+    "NameEn": "Sylveon",
+    "types": ["Fairy"]
+  },
+  {
+    "Paldea": 188,
+    "National": 206,
+    "NameZh": "土龍弟弟",
+    "NameJp": "ノコッチ",
+    "NameEn": "Dunsparce",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 189,
+    "National": 917,
+    "NameZh": "土龍節節",
+    "NameJp": "ノココッチ",
+    "NameEn": "Dudunsparce",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 190,
+    "National": 585,
+    "NameZh": "四季鹿",
+    "NameJp": "シキジカ",
+    "NameEn": "Deerling",
+    "types": ["Normal", "Grass"]
+  },
+  {
+    "Paldea": 191,
+    "National": 586,
+    "NameZh": "萌芽鹿",
+    "NameJp": "メブキジカ",
+    "NameEn": "Sawsbuck",
+    "types": ["Normal", "Grass"]
+  },
+  {
+    "Paldea": 192,
+    "National": 203,
+    "NameZh": "麒麟奇",
+    "NameJp": "キリンリキ",
+    "NameEn": "Girafarig",
+    "types": ["Normal", "Psychic"]
+  },
+  {
+    "Paldea": 193,
+    "National": 928,
+    "NameZh": "奇麒麟",
+    "NameJp": "リキキリン",
+    "NameEn": "Farigiraf",
+    "types": ["Normal", "Psychic"]
+  },
+  {
+    "Paldea": 194,
+    "National": "088",
+    "NameZh": "臭泥",
+    "NameJp": "ベトベター",
+    "NameEn": "Grimer",
+    "types": ["Poison"]
+  },
+  {
+    "Paldea": 195,
+    "National": "089",
+    "NameZh": "臭臭泥",
+    "NameJp": "ベトベトン",
+    "NameEn": "Muk",
+    "types": ["Poison"]
+  },
+  {
+    "Paldea": 196,
+    "National": 972,
+    "NameZh": "偶叫獒",
+    "NameJp": "オラチフ",
+    "NameEn": "Maschiff",
+    "types": ["Dark"]
+  },
+  {
+    "Paldea": 197,
+    "National": 973,
+    "NameZh": "獒教父",
+    "NameJp": "マフィティフ",
+    "NameEn": "Mabosstiff",
+    "types": ["Dark"]
+  },
+  {
+    "Paldea": 198,
+    "National": 848,
+    "NameZh": "毒電嬰",
+    "NameJp": "エレズン",
+    "NameEn": "Toxel",
+    "types": ["Electric", "Poison"]
+  },
+  {
+    "Paldea": 199,
+    "National": 849,
+    "NameZh": "顫弦蠑螈",
+    "NameJp": "ストリンダー",
+    "NameEn": "Toxtricity",
+    "types": ["Electric", "Poison"]
+  },
+  {
+    "Paldea": 200,
+    "National": 702,
+    "NameZh": "咚咚鼠",
+    "NameJp": "デデンネ",
+    "NameEn": "Dedenne",
+    "types": ["Electric", "Fairy"]
+  },
+  {
+    "Paldea": 201,
+    "National": 417,
+    "NameZh": "帕奇利茲",
+    "NameJp": "パチリス",
+    "NameEn": "Pachirisu",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 202,
+    "National": 968,
+    "NameZh": "滋汁鼴",
+    "NameJp": "シルシュルー",
+    "NameEn": "Shroodle",
+    "types": ["Poison", "Normal"]
+  },
+  {
+    "Paldea": 203,
+    "National": 969,
+    "NameZh": "塗標客",
+    "NameJp": "タギングル",
+    "NameEn": "Grafaiai",
+    "types": ["Poison", "Normal"]
+  },
+  {
+    "Paldea": 204,
+    "National": 234,
+    "NameZh": "驚角鹿",
+    "NameJp": "オドシシ",
+    "NameEn": "Stantler",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 205,
+    "National": 590,
+    "NameZh": "哎呀球菇",
+    "NameJp": "タマゲタケ",
+    "NameEn": "Foongus",
+    "types": ["Grass", "Poison"]
+  },
+  {
+    "Paldea": 206,
+    "National": 591,
+    "NameZh": "敗露球菇",
+    "NameJp": "モロバレル",
+    "NameEn": "Amoonguss",
+    "types": ["Grass", "Poison"]
+  },
+  {
+    "Paldea": 207,
+    "National": 100,
+    "NameZh": "霹靂電球",
+    "NameJp": "ビリリダマ",
+    "NameEn": "Voltorb",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 208,
+    "National": 101,
+    "NameZh": "頑皮雷彈",
+    "NameJp": "マルマイン",
+    "NameEn": "Electrode",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 209,
+    "National": "081",
+    "NameZh": "小磁怪",
+    "NameJp": "コイル",
+    "NameEn": "Magnemite",
+    "types": ["Electric", "Steel"]
+  },
+  {
+    "Paldea": 210,
+    "National": "082",
+    "NameZh": "三合一磁怪",
+    "NameJp": "レアコイル",
+    "NameEn": "Magneton",
+    "types": ["Electric", "Steel"]
+  },
+  {
+    "Paldea": 211,
+    "National": 462,
+    "NameZh": "自爆磁怪",
+    "NameJp": "ジバコイル",
+    "NameEn": "Magnezone",
+    "types": ["Electric", "Steel"]
+  },
+  {
+    "Paldea": 212,
+    "National": 132,
+    "NameZh": "百變怪",
+    "NameJp": "メタモン",
+    "NameEn": "Ditto",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 213,
+    "National": "058",
+    "NameZh": "卡蒂狗",
+    "NameJp": "ガーディ",
+    "NameEn": "Growlithe",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 214,
+    "National": "059",
+    "NameZh": "風速狗",
+    "NameJp": "ウインディ",
+    "NameEn": "Arcanine",
+    "types": ["Fire"]
+  },
+  {
+    "Paldea": 215,
+    "National": 216,
+    "NameZh": "熊寶寶",
+    "NameJp": "ヒメグマ",
+    "NameEn": "Teddiursa",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 216,
+    "National": 217,
+    "NameZh": "圈圈熊",
+    "NameJp": "リングマ",
+    "NameEn": "Ursaring",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 217,
+    "National": 335,
+    "NameZh": "貓鼬斬",
+    "NameJp": "ザングース",
+    "NameEn": "Zangoose",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 218,
+    "National": 336,
+    "NameZh": "飯匙蛇",
+    "NameJp": "ハブネーク",
+    "NameEn": "Seviper",
+    "types": ["Poison"]
+  },
+  {
+    "Paldea": 219,
+    "National": 333,
+    "NameZh": "青綿鳥",
+    "NameJp": "チルット",
+    "NameEn": "Swablu",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 220,
+    "National": 334,
+    "NameZh": "七夕青鳥",
+    "NameJp": "チルタリス",
+    "NameEn": "Altaria",
+    "types": ["Dragon", "Flying"]
+  },
+  {
+    "Paldea": 221,
+    "National": 672,
+    "NameZh": "坐騎小羊",
+    "NameJp": "メェークル",
+    "NameEn": "Skiddo",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 222,
+    "National": 673,
+    "NameZh": "坐騎山羊",
+    "NameJp": "ゴーゴート",
+    "NameEn": "Gogoat",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 223,
+    "National": 128,
+    "NameZh": "肯泰羅",
+    "NameJp": "ケンタロス",
+    "NameEn": "Tauros",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 224,
+    "National": 667,
+    "NameZh": "小獅獅",
+    "NameJp": "シシコ",
+    "NameEn": "Litleo",
+    "types": ["Fire", "Normal"]
+  },
+  {
+    "Paldea": 225,
+    "National": 668,
+    "NameZh": "火炎獅",
+    "NameJp": "カエンジシ",
+    "NameEn": "Pyroar",
+    "types": ["Fire", "Normal"]
+  },
+  {
+    "Paldea": 226,
+    "National": 434,
+    "NameZh": "臭鼬噗",
+    "NameJp": "スカンプー",
+    "NameEn": "Stunky",
+    "types": ["Poison", "Dark"]
+  },
+  {
+    "Paldea": 227,
+    "National": 435,
+    "NameZh": "坦克臭鼬",
+    "NameJp": "スカタンク",
+    "NameEn": "Skuntank",
+    "types": ["Poison", "Dark"]
+  },
+  {
+    "Paldea": 228,
+    "National": 570,
+    "NameZh": "索羅亞",
+    "NameJp": "ゾロア",
+    "NameEn": "Zorua",
+    "types": ["Dark"]
+  },
+  {
+    "Paldea": 229,
+    "National": 571,
+    "NameZh": "索羅亞克",
+    "NameJp": "ゾロアーク",
+    "NameEn": "Zoroark",
+    "types": ["Dark"]
+  },
+  {
+    "Paldea": 230,
+    "National": 215,
+    "NameZh": "狃拉",
+    "NameJp": "ニューラ",
+    "NameEn": "Sneasel",
+    "types": ["Dark", "Ice"]
+  },
+  {
+    "Paldea": 231,
+    "National": 461,
+    "NameZh": "瑪狃拉",
+    "NameJp": "マニューラ",
+    "NameEn": "Weavile",
+    "types": ["Dark", "Ice"]
+  },
+  {
+    "Paldea": 232,
+    "National": 198,
+    "NameZh": "黑暗鴉",
+    "NameJp": "ヤミカラス",
+    "NameEn": "Murkrow",
+    "types": ["Dark", "Flying"]
+  },
+  {
+    "Paldea": 233,
+    "National": 430,
+    "NameZh": "烏鴉頭頭",
+    "NameJp": "ドンカラス",
+    "NameEn": "Honchkrow",
+    "types": ["Dark", "Flying"]
+  },
+  {
+    "Paldea": 234,
+    "National": 574,
+    "NameZh": "哥德寶寶",
+    "NameJp": "ゴチム",
+    "NameEn": "Gothita",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 235,
+    "National": 575,
+    "NameZh": "哥德小童",
+    "NameJp": "ゴチミル",
+    "NameEn": "Gothorita",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 236,
+    "National": 576,
+    "NameZh": "哥德小姐",
+    "NameJp": "ゴチルゼル",
+    "NameEn": "Gothitelle",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 237,
+    "National": 854,
+    "NameZh": "來悲茶",
+    "NameJp": "ヤバチャ",
+    "NameEn": "Sinistea",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 238,
+    "National": 855,
+    "NameZh": "怖思壺",
+    "NameJp": "ポットデス",
+    "NameEn": "Polteageist",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 239,
+    "National": 778,
+    "NameZh": "謎擬Ｑ",
+    "NameJp": "ミミッキュ",
+    "NameEn": "Mimikyu",
+    "types": ["Ghost", "Fairy"]
+  },
+  {
+    "Paldea": 240,
+    "National": 707,
+    "NameZh": "鑰圈兒",
+    "NameJp": "クレッフィ",
+    "NameEn": "Klefki",
+    "types": ["Steel", "Fairy"]
+  },
+  {
+    "Paldea": 241,
+    "National": 876,
+    "NameZh": "愛管侍",
+    "NameJp": "イエッサン",
+    "NameEn": "Indeedee",
+    "types": ["Psychic", "Normal"]
+  },
+  {
+    "Paldea": 242,
+    "National": 974,
+    "NameZh": "納噬草",
+    "NameJp": "アノクサ",
+    "NameEn": "Bramblin",
+    "types": ["Grass", "Ghost"]
+  },
+  {
+    "Paldea": 243,
+    "National": 975,
+    "NameZh": "怖納噬草",
+    "NameJp": "アノホラグサ",
+    "NameEn": "Brambleghast",
+    "types": ["Grass", "Ghost"]
+  },
+  {
+    "Paldea": 244,
+    "National": 1006,
+    "NameZh": "原野水母",
+    "NameJp": "ノノクラゲ",
+    "NameEn": "Toedscool",
+    "types": ["Ground", "Grass"]
+  },
+  {
+    "Paldea": 245,
+    "National": 1007,
+    "NameZh": "陸地水母",
+    "NameJp": "リククラゲ",
+    "NameEn": "Toedscruel",
+    "types": ["Ground", "Grass"]
+  },
+  {
+    "Paldea": 246,
+    "National": 357,
+    "NameZh": "熱帶龍",
+    "NameJp": "トロピウス",
+    "NameEn": "Tropius",
+    "types": ["Grass", "Flying"]
+  },
+  {
+    "Paldea": 247,
+    "National": 753,
+    "NameZh": "偽螳草",
+    "NameJp": "カリキリ",
+    "NameEn": "Fomantis",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 248,
+    "National": 754,
+    "NameZh": "蘭螳花",
+    "NameJp": "ラランテス",
+    "NameEn": "Lurantis",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 249,
+    "National": 962,
+    "NameZh": "毛崖蟹",
+    "NameJp": "ガケガニ",
+    "NameEn": "Klawf",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 250,
+    "National": 938,
+    "NameZh": "熱辣娃",
+    "NameJp": "カプサイジ",
+    "NameEn": "Capsakid",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 251,
+    "National": 939,
+    "NameZh": "狠辣椒",
+    "NameJp": "スコヴィラン",
+    "NameEn": "Scovillain",
+    "types": ["Grass", "Fire"]
+  },
+  {
+    "Paldea": 252,
+    "National": 331,
+    "NameZh": "刺球仙人掌",
+    "NameJp": "サボネア",
+    "NameEn": "Cacnea",
+    "types": ["Grass"]
+  },
+  {
+    "Paldea": 253,
+    "National": 332,
+    "NameZh": "夢歌仙人掌",
+    "NameJp": "ノクタス",
+    "NameEn": "Cacturne",
+    "types": ["Grass", "Dark"]
+  },
+  {
+    "Paldea": 254,
+    "National": 922,
+    "NameZh": "蟲滾泥",
+    "NameJp": "シガロコ",
+    "NameEn": "Rellor",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 255,
+    "National": 923,
+    "NameZh": "蟲甲聖",
+    "NameJp": "ベラカス",
+    "NameEn": "Rabsca",
+    "types": ["Bug", "Psychic"]
+  },
+  {
+    "Paldea": 256,
+    "National": "048",
+    "NameZh": "毛球",
+    "NameJp": "コンパン",
+    "NameEn": "Venonat",
+    "types": ["Bug", "Poison"]
+  },
+  {
+    "Paldea": 257,
+    "National": "049",
+    "NameZh": "摩魯蛾",
+    "NameJp": "モルフォン",
+    "NameEn": "Venomoth",
+    "types": ["Bug", "Poison"]
+  },
+  {
+    "Paldea": 258,
+    "National": 204,
+    "NameZh": "榛果球",
+    "NameJp": "クヌギダマ",
+    "NameEn": "Pineco",
+    "types": ["Bug"]
+  },
+  {
+    "Paldea": 259,
+    "National": 205,
+    "NameZh": "佛烈托斯",
+    "NameJp": "フォレトス",
+    "NameEn": "Forretress",
+    "types": ["Bug", "Steel"]
+  },
+  {
+    "Paldea": 260,
+    "National": 123,
+    "NameZh": "飛天螳螂",
+    "NameJp": "ストライク",
+    "NameEn": "Scyther",
+    "types": ["Bug", "Flying"]
+  },
+  {
+    "Paldea": 261,
+    "National": 212,
+    "NameZh": "巨鉗螳螂",
+    "NameJp": "ハッサム",
+    "NameEn": "Scizor",
+    "types": ["Bug", "Steel"]
+  },
+  {
+    "Paldea": 262,
+    "National": 214,
+    "NameZh": "赫拉克羅斯",
+    "NameJp": "ヘラクロス",
+    "NameEn": "Heracross",
+    "types": ["Bug", "Fighting"]
+  },
+  {
+    "Paldea": 263,
+    "National": 926,
+    "NameZh": "飄飄雛",
+    "NameJp": "ヒラヒナ",
+    "NameEn": "Flittle",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 264,
+    "National": 927,
+    "NameZh": "超能艷鴕",
+    "NameJp": "クエスパトラ",
+    "NameEn": "Espathra",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 265,
+    "National": 449,
+    "NameZh": "沙河馬",
+    "NameJp": "ヒポポタス",
+    "NameEn": "Hippopotas",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 266,
+    "National": 450,
+    "NameZh": "河馬獸",
+    "NameJp": "カバルドン",
+    "NameEn": "Hippowdon",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 267,
+    "National": 551,
+    "NameZh": "黑眼鱷",
+    "NameJp": "メグロコ",
+    "NameEn": "Sandile",
+    "types": ["Ground", "Dark"]
+  },
+  {
+    "Paldea": 268,
+    "National": 552,
+    "NameZh": "混混鱷",
+    "NameJp": "ワルビル",
+    "NameEn": "Krokorok",
+    "types": ["Ground", "Dark"]
+  },
+  {
+    "Paldea": 269,
+    "National": 553,
+    "NameZh": "流氓鱷",
+    "NameJp": "ワルビアル",
+    "NameEn": "Krookodile",
+    "types": ["Ground", "Dark"]
+  },
+  {
+    "Paldea": 270,
+    "National": 843,
+    "NameZh": "沙包蛇",
+    "NameJp": "スナヘビ",
+    "NameEn": "Silicobra",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 271,
+    "National": 844,
+    "NameZh": "沙螺蟒",
+    "NameJp": "サダイジャ",
+    "NameEn": "Sandaconda",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 272,
+    "National": 749,
+    "NameZh": "泥驢仔",
+    "NameJp": "ドロバンコ",
+    "NameEn": "Mudbray",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 273,
+    "National": 750,
+    "NameZh": "重泥挽馬",
+    "NameJp": "バンバドロ",
+    "NameEn": "Mudsdale",
+    "types": ["Ground"]
+  },
+  {
+    "Paldea": 274,
+    "National": 636,
+    "NameZh": "燃燒蟲",
+    "NameJp": "メラルバ",
+    "NameEn": "Larvesta",
+    "types": ["Bug", "Fire"]
+  },
+  {
+    "Paldea": 275,
+    "National": 637,
+    "NameZh": "火神蛾",
+    "NameJp": "ウルガモス",
+    "NameEn": "Volcarona",
+    "types": ["Bug", "Fire"]
+  },
+  {
+    "Paldea": 276,
+    "National": 371,
+    "NameZh": "寶貝龍",
+    "NameJp": "タツベイ",
+    "NameEn": "Bagon",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 277,
+    "National": 372,
+    "NameZh": "甲殼龍",
+    "NameJp": "コモルー",
+    "NameEn": "Shelgon",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 278,
+    "National": 373,
+    "NameZh": "暴飛龍",
+    "NameJp": "ボーマンダ",
+    "NameEn": "Salamence",
+    "types": ["Dragon", "Flying"]
+  },
+  {
+    "Paldea": 279,
+    "National": 1000,
+    "NameZh": "小鍛匠",
+    "NameJp": "カヌチャン",
+    "NameEn": "Tinkatink",
+    "types": ["Fairy", "Steel"]
+  },
+  {
+    "Paldea": 280,
+    "National": 1001,
+    "NameZh": "巧鍛匠",
+    "NameJp": "ナカヌチャン",
+    "NameEn": "Tinkatuff",
+    "types": ["Fairy", "Steel"]
+  },
+  {
+    "Paldea": 281,
+    "National": 1002,
+    "NameZh": "巨鍛匠",
+    "NameJp": "デカヌチャン",
+    "NameEn": "Tinkaton",
+    "types": ["Fairy", "Steel"]
+  },
+  {
+    "Paldea": 282,
+    "National": 856,
+    "NameZh": "迷布莉姆",
+    "NameJp": "ミブリム",
+    "NameEn": "Hatenna",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 283,
+    "National": 857,
+    "NameZh": "提布莉姆",
+    "NameJp": "テブリム",
+    "NameEn": "Hattrem",
+    "types": ["Psychic"]
+  },
+  {
+    "Paldea": 284,
+    "National": 858,
+    "NameZh": "布莉姆溫",
+    "NameJp": "ブリムオン",
+    "NameEn": "Hatterene",
+    "types": ["Psychic", "Fairy"]
+  },
+  {
+    "Paldea": 285,
+    "National": 859,
+    "NameZh": "搗蛋小妖",
+    "NameJp": "ベロバー",
+    "NameEn": "Impidimp",
+    "types": ["Dark", "Fairy"]
+  },
+  {
+    "Paldea": 286,
+    "National": 860,
+    "NameZh": "詐唬魔",
+    "NameJp": "ギモー",
+    "NameEn": "Morgrem",
+    "types": ["Dark", "Fairy"]
+  },
+  {
+    "Paldea": 287,
+    "National": 861,
+    "NameZh": "長毛巨魔",
+    "NameJp": "オーロンゲ",
+    "NameEn": "Grimmsnarl",
+    "types": ["Dark", "Fairy"]
+  },
+  {
+    "Paldea": 288,
+    "National": 929,
+    "NameZh": "海地鼠",
+    "NameJp": "ウミディグダ",
+    "NameEn": "Wiglett",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 289,
+    "National": 930,
+    "NameZh": "三海地鼠",
+    "NameJp": "ウミトリオ",
+    "NameEn": "Wugtrio",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 290,
+    "National": 959,
+    "NameZh": "下石鳥",
+    "NameJp": "オトシドリ",
+    "NameEn": "Bombirdier",
+    "types": ["Flying", "Dark"]
+  },
+  {
+    "Paldea": 291,
+    "National": 933,
+    "NameZh": "波普海豚",
+    "NameJp": "ナミイルカ",
+    "NameEn": "Finizen",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 292,
+    "National": 934,
+    "NameZh": "海豚俠",
+    "NameJp": "イルカマン",
+    "NameEn": "Palafin",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 293,
+    "National": 942,
+    "NameZh": "噗隆隆",
+    "NameJp": "ブロロン",
+    "NameEn": "Varoom",
+    "types": ["Steel", "Poison"]
+  },
+  {
+    "Paldea": 294,
+    "National": 943,
+    "NameZh": "普隆隆姆",
+    "NameJp": "ブロロローム",
+    "NameEn": "Revavroom",
+    "types": ["Steel", "Poison"]
+  },
+  {
+    "Paldea": 295,
+    "National": 953,
+    "NameZh": "摩托蜥",
+    "NameJp": "モトトカゲ",
+    "NameEn": "Cyclizar",
+    "types": ["Dragon", "Normal"]
+  },
+  {
+    "Paldea": 296,
+    "National": 944,
+    "NameZh": "拖拖蚓",
+    "NameJp": "ミミズズ",
+    "NameEn": "Orthworm",
+    "types": ["Steel"]
+  },
+  {
+    "Paldea": 297,
+    "National": 302,
+    "NameZh": "勾魂眼",
+    "NameJp": "ヤミラミ",
+    "NameEn": "Sableye",
+    "types": ["Dark", "Ghost"]
+  },
+  {
+    "Paldea": 298,
+    "National": 353,
+    "NameZh": "怨影娃娃",
+    "NameJp": "カゲボウズ",
+    "NameEn": "Shuppet",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 299,
+    "National": 354,
+    "NameZh": "詛咒娃娃",
+    "NameJp": "ジュペッタ",
+    "NameEn": "Banette",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 300,
+    "National": 870,
+    "NameZh": "列陣兵",
+    "NameJp": "タイレーツ",
+    "NameEn": "Falinks",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 301,
+    "National": 701,
+    "NameZh": "摔角鷹人",
+    "NameJp": "ルチャブル",
+    "NameEn": "Hawlucha",
+    "types": ["Fighting", "Flying"]
+  },
+  {
+    "Paldea": 302,
+    "National": 442,
+    "NameZh": "花岩怪",
+    "NameJp": "ミカルゲ",
+    "NameEn": "Spiritomb",
+    "types": ["Ghost", "Dark"]
+  },
+  {
+    "Paldea": 303,
+    "National": 714,
+    "NameZh": "嗡蝠",
+    "NameJp": "オンバット",
+    "NameEn": "Noibat",
+    "types": ["Flying", "Dragon"]
+  },
+  {
+    "Paldea": 304,
+    "National": 715,
+    "NameZh": "音波龍",
+    "NameJp": "オンバーン",
+    "NameEn": "Noivern",
+    "types": ["Flying", "Dragon"]
+  },
+  {
+    "Paldea": 305,
+    "National": 885,
+    "NameZh": "多龍梅西亞",
+    "NameJp": "ドラメシヤ",
+    "NameEn": "Dreepy",
+    "types": ["Dragon", "Ghost"]
+  },
+  {
+    "Paldea": 306,
+    "National": 886,
+    "NameZh": "多龍奇",
+    "NameJp": "ドロンチ",
+    "NameEn": "Drakloak",
+    "types": ["Dragon", "Ghost"]
+  },
+  {
+    "Paldea": 307,
+    "National": 887,
+    "NameZh": "多龍巴魯托",
+    "NameJp": "ドラパルト",
+    "NameEn": "Dragapult",
+    "types": ["Dragon", "Ghost"]
+  },
+  {
+    "Paldea": 308,
+    "National": 966,
+    "NameZh": "晶光芽",
+    "NameJp": "キラーメ",
+    "NameEn": "Glimmet",
+    "types": ["Rock", "Poison"]
+  },
+  {
+    "Paldea": 309,
+    "National": 967,
+    "NameZh": "晶光花",
+    "NameJp": "キラフロル",
+    "NameEn": "Glimmora",
+    "types": ["Rock", "Poison"]
+  },
+  {
+    "Paldea": 310,
+    "National": 479,
+    "NameZh": "洛托姆",
+    "NameJp": "ロトム",
+    "NameEn": "Rotom",
+    "types": ["Electric", "Ghost"]
+  },
+  {
+    "Paldea": 311,
+    "National": 924,
+    "NameZh": "墓仔狗",
+    "NameJp": "ボチ",
+    "NameEn": "Greavard",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 312,
+    "National": 925,
+    "NameZh": "墓揚犬",
+    "NameJp": "ハカドッグ",
+    "NameEn": "Houndstone",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 313,
+    "National": 765,
+    "NameZh": "智揮猩",
+    "NameJp": "ヤレユータン",
+    "NameEn": "Oranguru",
+    "types": ["Normal", "Psychic"]
+  },
+  {
+    "Paldea": 314,
+    "National": 766,
+    "NameZh": "投擲猴",
+    "NameJp": "ナゲツケサル",
+    "NameEn": "Passimian",
+    "types": ["Fighting"]
+  },
+  {
+    "Paldea": 315,
+    "National": 775,
+    "NameZh": "樹枕尾熊",
+    "NameJp": "ネッコアラ",
+    "NameEn": "Komala",
+    "types": ["Normal"]
+  },
+  {
+    "Paldea": 316,
+    "National": 246,
+    "NameZh": "幼基拉斯",
+    "NameJp": "ヨーギラス",
+    "NameEn": "Larvitar",
+    "types": ["Rock", "Ground"]
+  },
+  {
+    "Paldea": 317,
+    "National": 247,
+    "NameZh": "沙基拉斯",
+    "NameJp": "サナギラス",
+    "NameEn": "Pupitar",
+    "types": ["Rock", "Ground"]
+  },
+  {
+    "Paldea": 318,
+    "National": 248,
+    "NameZh": "班基拉斯",
+    "NameJp": "バンギラス",
+    "NameEn": "Tyranitar",
+    "types": ["Rock", "Dark"]
+  },
+  {
+    "Paldea": 319,
+    "National": 874,
+    "NameZh": "巨石丁",
+    "NameJp": "イシヘンジン",
+    "NameEn": "Stonjourner",
+    "types": ["Rock"]
+  },
+  {
+    "Paldea": 320,
+    "National": 875,
+    "NameZh": "冰砌鵝",
+    "NameJp": "コオリッポ",
+    "NameEn": "Eiscue",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 321,
+    "National": 871,
+    "NameZh": "啪嚓海膽",
+    "NameJp": "バチンウニ",
+    "NameEn": "Pincurchin",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 322,
+    "National": 769,
+    "NameZh": "沙丘娃",
+    "NameJp": "スナバァ",
+    "NameEn": "Sandygast",
+    "types": ["Ghost", "Ground"]
+  },
+  {
+    "Paldea": 323,
+    "National": 770,
+    "NameZh": "噬沙堡爺",
+    "NameJp": "シロデスナ",
+    "NameEn": "Palossand",
+    "types": ["Ghost", "Ground"]
+  },
+  {
+    "Paldea": 324,
+    "National": "079",
+    "NameZh": "呆呆獸",
+    "NameJp": "ヤドン",
+    "NameEn": "Slowpoke",
+    "types": ["Water", "Psychic"]
+  },
+  {
+    "Paldea": 325,
+    "National": "080",
+    "NameZh": "呆殼獸",
+    "NameJp": "ヤドラン",
+    "NameEn": "Slowbro",
+    "types": ["Water", "Psychic"]
+  },
+  {
+    "Paldea": 326,
+    "National": 199,
+    "NameZh": "呆呆王",
+    "NameJp": "ヤドキング",
+    "NameEn": "Slowking",
+    "types": ["Water", "Psychic"]
+  },
+  {
+    "Paldea": 327,
+    "National": 422,
+    "NameZh": "無殼海兔",
+    "NameJp": "カラナクシ",
+    "NameEn": "Shellos",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 328,
+    "National": 423,
+    "NameZh": "海兔獸",
+    "NameJp": "トリトドン",
+    "NameEn": "Gastrodon",
+    "types": ["Water", "Ground"]
+  },
+  {
+    "Paldea": 329,
+    "National": "090",
+    "NameZh": "大舌貝",
+    "NameJp": "シェルダー",
+    "NameEn": "Shellder",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 330,
+    "National": "091",
+    "NameZh": "刺甲貝",
+    "NameJp": "パルシェン",
+    "NameEn": "Cloyster",
+    "types": ["Water", "Ice"]
+  },
+  {
+    "Paldea": 331,
+    "National": 211,
+    "NameZh": "千針魚",
+    "NameJp": "ハリーセン",
+    "NameEn": "Qwilfish",
+    "types": ["Water", "Poison"]
+  },
+  {
+    "Paldea": 332,
+    "National": 370,
+    "NameZh": "愛心魚",
+    "NameJp": "ラブカス",
+    "NameEn": "Luvdisc",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 333,
+    "National": 456,
+    "NameZh": "螢光魚",
+    "NameJp": "ケイコウオ",
+    "NameEn": "Finneon",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 334,
+    "National": 457,
+    "NameZh": "霓虹魚",
+    "NameJp": "ネオラント",
+    "NameEn": "Lumineon",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 335,
+    "National": 779,
+    "NameZh": "磨牙彩皮魚",
+    "NameJp": "ハギギシリ",
+    "NameEn": "Bruxish",
+    "types": ["Water", "Psychic"]
+  },
+  {
+    "Paldea": 336,
+    "National": 594,
+    "NameZh": "保母曼波",
+    "NameJp": "ママンボウ",
+    "NameEn": "Alomomola",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 337,
+    "National": 690,
+    "NameZh": "垃垃藻",
+    "NameJp": "クズモー",
+    "NameEn": "Skrelp",
+    "types": ["Poison", "Water"]
+  },
+  {
+    "Paldea": 338,
+    "National": 691,
+    "NameZh": "毒藻龍",
+    "NameJp": "ドラミドロ",
+    "NameEn": "Dragalge",
+    "types": ["Poison", "Dragon"]
+  },
+  {
+    "Paldea": 339,
+    "National": 692,
+    "NameZh": "鐵臂槍蝦",
+    "NameJp": "ウデッポウ",
+    "NameEn": "Clauncher",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 340,
+    "National": 693,
+    "NameZh": "鋼炮臂蝦",
+    "NameJp": "ブロスター",
+    "NameEn": "Clawitzer",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 341,
+    "National": 602,
+    "NameZh": "麻麻小魚",
+    "NameJp": "シビシラス",
+    "NameEn": "Tynamo",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 342,
+    "National": 603,
+    "NameZh": "麻麻鰻",
+    "NameJp": "シビビール",
+    "NameEn": "Eelektrik",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 343,
+    "National": 604,
+    "NameZh": "麻麻鰻魚王",
+    "NameJp": "シビルドン",
+    "NameEn": "Eelektross",
+    "types": ["Electric"]
+  },
+  {
+    "Paldea": 344,
+    "National": 747,
+    "NameZh": "好壞星",
+    "NameJp": "ヒドイデ",
+    "NameEn": "Mareanie",
+    "types": ["Poison", "Water"]
+  },
+  {
+    "Paldea": 345,
+    "National": 748,
+    "NameZh": "超壞星",
+    "NameJp": "ドヒドイデ",
+    "NameEn": "Toxapex",
+    "types": ["Poison", "Water"]
+  },
+  {
+    "Paldea": 346,
+    "National": 961,
+    "NameZh": "纏紅鶴",
+    "NameJp": "カラミンゴ",
+    "NameEn": "Flamigo",
+    "types": ["Flying", "Fighting"]
+  },
+  {
+    "Paldea": 347,
+    "National": 147,
+    "NameZh": "迷你龍",
+    "NameJp": "ミニリュウ",
+    "NameEn": "Dratini",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 348,
+    "National": 148,
+    "NameZh": "哈克龍",
+    "NameJp": "ハクリュー",
+    "NameEn": "Dragonair",
+    "types": ["Dragon"]
+  },
+  {
+    "Paldea": 349,
+    "National": 149,
+    "NameZh": "快龍",
+    "NameJp": "カイリュー",
+    "NameEn": "Dragonite",
+    "types": ["Dragon", "Flying"]
+  },
+  {
+    "Paldea": 350,
+    "National": 872,
+    "NameZh": "雪吞蟲",
+    "NameJp": "ユキハミ",
+    "NameEn": "Snom",
+    "types": ["Ice", "Bug"]
+  },
+  {
+    "Paldea": 351,
+    "National": 873,
+    "NameZh": "雪絨蛾",
+    "NameJp": "モスノウ",
+    "NameEn": "Frosmoth",
+    "types": ["Ice", "Bug"]
+  },
+  {
+    "Paldea": 352,
+    "National": 459,
+    "NameZh": "雪笠怪",
+    "NameJp": "ユキカブリ",
+    "NameEn": "Snover",
+    "types": ["Grass", "Ice"]
+  },
+  {
+    "Paldea": 353,
+    "National": 460,
+    "NameZh": "暴雪王",
+    "NameJp": "ユキノオー",
+    "NameEn": "Abomasnow",
+    "types": ["Grass", "Ice"]
+  },
+  {
+    "Paldea": 354,
+    "National": 225,
+    "NameZh": "信使鳥",
+    "NameJp": "デリバード",
+    "NameEn": "Delibird",
+    "types": ["Ice", "Flying"]
+  },
+  {
+    "Paldea": 355,
+    "National": 613,
+    "NameZh": "噴嚏熊",
+    "NameJp": "クマシュン",
+    "NameEn": "Cubchoo",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 356,
+    "National": 614,
+    "NameZh": "凍原熊",
+    "NameJp": "ツンベアー",
+    "NameEn": "Beartic",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 357,
+    "National": 361,
+    "NameZh": "雪童子",
+    "NameJp": "ユキワラシ",
+    "NameEn": "Snorunt",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 358,
+    "National": 362,
+    "NameZh": "冰鬼護",
+    "NameJp": "オニゴーリ",
+    "NameEn": "Glalie",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 359,
+    "National": 478,
+    "NameZh": "雪妖女",
+    "NameJp": "ユキメノコ",
+    "NameEn": "Froslass",
+    "types": ["Ice", "Ghost"]
+  },
+  {
+    "Paldea": 360,
+    "National": 615,
+    "NameZh": "幾何雪花",
+    "NameJp": "フリージオ",
+    "NameEn": "Cryogonal",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 361,
+    "National": 947,
+    "NameZh": "走鯨",
+    "NameJp": "アルクジラ",
+    "NameEn": "Cetoddle",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 362,
+    "National": 948,
+    "NameZh": "浩大鯨",
+    "NameJp": "ハルクジラ",
+    "NameEn": "Cetitan",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 363,
+    "National": 712,
+    "NameZh": "冰寶",
+    "NameJp": "カチコール",
+    "NameEn": "Bergmite",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 364,
+    "National": 713,
+    "NameZh": "冰岩怪",
+    "NameJp": "クレベース",
+    "NameEn": "Avalugg",
+    "types": ["Ice"]
+  },
+  {
+    "Paldea": 365,
+    "National": 627,
+    "NameZh": "毛頭小鷹",
+    "NameJp": "ワシボン",
+    "NameEn": "Rufflet",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 366,
+    "National": 628,
+    "NameZh": "勇士雄鷹",
+    "NameJp": "ウォーグル",
+    "NameEn": "Braviary",
+    "types": ["Normal", "Flying"]
+  },
+  {
+    "Paldea": 367,
+    "National": 624,
+    "NameZh": "駒刀小兵",
+    "NameJp": "コマタナ",
+    "NameEn": "Pawniard",
+    "types": ["Dark", "Steel"]
+  },
+  {
+    "Paldea": 368,
+    "National": 625,
+    "NameZh": "劈斬司令",
+    "NameJp": "キリキザン",
+    "NameEn": "Bisharp",
+    "types": ["Dark", "Steel"]
+  },
+  {
+    "Paldea": 369,
+    "National": 1008,
+    "NameZh": "仆刀將軍",
+    "NameJp": "ドドゲザン",
+    "NameEn": "Kingambit",
+    "types": ["Dark", "Steel"]
+  },
+  {
+    "Paldea": 370,
+    "National": 633,
+    "NameZh": "單首龍",
+    "NameJp": "モノズ",
+    "NameEn": "Deino",
+    "types": ["Dark", "Dragon"]
+  },
+  {
+    "Paldea": 371,
+    "National": 634,
+    "NameZh": "雙首暴龍",
+    "NameJp": "ジヘッド",
+    "NameEn": "Zweilous",
+    "types": ["Dark", "Dragon"]
+  },
+  {
+    "Paldea": 372,
+    "National": 635,
+    "NameZh": "三首惡龍",
+    "NameJp": "サザンドラ",
+    "NameEn": "Hydreigon",
+    "types": ["Dark", "Dragon"]
+  },
+  {
+    "Paldea": 373,
+    "National": 932,
+    "NameZh": "輕身鱈",
+    "NameJp": "ミガルーサ",
+    "NameEn": "Veluza",
+    "types": ["Water", "Psychic"]
+  },
+  {
+    "Paldea": 374,
+    "National": 931,
+    "NameZh": "吃吼霸",
+    "NameJp": "ヘイラッシャ",
+    "NameEn": "Dondozo",
+    "types": ["Water"]
+  },
+  {
+    "Paldea": 375,
+    "National": 952,
+    "NameZh": "米立龍",
+    "NameJp": "シャリタツ",
+    "NameEn": "Tatsugiri",
+    "types": ["Dragon", "Water"]
+  },
+  {
+    "Paldea": 376,
+    "National": 984,
+    "NameZh": "雄偉牙",
+    "NameJp": "イダイナキバ",
+    "NameEn": "Great Tusk",
+    "types": ["Ground", "Fighting"]
+  },
+  {
+    "Paldea": 377,
+    "National": 985,
+    "NameZh": "吼叫尾",
+    "NameJp": "サケブシッポ",
+    "NameEn": "Scream Tail",
+    "types": ["Fairy", "Psychic"]
+  },
+  {
+    "Paldea": 378,
+    "National": 986,
+    "NameZh": "猛惡菇",
+    "NameJp": "アラブルタケ",
+    "NameEn": "Brute Bonnet",
+    "types": ["Grass", "Dark"]
+  },
+  {
+    "Paldea": 379,
+    "National": 987,
+    "NameZh": "振翼發",
+    "NameJp": "ハバタクカミ",
+    "NameEn": "Flutter Mane",
+    "types": ["Ghost", "Fairy"]
+  },
+  {
+    "Paldea": 380,
+    "National": 988,
+    "NameZh": "爬地翅",
+    "NameJp": "チヲハウハネ",
+    "NameEn": "Slither Wing",
+    "types": ["Bug", "Fighting"]
+  },
+  {
+    "Paldea": 381,
+    "National": 989,
+    "NameZh": "沙鐵皮",
+    "NameJp": "スナノケガワ",
+    "NameEn": "Sandy Shocks",
+    "types": ["Electric", "Ground"]
+  },
+  {
+    "Paldea": 382,
+    "National": 990,
+    "NameZh": "鐵轍跡",
+    "NameJp": "テツノワダチ",
+    "NameEn": "Iron Treads",
+    "types": ["Ground", "Steel"]
+  },
+  {
+    "Paldea": 383,
+    "National": 991,
+    "NameZh": "鐵包袱",
+    "NameJp": "テツノツツミ",
+    "NameEn": "Iron Bundle",
+    "types": ["Ice", "Water"]
+  },
+  {
+    "Paldea": 384,
+    "National": 992,
+    "NameZh": "鐵臂膀",
+    "NameJp": "テツノカイナ",
+    "NameEn": "Iron Hands",
+    "types": ["Fighting", "Electric"]
+  },
+  {
+    "Paldea": 385,
+    "National": 993,
+    "NameZh": "鐵脖頸",
+    "NameJp": "テツノコウベ",
+    "NameEn": "Iron Jugulis",
+    "types": ["Dark", "Flying"]
+  },
+  {
+    "Paldea": 386,
+    "National": 994,
+    "NameZh": "鐵毒蛾",
+    "NameJp": "テツノドクガ",
+    "NameEn": "Iron Moth",
+    "types": ["Fire", "Poison"]
+  },
+  {
+    "Paldea": 387,
+    "National": 995,
+    "NameZh": "鐵荊棘",
+    "NameJp": "テツノイバラ",
+    "NameEn": "Iron Thorns",
+    "types": ["Rock", "Electric"]
+  },
+  {
+    "Paldea": 388,
+    "National": 949,
+    "NameZh": "涼脊龍",
+    "NameJp": "セビエ",
+    "NameEn": "Frigibax",
+    "types": ["Dragon", "Ice"]
+  },
+  {
+    "Paldea": 389,
+    "National": 950,
+    "NameZh": "凍脊龍",
+    "NameJp": "セゴール",
+    "NameEn": "Arctibax",
+    "types": ["Dragon", "Ice"]
+  },
+  {
+    "Paldea": 390,
+    "National": 951,
+    "NameZh": "戟脊龍",
+    "NameJp": "セグレイブ",
+    "NameEn": "Baxcalibur",
+    "types": ["Dragon", "Ice"]
+  },
+  {
+    "Paldea": 391,
+    "National": 976,
+    "NameZh": "索財靈",
+    "NameJp": "コレクレー",
+    "NameEn": "Gimmighoul",
+    "types": ["Ghost"]
+  },
+  {
+    "Paldea": 392,
+    "National": 977,
+    "NameZh": "賽富豪",
+    "NameJp": "サーフゴー",
+    "NameEn": "Gholdengo",
+    "types": ["Steel", "Ghost"]
+  },
+  {
+    "Paldea": 393,
+    "National": 996,
+    "NameZh": "古簡蝸",
+    "NameJp": "チオンジェン",
+    "NameEn": "Wo-Chien",
+    "types": ["Dark", "Grass"]
+  },
+  {
+    "Paldea": 394,
+    "National": 995,
+    "NameZh": "古劍豹",
+    "NameJp": "パオジアン",
+    "NameEn": "Chien-Pao",
+    "types": ["Dark", "Ice"]
+  },
+  {
+    "Paldea": 395,
+    "National": 994,
+    "NameZh": "古鼎鹿",
+    "NameJp": "ディンルー",
+    "NameEn": "Ting-Lu",
+    "types": ["Dark", "Ground"]
+  },
+  {
+    "Paldea": 396,
+    "National": 997,
+    "NameZh": "古玉魚",
+    "NameJp": "イーユイ",
+    "NameEn": "Chi-Yu",
+    "types": ["Dark", "Fire"]
+  },
+  {
+    "Paldea": 397,
+    "National": 1005,
+    "NameZh": "轟鳴月",
+    "NameJp": "トドロクツキ",
+    "NameEn": "Roaring Moon",
+    "types": ["Dragon", "Dark"]
+  },
+  {
+    "Paldea": 398,
+    "National": 1006,
+    "NameZh": "鐵武者",
+    "NameJp": "テツノブジン",
+    "NameEn": "Iron Valiant",
+    "types": ["Fairy", "Fighting"]
+  },
+  {
+    "Paldea": 399,
+    "National": 998,
+    "NameZh": "故勒頓",
+    "NameJp": "コライドン",
+    "NameEn": "Koraidon",
+    "types": ["Fighting", "Dragon"]
+  },
+  {
+    "Paldea": 400,
+    "National": 999,
+    "NameZh": "密勒頓",
+    "NameJp": "ミライドン",
+    "NameEn": "Miraidon",
+    "types": ["Electric", "Dragon"]
+  }
+]
