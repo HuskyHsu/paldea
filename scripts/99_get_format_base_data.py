@@ -29,7 +29,8 @@ if __name__ == '__main__':
                 attributes["statsSpDef"],
                 attributes["statsSpd"],
                 attributes["statsTotal"],
-            ]
+            ],
+            "altForm": attributes["altForm"],
         }
 
         output.append(data)
