@@ -5,7 +5,7 @@ function List() {
   return (
     <div className="flex flex-wrap gap-4 bg-orange-50 px-4 justify-around">
       {data.map((pm) => (
-        <Card pokemon={pm} />
+        <Card pokemon={pm} key={pm.paldeaId.toString() + pm.altForm} />
       ))}
     </div>
   );

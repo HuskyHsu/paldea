@@ -30,7 +30,7 @@ export function Card({ pokemon }: Props) {
 
         <p className="flex gap-x-2">
           {pokemon.types.map((type) => (
-            <TypeIcon type={type} />
+            <TypeIcon type={type} key={type} />
           ))}
         </p>
       </div>
