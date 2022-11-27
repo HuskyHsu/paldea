@@ -1,7 +1,7 @@
 import create from "zustand";
 
 interface BearState {
-  bears: number
+  bears: number;
 }
 
 const useBearStore = create<BearState>((set) => ({

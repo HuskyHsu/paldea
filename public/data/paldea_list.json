@@ -5,7 +5,8 @@
     "NameZh": "新葉喵",
     "NameJp": "ニャオハ",
     "NameEn": "Sprigatito",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [40, 61, 54, 45, 45, 65, 310]
   },
   {
     "Paldea": 2,
@@ -13,7 +14,8 @@
     "NameZh": "蒂蕾喵",
     "NameJp": "ニャローテ",
     "NameEn": "Floragato",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [61, 80, 63, 60, 63, 83, 410]
   },
   {
     "Paldea": 3,
@@ -21,7 +23,8 @@
     "NameZh": "魔幻假面喵",
     "NameJp": "マスカーニャ",
     "NameEn": "Meowscarada",
-    "types": ["Grass", "Dark"]
+    "types": ["Grass", "Dark"],
+    "stats": [76, 110, 70, 81, 70, 123, 530]
   },
   {
     "Paldea": 4,
@@ -29,7 +32,8 @@
     "NameZh": "呆火鱷",
     "NameJp": "ホゲータ",
     "NameEn": "Fuecoco",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [67, 45, 59, 63, 40, 36, 310]
   },
   {
     "Paldea": 5,
@@ -37,7 +41,8 @@
     "NameZh": "炙燙鱷",
     "NameJp": "アチゲータ",
     "NameEn": "Crocalor",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [81, 55, 78, 90, 58, 49, 411]
   },
   {
     "Paldea": 6,
@@ -45,7 +50,8 @@
     "NameZh": "骨紋巨聲鱷",
     "NameJp": "ラウドボーン",
     "NameEn": "Skeledirge",
-    "types": ["Fire", "Ghost"]
+    "types": ["Fire", "Ghost"],
+    "stats": [104, 75, 100, 110, 75, 66, 530]
   },
   {
     "Paldea": 7,
@@ -53,7 +59,8 @@
     "NameZh": "潤水鴨",
     "NameJp": "クワッス",
     "NameEn": "Quaxly",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [55, 65, 45, 50, 45, 50, 310]
   },
   {
     "Paldea": 8,
@@ -61,7 +68,8 @@
     "NameZh": "涌躍鴨",
     "NameJp": "ウェルカモ",
     "NameEn": "Quaxwell",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [70, 85, 65, 65, 60, 65, 410]
   },
   {
     "Paldea": 9,
@@ -69,7 +77,8 @@
     "NameZh": "狂歡浪舞鴨",
     "NameJp": "ウェーニバル",
     "NameEn": "Quaquaval",
-    "types": ["Water", "Fighting"]
+    "types": ["Water", "Fighting"],
+    "stats": [85, 120, 80, 85, 75, 85, 530]
   },
   {
     "Paldea": 10,
@@ -77,7 +86,8 @@
     "NameZh": "愛吃豚",
     "NameJp": "グルトン",
     "NameEn": "Lechonk",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [54, 45, 40, 35, 45, 35, 254]
   },
   {
     "Paldea": 11,
@@ -85,7 +95,8 @@
     "NameZh": "飄香豚",
     "NameJp": "パフュートン",
     "NameEn": "Oinkologne",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [110, 100, 75, 59, 80, 65, 489]
   },
   {
     "Paldea": 12,
@@ -93,7 +104,8 @@
     "NameZh": "團珠蛛",
     "NameJp": "タマンチュラ",
     "NameEn": "Tarountula",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [35, 41, 45, 29, 40, 20, 210]
   },
   {
     "Paldea": 13,
@@ -101,7 +113,8 @@
     "NameZh": "操陷蛛",
     "NameJp": "ワナイダー",
     "NameEn": "Spidops",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [60, 79, 92, 52, 86, 35, 404]
   },
   {
     "Paldea": 14,
@@ -109,7 +122,8 @@
     "NameZh": "豆蟋蟀",
     "NameJp": "マメバッタ",
     "NameEn": "Nymble",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [33, 46, 40, 21, 25, 45, 210]
   },
   {
     "Paldea": 15,
@@ -117,7 +131,8 @@
     "NameZh": "烈腿蝗",
     "NameJp": "エクスレッグ",
     "NameEn": "Lokix",
-    "types": ["Bug", "Dark"]
+    "types": ["Bug", "Dark"],
+    "stats": [71, 102, 78, 52, 55, 92, 450]
   },
   {
     "Paldea": 16,
@@ -125,7 +140,8 @@
     "NameZh": "毽子草",
     "NameJp": "ハネッコ",
     "NameEn": "Hoppip",
-    "types": ["Grass", "Flying"]
+    "types": ["Grass", "Flying"],
+    "stats": [35, 35, 40, 35, 55, 50, 250]
   },
   {
     "Paldea": 17,
@@ -133,7 +149,8 @@
     "NameZh": "毽子花",
     "NameJp": "ポポッコ",
     "NameEn": "Skiploom",
-    "types": ["Grass", "Flying"]
+    "types": ["Grass", "Flying"],
+    "stats": [55, 45, 50, 45, 65, 80, 340]
   },
   {
     "Paldea": 18,
@@ -141,7 +158,8 @@
     "NameZh": "毽子棉",
     "NameJp": "ワタッコ",
     "NameEn": "Jumpluff",
-    "types": ["Grass", "Flying"]
+    "types": ["Grass", "Flying"],
+    "stats": [75, 55, 70, 55, 95, 110, 460]
   },
   {
     "Paldea": 19,
@@ -149,7 +167,8 @@
     "NameZh": "小箭雀",
     "NameJp": "ヤヤコマ",
     "NameEn": "Fletchling",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [45, 50, 43, 40, 38, 62, 278]
   },
   {
     "Paldea": 20,
@@ -157,7 +176,8 @@
     "NameZh": "火箭雀",
     "NameJp": "ヒノヤコマ",
     "NameEn": "Fletchinder",
-    "types": ["Fire", "Flying"]
+    "types": ["Fire", "Flying"],
+    "stats": [62, 73, 55, 56, 52, 84, 382]
   },
   {
     "Paldea": 21,
@@ -165,7 +185,8 @@
     "NameZh": "烈箭鷹",
     "NameJp": "ファイアロー",
     "NameEn": "Talonflame",
-    "types": ["Fire", "Flying"]
+    "types": ["Fire", "Flying"],
+    "stats": [78, 81, 71, 74, 69, 126, 499]
   },
   {
     "Paldea": 22,
@@ -173,7 +194,8 @@
     "NameZh": "布撥",
     "NameJp": "パモ",
     "NameEn": "Pawmi",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [45, 50, 20, 40, 25, 60, 240]
   },
   {
     "Paldea": 23,
@@ -181,7 +203,8 @@
     "NameZh": "布土撥",
     "NameJp": "パモット",
     "NameEn": "Pawmo",
-    "types": ["Electric", "Fighting"]
+    "types": ["Electric", "Fighting"],
+    "stats": [60, 75, 40, 50, 40, 85, 350]
   },
   {
     "Paldea": 24,
@@ -189,7 +212,8 @@
     "NameZh": "巴布土撥",
     "NameJp": "パーモット",
     "NameEn": "Pawmot",
-    "types": ["Electric", "Fighting"]
+    "types": ["Electric", "Fighting"],
+    "stats": [70, 115, 70, 70, 60, 105, 490]
   },
   {
     "Paldea": 25,
@@ -197,7 +221,8 @@
     "NameZh": "戴魯比",
     "NameJp": "デルビル",
     "NameEn": "Houndour",
-    "types": ["Dark", "Fire"]
+    "types": ["Dark", "Fire"],
+    "stats": [45, 60, 30, 80, 50, 65, 330]
   },
   {
     "Paldea": 26,
@@ -205,7 +230,8 @@
     "NameZh": "黑魯加",
     "NameJp": "ヘルガー",
     "NameEn": "Houndoom",
-    "types": ["Dark", "Fire"]
+    "types": ["Dark", "Fire"],
+    "stats": [75, 90, 50, 110, 80, 95, 500]
   },
   {
     "Paldea": 27,
@@ -213,7 +239,8 @@
     "NameZh": "貓鼬少",
     "NameJp": "ヤングース",
     "NameEn": "Yungoos",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [48, 70, 30, 30, 30, 45, 253]
   },
   {
     "Paldea": 28,
@@ -221,7 +248,8 @@
     "NameZh": "貓鼬探長",
     "NameJp": "デカグース",
     "NameEn": "Gumshoos",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [88, 110, 60, 55, 60, 45, 418]
   },
   {
     "Paldea": 29,
@@ -229,7 +257,8 @@
     "NameZh": "貪心栗鼠",
     "NameJp": "ホシガリス",
     "NameEn": "Skwovet",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [70, 55, 55, 35, 35, 25, 275]
   },
   {
     "Paldea": 30,
@@ -237,7 +266,8 @@
     "NameZh": "藏飽栗鼠",
     "NameJp": "ヨクバリス",
     "NameEn": "Greedent",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [120, 95, 95, 55, 75, 20, 460]
   },
   {
     "Paldea": 31,
@@ -245,7 +275,8 @@
     "NameZh": "向日種子",
     "NameJp": "ヒマナッツ",
     "NameEn": "Sunkern",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [30, 30, 30, 30, 30, 30, 180]
   },
   {
     "Paldea": 32,
@@ -253,7 +284,8 @@
     "NameZh": "向日花怪",
     "NameJp": "キマワリ",
     "NameEn": "Sunflora",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [75, 75, 55, 105, 85, 30, 425]
   },
   {
     "Paldea": 33,
@@ -261,7 +293,8 @@
     "NameZh": "圓法師",
     "NameJp": "コロボーシ",
     "NameEn": "Kricketot",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [37, 25, 41, 25, 41, 25, 194]
   },
   {
     "Paldea": 34,
@@ -269,7 +302,8 @@
     "NameZh": "音箱蟀",
     "NameJp": "コロトック",
     "NameEn": "Kricketune",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [77, 85, 51, 55, 51, 65, 384]
   },
   {
     "Paldea": 35,
@@ -277,7 +311,8 @@
     "NameZh": "粉蝶蟲",
     "NameJp": "コフキムシ",
     "NameEn": "Scatterbug",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [38, 35, 40, 27, 25, 35, 200]
   },
   {
     "Paldea": 36,
@@ -285,7 +320,8 @@
     "NameZh": "粉蝶蛹",
     "NameJp": "コフーライ",
     "NameEn": "Spewpa",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [45, 22, 60, 27, 30, 29, 213]
   },
   {
     "Paldea": 37,
@@ -293,7 +329,8 @@
     "NameZh": "彩粉蝶",
     "NameJp": "ビビヨン",
     "NameEn": "Vivillon",
-    "types": ["Bug", "Flying"]
+    "types": ["Bug", "Flying"],
+    "stats": [80, 52, 50, 90, 50, 89, 411]
   },
   {
     "Paldea": 38,
@@ -301,7 +338,8 @@
     "NameZh": "三蜜蜂",
     "NameJp": "ミツハニー",
     "NameEn": "Combee",
-    "types": ["Bug", "Flying"]
+    "types": ["Bug", "Flying"],
+    "stats": [30, 30, 42, 30, 42, 70, 244]
   },
   {
     "Paldea": 39,
@@ -309,7 +347,8 @@
     "NameZh": "蜂女王",
     "NameJp": "ビークイン",
     "NameEn": "Vespiquen",
-    "types": ["Bug", "Flying"]
+    "types": ["Bug", "Flying"],
+    "stats": [70, 80, 102, 80, 102, 40, 474]
   },
   {
     "Paldea": 40,
@@ -317,7 +356,8 @@
     "NameZh": "稚山雀",
     "NameJp": "ココガラ",
     "NameEn": "Rookidee",
-    "types": ["Flying"]
+    "types": ["Flying"],
+    "stats": [38, 47, 35, 33, 35, 57, 245]
   },
   {
     "Paldea": 41,
@@ -325,7 +365,8 @@
     "NameZh": "藍鴉",
     "NameJp": "アオガラス",
     "NameEn": "Corvisquire",
-    "types": ["Flying"]
+    "types": ["Flying"],
+    "stats": [68, 67, 55, 43, 55, 77, 365]
   },
   {
     "Paldea": 42,
@@ -333,7 +374,8 @@
     "NameZh": "鋼鎧鴉",
     "NameJp": "アーマーガア",
     "NameEn": "Corviknight",
-    "types": ["Flying", "Steel"]
+    "types": ["Flying", "Steel"],
+    "stats": [98, 87, 105, 53, 85, 67, 495]
   },
   {
     "Paldea": 43,
@@ -341,7 +383,8 @@
     "NameZh": "小福蛋",
     "NameJp": "ピンプク",
     "NameEn": "Happiny",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [100, 5, 5, 15, 65, 30, 220]
   },
   {
     "Paldea": 44,
@@ -349,7 +392,8 @@
     "NameZh": "吉利蛋",
     "NameJp": "ラッキー",
     "NameEn": "Chansey",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [250, 5, 5, 35, 105, 50, 450]
   },
   {
     "Paldea": 45,
@@ -357,7 +401,8 @@
     "NameZh": "幸福蛋",
     "NameJp": "ハピナス",
     "NameEn": "Blissey",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [255, 10, 10, 75, 135, 55, 540]
   },
   {
     "Paldea": 46,
@@ -365,7 +410,8 @@
     "NameZh": "露力麗",
     "NameJp": "ルリリ",
     "NameEn": "Azurill",
-    "types": ["Normal", "Fairy"]
+    "types": ["Normal", "Fairy"],
+    "stats": [50, 20, 40, 20, 40, 20, 190]
   },
   {
     "Paldea": 47,
@@ -373,7 +419,8 @@
     "NameZh": "瑪力露",
     "NameJp": "マリル",
     "NameEn": "Marill",
-    "types": ["Water", "Fairy"]
+    "types": ["Water", "Fairy"],
+    "stats": [70, 20, 50, 20, 50, 40, 250]
   },
   {
     "Paldea": 48,
@@ -381,7 +428,8 @@
     "NameZh": "瑪力露麗",
     "NameJp": "マリルリ",
     "NameEn": "Azumarill",
-    "types": ["Water", "Fairy"]
+    "types": ["Water", "Fairy"],
+    "stats": [100, 50, 80, 60, 80, 50, 420]
   },
   {
     "Paldea": 49,
@@ -389,7 +437,8 @@
     "NameZh": "溜溜糖球",
     "NameJp": "アメタマ",
     "NameEn": "Surskit",
-    "types": ["Bug", "Water"]
+    "types": ["Bug", "Water"],
+    "stats": [40, 30, 32, 50, 52, 65, 269]
   },
   {
     "Paldea": 50,
@@ -397,7 +446,8 @@
     "NameZh": "雨翅蛾",
     "NameJp": "アメモース",
     "NameEn": "Masquerain",
-    "types": ["Bug", "Flying"]
+    "types": ["Bug", "Flying"],
+    "stats": [70, 60, 62, 100, 82, 80, 454]
   },
   {
     "Paldea": 51,
@@ -405,7 +455,8 @@
     "NameZh": "泳圈鼬",
     "NameJp": "ブイゼル",
     "NameEn": "Buizel",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [55, 65, 35, 60, 30, 85, 330]
   },
   {
     "Paldea": 52,
@@ -413,7 +464,8 @@
     "NameZh": "浮潛鼬",
     "NameJp": "フローゼル",
     "NameEn": "Floatzel",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [85, 105, 55, 85, 50, 115, 495]
   },
   {
     "Paldea": 53,
@@ -421,7 +473,8 @@
     "NameZh": "烏波",
     "NameJp": "ウパー",
     "NameEn": "Wooper",
-    "types": ["Water", "Ground"]
+    "types": ["Water", "Ground"],
+    "stats": [55, 45, 45, 25, 25, 15, 210]
   },
   {
     "Paldea": 54,
@@ -429,7 +482,8 @@
     "NameZh": "土王",
     "NameJp": "ドオー",
     "NameEn": "Clodsire",
-    "types": ["Poison", "Ground"]
+    "types": ["Poison", "Ground"],
+    "stats": [130, 75, 60, 45, 100, 20, 430]
   },
   {
     "Paldea": 55,
@@ -437,7 +491,8 @@
     "NameZh": "可達鴨",
     "NameJp": "コダック",
     "NameEn": "Psyduck",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [50, 52, 48, 65, 50, 55, 320]
   },
   {
     "Paldea": 56,
@@ -445,7 +500,8 @@
     "NameZh": "哥達鴨",
     "NameJp": "ゴルダック",
     "NameEn": "Golduck",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [80, 82, 78, 95, 80, 85, 500]
   },
   {
     "Paldea": 57,
@@ -453,7 +509,8 @@
     "NameZh": "咬咬龜",
     "NameJp": "カムカメ",
     "NameEn": "Chewtle",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [50, 64, 50, 38, 38, 44, 284]
   },
   {
     "Paldea": 58,
@@ -461,7 +518,8 @@
     "NameZh": "暴噬龜",
     "NameJp": "カジリガメ",
     "NameEn": "Drednaw",
-    "types": ["Water", "Rock"]
+    "types": ["Water", "Rock"],
+    "stats": [90, 115, 90, 48, 68, 74, 485]
   },
   {
     "Paldea": 59,
@@ -469,7 +527,8 @@
     "NameZh": "寶寶丁",
     "NameJp": "ププリン",
     "NameEn": "Igglybuff",
-    "types": ["Normal", "Fairy"]
+    "types": ["Normal", "Fairy"],
+    "stats": [90, 30, 15, 40, 20, 15, 210]
   },
   {
     "Paldea": 60,
@@ -477,7 +536,8 @@
     "NameZh": "胖丁",
     "NameJp": "プリン",
     "NameEn": "Jigglypuff",
-    "types": ["Normal", "Fairy"]
+    "types": ["Normal", "Fairy"],
+    "stats": [115, 45, 20, 45, 25, 20, 270]
   },
   {
     "Paldea": 61,
@@ -485,7 +545,8 @@
     "NameZh": "胖可丁",
     "NameJp": "プクリン",
     "NameEn": "Wigglytuff",
-    "types": ["Normal", "Fairy"]
+    "types": ["Normal", "Fairy"],
+    "stats": [140, 70, 45, 85, 50, 45, 435]
   },
   {
     "Paldea": 62,
@@ -493,7 +554,8 @@
     "NameZh": "拉魯拉絲",
     "NameJp": "ラルトス",
     "NameEn": "Ralts",
-    "types": ["Psychic", "Fairy"]
+    "types": ["Psychic", "Fairy"],
+    "stats": [28, 25, 25, 45, 35, 40, 198]
   },
   {
     "Paldea": 63,
@@ -501,7 +563,8 @@
     "NameZh": "奇魯莉安",
     "NameJp": "キルリア",
     "NameEn": "Kirlia",
-    "types": ["Psychic", "Fairy"]
+    "types": ["Psychic", "Fairy"],
+    "stats": [38, 35, 35, 65, 55, 50, 278]
   },
   {
     "Paldea": 64,
@@ -509,7 +572,8 @@
     "NameZh": "沙奈朵",
     "NameJp": "サーナイト",
     "NameEn": "Gardevoir",
-    "types": ["Psychic", "Fairy"]
+    "types": ["Psychic", "Fairy"],
+    "stats": [68, 65, 65, 125, 115, 80, 518]
   },
   {
     "Paldea": 65,
@@ -517,7 +581,8 @@
     "NameZh": "艾路雷朵",
     "NameJp": "エルレイド",
     "NameEn": "Gallade",
-    "types": ["Psychic", "Fighting"]
+    "types": ["Psychic", "Fighting"],
+    "stats": [68, 125, 65, 65, 115, 80, 518]
   },
   {
     "Paldea": 66,
@@ -525,7 +590,8 @@
     "NameZh": "催眠貘",
     "NameJp": "スリープ",
     "NameEn": "Drowzee",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [60, 48, 45, 43, 90, 42, 328]
   },
   {
     "Paldea": 67,
@@ -533,7 +599,8 @@
     "NameZh": "引夢貘人",
     "NameJp": "スリーパー",
     "NameEn": "Hypno",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [85, 73, 70, 73, 115, 67, 483]
   },
   {
     "Paldea": 68,
@@ -541,7 +608,8 @@
     "NameZh": "鬼斯",
     "NameJp": "ゴース",
     "NameEn": "Gastly",
-    "types": ["Ghost", "Poison"]
+    "types": ["Ghost", "Poison"],
+    "stats": [30, 35, 30, 100, 35, 80, 310]
   },
   {
     "Paldea": 69,
@@ -549,7 +617,8 @@
     "NameZh": "鬼斯通",
     "NameJp": "ゴースト",
     "NameEn": "Haunter",
-    "types": ["Ghost", "Poison"]
+    "types": ["Ghost", "Poison"],
+    "stats": [45, 50, 45, 115, 55, 95, 405]
   },
   {
     "Paldea": 70,
@@ -557,7 +626,8 @@
     "NameZh": "耿鬼",
     "NameJp": "ゲンガー",
     "NameEn": "Gengar",
-    "types": ["Ghost", "Poison"]
+    "types": ["Ghost", "Poison"],
+    "stats": [60, 65, 60, 130, 75, 110, 500]
   },
   {
     "Paldea": 71,
@@ -565,7 +635,8 @@
     "NameZh": "一對鼠",
     "NameJp": "ワッカネズミ",
     "NameEn": "Tandemaus",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [50, 50, 45, 40, 45, 75, 305]
   },
   {
     "Paldea": 72,
@@ -573,7 +644,8 @@
     "NameZh": "一家鼠",
     "NameJp": "イッカネズミ",
     "NameEn": "Maushold",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [74, 75, 70, 65, 75, 111, 470]
   },
   {
     "Paldea": 73,
@@ -581,7 +653,8 @@
     "NameZh": "皮丘",
     "NameJp": "ピチュー",
     "NameEn": "Pichu",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [20, 40, 15, 35, 35, 60, 205]
   },
   {
     "Paldea": 74,
@@ -589,7 +662,8 @@
     "NameZh": "皮卡丘",
     "NameJp": "ピカチュウ",
     "NameEn": "Pikachu",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [35, 55, 40, 50, 50, 90, 320]
   },
   {
     "Paldea": 75,
@@ -597,7 +671,8 @@
     "NameZh": "雷丘",
     "NameJp": "ライチュウ",
     "NameEn": "Raichu",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [60, 90, 55, 90, 80, 110, 485]
   },
   {
     "Paldea": 76,
@@ -605,7 +680,8 @@
     "NameZh": "狗仔包",
     "NameJp": "パピモッチ",
     "NameEn": "Fidough",
-    "types": ["Fairy"]
+    "types": ["Fairy"],
+    "stats": [37, 55, 70, 30, 55, 65, 312]
   },
   {
     "Paldea": 77,
@@ -613,7 +689,8 @@
     "NameZh": "麻花犬",
     "NameJp": "バウッツェル",
     "NameEn": "Dachsbun",
-    "types": ["Fairy"]
+    "types": ["Fairy"],
+    "stats": [57, 80, 115, 50, 80, 95, 477]
   },
   {
     "Paldea": 78,
@@ -621,7 +698,8 @@
     "NameZh": "懶人獺",
     "NameJp": "ナマケロ",
     "NameEn": "Slakoth",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [60, 60, 60, 35, 35, 30, 280]
   },
   {
     "Paldea": 79,
@@ -629,7 +707,8 @@
     "NameZh": "過動猿",
     "NameJp": "ヤルキモノ",
     "NameEn": "Vigoroth",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [80, 80, 80, 55, 55, 90, 440]
   },
   {
     "Paldea": 80,
@@ -637,7 +716,8 @@
     "NameZh": "請假王",
     "NameJp": "ケッキング",
     "NameEn": "Slaking",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [150, 160, 100, 95, 65, 100, 670]
   },
   {
     "Paldea": 81,
@@ -645,7 +725,8 @@
     "NameZh": "甜竹竹",
     "NameJp": "アマカジ",
     "NameEn": "Bounsweet",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [42, 30, 38, 30, 38, 32, 210]
   },
   {
     "Paldea": 82,
@@ -653,7 +734,8 @@
     "NameZh": "甜舞妮",
     "NameJp": "アママイコ",
     "NameEn": "Steenee",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [52, 40, 48, 40, 48, 62, 290]
   },
   {
     "Paldea": 83,
@@ -661,7 +743,8 @@
     "NameZh": "甜冷美后",
     "NameJp": "アマージョ",
     "NameEn": "Tsareena",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [72, 120, 98, 50, 98, 72, 510]
   },
   {
     "Paldea": 84,
@@ -669,7 +752,8 @@
     "NameZh": "迷你芙",
     "NameJp": "ミニーブ",
     "NameEn": "Smoliv",
-    "types": ["Grass", "Normal"]
+    "types": ["Grass", "Normal"],
+    "stats": [41, 35, 45, 58, 51, 30, 260]
   },
   {
     "Paldea": 85,
@@ -677,7 +761,8 @@
     "NameZh": "奧利紐",
     "NameJp": "オリーニョ",
     "NameEn": "Dolliv",
-    "types": ["Grass", "Normal"]
+    "types": ["Grass", "Normal"],
+    "stats": [52, 53, 60, 78, 78, 33, 354]
   },
   {
     "Paldea": 86,
@@ -685,7 +770,8 @@
     "NameZh": "奧利瓦",
     "NameJp": "オリーヴァ",
     "NameEn": "Arboliva",
-    "types": ["Grass", "Normal"]
+    "types": ["Grass", "Normal"],
+    "stats": [78, 69, 90, 125, 109, 39, 510]
   },
   {
     "Paldea": 87,
@@ -693,7 +779,8 @@
     "NameZh": "盆才怪",
     "NameJp": "ウソハチ",
     "NameEn": "Bonsly",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [50, 80, 95, 10, 45, 10, 290]
   },
   {
     "Paldea": 88,
@@ -701,7 +788,8 @@
     "NameZh": "樹才怪",
     "NameJp": "ウソッキー",
     "NameEn": "Sudowoodo",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [70, 100, 115, 30, 65, 30, 410]
   },
   {
     "Paldea": 89,
@@ -709,7 +797,8 @@
     "NameZh": "岩狗狗",
     "NameJp": "イワンコ",
     "NameEn": "Rockruff",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [45, 65, 40, 30, 40, 60, 280]
   },
   {
     "Paldea": 90,
@@ -717,7 +806,8 @@
     "NameZh": "鬃岩狼人",
     "NameJp": "ルガルガン",
     "NameEn": "Lycanroc",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [75, 115, 65, 55, 65, 112, 487]
   },
   {
     "Paldea": 91,
@@ -725,7 +815,8 @@
     "NameZh": "小炭仔",
     "NameJp": "タンドン",
     "NameEn": "Rolycoly",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [30, 40, 50, 40, 50, 30, 240]
   },
   {
     "Paldea": 92,
@@ -733,7 +824,8 @@
     "NameZh": "大炭車",
     "NameJp": "トロッゴン",
     "NameEn": "Carkol",
-    "types": ["Rock", "Fire"]
+    "types": ["Rock", "Fire"],
+    "stats": [80, 60, 90, 60, 70, 50, 410]
   },
   {
     "Paldea": 93,
@@ -741,7 +833,8 @@
     "NameZh": "巨炭山",
     "NameJp": "セキタンザン",
     "NameEn": "Coalossal",
-    "types": ["Rock", "Fire"]
+    "types": ["Rock", "Fire"],
+    "stats": [110, 80, 120, 80, 90, 30, 510]
   },
   {
     "Paldea": 94,
@@ -749,7 +842,8 @@
     "NameZh": "小貓怪",
     "NameJp": "コリンク",
     "NameEn": "Shinx",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [45, 65, 34, 40, 34, 45, 263]
   },
   {
     "Paldea": 95,
@@ -757,7 +851,8 @@
     "NameZh": "勒克貓",
     "NameJp": "ルクシオ",
     "NameEn": "Luxio",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [60, 85, 49, 60, 49, 60, 363]
   },
   {
     "Paldea": 96,
@@ -765,7 +860,8 @@
     "NameZh": "倫琴貓",
     "NameJp": "レントラー",
     "NameEn": "Luxray",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [80, 120, 79, 95, 79, 70, 523]
   },
   {
     "Paldea": 97,
@@ -773,7 +869,8 @@
     "NameZh": "姆克兒",
     "NameJp": "ムックル",
     "NameEn": "Starly",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [40, 55, 30, 30, 30, 60, 245]
   },
   {
     "Paldea": 98,
@@ -781,7 +878,8 @@
     "NameZh": "姆克鳥",
     "NameJp": "ムクバード",
     "NameEn": "Staravia",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [55, 75, 50, 40, 40, 80, 340]
   },
   {
     "Paldea": 99,
@@ -789,7 +887,8 @@
     "NameZh": "姆克鷹",
     "NameJp": "ムクホーク",
     "NameEn": "Staraptor",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [85, 120, 70, 50, 60, 100, 485]
   },
   {
     "Paldea": 10,
@@ -797,7 +896,8 @@
     "NameZh": "花舞鳥",
     "NameJp": "オドリドリ",
     "NameEn": "Oricorio",
-    "types": ["Fire", "Flying"]
+    "types": ["Fire", "Flying"],
+    "stats": [54, 45, 40, 35, 45, 35, 254]
   },
   {
     "Paldea": 101,
@@ -805,7 +905,8 @@
     "NameZh": "咩利羊",
     "NameJp": "メリープ",
     "NameEn": "Mareep",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [55, 40, 40, 65, 45, 35, 280]
   },
   {
     "Paldea": 102,
@@ -813,7 +914,8 @@
     "NameZh": "茸茸羊",
     "NameJp": "モココ",
     "NameEn": "Flaaffy",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [70, 55, 55, 80, 60, 45, 365]
   },
   {
     "Paldea": 103,
@@ -821,7 +923,8 @@
     "NameZh": "電龍",
     "NameJp": "デンリュウ",
     "NameEn": "Ampharos",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [90, 75, 85, 115, 90, 55, 510]
   },
   {
     "Paldea": 104,
@@ -829,7 +932,8 @@
     "NameZh": "百合根娃娃",
     "NameJp": "チュリネ",
     "NameEn": "Petilil",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [45, 35, 50, 70, 50, 30, 280]
   },
   {
     "Paldea": 105,
@@ -837,7 +941,8 @@
     "NameZh": "裙兒小姐",
     "NameJp": "ドレディア",
     "NameEn": "Lilligant",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [70, 60, 75, 110, 75, 90, 480]
   },
   {
     "Paldea": 106,
@@ -845,7 +950,8 @@
     "NameZh": "蘑蘑菇",
     "NameJp": "キノココ",
     "NameEn": "Shroomish",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [60, 40, 60, 40, 60, 35, 295]
   },
   {
     "Paldea": 107,
@@ -853,7 +959,8 @@
     "NameZh": "斗笠菇",
     "NameJp": "キノガッサ",
     "NameEn": "Breloom",
-    "types": ["Grass", "Fighting"]
+    "types": ["Grass", "Fighting"],
+    "stats": [60, 130, 80, 60, 60, 70, 460]
   },
   {
     "Paldea": 108,
@@ -861,7 +968,8 @@
     "NameZh": "啃果蟲",
     "NameJp": "カジッチュ",
     "NameEn": "Applin",
-    "types": ["Grass", "Dragon"]
+    "types": ["Grass", "Dragon"],
+    "stats": [40, 40, 80, 40, 40, 20, 260]
   },
   {
     "Paldea": 109,
@@ -869,7 +977,8 @@
     "NameZh": "蘋裹龍",
     "NameJp": "アップリュー",
     "NameEn": "Flapple",
-    "types": ["Grass", "Dragon"]
+    "types": ["Grass", "Dragon"],
+    "stats": [70, 110, 80, 95, 60, 70, 485]
   },
   {
     "Paldea": 110,
@@ -877,7 +986,8 @@
     "NameZh": "豐蜜龍",
     "NameJp": "タルップル",
     "NameEn": "Appletun",
-    "types": ["Grass", "Dragon"]
+    "types": ["Grass", "Dragon"],
+    "stats": [110, 85, 80, 100, 80, 30, 485]
   },
   {
     "Paldea": 111,
@@ -885,7 +995,8 @@
     "NameZh": "跳跳豬",
     "NameJp": "バネブー",
     "NameEn": "Spoink",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [60, 25, 35, 70, 80, 60, 330]
   },
   {
     "Paldea": 112,
@@ -893,7 +1004,8 @@
     "NameZh": "噗噗豬",
     "NameJp": "ブーピッグ",
     "NameEn": "Grumpig",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [80, 45, 65, 90, 110, 80, 470]
   },
   {
     "Paldea": 113,
@@ -901,7 +1013,8 @@
     "NameZh": "怒鸚哥",
     "NameJp": "イキリンコ",
     "NameEn": "Squawkabilly",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [82, 96, 51, 45, 51, 92, 417]
   },
   {
     "Paldea": 114,
@@ -909,7 +1022,8 @@
     "NameZh": "夢妖",
     "NameJp": "ムウマ",
     "NameEn": "Misdreavus",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [60, 60, 60, 85, 85, 85, 435]
   },
   {
     "Paldea": 115,
@@ -917,7 +1031,8 @@
     "NameZh": "夢妖魔",
     "NameJp": "ムウマージ",
     "NameEn": "Mismagius",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [60, 60, 60, 105, 105, 105, 495]
   },
   {
     "Paldea": 116,
@@ -925,7 +1040,8 @@
     "NameZh": "幕下力士",
     "NameJp": "マクノシタ",
     "NameEn": "Makuhita",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [72, 60, 30, 20, 30, 25, 237]
   },
   {
     "Paldea": 117,
@@ -933,7 +1049,8 @@
     "NameZh": "鐵掌力士",
     "NameJp": "ハリテヤマ",
     "NameEn": "Hariyama",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [144, 120, 60, 40, 60, 50, 474]
   },
   {
     "Paldea": 118,
@@ -941,7 +1058,8 @@
     "NameZh": "好勝蟹",
     "NameJp": "マケンカニ",
     "NameEn": "Crabrawler",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [47, 82, 57, 42, 47, 63, 338]
   },
   {
     "Paldea": 119,
@@ -949,7 +1067,8 @@
     "NameZh": "好勝毛蟹",
     "NameJp": "ケケンカニ",
     "NameEn": "Crabominable",
-    "types": ["Fighting", "Ice"]
+    "types": ["Fighting", "Ice"],
+    "stats": [97, 132, 77, 62, 67, 43, 478]
   },
   {
     "Paldea": 120,
@@ -957,7 +1076,8 @@
     "NameZh": "夜盜火蜥",
     "NameJp": "ヤトウモリ",
     "NameEn": "Salandit",
-    "types": ["Poison", "Fire"]
+    "types": ["Poison", "Fire"],
+    "stats": [48, 44, 40, 71, 40, 77, 320]
   },
   {
     "Paldea": 121,
@@ -965,7 +1085,8 @@
     "NameZh": "焰后蜥",
     "NameJp": "エンニュート",
     "NameEn": "Salazzle",
-    "types": ["Poison", "Fire"]
+    "types": ["Poison", "Fire"],
+    "stats": [68, 64, 60, 111, 60, 117, 480]
   },
   {
     "Paldea": 122,
@@ -973,7 +1094,8 @@
     "NameZh": "小小象",
     "NameJp": "ゴマゾウ",
     "NameEn": "Phanpy",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [90, 60, 60, 40, 40, 40, 330]
   },
   {
     "Paldea": 123,
@@ -981,7 +1103,8 @@
     "NameZh": "頓甲",
     "NameJp": "ドンファン",
     "NameEn": "Donphan",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [90, 120, 120, 60, 60, 50, 500]
   },
   {
     "Paldea": 124,
@@ -989,7 +1112,8 @@
     "NameZh": "銅象",
     "NameJp": "ゾウドウ",
     "NameEn": "Cufant",
-    "types": ["Steel"]
+    "types": ["Steel"],
+    "stats": [72, 80, 49, 40, 49, 40, 330]
   },
   {
     "Paldea": 125,
@@ -997,7 +1121,8 @@
     "NameZh": "大王銅象",
     "NameJp": "ダイオウドウ",
     "NameEn": "Copperajah",
-    "types": ["Steel"]
+    "types": ["Steel"],
+    "stats": [122, 130, 69, 80, 69, 30, 500]
   },
   {
     "Paldea": 126,
@@ -1005,7 +1130,8 @@
     "NameZh": "圓陸鯊",
     "NameJp": "フカマル",
     "NameEn": "Gible",
-    "types": ["Dragon", "Ground"]
+    "types": ["Dragon", "Ground"],
+    "stats": [58, 70, 45, 40, 45, 42, 300]
   },
   {
     "Paldea": 127,
@@ -1013,7 +1139,8 @@
     "NameZh": "尖牙陸鯊",
     "NameJp": "ガバイト",
     "NameEn": "Gabite",
-    "types": ["Dragon", "Ground"]
+    "types": ["Dragon", "Ground"],
+    "stats": [68, 90, 65, 50, 55, 82, 410]
   },
   {
     "Paldea": 128,
@@ -1021,7 +1148,8 @@
     "NameZh": "烈咬陸鯊",
     "NameJp": "ガブリアス",
     "NameEn": "Garchomp",
-    "types": ["Dragon", "Ground"]
+    "types": ["Dragon", "Ground"],
+    "stats": [108, 130, 95, 80, 85, 102, 600]
   },
   {
     "Paldea": 129,
@@ -1029,7 +1157,8 @@
     "NameZh": "鹽石寶",
     "NameJp": "コジオ",
     "NameEn": "Nacli",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [55, 55, 75, 35, 35, 25, 280]
   },
   {
     "Paldea": 130,
@@ -1037,7 +1166,8 @@
     "NameZh": "鹽石壘",
     "NameJp": "ジオヅム",
     "NameEn": "Naclstack",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [60, 60, 100, 35, 65, 35, 355]
   },
   {
     "Paldea": 131,
@@ -1045,7 +1175,8 @@
     "NameZh": "鹽石巨靈",
     "NameJp": "キョジオーン",
     "NameEn": "Garganacl",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [100, 100, 130, 45, 90, 35, 500]
   },
   {
     "Paldea": 132,
@@ -1053,7 +1184,8 @@
     "NameZh": "長翅鷗",
     "NameJp": "キャモメ",
     "NameEn": "Wingull",
-    "types": ["Water", "Flying"]
+    "types": ["Water", "Flying"],
+    "stats": [40, 30, 30, 55, 30, 85, 270]
   },
   {
     "Paldea": 133,
@@ -1061,7 +1193,8 @@
     "NameZh": "大嘴鷗",
     "NameJp": "ペリッパー",
     "NameEn": "Pelipper",
-    "types": ["Water", "Flying"]
+    "types": ["Water", "Flying"],
+    "stats": [60, 50, 100, 95, 70, 65, 440]
   },
   {
     "Paldea": 134,
@@ -1069,7 +1202,8 @@
     "NameZh": "鯉魚王",
     "NameJp": "コイキング",
     "NameEn": "Magikarp",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [20, 10, 55, 15, 20, 80, 200]
   },
   {
     "Paldea": 135,
@@ -1077,7 +1211,8 @@
     "NameZh": "暴鯉龍",
     "NameJp": "ギャラドス",
     "NameEn": "Gyarados",
-    "types": ["Water", "Flying"]
+    "types": ["Water", "Flying"],
+    "stats": [95, 125, 79, 60, 100, 81, 540]
   },
   {
     "Paldea": 136,
@@ -1085,7 +1220,8 @@
     "NameZh": "刺梭魚",
     "NameJp": "サシカマス",
     "NameEn": "Arrokuda",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [41, 63, 40, 40, 30, 66, 280]
   },
   {
     "Paldea": 137,
@@ -1093,7 +1229,8 @@
     "NameZh": "戽斗尖梭",
     "NameJp": "カマスジョー",
     "NameEn": "Barraskewda",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [61, 123, 60, 60, 50, 136, 490]
   },
   {
     "Paldea": 138,
@@ -1101,7 +1238,8 @@
     "NameZh": "野蠻鱸魚",
     "NameJp": "バスラオ",
     "NameEn": "Basculin",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [70, 92, 65, 80, 55, 98, 460]
   },
   {
     "Paldea": 139,
@@ -1109,7 +1247,8 @@
     "NameZh": "溶食獸",
     "NameJp": "ゴクリン",
     "NameEn": "Gulpin",
-    "types": ["Poison"]
+    "types": ["Poison"],
+    "stats": [70, 43, 53, 43, 53, 40, 302]
   },
   {
     "Paldea": 140,
@@ -1117,7 +1256,8 @@
     "NameZh": "吞食獸",
     "NameJp": "マルノーム",
     "NameEn": "Swalot",
-    "types": ["Poison"]
+    "types": ["Poison"],
+    "stats": [100, 73, 83, 73, 83, 55, 467]
   },
   {
     "Paldea": 141,
@@ -1125,7 +1265,8 @@
     "NameZh": "喵喵",
     "NameJp": "ニャース",
     "NameEn": "Meowth",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [40, 45, 35, 40, 40, 90, 290]
   },
   {
     "Paldea": 142,
@@ -1133,7 +1274,8 @@
     "NameZh": "貓老大",
     "NameJp": "ペルシアン",
     "NameEn": "Persian",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [65, 70, 60, 65, 65, 115, 440]
   },
   {
     "Paldea": 143,
@@ -1141,7 +1283,8 @@
     "NameZh": "飄飄球",
     "NameJp": "フワンテ",
     "NameEn": "Drifloon",
-    "types": ["Ghost", "Flying"]
+    "types": ["Ghost", "Flying"],
+    "stats": [90, 50, 34, 60, 44, 70, 348]
   },
   {
     "Paldea": 144,
@@ -1149,7 +1292,8 @@
     "NameZh": "隨風球",
     "NameJp": "フワライド",
     "NameEn": "Drifblim",
-    "types": ["Ghost", "Flying"]
+    "types": ["Ghost", "Flying"],
+    "stats": [150, 80, 44, 90, 54, 80, 498]
   },
   {
     "Paldea": 145,
@@ -1157,7 +1301,8 @@
     "NameZh": "花蓓蓓",
     "NameJp": "フラベベ",
     "NameEn": "Flabébé",
-    "types": ["Fairy"]
+    "types": ["Fairy"],
+    "stats": [44, 38, 39, 61, 79, 42, 303]
   },
   {
     "Paldea": 146,
@@ -1165,7 +1310,8 @@
     "NameZh": "花葉蒂",
     "NameJp": "フラエッテ",
     "NameEn": "Floette",
-    "types": ["Fairy"]
+    "types": ["Fairy"],
+    "stats": [54, 45, 47, 75, 98, 52, 371]
   },
   {
     "Paldea": 147,
@@ -1173,7 +1319,8 @@
     "NameZh": "花潔夫人",
     "NameJp": "フラージェス",
     "NameEn": "Florges",
-    "types": ["Fairy"]
+    "types": ["Fairy"],
+    "stats": [78, 65, 68, 112, 154, 75, 552]
   },
   {
     "Paldea": 148,
@@ -1181,7 +1328,8 @@
     "NameZh": "地鼠",
     "NameJp": "ディグダ",
     "NameEn": "Diglett",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [10, 55, 25, 35, 45, 95, 265]
   },
   {
     "Paldea": 149,
@@ -1189,7 +1337,8 @@
     "NameZh": "三地鼠",
     "NameJp": "ダグトリオ",
     "NameEn": "Dugtrio",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [35, 100, 50, 50, 70, 120, 425]
   },
   {
     "Paldea": 150,
@@ -1197,7 +1346,8 @@
     "NameZh": "煤炭龜",
     "NameJp": "コータス",
     "NameEn": "Torkoal",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [70, 85, 140, 85, 70, 20, 470]
   },
   {
     "Paldea": 151,
@@ -1205,7 +1355,8 @@
     "NameZh": "呆火駝",
     "NameJp": "ドンメル",
     "NameEn": "Numel",
-    "types": ["Fire", "Ground"]
+    "types": ["Fire", "Ground"],
+    "stats": [60, 60, 40, 65, 45, 35, 305]
   },
   {
     "Paldea": 152,
@@ -1213,7 +1364,8 @@
     "NameZh": "噴火駝",
     "NameJp": "バクーダ",
     "NameEn": "Camerupt",
-    "types": ["Fire", "Ground"]
+    "types": ["Fire", "Ground"],
+    "stats": [70, 100, 70, 105, 75, 40, 460]
   },
   {
     "Paldea": 153,
@@ -1221,7 +1373,8 @@
     "NameZh": "銅鏡怪",
     "NameJp": "ドーミラー",
     "NameEn": "Bronzor",
-    "types": ["Steel", "Psychic"]
+    "types": ["Steel", "Psychic"],
+    "stats": [57, 24, 86, 24, 86, 23, 300]
   },
   {
     "Paldea": 154,
@@ -1229,7 +1382,8 @@
     "NameZh": "青銅鐘",
     "NameJp": "ドータクン",
     "NameEn": "Bronzong",
-    "types": ["Steel", "Psychic"]
+    "types": ["Steel", "Psychic"],
+    "stats": [67, 89, 116, 79, 116, 33, 500]
   },
   {
     "Paldea": 155,
@@ -1237,7 +1391,8 @@
     "NameZh": "牙牙",
     "NameJp": "キバゴ",
     "NameEn": "Axew",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [46, 87, 60, 30, 40, 57, 320]
   },
   {
     "Paldea": 156,
@@ -1245,7 +1400,8 @@
     "NameZh": "斧牙龍",
     "NameJp": "オノンド",
     "NameEn": "Fraxure",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [66, 117, 70, 40, 50, 67, 410]
   },
   {
     "Paldea": 157,
@@ -1253,7 +1409,8 @@
     "NameZh": "雙斧戰龍",
     "NameJp": "オノノクス",
     "NameEn": "Haxorus",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [76, 147, 90, 60, 70, 97, 540]
   },
   {
     "Paldea": 158,
@@ -1261,7 +1418,8 @@
     "NameZh": "猴怪",
     "NameJp": "マンキー",
     "NameEn": "Mankey",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [40, 80, 35, 35, 45, 70, 305]
   },
   {
     "Paldea": 159,
@@ -1269,7 +1427,8 @@
     "NameZh": "火爆猴",
     "NameJp": "オコリザル",
     "NameEn": "Primeape",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [65, 105, 60, 60, 70, 95, 455]
   },
   {
     "Paldea": 160,
@@ -1277,7 +1436,8 @@
     "NameZh": "棄世猴",
     "NameJp": "コノヨザル",
     "NameEn": "Annihilape",
-    "types": ["Fighting", "Ghost"]
+    "types": ["Fighting", "Ghost"],
+    "stats": [110, 115, 80, 50, 90, 90, 535]
   },
   {
     "Paldea": 161,
@@ -1285,7 +1445,8 @@
     "NameZh": "瑪沙那",
     "NameJp": "アサナン",
     "NameEn": "Meditite",
-    "types": ["Fighting", "Psychic"]
+    "types": ["Fighting", "Psychic"],
+    "stats": [30, 40, 55, 40, 55, 60, 280]
   },
   {
     "Paldea": 162,
@@ -1293,7 +1454,8 @@
     "NameZh": "恰雷姆",
     "NameJp": "チャーレム",
     "NameEn": "Medicham",
-    "types": ["Fighting", "Psychic"]
+    "types": ["Fighting", "Psychic"],
+    "stats": [60, 60, 75, 60, 75, 80, 410]
   },
   {
     "Paldea": 163,
@@ -1301,7 +1463,8 @@
     "NameZh": "利歐路",
     "NameJp": "リオル",
     "NameEn": "Riolu",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [40, 70, 40, 35, 40, 60, 285]
   },
   {
     "Paldea": 164,
@@ -1309,7 +1472,8 @@
     "NameZh": "路卡利歐",
     "NameJp": "ルカリオ",
     "NameEn": "Lucario",
-    "types": ["Fighting", "Steel"]
+    "types": ["Fighting", "Steel"],
+    "stats": [70, 110, 70, 115, 70, 90, 525]
   },
   {
     "Paldea": 165,
@@ -1317,7 +1481,8 @@
     "NameZh": "炭小侍",
     "NameJp": "カルボウ",
     "NameEn": "Charcadet",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [40, 50, 40, 50, 40, 35, 255]
   },
   {
     "Paldea": 166,
@@ -1325,7 +1490,8 @@
     "NameZh": "紅蓮鎧騎",
     "NameJp": "グレンアルマ",
     "NameEn": "Armarouge",
-    "types": ["Fire", "Psychic"]
+    "types": ["Fire", "Psychic"],
+    "stats": [85, 60, 100, 125, 80, 75, 525]
   },
   {
     "Paldea": 167,
@@ -1333,7 +1499,8 @@
     "NameZh": "蒼炎刃鬼",
     "NameJp": "ソウブレイズ",
     "NameEn": "Ceruledge",
-    "types": ["Fire", "Ghost"]
+    "types": ["Fire", "Ghost"],
+    "stats": [75, 125, 80, 60, 100, 85, 525]
   },
   {
     "Paldea": 168,
@@ -1341,7 +1508,8 @@
     "NameZh": "泥泥鰍",
     "NameJp": "ドジョッチ",
     "NameEn": "Barboach",
-    "types": ["Water", "Ground"]
+    "types": ["Water", "Ground"],
+    "stats": [50, 48, 43, 46, 41, 60, 288]
   },
   {
     "Paldea": 169,
@@ -1349,7 +1517,8 @@
     "NameZh": "鯰魚王",
     "NameJp": "ナマズン",
     "NameEn": "Whiscash",
-    "types": ["Water", "Ground"]
+    "types": ["Water", "Ground"],
+    "stats": [110, 78, 73, 76, 71, 60, 468]
   },
   {
     "Paldea": 170,
@@ -1357,7 +1526,8 @@
     "NameZh": "光蚪仔",
     "NameJp": "ズピカ",
     "NameEn": "Tadbulb",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [61, 31, 41, 59, 35, 45, 272]
   },
   {
     "Paldea": 171,
@@ -1365,7 +1535,8 @@
     "NameZh": "電肚蛙",
     "NameJp": "ハラバリー",
     "NameEn": "Bellibolt",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [109, 64, 91, 103, 83, 45, 495]
   },
   {
     "Paldea": 172,
@@ -1373,7 +1544,8 @@
     "NameZh": "黏黏寶",
     "NameJp": "ヌメラ",
     "NameEn": "Goomy",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [45, 50, 35, 55, 75, 40, 300]
   },
   {
     "Paldea": 173,
@@ -1381,7 +1553,8 @@
     "NameZh": "黏美兒",
     "NameJp": "ヌメイル",
     "NameEn": "Sliggoo",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [68, 75, 53, 83, 113, 60, 452]
   },
   {
     "Paldea": 174,
@@ -1389,7 +1562,8 @@
     "NameZh": "黏美龍",
     "NameJp": "ヌメルゴン",
     "NameEn": "Goodra",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [90, 100, 70, 110, 150, 80, 600]
   },
   {
     "Paldea": 175,
@@ -1397,7 +1571,8 @@
     "NameZh": "不良蛙",
     "NameJp": "グレッグル",
     "NameEn": "Croagunk",
-    "types": ["Poison", "Fighting"]
+    "types": ["Poison", "Fighting"],
+    "stats": [48, 61, 40, 61, 40, 50, 300]
   },
   {
     "Paldea": 176,
@@ -1405,7 +1580,8 @@
     "NameZh": "毒骷蛙",
     "NameJp": "ドクロッグ",
     "NameEn": "Toxicroak",
-    "types": ["Poison", "Fighting"]
+    "types": ["Poison", "Fighting"],
+    "stats": [83, 106, 65, 86, 65, 85, 490]
   },
   {
     "Paldea": 177,
@@ -1413,7 +1589,8 @@
     "NameZh": "電海燕",
     "NameJp": "カイデン",
     "NameEn": "Wattrel",
-    "types": ["Electric", "Flying"]
+    "types": ["Electric", "Flying"],
+    "stats": [40, 40, 35, 55, 40, 70, 280]
   },
   {
     "Paldea": 178,
@@ -1421,7 +1598,8 @@
     "NameZh": "大電海燕",
     "NameJp": "タイカイデン",
     "NameEn": "Kilowattrel",
-    "types": ["Electric", "Flying"]
+    "types": ["Electric", "Flying"],
+    "stats": [70, 70, 60, 105, 60, 125, 490]
   },
   {
     "Paldea": 179,
@@ -1429,7 +1607,8 @@
     "NameZh": "伊布",
     "NameJp": "イーブイ",
     "NameEn": "Eevee",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [55, 55, 50, 45, 65, 55, 325]
   },
   {
     "Paldea": 180,
@@ -1437,7 +1616,8 @@
     "NameZh": "水伊布",
     "NameJp": "シャワーズ",
     "NameEn": "Vaporeon",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [130, 65, 60, 110, 95, 65, 525]
   },
   {
     "Paldea": 181,
@@ -1445,7 +1625,8 @@
     "NameZh": "雷伊布",
     "NameJp": "サンダース",
     "NameEn": "Jolteon",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [65, 65, 60, 110, 95, 130, 525]
   },
   {
     "Paldea": 182,
@@ -1453,7 +1634,8 @@
     "NameZh": "火伊布",
     "NameJp": "ブースター",
     "NameEn": "Flareon",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [65, 130, 60, 95, 110, 65, 525]
   },
   {
     "Paldea": 183,
@@ -1461,7 +1643,8 @@
     "NameZh": "太陽伊布",
     "NameJp": "エーフィ",
     "NameEn": "Espeon",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [65, 65, 60, 130, 95, 110, 525]
   },
   {
     "Paldea": 184,
@@ -1469,7 +1652,8 @@
     "NameZh": "月亮伊布",
     "NameJp": "ブラッキー",
     "NameEn": "Umbreon",
-    "types": ["Dark"]
+    "types": ["Dark"],
+    "stats": [95, 65, 110, 60, 130, 65, 525]
   },
   {
     "Paldea": 185,
@@ -1477,7 +1661,8 @@
     "NameZh": "葉伊布",
     "NameJp": "リーフィア",
     "NameEn": "Leafeon",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [65, 110, 130, 60, 65, 95, 525]
   },
   {
     "Paldea": 186,
@@ -1485,7 +1670,8 @@
     "NameZh": "冰伊布",
     "NameJp": "グレイシア",
     "NameEn": "Glaceon",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [65, 60, 110, 130, 95, 65, 525]
   },
   {
     "Paldea": 187,
@@ -1493,7 +1679,8 @@
     "NameZh": "仙子伊布",
     "NameJp": "ニンフィア",
     "NameEn": "Sylveon",
-    "types": ["Fairy"]
+    "types": ["Fairy"],
+    "stats": [95, 65, 65, 110, 130, 60, 525]
   },
   {
     "Paldea": 188,
@@ -1501,7 +1688,8 @@
     "NameZh": "土龍弟弟",
     "NameJp": "ノコッチ",
     "NameEn": "Dunsparce",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [100, 70, 70, 65, 65, 45, 415]
   },
   {
     "Paldea": 189,
@@ -1509,7 +1697,8 @@
     "NameZh": "土龍節節",
     "NameJp": "ノココッチ",
     "NameEn": "Dudunsparce",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [125, 100, 80, 85, 75, 55, 520]
   },
   {
     "Paldea": 190,
@@ -1517,7 +1706,8 @@
     "NameZh": "四季鹿",
     "NameJp": "シキジカ",
     "NameEn": "Deerling",
-    "types": ["Normal", "Grass"]
+    "types": ["Normal", "Grass"],
+    "stats": [60, 60, 50, 40, 50, 75, 335]
   },
   {
     "Paldea": 191,
@@ -1525,7 +1715,8 @@
     "NameZh": "萌芽鹿",
     "NameJp": "メブキジカ",
     "NameEn": "Sawsbuck",
-    "types": ["Normal", "Grass"]
+    "types": ["Normal", "Grass"],
+    "stats": [80, 100, 70, 60, 70, 95, 475]
   },
   {
     "Paldea": 192,
@@ -1533,7 +1724,8 @@
     "NameZh": "麒麟奇",
     "NameJp": "キリンリキ",
     "NameEn": "Girafarig",
-    "types": ["Normal", "Psychic"]
+    "types": ["Normal", "Psychic"],
+    "stats": [70, 80, 65, 90, 65, 85, 455]
   },
   {
     "Paldea": 193,
@@ -1541,7 +1733,8 @@
     "NameZh": "奇麒麟",
     "NameJp": "リキキリン",
     "NameEn": "Farigiraf",
-    "types": ["Normal", "Psychic"]
+    "types": ["Normal", "Psychic"],
+    "stats": [120, 90, 70, 110, 70, 60, 520]
   },
   {
     "Paldea": 194,
@@ -1549,7 +1742,8 @@
     "NameZh": "臭泥",
     "NameJp": "ベトベター",
     "NameEn": "Grimer",
-    "types": ["Poison"]
+    "types": ["Poison"],
+    "stats": [80, 80, 50, 40, 50, 25, 325]
   },
   {
     "Paldea": 195,
@@ -1557,7 +1751,8 @@
     "NameZh": "臭臭泥",
     "NameJp": "ベトベトン",
     "NameEn": "Muk",
-    "types": ["Poison"]
+    "types": ["Poison"],
+    "stats": [105, 105, 75, 65, 100, 50, 500]
   },
   {
     "Paldea": 196,
@@ -1565,7 +1760,8 @@
     "NameZh": "偶叫獒",
     "NameJp": "オラチフ",
     "NameEn": "Maschiff",
-    "types": ["Dark"]
+    "types": ["Dark"],
+    "stats": [60, 78, 60, 40, 51, 51, 340]
   },
   {
     "Paldea": 197,
@@ -1573,7 +1769,8 @@
     "NameZh": "獒教父",
     "NameJp": "マフィティフ",
     "NameEn": "Mabosstiff",
-    "types": ["Dark"]
+    "types": ["Dark"],
+    "stats": [80, 120, 90, 60, 70, 85, 505]
   },
   {
     "Paldea": 198,
@@ -1581,7 +1778,8 @@
     "NameZh": "毒電嬰",
     "NameJp": "エレズン",
     "NameEn": "Toxel",
-    "types": ["Electric", "Poison"]
+    "types": ["Electric", "Poison"],
+    "stats": [40, 38, 35, 54, 35, 40, 242]
   },
   {
     "Paldea": 199,
@@ -1589,7 +1787,8 @@
     "NameZh": "顫弦蠑螈",
     "NameJp": "ストリンダー",
     "NameEn": "Toxtricity",
-    "types": ["Electric", "Poison"]
+    "types": ["Electric", "Poison"],
+    "stats": [75, 98, 70, 114, 70, 75, 502]
   },
   {
     "Paldea": 200,
@@ -1597,7 +1796,8 @@
     "NameZh": "咚咚鼠",
     "NameJp": "デデンネ",
     "NameEn": "Dedenne",
-    "types": ["Electric", "Fairy"]
+    "types": ["Electric", "Fairy"],
+    "stats": [67, 58, 57, 81, 67, 101, 431]
   },
   {
     "Paldea": 201,
@@ -1605,7 +1805,8 @@
     "NameZh": "帕奇利茲",
     "NameJp": "パチリス",
     "NameEn": "Pachirisu",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [60, 45, 70, 45, 90, 95, 405]
   },
   {
     "Paldea": 202,
@@ -1613,7 +1814,8 @@
     "NameZh": "滋汁鼴",
     "NameJp": "シルシュルー",
     "NameEn": "Shroodle",
-    "types": ["Poison", "Normal"]
+    "types": ["Poison", "Normal"],
+    "stats": [40, 65, 35, 40, 35, 75, 290]
   },
   {
     "Paldea": 203,
@@ -1621,7 +1823,8 @@
     "NameZh": "塗標客",
     "NameJp": "タギングル",
     "NameEn": "Grafaiai",
-    "types": ["Poison", "Normal"]
+    "types": ["Poison", "Normal"],
+    "stats": [63, 95, 65, 80, 72, 110, 485]
   },
   {
     "Paldea": 204,
@@ -1629,7 +1832,8 @@
     "NameZh": "驚角鹿",
     "NameJp": "オドシシ",
     "NameEn": "Stantler",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [73, 95, 62, 85, 65, 85, 465]
   },
   {
     "Paldea": 205,
@@ -1637,7 +1841,8 @@
     "NameZh": "哎呀球菇",
     "NameJp": "タマゲタケ",
     "NameEn": "Foongus",
-    "types": ["Grass", "Poison"]
+    "types": ["Grass", "Poison"],
+    "stats": [69, 55, 45, 55, 55, 15, 294]
   },
   {
     "Paldea": 206,
@@ -1645,7 +1850,8 @@
     "NameZh": "敗露球菇",
     "NameJp": "モロバレル",
     "NameEn": "Amoonguss",
-    "types": ["Grass", "Poison"]
+    "types": ["Grass", "Poison"],
+    "stats": [114, 85, 70, 85, 80, 30, 464]
   },
   {
     "Paldea": 207,
@@ -1653,7 +1859,8 @@
     "NameZh": "霹靂電球",
     "NameJp": "ビリリダマ",
     "NameEn": "Voltorb",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [40, 30, 50, 55, 55, 100, 330]
   },
   {
     "Paldea": 208,
@@ -1661,7 +1868,8 @@
     "NameZh": "頑皮雷彈",
     "NameJp": "マルマイン",
     "NameEn": "Electrode",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [60, 50, 70, 80, 80, 150, 490]
   },
   {
     "Paldea": 209,
@@ -1669,7 +1877,8 @@
     "NameZh": "小磁怪",
     "NameJp": "コイル",
     "NameEn": "Magnemite",
-    "types": ["Electric", "Steel"]
+    "types": ["Electric", "Steel"],
+    "stats": [25, 35, 70, 95, 55, 45, 325]
   },
   {
     "Paldea": 210,
@@ -1677,7 +1886,8 @@
     "NameZh": "三合一磁怪",
     "NameJp": "レアコイル",
     "NameEn": "Magneton",
-    "types": ["Electric", "Steel"]
+    "types": ["Electric", "Steel"],
+    "stats": [50, 60, 95, 120, 70, 70, 465]
   },
   {
     "Paldea": 211,
@@ -1685,7 +1895,8 @@
     "NameZh": "自爆磁怪",
     "NameJp": "ジバコイル",
     "NameEn": "Magnezone",
-    "types": ["Electric", "Steel"]
+    "types": ["Electric", "Steel"],
+    "stats": [70, 70, 115, 130, 90, 60, 535]
   },
   {
     "Paldea": 212,
@@ -1693,7 +1904,8 @@
     "NameZh": "百變怪",
     "NameJp": "メタモン",
     "NameEn": "Ditto",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [48, 48, 48, 48, 48, 48, 288]
   },
   {
     "Paldea": 213,
@@ -1701,7 +1913,8 @@
     "NameZh": "卡蒂狗",
     "NameJp": "ガーディ",
     "NameEn": "Growlithe",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [55, 70, 45, 70, 50, 60, 350]
   },
   {
     "Paldea": 214,
@@ -1709,7 +1922,8 @@
     "NameZh": "風速狗",
     "NameJp": "ウインディ",
     "NameEn": "Arcanine",
-    "types": ["Fire"]
+    "types": ["Fire"],
+    "stats": [90, 110, 80, 100, 80, 95, 555]
   },
   {
     "Paldea": 215,
@@ -1717,7 +1931,8 @@
     "NameZh": "熊寶寶",
     "NameJp": "ヒメグマ",
     "NameEn": "Teddiursa",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [60, 80, 50, 50, 50, 40, 330]
   },
   {
     "Paldea": 216,
@@ -1725,7 +1940,8 @@
     "NameZh": "圈圈熊",
     "NameJp": "リングマ",
     "NameEn": "Ursaring",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [90, 130, 75, 75, 75, 55, 500]
   },
   {
     "Paldea": 217,
@@ -1733,7 +1949,8 @@
     "NameZh": "貓鼬斬",
     "NameJp": "ザングース",
     "NameEn": "Zangoose",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [73, 115, 60, 60, 60, 90, 458]
   },
   {
     "Paldea": 218,
@@ -1741,7 +1958,8 @@
     "NameZh": "飯匙蛇",
     "NameJp": "ハブネーク",
     "NameEn": "Seviper",
-    "types": ["Poison"]
+    "types": ["Poison"],
+    "stats": [73, 100, 60, 100, 60, 65, 458]
   },
   {
     "Paldea": 219,
@@ -1749,7 +1967,8 @@
     "NameZh": "青綿鳥",
     "NameJp": "チルット",
     "NameEn": "Swablu",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [45, 40, 60, 40, 75, 50, 310]
   },
   {
     "Paldea": 220,
@@ -1757,7 +1976,8 @@
     "NameZh": "七夕青鳥",
     "NameJp": "チルタリス",
     "NameEn": "Altaria",
-    "types": ["Dragon", "Flying"]
+    "types": ["Dragon", "Flying"],
+    "stats": [75, 70, 90, 70, 105, 80, 490]
   },
   {
     "Paldea": 221,
@@ -1765,7 +1985,8 @@
     "NameZh": "坐騎小羊",
     "NameJp": "メェークル",
     "NameEn": "Skiddo",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [66, 65, 48, 62, 57, 52, 350]
   },
   {
     "Paldea": 222,
@@ -1773,7 +1994,8 @@
     "NameZh": "坐騎山羊",
     "NameJp": "ゴーゴート",
     "NameEn": "Gogoat",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [123, 100, 62, 97, 81, 68, 531]
   },
   {
     "Paldea": 223,
@@ -1781,7 +2003,8 @@
     "NameZh": "肯泰羅",
     "NameJp": "ケンタロス",
     "NameEn": "Tauros",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [75, 110, 105, 30, 70, 100, 490]
   },
   {
     "Paldea": 224,
@@ -1789,7 +2012,8 @@
     "NameZh": "小獅獅",
     "NameJp": "シシコ",
     "NameEn": "Litleo",
-    "types": ["Fire", "Normal"]
+    "types": ["Fire", "Normal"],
+    "stats": [62, 50, 58, 73, 54, 72, 369]
   },
   {
     "Paldea": 225,
@@ -1797,7 +2021,8 @@
     "NameZh": "火炎獅",
     "NameJp": "カエンジシ",
     "NameEn": "Pyroar",
-    "types": ["Fire", "Normal"]
+    "types": ["Fire", "Normal"],
+    "stats": [86, 68, 72, 109, 66, 106, 507]
   },
   {
     "Paldea": 226,
@@ -1805,7 +2030,8 @@
     "NameZh": "臭鼬噗",
     "NameJp": "スカンプー",
     "NameEn": "Stunky",
-    "types": ["Poison", "Dark"]
+    "types": ["Poison", "Dark"],
+    "stats": [63, 63, 47, 41, 41, 74, 329]
   },
   {
     "Paldea": 227,
@@ -1813,7 +2039,8 @@
     "NameZh": "坦克臭鼬",
     "NameJp": "スカタンク",
     "NameEn": "Skuntank",
-    "types": ["Poison", "Dark"]
+    "types": ["Poison", "Dark"],
+    "stats": [103, 93, 67, 71, 61, 84, 479]
   },
   {
     "Paldea": 228,
@@ -1821,7 +2048,8 @@
     "NameZh": "索羅亞",
     "NameJp": "ゾロア",
     "NameEn": "Zorua",
-    "types": ["Dark"]
+    "types": ["Dark"],
+    "stats": [40, 65, 40, 80, 40, 65, 330]
   },
   {
     "Paldea": 229,
@@ -1829,7 +2057,8 @@
     "NameZh": "索羅亞克",
     "NameJp": "ゾロアーク",
     "NameEn": "Zoroark",
-    "types": ["Dark"]
+    "types": ["Dark"],
+    "stats": [60, 105, 60, 120, 60, 105, 510]
   },
   {
     "Paldea": 230,
@@ -1837,7 +2066,8 @@
     "NameZh": "狃拉",
     "NameJp": "ニューラ",
     "NameEn": "Sneasel",
-    "types": ["Dark", "Ice"]
+    "types": ["Dark", "Ice"],
+    "stats": [55, 95, 55, 35, 75, 115, 430]
   },
   {
     "Paldea": 231,
@@ -1845,7 +2075,8 @@
     "NameZh": "瑪狃拉",
     "NameJp": "マニューラ",
     "NameEn": "Weavile",
-    "types": ["Dark", "Ice"]
+    "types": ["Dark", "Ice"],
+    "stats": [70, 120, 65, 45, 85, 125, 510]
   },
   {
     "Paldea": 232,
@@ -1853,7 +2084,8 @@
     "NameZh": "黑暗鴉",
     "NameJp": "ヤミカラス",
     "NameEn": "Murkrow",
-    "types": ["Dark", "Flying"]
+    "types": ["Dark", "Flying"],
+    "stats": [60, 85, 42, 85, 42, 91, 405]
   },
   {
     "Paldea": 233,
@@ -1861,7 +2093,8 @@
     "NameZh": "烏鴉頭頭",
     "NameJp": "ドンカラス",
     "NameEn": "Honchkrow",
-    "types": ["Dark", "Flying"]
+    "types": ["Dark", "Flying"],
+    "stats": [100, 125, 52, 105, 52, 71, 505]
   },
   {
     "Paldea": 234,
@@ -1869,7 +2102,8 @@
     "NameZh": "哥德寶寶",
     "NameJp": "ゴチム",
     "NameEn": "Gothita",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [45, 30, 50, 55, 65, 45, 290]
   },
   {
     "Paldea": 235,
@@ -1877,7 +2111,8 @@
     "NameZh": "哥德小童",
     "NameJp": "ゴチミル",
     "NameEn": "Gothorita",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [60, 45, 70, 75, 85, 55, 390]
   },
   {
     "Paldea": 236,
@@ -1885,7 +2120,8 @@
     "NameZh": "哥德小姐",
     "NameJp": "ゴチルゼル",
     "NameEn": "Gothitelle",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [70, 55, 95, 95, 110, 65, 490]
   },
   {
     "Paldea": 237,
@@ -1893,7 +2129,8 @@
     "NameZh": "來悲茶",
     "NameJp": "ヤバチャ",
     "NameEn": "Sinistea",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [40, 45, 45, 74, 54, 50, 308]
   },
   {
     "Paldea": 238,
@@ -1901,7 +2138,8 @@
     "NameZh": "怖思壺",
     "NameJp": "ポットデス",
     "NameEn": "Polteageist",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [60, 65, 65, 134, 114, 70, 508]
   },
   {
     "Paldea": 239,
@@ -1909,7 +2147,8 @@
     "NameZh": "謎擬Ｑ",
     "NameJp": "ミミッキュ",
     "NameEn": "Mimikyu",
-    "types": ["Ghost", "Fairy"]
+    "types": ["Ghost", "Fairy"],
+    "stats": [55, 90, 80, 50, 105, 96, 476]
   },
   {
     "Paldea": 240,
@@ -1917,7 +2156,8 @@
     "NameZh": "鑰圈兒",
     "NameJp": "クレッフィ",
     "NameEn": "Klefki",
-    "types": ["Steel", "Fairy"]
+    "types": ["Steel", "Fairy"],
+    "stats": [57, 80, 91, 80, 87, 75, 470]
   },
   {
     "Paldea": 241,
@@ -1925,7 +2165,8 @@
     "NameZh": "愛管侍",
     "NameJp": "イエッサン",
     "NameEn": "Indeedee",
-    "types": ["Psychic", "Normal"]
+    "types": ["Psychic", "Normal"],
+    "stats": [60, 65, 55, 105, 95, 95, 475]
   },
   {
     "Paldea": 242,
@@ -1933,7 +2174,8 @@
     "NameZh": "納噬草",
     "NameJp": "アノクサ",
     "NameEn": "Bramblin",
-    "types": ["Grass", "Ghost"]
+    "types": ["Grass", "Ghost"],
+    "stats": [40, 65, 30, 45, 35, 60, 275]
   },
   {
     "Paldea": 243,
@@ -1941,7 +2183,8 @@
     "NameZh": "怖納噬草",
     "NameJp": "アノホラグサ",
     "NameEn": "Brambleghast",
-    "types": ["Grass", "Ghost"]
+    "types": ["Grass", "Ghost"],
+    "stats": [55, 115, 70, 80, 70, 90, 480]
   },
   {
     "Paldea": 244,
@@ -1949,7 +2192,8 @@
     "NameZh": "原野水母",
     "NameJp": "ノノクラゲ",
     "NameEn": "Toedscool",
-    "types": ["Ground", "Grass"]
+    "types": ["Ground", "Grass"],
+    "stats": [40, 40, 35, 50, 100, 70, 335]
   },
   {
     "Paldea": 245,
@@ -1957,7 +2201,8 @@
     "NameZh": "陸地水母",
     "NameJp": "リククラゲ",
     "NameEn": "Toedscruel",
-    "types": ["Ground", "Grass"]
+    "types": ["Ground", "Grass"],
+    "stats": [80, 70, 65, 80, 120, 100, 515]
   },
   {
     "Paldea": 246,
@@ -1965,7 +2210,8 @@
     "NameZh": "熱帶龍",
     "NameJp": "トロピウス",
     "NameEn": "Tropius",
-    "types": ["Grass", "Flying"]
+    "types": ["Grass", "Flying"],
+    "stats": [99, 68, 83, 72, 87, 51, 460]
   },
   {
     "Paldea": 247,
@@ -1973,7 +2219,8 @@
     "NameZh": "偽螳草",
     "NameJp": "カリキリ",
     "NameEn": "Fomantis",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [40, 55, 35, 50, 35, 35, 250]
   },
   {
     "Paldea": 248,
@@ -1981,7 +2228,8 @@
     "NameZh": "蘭螳花",
     "NameJp": "ラランテス",
     "NameEn": "Lurantis",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [70, 105, 90, 80, 90, 45, 480]
   },
   {
     "Paldea": 249,
@@ -1989,7 +2237,8 @@
     "NameZh": "毛崖蟹",
     "NameJp": "ガケガニ",
     "NameEn": "Klawf",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [70, 100, 115, 35, 55, 75, 450]
   },
   {
     "Paldea": 250,
@@ -1997,7 +2246,8 @@
     "NameZh": "熱辣娃",
     "NameJp": "カプサイジ",
     "NameEn": "Capsakid",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [50, 62, 40, 62, 40, 50, 304]
   },
   {
     "Paldea": 251,
@@ -2005,7 +2255,8 @@
     "NameZh": "狠辣椒",
     "NameJp": "スコヴィラン",
     "NameEn": "Scovillain",
-    "types": ["Grass", "Fire"]
+    "types": ["Grass", "Fire"],
+    "stats": [65, 108, 65, 108, 65, 75, 486]
   },
   {
     "Paldea": 252,
@@ -2013,7 +2264,8 @@
     "NameZh": "刺球仙人掌",
     "NameJp": "サボネア",
     "NameEn": "Cacnea",
-    "types": ["Grass"]
+    "types": ["Grass"],
+    "stats": [50, 85, 40, 85, 40, 35, 335]
   },
   {
     "Paldea": 253,
@@ -2021,7 +2273,8 @@
     "NameZh": "夢歌仙人掌",
     "NameJp": "ノクタス",
     "NameEn": "Cacturne",
-    "types": ["Grass", "Dark"]
+    "types": ["Grass", "Dark"],
+    "stats": [70, 115, 60, 115, 60, 55, 475]
   },
   {
     "Paldea": 254,
@@ -2029,7 +2282,8 @@
     "NameZh": "蟲滾泥",
     "NameJp": "シガロコ",
     "NameEn": "Rellor",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [41, 50, 60, 31, 58, 30, 270]
   },
   {
     "Paldea": 255,
@@ -2037,7 +2291,8 @@
     "NameZh": "蟲甲聖",
     "NameJp": "ベラカス",
     "NameEn": "Rabsca",
-    "types": ["Bug", "Psychic"]
+    "types": ["Bug", "Psychic"],
+    "stats": [75, 50, 85, 115, 100, 45, 470]
   },
   {
     "Paldea": 256,
@@ -2045,7 +2300,8 @@
     "NameZh": "毛球",
     "NameJp": "コンパン",
     "NameEn": "Venonat",
-    "types": ["Bug", "Poison"]
+    "types": ["Bug", "Poison"],
+    "stats": [60, 55, 50, 40, 55, 45, 305]
   },
   {
     "Paldea": 257,
@@ -2053,7 +2309,8 @@
     "NameZh": "摩魯蛾",
     "NameJp": "モルフォン",
     "NameEn": "Venomoth",
-    "types": ["Bug", "Poison"]
+    "types": ["Bug", "Poison"],
+    "stats": [70, 65, 60, 90, 75, 90, 450]
   },
   {
     "Paldea": 258,
@@ -2061,7 +2318,8 @@
     "NameZh": "榛果球",
     "NameJp": "クヌギダマ",
     "NameEn": "Pineco",
-    "types": ["Bug"]
+    "types": ["Bug"],
+    "stats": [50, 65, 90, 35, 35, 15, 290]
   },
   {
     "Paldea": 259,
@@ -2069,7 +2327,8 @@
     "NameZh": "佛烈托斯",
     "NameJp": "フォレトス",
     "NameEn": "Forretress",
-    "types": ["Bug", "Steel"]
+    "types": ["Bug", "Steel"],
+    "stats": [75, 90, 140, 60, 60, 40, 465]
   },
   {
     "Paldea": 260,
@@ -2077,7 +2336,8 @@
     "NameZh": "飛天螳螂",
     "NameJp": "ストライク",
     "NameEn": "Scyther",
-    "types": ["Bug", "Flying"]
+    "types": ["Bug", "Flying"],
+    "stats": [70, 110, 80, 55, 80, 105, 500]
   },
   {
     "Paldea": 261,
@@ -2085,7 +2345,8 @@
     "NameZh": "巨鉗螳螂",
     "NameJp": "ハッサム",
     "NameEn": "Scizor",
-    "types": ["Bug", "Steel"]
+    "types": ["Bug", "Steel"],
+    "stats": [70, 130, 100, 55, 80, 65, 500]
   },
   {
     "Paldea": 262,
@@ -2093,7 +2354,8 @@
     "NameZh": "赫拉克羅斯",
     "NameJp": "ヘラクロス",
     "NameEn": "Heracross",
-    "types": ["Bug", "Fighting"]
+    "types": ["Bug", "Fighting"],
+    "stats": [80, 125, 75, 40, 95, 85, 500]
   },
   {
     "Paldea": 263,
@@ -2101,7 +2363,8 @@
     "NameZh": "飄飄雛",
     "NameJp": "ヒラヒナ",
     "NameEn": "Flittle",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [30, 35, 30, 55, 30, 75, 255]
   },
   {
     "Paldea": 264,
@@ -2109,7 +2372,8 @@
     "NameZh": "超能艷鴕",
     "NameJp": "クエスパトラ",
     "NameEn": "Espathra",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [95, 60, 60, 101, 60, 105, 481]
   },
   {
     "Paldea": 265,
@@ -2117,7 +2381,8 @@
     "NameZh": "沙河馬",
     "NameJp": "ヒポポタス",
     "NameEn": "Hippopotas",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [68, 72, 78, 38, 42, 32, 330]
   },
   {
     "Paldea": 266,
@@ -2125,7 +2390,8 @@
     "NameZh": "河馬獸",
     "NameJp": "カバルドン",
     "NameEn": "Hippowdon",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [108, 112, 118, 68, 72, 47, 525]
   },
   {
     "Paldea": 267,
@@ -2133,7 +2399,8 @@
     "NameZh": "黑眼鱷",
     "NameJp": "メグロコ",
     "NameEn": "Sandile",
-    "types": ["Ground", "Dark"]
+    "types": ["Ground", "Dark"],
+    "stats": [50, 72, 35, 35, 35, 65, 292]
   },
   {
     "Paldea": 268,
@@ -2141,7 +2408,8 @@
     "NameZh": "混混鱷",
     "NameJp": "ワルビル",
     "NameEn": "Krokorok",
-    "types": ["Ground", "Dark"]
+    "types": ["Ground", "Dark"],
+    "stats": [60, 82, 45, 45, 45, 74, 351]
   },
   {
     "Paldea": 269,
@@ -2149,7 +2417,8 @@
     "NameZh": "流氓鱷",
     "NameJp": "ワルビアル",
     "NameEn": "Krookodile",
-    "types": ["Ground", "Dark"]
+    "types": ["Ground", "Dark"],
+    "stats": [95, 117, 80, 65, 70, 92, 519]
   },
   {
     "Paldea": 270,
@@ -2157,7 +2426,8 @@
     "NameZh": "沙包蛇",
     "NameJp": "スナヘビ",
     "NameEn": "Silicobra",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [52, 57, 75, 35, 50, 46, 315]
   },
   {
     "Paldea": 271,
@@ -2165,7 +2435,8 @@
     "NameZh": "沙螺蟒",
     "NameJp": "サダイジャ",
     "NameEn": "Sandaconda",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [72, 107, 125, 65, 70, 71, 510]
   },
   {
     "Paldea": 272,
@@ -2173,7 +2444,8 @@
     "NameZh": "泥驢仔",
     "NameJp": "ドロバンコ",
     "NameEn": "Mudbray",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [70, 100, 70, 45, 55, 45, 385]
   },
   {
     "Paldea": 273,
@@ -2181,7 +2453,8 @@
     "NameZh": "重泥挽馬",
     "NameJp": "バンバドロ",
     "NameEn": "Mudsdale",
-    "types": ["Ground"]
+    "types": ["Ground"],
+    "stats": [100, 125, 100, 55, 85, 35, 500]
   },
   {
     "Paldea": 274,
@@ -2189,7 +2462,8 @@
     "NameZh": "燃燒蟲",
     "NameJp": "メラルバ",
     "NameEn": "Larvesta",
-    "types": ["Bug", "Fire"]
+    "types": ["Bug", "Fire"],
+    "stats": [55, 85, 55, 50, 55, 60, 360]
   },
   {
     "Paldea": 275,
@@ -2197,7 +2471,8 @@
     "NameZh": "火神蛾",
     "NameJp": "ウルガモス",
     "NameEn": "Volcarona",
-    "types": ["Bug", "Fire"]
+    "types": ["Bug", "Fire"],
+    "stats": [85, 60, 65, 135, 105, 100, 550]
   },
   {
     "Paldea": 276,
@@ -2205,7 +2480,8 @@
     "NameZh": "寶貝龍",
     "NameJp": "タツベイ",
     "NameEn": "Bagon",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [45, 75, 60, 40, 30, 50, 300]
   },
   {
     "Paldea": 277,
@@ -2213,7 +2489,8 @@
     "NameZh": "甲殼龍",
     "NameJp": "コモルー",
     "NameEn": "Shelgon",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [65, 95, 100, 60, 50, 50, 420]
   },
   {
     "Paldea": 278,
@@ -2221,7 +2498,8 @@
     "NameZh": "暴飛龍",
     "NameJp": "ボーマンダ",
     "NameEn": "Salamence",
-    "types": ["Dragon", "Flying"]
+    "types": ["Dragon", "Flying"],
+    "stats": [95, 135, 80, 110, 80, 100, 600]
   },
   {
     "Paldea": 279,
@@ -2229,7 +2507,8 @@
     "NameZh": "小鍛匠",
     "NameJp": "カヌチャン",
     "NameEn": "Tinkatink",
-    "types": ["Fairy", "Steel"]
+    "types": ["Fairy", "Steel"],
+    "stats": [50, 45, 45, 35, 64, 58, 297]
   },
   {
     "Paldea": 280,
@@ -2237,7 +2516,8 @@
     "NameZh": "巧鍛匠",
     "NameJp": "ナカヌチャン",
     "NameEn": "Tinkatuff",
-    "types": ["Fairy", "Steel"]
+    "types": ["Fairy", "Steel"],
+    "stats": [65, 55, 55, 45, 82, 78, 380]
   },
   {
     "Paldea": 281,
@@ -2245,7 +2525,8 @@
     "NameZh": "巨鍛匠",
     "NameJp": "デカヌチャン",
     "NameEn": "Tinkaton",
-    "types": ["Fairy", "Steel"]
+    "types": ["Fairy", "Steel"],
+    "stats": [85, 75, 77, 70, 105, 94, 506]
   },
   {
     "Paldea": 282,
@@ -2253,7 +2534,8 @@
     "NameZh": "迷布莉姆",
     "NameJp": "ミブリム",
     "NameEn": "Hatenna",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [42, 30, 45, 56, 53, 39, 265]
   },
   {
     "Paldea": 283,
@@ -2261,7 +2543,8 @@
     "NameZh": "提布莉姆",
     "NameJp": "テブリム",
     "NameEn": "Hattrem",
-    "types": ["Psychic"]
+    "types": ["Psychic"],
+    "stats": [57, 40, 65, 86, 73, 49, 370]
   },
   {
     "Paldea": 284,
@@ -2269,7 +2552,8 @@
     "NameZh": "布莉姆溫",
     "NameJp": "ブリムオン",
     "NameEn": "Hatterene",
-    "types": ["Psychic", "Fairy"]
+    "types": ["Psychic", "Fairy"],
+    "stats": [57, 90, 95, 136, 103, 29, 510]
   },
   {
     "Paldea": 285,
@@ -2277,7 +2561,8 @@
     "NameZh": "搗蛋小妖",
     "NameJp": "ベロバー",
     "NameEn": "Impidimp",
-    "types": ["Dark", "Fairy"]
+    "types": ["Dark", "Fairy"],
+    "stats": [45, 45, 30, 55, 40, 50, 265]
   },
   {
     "Paldea": 286,
@@ -2285,7 +2570,8 @@
     "NameZh": "詐唬魔",
     "NameJp": "ギモー",
     "NameEn": "Morgrem",
-    "types": ["Dark", "Fairy"]
+    "types": ["Dark", "Fairy"],
+    "stats": [65, 60, 45, 75, 55, 70, 370]
   },
   {
     "Paldea": 287,
@@ -2293,7 +2579,8 @@
     "NameZh": "長毛巨魔",
     "NameJp": "オーロンゲ",
     "NameEn": "Grimmsnarl",
-    "types": ["Dark", "Fairy"]
+    "types": ["Dark", "Fairy"],
+    "stats": [95, 120, 65, 95, 75, 60, 510]
   },
   {
     "Paldea": 288,
@@ -2301,7 +2588,8 @@
     "NameZh": "海地鼠",
     "NameJp": "ウミディグダ",
     "NameEn": "Wiglett",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [10, 55, 25, 35, 25, 95, 245]
   },
   {
     "Paldea": 289,
@@ -2309,7 +2597,8 @@
     "NameZh": "三海地鼠",
     "NameJp": "ウミトリオ",
     "NameEn": "Wugtrio",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [35, 100, 50, 50, 70, 120, 425]
   },
   {
     "Paldea": 290,
@@ -2317,7 +2606,8 @@
     "NameZh": "下石鳥",
     "NameJp": "オトシドリ",
     "NameEn": "Bombirdier",
-    "types": ["Flying", "Dark"]
+    "types": ["Flying", "Dark"],
+    "stats": [70, 103, 85, 60, 85, 82, 485]
   },
   {
     "Paldea": 291,
@@ -2325,7 +2615,8 @@
     "NameZh": "波普海豚",
     "NameJp": "ナミイルカ",
     "NameEn": "Finizen",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [70, 45, 40, 45, 40, 75, 315]
   },
   {
     "Paldea": 292,
@@ -2333,7 +2624,8 @@
     "NameZh": "海豚俠",
     "NameJp": "イルカマン",
     "NameEn": "Palafin",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [100, 70, 72, 53, 62, 100, 457]
   },
   {
     "Paldea": 293,
@@ -2341,7 +2633,8 @@
     "NameZh": "噗隆隆",
     "NameJp": "ブロロン",
     "NameEn": "Varoom",
-    "types": ["Steel", "Poison"]
+    "types": ["Steel", "Poison"],
+    "stats": [45, 70, 63, 30, 45, 47, 300]
   },
   {
     "Paldea": 294,
@@ -2349,7 +2642,8 @@
     "NameZh": "普隆隆姆",
     "NameJp": "ブロロローム",
     "NameEn": "Revavroom",
-    "types": ["Steel", "Poison"]
+    "types": ["Steel", "Poison"],
+    "stats": [80, 119, 90, 54, 67, 90, 500]
   },
   {
     "Paldea": 295,
@@ -2357,7 +2651,8 @@
     "NameZh": "摩托蜥",
     "NameJp": "モトトカゲ",
     "NameEn": "Cyclizar",
-    "types": ["Dragon", "Normal"]
+    "types": ["Dragon", "Normal"],
+    "stats": [70, 95, 65, 85, 65, 121, 501]
   },
   {
     "Paldea": 296,
@@ -2365,7 +2660,8 @@
     "NameZh": "拖拖蚓",
     "NameJp": "ミミズズ",
     "NameEn": "Orthworm",
-    "types": ["Steel"]
+    "types": ["Steel"],
+    "stats": [70, 85, 145, 60, 55, 65, 480]
   },
   {
     "Paldea": 297,
@@ -2373,7 +2669,8 @@
     "NameZh": "勾魂眼",
     "NameJp": "ヤミラミ",
     "NameEn": "Sableye",
-    "types": ["Dark", "Ghost"]
+    "types": ["Dark", "Ghost"],
+    "stats": [50, 75, 75, 65, 65, 50, 380]
   },
   {
     "Paldea": 298,
@@ -2381,7 +2678,8 @@
     "NameZh": "怨影娃娃",
     "NameJp": "カゲボウズ",
     "NameEn": "Shuppet",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [44, 75, 35, 63, 33, 45, 295]
   },
   {
     "Paldea": 299,
@@ -2389,7 +2687,8 @@
     "NameZh": "詛咒娃娃",
     "NameJp": "ジュペッタ",
     "NameEn": "Banette",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [64, 115, 65, 83, 63, 65, 455]
   },
   {
     "Paldea": 300,
@@ -2397,7 +2696,8 @@
     "NameZh": "列陣兵",
     "NameJp": "タイレーツ",
     "NameEn": "Falinks",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [65, 100, 100, 70, 60, 75, 470]
   },
   {
     "Paldea": 301,
@@ -2405,7 +2705,8 @@
     "NameZh": "摔角鷹人",
     "NameJp": "ルチャブル",
     "NameEn": "Hawlucha",
-    "types": ["Fighting", "Flying"]
+    "types": ["Fighting", "Flying"],
+    "stats": [78, 92, 75, 74, 63, 118, 500]
   },
   {
     "Paldea": 302,
@@ -2413,7 +2714,8 @@
     "NameZh": "花岩怪",
     "NameJp": "ミカルゲ",
     "NameEn": "Spiritomb",
-    "types": ["Ghost", "Dark"]
+    "types": ["Ghost", "Dark"],
+    "stats": [50, 92, 108, 92, 108, 35, 485]
   },
   {
     "Paldea": 303,
@@ -2421,7 +2723,8 @@
     "NameZh": "嗡蝠",
     "NameJp": "オンバット",
     "NameEn": "Noibat",
-    "types": ["Flying", "Dragon"]
+    "types": ["Flying", "Dragon"],
+    "stats": [40, 30, 35, 45, 40, 55, 245]
   },
   {
     "Paldea": 304,
@@ -2429,7 +2732,8 @@
     "NameZh": "音波龍",
     "NameJp": "オンバーン",
     "NameEn": "Noivern",
-    "types": ["Flying", "Dragon"]
+    "types": ["Flying", "Dragon"],
+    "stats": [85, 70, 80, 97, 80, 123, 535]
   },
   {
     "Paldea": 305,
@@ -2437,7 +2741,8 @@
     "NameZh": "多龍梅西亞",
     "NameJp": "ドラメシヤ",
     "NameEn": "Dreepy",
-    "types": ["Dragon", "Ghost"]
+    "types": ["Dragon", "Ghost"],
+    "stats": [28, 60, 30, 40, 30, 82, 270]
   },
   {
     "Paldea": 306,
@@ -2445,7 +2750,8 @@
     "NameZh": "多龍奇",
     "NameJp": "ドロンチ",
     "NameEn": "Drakloak",
-    "types": ["Dragon", "Ghost"]
+    "types": ["Dragon", "Ghost"],
+    "stats": [68, 80, 50, 60, 50, 102, 410]
   },
   {
     "Paldea": 307,
@@ -2453,7 +2759,8 @@
     "NameZh": "多龍巴魯托",
     "NameJp": "ドラパルト",
     "NameEn": "Dragapult",
-    "types": ["Dragon", "Ghost"]
+    "types": ["Dragon", "Ghost"],
+    "stats": [88, 120, 75, 100, 75, 142, 600]
   },
   {
     "Paldea": 308,
@@ -2461,7 +2768,8 @@
     "NameZh": "晶光芽",
     "NameJp": "キラーメ",
     "NameEn": "Glimmet",
-    "types": ["Rock", "Poison"]
+    "types": ["Rock", "Poison"],
+    "stats": [48, 35, 42, 105, 60, 60, 350]
   },
   {
     "Paldea": 309,
@@ -2469,7 +2777,8 @@
     "NameZh": "晶光花",
     "NameJp": "キラフロル",
     "NameEn": "Glimmora",
-    "types": ["Rock", "Poison"]
+    "types": ["Rock", "Poison"],
+    "stats": [83, 55, 90, 130, 81, 86, 525]
   },
   {
     "Paldea": 310,
@@ -2477,7 +2786,8 @@
     "NameZh": "洛托姆",
     "NameJp": "ロトム",
     "NameEn": "Rotom",
-    "types": ["Electric", "Ghost"]
+    "types": ["Electric", "Ghost"],
+    "stats": [50, 50, 77, 95, 77, 91, 440]
   },
   {
     "Paldea": 311,
@@ -2485,7 +2795,8 @@
     "NameZh": "墓仔狗",
     "NameJp": "ボチ",
     "NameEn": "Greavard",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [50, 61, 60, 30, 55, 34, 290]
   },
   {
     "Paldea": 312,
@@ -2493,7 +2804,8 @@
     "NameZh": "墓揚犬",
     "NameJp": "ハカドッグ",
     "NameEn": "Houndstone",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [72, 101, 100, 50, 97, 68, 488]
   },
   {
     "Paldea": 313,
@@ -2501,7 +2813,8 @@
     "NameZh": "智揮猩",
     "NameJp": "ヤレユータン",
     "NameEn": "Oranguru",
-    "types": ["Normal", "Psychic"]
+    "types": ["Normal", "Psychic"],
+    "stats": [90, 60, 80, 90, 110, 60, 490]
   },
   {
     "Paldea": 314,
@@ -2509,7 +2822,8 @@
     "NameZh": "投擲猴",
     "NameJp": "ナゲツケサル",
     "NameEn": "Passimian",
-    "types": ["Fighting"]
+    "types": ["Fighting"],
+    "stats": [100, 120, 90, 40, 60, 80, 490]
   },
   {
     "Paldea": 315,
@@ -2517,7 +2831,8 @@
     "NameZh": "樹枕尾熊",
     "NameJp": "ネッコアラ",
     "NameEn": "Komala",
-    "types": ["Normal"]
+    "types": ["Normal"],
+    "stats": [65, 115, 65, 75, 95, 65, 480]
   },
   {
     "Paldea": 316,
@@ -2525,7 +2840,8 @@
     "NameZh": "幼基拉斯",
     "NameJp": "ヨーギラス",
     "NameEn": "Larvitar",
-    "types": ["Rock", "Ground"]
+    "types": ["Rock", "Ground"],
+    "stats": [50, 64, 50, 45, 50, 41, 300]
   },
   {
     "Paldea": 317,
@@ -2533,7 +2849,8 @@
     "NameZh": "沙基拉斯",
     "NameJp": "サナギラス",
     "NameEn": "Pupitar",
-    "types": ["Rock", "Ground"]
+    "types": ["Rock", "Ground"],
+    "stats": [70, 84, 70, 65, 70, 51, 410]
   },
   {
     "Paldea": 318,
@@ -2541,7 +2858,8 @@
     "NameZh": "班基拉斯",
     "NameJp": "バンギラス",
     "NameEn": "Tyranitar",
-    "types": ["Rock", "Dark"]
+    "types": ["Rock", "Dark"],
+    "stats": [100, 134, 110, 95, 100, 61, 600]
   },
   {
     "Paldea": 319,
@@ -2549,7 +2867,8 @@
     "NameZh": "巨石丁",
     "NameJp": "イシヘンジン",
     "NameEn": "Stonjourner",
-    "types": ["Rock"]
+    "types": ["Rock"],
+    "stats": [100, 125, 135, 20, 20, 70, 470]
   },
   {
     "Paldea": 320,
@@ -2557,7 +2876,8 @@
     "NameZh": "冰砌鵝",
     "NameJp": "コオリッポ",
     "NameEn": "Eiscue",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [75, 80, 110, 65, 90, 50, 470]
   },
   {
     "Paldea": 321,
@@ -2565,7 +2885,8 @@
     "NameZh": "啪嚓海膽",
     "NameJp": "バチンウニ",
     "NameEn": "Pincurchin",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [48, 101, 95, 91, 85, 15, 435]
   },
   {
     "Paldea": 322,
@@ -2573,7 +2894,8 @@
     "NameZh": "沙丘娃",
     "NameJp": "スナバァ",
     "NameEn": "Sandygast",
-    "types": ["Ghost", "Ground"]
+    "types": ["Ghost", "Ground"],
+    "stats": [55, 55, 80, 70, 45, 15, 320]
   },
   {
     "Paldea": 323,
@@ -2581,7 +2903,8 @@
     "NameZh": "噬沙堡爺",
     "NameJp": "シロデスナ",
     "NameEn": "Palossand",
-    "types": ["Ghost", "Ground"]
+    "types": ["Ghost", "Ground"],
+    "stats": [85, 75, 110, 100, 75, 35, 480]
   },
   {
     "Paldea": 324,
@@ -2589,7 +2912,8 @@
     "NameZh": "呆呆獸",
     "NameJp": "ヤドン",
     "NameEn": "Slowpoke",
-    "types": ["Water", "Psychic"]
+    "types": ["Water", "Psychic"],
+    "stats": [90, 65, 65, 40, 40, 15, 315]
   },
   {
     "Paldea": 325,
@@ -2597,7 +2921,8 @@
     "NameZh": "呆殼獸",
     "NameJp": "ヤドラン",
     "NameEn": "Slowbro",
-    "types": ["Water", "Psychic"]
+    "types": ["Water", "Psychic"],
+    "stats": [95, 75, 110, 100, 80, 30, 490]
   },
   {
     "Paldea": 326,
@@ -2605,7 +2930,8 @@
     "NameZh": "呆呆王",
     "NameJp": "ヤドキング",
     "NameEn": "Slowking",
-    "types": ["Water", "Psychic"]
+    "types": ["Water", "Psychic"],
+    "stats": [95, 75, 80, 100, 110, 30, 490]
   },
   {
     "Paldea": 327,
@@ -2613,7 +2939,8 @@
     "NameZh": "無殼海兔",
     "NameJp": "カラナクシ",
     "NameEn": "Shellos",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [76, 48, 48, 57, 62, 34, 325]
   },
   {
     "Paldea": 328,
@@ -2621,7 +2948,8 @@
     "NameZh": "海兔獸",
     "NameJp": "トリトドン",
     "NameEn": "Gastrodon",
-    "types": ["Water", "Ground"]
+    "types": ["Water", "Ground"],
+    "stats": [111, 83, 68, 92, 82, 39, 475]
   },
   {
     "Paldea": 329,
@@ -2629,7 +2957,8 @@
     "NameZh": "大舌貝",
     "NameJp": "シェルダー",
     "NameEn": "Shellder",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [30, 65, 100, 45, 25, 40, 305]
   },
   {
     "Paldea": 330,
@@ -2637,7 +2966,8 @@
     "NameZh": "刺甲貝",
     "NameJp": "パルシェン",
     "NameEn": "Cloyster",
-    "types": ["Water", "Ice"]
+    "types": ["Water", "Ice"],
+    "stats": [50, 95, 180, 85, 45, 70, 525]
   },
   {
     "Paldea": 331,
@@ -2645,7 +2975,8 @@
     "NameZh": "千針魚",
     "NameJp": "ハリーセン",
     "NameEn": "Qwilfish",
-    "types": ["Water", "Poison"]
+    "types": ["Water", "Poison"],
+    "stats": [65, 95, 85, 55, 55, 85, 440]
   },
   {
     "Paldea": 332,
@@ -2653,7 +2984,8 @@
     "NameZh": "愛心魚",
     "NameJp": "ラブカス",
     "NameEn": "Luvdisc",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [43, 30, 55, 40, 65, 97, 330]
   },
   {
     "Paldea": 333,
@@ -2661,7 +2993,8 @@
     "NameZh": "螢光魚",
     "NameJp": "ケイコウオ",
     "NameEn": "Finneon",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [49, 49, 56, 49, 61, 66, 330]
   },
   {
     "Paldea": 334,
@@ -2669,7 +3002,8 @@
     "NameZh": "霓虹魚",
     "NameJp": "ネオラント",
     "NameEn": "Lumineon",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [69, 69, 76, 69, 86, 91, 460]
   },
   {
     "Paldea": 335,
@@ -2677,7 +3011,8 @@
     "NameZh": "磨牙彩皮魚",
     "NameJp": "ハギギシリ",
     "NameEn": "Bruxish",
-    "types": ["Water", "Psychic"]
+    "types": ["Water", "Psychic"],
+    "stats": [68, 105, 70, 70, 70, 92, 475]
   },
   {
     "Paldea": 336,
@@ -2685,7 +3020,8 @@
     "NameZh": "保母曼波",
     "NameJp": "ママンボウ",
     "NameEn": "Alomomola",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [165, 75, 80, 40, 45, 65, 470]
   },
   {
     "Paldea": 337,
@@ -2693,7 +3029,8 @@
     "NameZh": "垃垃藻",
     "NameJp": "クズモー",
     "NameEn": "Skrelp",
-    "types": ["Poison", "Water"]
+    "types": ["Poison", "Water"],
+    "stats": [50, 60, 60, 60, 60, 30, 320]
   },
   {
     "Paldea": 338,
@@ -2701,7 +3038,8 @@
     "NameZh": "毒藻龍",
     "NameJp": "ドラミドロ",
     "NameEn": "Dragalge",
-    "types": ["Poison", "Dragon"]
+    "types": ["Poison", "Dragon"],
+    "stats": [65, 75, 90, 97, 123, 44, 494]
   },
   {
     "Paldea": 339,
@@ -2709,7 +3047,8 @@
     "NameZh": "鐵臂槍蝦",
     "NameJp": "ウデッポウ",
     "NameEn": "Clauncher",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [50, 53, 62, 58, 63, 44, 330]
   },
   {
     "Paldea": 340,
@@ -2717,7 +3056,8 @@
     "NameZh": "鋼炮臂蝦",
     "NameJp": "ブロスター",
     "NameEn": "Clawitzer",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [71, 73, 88, 120, 89, 59, 500]
   },
   {
     "Paldea": 341,
@@ -2725,7 +3065,8 @@
     "NameZh": "麻麻小魚",
     "NameJp": "シビシラス",
     "NameEn": "Tynamo",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [35, 55, 40, 45, 40, 60, 275]
   },
   {
     "Paldea": 342,
@@ -2733,7 +3074,8 @@
     "NameZh": "麻麻鰻",
     "NameJp": "シビビール",
     "NameEn": "Eelektrik",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [65, 85, 70, 75, 70, 40, 405]
   },
   {
     "Paldea": 343,
@@ -2741,7 +3083,8 @@
     "NameZh": "麻麻鰻魚王",
     "NameJp": "シビルドン",
     "NameEn": "Eelektross",
-    "types": ["Electric"]
+    "types": ["Electric"],
+    "stats": [85, 115, 80, 105, 80, 50, 515]
   },
   {
     "Paldea": 344,
@@ -2749,7 +3092,8 @@
     "NameZh": "好壞星",
     "NameJp": "ヒドイデ",
     "NameEn": "Mareanie",
-    "types": ["Poison", "Water"]
+    "types": ["Poison", "Water"],
+    "stats": [50, 53, 62, 43, 52, 45, 305]
   },
   {
     "Paldea": 345,
@@ -2757,7 +3101,8 @@
     "NameZh": "超壞星",
     "NameJp": "ドヒドイデ",
     "NameEn": "Toxapex",
-    "types": ["Poison", "Water"]
+    "types": ["Poison", "Water"],
+    "stats": [50, 63, 152, 53, 142, 35, 495]
   },
   {
     "Paldea": 346,
@@ -2765,7 +3110,8 @@
     "NameZh": "纏紅鶴",
     "NameJp": "カラミンゴ",
     "NameEn": "Flamigo",
-    "types": ["Flying", "Fighting"]
+    "types": ["Flying", "Fighting"],
+    "stats": [82, 115, 74, 75, 64, 90, 500]
   },
   {
     "Paldea": 347,
@@ -2773,7 +3119,8 @@
     "NameZh": "迷你龍",
     "NameJp": "ミニリュウ",
     "NameEn": "Dratini",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [41, 64, 45, 50, 50, 50, 300]
   },
   {
     "Paldea": 348,
@@ -2781,7 +3128,8 @@
     "NameZh": "哈克龍",
     "NameJp": "ハクリュー",
     "NameEn": "Dragonair",
-    "types": ["Dragon"]
+    "types": ["Dragon"],
+    "stats": [61, 84, 65, 70, 70, 70, 420]
   },
   {
     "Paldea": 349,
@@ -2789,7 +3137,8 @@
     "NameZh": "快龍",
     "NameJp": "カイリュー",
     "NameEn": "Dragonite",
-    "types": ["Dragon", "Flying"]
+    "types": ["Dragon", "Flying"],
+    "stats": [91, 134, 95, 100, 100, 80, 600]
   },
   {
     "Paldea": 350,
@@ -2797,7 +3146,8 @@
     "NameZh": "雪吞蟲",
     "NameJp": "ユキハミ",
     "NameEn": "Snom",
-    "types": ["Ice", "Bug"]
+    "types": ["Ice", "Bug"],
+    "stats": [30, 25, 35, 45, 30, 20, 185]
   },
   {
     "Paldea": 351,
@@ -2805,7 +3155,8 @@
     "NameZh": "雪絨蛾",
     "NameJp": "モスノウ",
     "NameEn": "Frosmoth",
-    "types": ["Ice", "Bug"]
+    "types": ["Ice", "Bug"],
+    "stats": [70, 65, 60, 125, 90, 65, 475]
   },
   {
     "Paldea": 352,
@@ -2813,7 +3164,8 @@
     "NameZh": "雪笠怪",
     "NameJp": "ユキカブリ",
     "NameEn": "Snover",
-    "types": ["Grass", "Ice"]
+    "types": ["Grass", "Ice"],
+    "stats": [60, 62, 50, 62, 60, 40, 334]
   },
   {
     "Paldea": 353,
@@ -2821,7 +3173,8 @@
     "NameZh": "暴雪王",
     "NameJp": "ユキノオー",
     "NameEn": "Abomasnow",
-    "types": ["Grass", "Ice"]
+    "types": ["Grass", "Ice"],
+    "stats": [90, 92, 75, 92, 85, 60, 494]
   },
   {
     "Paldea": 354,
@@ -2829,7 +3182,8 @@
     "NameZh": "信使鳥",
     "NameJp": "デリバード",
     "NameEn": "Delibird",
-    "types": ["Ice", "Flying"]
+    "types": ["Ice", "Flying"],
+    "stats": [45, 55, 45, 65, 45, 75, 330]
   },
   {
     "Paldea": 355,
@@ -2837,7 +3191,8 @@
     "NameZh": "噴嚏熊",
     "NameJp": "クマシュン",
     "NameEn": "Cubchoo",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [55, 70, 40, 60, 40, 40, 305]
   },
   {
     "Paldea": 356,
@@ -2845,7 +3200,8 @@
     "NameZh": "凍原熊",
     "NameJp": "ツンベアー",
     "NameEn": "Beartic",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [95, 130, 80, 70, 80, 50, 505]
   },
   {
     "Paldea": 357,
@@ -2853,7 +3209,8 @@
     "NameZh": "雪童子",
     "NameJp": "ユキワラシ",
     "NameEn": "Snorunt",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [50, 50, 50, 50, 50, 50, 300]
   },
   {
     "Paldea": 358,
@@ -2861,7 +3218,8 @@
     "NameZh": "冰鬼護",
     "NameJp": "オニゴーリ",
     "NameEn": "Glalie",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [80, 80, 80, 80, 80, 80, 480]
   },
   {
     "Paldea": 359,
@@ -2869,7 +3227,8 @@
     "NameZh": "雪妖女",
     "NameJp": "ユキメノコ",
     "NameEn": "Froslass",
-    "types": ["Ice", "Ghost"]
+    "types": ["Ice", "Ghost"],
+    "stats": [70, 80, 70, 80, 70, 110, 480]
   },
   {
     "Paldea": 360,
@@ -2877,7 +3236,8 @@
     "NameZh": "幾何雪花",
     "NameJp": "フリージオ",
     "NameEn": "Cryogonal",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [80, 50, 50, 95, 135, 105, 515]
   },
   {
     "Paldea": 361,
@@ -2885,7 +3245,8 @@
     "NameZh": "走鯨",
     "NameJp": "アルクジラ",
     "NameEn": "Cetoddle",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [108, 68, 45, 30, 40, 43, 334]
   },
   {
     "Paldea": 362,
@@ -2893,7 +3254,8 @@
     "NameZh": "浩大鯨",
     "NameJp": "ハルクジラ",
     "NameEn": "Cetitan",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [170, 113, 65, 45, 55, 73, 521]
   },
   {
     "Paldea": 363,
@@ -2901,7 +3263,8 @@
     "NameZh": "冰寶",
     "NameJp": "カチコール",
     "NameEn": "Bergmite",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [55, 69, 85, 32, 35, 28, 304]
   },
   {
     "Paldea": 364,
@@ -2909,7 +3272,8 @@
     "NameZh": "冰岩怪",
     "NameJp": "クレベース",
     "NameEn": "Avalugg",
-    "types": ["Ice"]
+    "types": ["Ice"],
+    "stats": [95, 117, 184, 44, 46, 28, 514]
   },
   {
     "Paldea": 365,
@@ -2917,7 +3281,8 @@
     "NameZh": "毛頭小鷹",
     "NameJp": "ワシボン",
     "NameEn": "Rufflet",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [70, 83, 50, 37, 50, 60, 350]
   },
   {
     "Paldea": 366,
@@ -2925,7 +3290,8 @@
     "NameZh": "勇士雄鷹",
     "NameJp": "ウォーグル",
     "NameEn": "Braviary",
-    "types": ["Normal", "Flying"]
+    "types": ["Normal", "Flying"],
+    "stats": [100, 123, 75, 57, 75, 80, 510]
   },
   {
     "Paldea": 367,
@@ -2933,7 +3299,8 @@
     "NameZh": "駒刀小兵",
     "NameJp": "コマタナ",
     "NameEn": "Pawniard",
-    "types": ["Dark", "Steel"]
+    "types": ["Dark", "Steel"],
+    "stats": [45, 85, 70, 40, 40, 60, 340]
   },
   {
     "Paldea": 368,
@@ -2941,7 +3308,8 @@
     "NameZh": "劈斬司令",
     "NameJp": "キリキザン",
     "NameEn": "Bisharp",
-    "types": ["Dark", "Steel"]
+    "types": ["Dark", "Steel"],
+    "stats": [65, 125, 100, 60, 70, 70, 490]
   },
   {
     "Paldea": 369,
@@ -2949,7 +3317,8 @@
     "NameZh": "仆刀將軍",
     "NameJp": "ドドゲザン",
     "NameEn": "Kingambit",
-    "types": ["Dark", "Steel"]
+    "types": ["Dark", "Steel"],
+    "stats": [100, 135, 120, 60, 85, 50, 550]
   },
   {
     "Paldea": 370,
@@ -2957,7 +3326,8 @@
     "NameZh": "單首龍",
     "NameJp": "モノズ",
     "NameEn": "Deino",
-    "types": ["Dark", "Dragon"]
+    "types": ["Dark", "Dragon"],
+    "stats": [52, 65, 50, 45, 50, 38, 300]
   },
   {
     "Paldea": 371,
@@ -2965,7 +3335,8 @@
     "NameZh": "雙首暴龍",
     "NameJp": "ジヘッド",
     "NameEn": "Zweilous",
-    "types": ["Dark", "Dragon"]
+    "types": ["Dark", "Dragon"],
+    "stats": [72, 85, 70, 65, 70, 58, 420]
   },
   {
     "Paldea": 372,
@@ -2973,7 +3344,8 @@
     "NameZh": "三首惡龍",
     "NameJp": "サザンドラ",
     "NameEn": "Hydreigon",
-    "types": ["Dark", "Dragon"]
+    "types": ["Dark", "Dragon"],
+    "stats": [92, 105, 90, 125, 90, 98, 600]
   },
   {
     "Paldea": 373,
@@ -2981,7 +3353,8 @@
     "NameZh": "輕身鱈",
     "NameJp": "ミガルーサ",
     "NameEn": "Veluza",
-    "types": ["Water", "Psychic"]
+    "types": ["Water", "Psychic"],
+    "stats": [90, 102, 73, 78, 65, 70, 478]
   },
   {
     "Paldea": 374,
@@ -2989,7 +3362,8 @@
     "NameZh": "吃吼霸",
     "NameJp": "ヘイラッシャ",
     "NameEn": "Dondozo",
-    "types": ["Water"]
+    "types": ["Water"],
+    "stats": [150, 100, 115, 65, 65, 35, 530]
   },
   {
     "Paldea": 375,
@@ -2997,7 +3371,8 @@
     "NameZh": "米立龍",
     "NameJp": "シャリタツ",
     "NameEn": "Tatsugiri",
-    "types": ["Dragon", "Water"]
+    "types": ["Dragon", "Water"],
+    "stats": [68, 50, 60, 120, 95, 82, 475]
   },
   {
     "Paldea": 376,
@@ -3005,7 +3380,8 @@
     "NameZh": "雄偉牙",
     "NameJp": "イダイナキバ",
     "NameEn": "Great Tusk",
-    "types": ["Ground", "Fighting"]
+    "types": ["Ground", "Fighting"],
+    "stats": [115, 131, 131, 53, 53, 87, 570]
   },
   {
     "Paldea": 377,
@@ -3013,7 +3389,8 @@
     "NameZh": "吼叫尾",
     "NameJp": "サケブシッポ",
     "NameEn": "Scream Tail",
-    "types": ["Fairy", "Psychic"]
+    "types": ["Fairy", "Psychic"],
+    "stats": [115, 65, 99, 65, 115, 111, 570]
   },
   {
     "Paldea": 378,
@@ -3021,7 +3398,8 @@
     "NameZh": "猛惡菇",
     "NameJp": "アラブルタケ",
     "NameEn": "Brute Bonnet",
-    "types": ["Grass", "Dark"]
+    "types": ["Grass", "Dark"],
+    "stats": [111, 127, 99, 79, 99, 55, 570]
   },
   {
     "Paldea": 379,
@@ -3029,7 +3407,8 @@
     "NameZh": "振翼發",
     "NameJp": "ハバタクカミ",
     "NameEn": "Flutter Mane",
-    "types": ["Ghost", "Fairy"]
+    "types": ["Ghost", "Fairy"],
+    "stats": [55, 55, 55, 135, 135, 135, 570]
   },
   {
     "Paldea": 380,
@@ -3037,7 +3416,8 @@
     "NameZh": "爬地翅",
     "NameJp": "チヲハウハネ",
     "NameEn": "Slither Wing",
-    "types": ["Bug", "Fighting"]
+    "types": ["Bug", "Fighting"],
+    "stats": [85, 135, 79, 85, 105, 81, 570]
   },
   {
     "Paldea": 381,
@@ -3045,7 +3425,8 @@
     "NameZh": "沙鐵皮",
     "NameJp": "スナノケガワ",
     "NameEn": "Sandy Shocks",
-    "types": ["Electric", "Ground"]
+    "types": ["Electric", "Ground"],
+    "stats": [85, 81, 97, 121, 85, 101, 570]
   },
   {
     "Paldea": 382,
@@ -3053,7 +3434,8 @@
     "NameZh": "鐵轍跡",
     "NameJp": "テツノワダチ",
     "NameEn": "Iron Treads",
-    "types": ["Ground", "Steel"]
+    "types": ["Ground", "Steel"],
+    "stats": [90, 112, 120, 72, 70, 106, 570]
   },
   {
     "Paldea": 383,
@@ -3061,7 +3443,8 @@
     "NameZh": "鐵包袱",
     "NameJp": "テツノツツミ",
     "NameEn": "Iron Bundle",
-    "types": ["Ice", "Water"]
+    "types": ["Ice", "Water"],
+    "stats": [56, 80, 114, 124, 60, 136, 570]
   },
   {
     "Paldea": 384,
@@ -3069,7 +3452,8 @@
     "NameZh": "鐵臂膀",
     "NameJp": "テツノカイナ",
     "NameEn": "Iron Hands",
-    "types": ["Fighting", "Electric"]
+    "types": ["Fighting", "Electric"],
+    "stats": [154, 140, 108, 50, 68, 50, 570]
   },
   {
     "Paldea": 385,
@@ -3077,7 +3461,8 @@
     "NameZh": "鐵脖頸",
     "NameJp": "テツノコウベ",
     "NameEn": "Iron Jugulis",
-    "types": ["Dark", "Flying"]
+    "types": ["Dark", "Flying"],
+    "stats": [94, 80, 86, 122, 80, 108, 570]
   },
   {
     "Paldea": 386,
@@ -3085,7 +3470,8 @@
     "NameZh": "鐵毒蛾",
     "NameJp": "テツノドクガ",
     "NameEn": "Iron Moth",
-    "types": ["Fire", "Poison"]
+    "types": ["Fire", "Poison"],
+    "stats": [80, 70, 60, 140, 110, 110, 570]
   },
   {
     "Paldea": 387,
@@ -3093,7 +3479,8 @@
     "NameZh": "鐵荊棘",
     "NameJp": "テツノイバラ",
     "NameEn": "Iron Thorns",
-    "types": ["Rock", "Electric"]
+    "types": ["Rock", "Electric"],
+    "stats": [100, 134, 110, 70, 84, 72, 570]
   },
   {
     "Paldea": 388,
@@ -3101,7 +3488,8 @@
     "NameZh": "涼脊龍",
     "NameJp": "セビエ",
     "NameEn": "Frigibax",
-    "types": ["Dragon", "Ice"]
+    "types": ["Dragon", "Ice"],
+    "stats": [65, 75, 45, 35, 45, 55, 320]
   },
   {
     "Paldea": 389,
@@ -3109,7 +3497,8 @@
     "NameZh": "凍脊龍",
     "NameJp": "セゴール",
     "NameEn": "Arctibax",
-    "types": ["Dragon", "Ice"]
+    "types": ["Dragon", "Ice"],
+    "stats": [90, 95, 66, 45, 65, 62, 423]
   },
   {
     "Paldea": 390,
@@ -3117,7 +3506,8 @@
     "NameZh": "戟脊龍",
     "NameJp": "セグレイブ",
     "NameEn": "Baxcalibur",
-    "types": ["Dragon", "Ice"]
+    "types": ["Dragon", "Ice"],
+    "stats": [115, 145, 92, 75, 86, 87, 600]
   },
   {
     "Paldea": 391,
@@ -3125,7 +3515,8 @@
     "NameZh": "索財靈",
     "NameJp": "コレクレー",
     "NameEn": "Gimmighoul",
-    "types": ["Ghost"]
+    "types": ["Ghost"],
+    "stats": [45, 30, 70, 75, 70, 10, 300]
   },
   {
     "Paldea": 392,
@@ -3133,7 +3524,8 @@
     "NameZh": "賽富豪",
     "NameJp": "サーフゴー",
     "NameEn": "Gholdengo",
-    "types": ["Steel", "Ghost"]
+    "types": ["Steel", "Ghost"],
+    "stats": [87, 60, 95, 133, 91, 84, 550]
   },
   {
     "Paldea": 393,
@@ -3141,7 +3533,8 @@
     "NameZh": "古簡蝸",
     "NameJp": "チオンジェン",
     "NameEn": "Wo-Chien",
-    "types": ["Dark", "Grass"]
+    "types": ["Dark", "Grass"],
+    "stats": [85, 85, 100, 95, 135, 70, 570]
   },
   {
     "Paldea": 394,
@@ -3149,7 +3542,8 @@
     "NameZh": "古劍豹",
     "NameJp": "パオジアン",
     "NameEn": "Chien-Pao",
-    "types": ["Dark", "Ice"]
+    "types": ["Dark", "Ice"],
+    "stats": [80, 120, 80, 90, 65, 135, 570]
   },
   {
     "Paldea": 395,
@@ -3157,7 +3551,8 @@
     "NameZh": "古鼎鹿",
     "NameJp": "ディンルー",
     "NameEn": "Ting-Lu",
-    "types": ["Dark", "Ground"]
+    "types": ["Dark", "Ground"],
+    "stats": [155, 110, 125, 55, 80, 45, 570]
   },
   {
     "Paldea": 396,
@@ -3165,7 +3560,8 @@
     "NameZh": "古玉魚",
     "NameJp": "イーユイ",
     "NameEn": "Chi-Yu",
-    "types": ["Dark", "Fire"]
+    "types": ["Dark", "Fire"],
+    "stats": [55, 80, 80, 135, 120, 100, 570]
   },
   {
     "Paldea": 397,
@@ -3173,7 +3569,8 @@
     "NameZh": "轟鳴月",
     "NameJp": "トドロクツキ",
     "NameEn": "Roaring Moon",
-    "types": ["Dragon", "Dark"]
+    "types": ["Dragon", "Dark"],
+    "stats": [105, 139, 71, 55, 101, 119, 590]
   },
   {
     "Paldea": 398,
@@ -3181,7 +3578,8 @@
     "NameZh": "鐵武者",
     "NameJp": "テツノブジン",
     "NameEn": "Iron Valiant",
-    "types": ["Fairy", "Fighting"]
+    "types": ["Fairy", "Fighting"],
+    "stats": [74, 130, 90, 120, 60, 116, 590]
   },
   {
     "Paldea": 399,
@@ -3189,7 +3587,8 @@
     "NameZh": "故勒頓",
     "NameJp": "コライドン",
     "NameEn": "Koraidon",
-    "types": ["Fighting", "Dragon"]
+    "types": ["Fighting", "Dragon"],
+    "stats": [100, 135, 115, 85, 100, 135, 670]
   },
   {
     "Paldea": 400,
@@ -3197,6 +3596,7 @@
     "NameZh": "密勒頓",
     "NameJp": "ミライドン",
     "NameEn": "Miraidon",
-    "types": ["Electric", "Dragon"]
+    "types": ["Electric", "Dragon"],
+    "stats": [100, 85, 100, 135, 115, 135, 670]
   }
 ]
