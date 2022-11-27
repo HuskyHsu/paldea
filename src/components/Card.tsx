@@ -13,11 +13,11 @@ export function Card({ pokemon }: Props) {
     : "";
 
   return (
-    <div className="w-44">
+    <div className="w-28 md:w-44">
       <header className="flex flex-row-reverse">
         <img
           className="w-36 -mb-8"
-          src={`./image/icon/${pid}${altForm}.png`}
+          src={`${process.env.PUBLIC_URL}/image/icon/${pid}${altForm}.png`}
           alt={pokemon.nameZh}
         />
       </header>

@@ -17,7 +17,9 @@ export const TypeIcon = ({
     return (
       <button type="button" onClick={clickFn}>
         <img
-          src={`./image/type/${TypeMap[type as keyof typeof TypeMap]}.svg`}
+          src={`${process.env.PUBLIC_URL}/image/type/${
+            TypeMap[type as keyof typeof TypeMap]
+          }.svg`}
           alt={type}
           className={className}
           key={type}
@@ -27,7 +29,9 @@ export const TypeIcon = ({
   }
   return (
     <img
-      src={`./image/type/${TypeMap[type as keyof typeof TypeMap]}.svg`}
+      src={`${process.env.PUBLIC_URL}/image/type/${
+        TypeMap[type as keyof typeof TypeMap]
+      }.svg`}
       alt={type}
       className={className}
       key={type}
