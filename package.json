@@ -1,5 +1,6 @@
 {
   "name": "paldea",
+  "homepage": "https://huskyhsu.github.io/paldea/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
