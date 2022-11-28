@@ -3,24 +3,26 @@ import json
 
 
 def get_list():
-    response = requests.get("https://paldea.fly.dev/api/pokemons?sort=paldeaId")
+    response = requests.get(
+        "https://paldea.fly.dev/api/pokemons?sort=paldeaId&populate=*"
+    )
     return response.json()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     base_list = get_list()
-    
+
     output = []
-    for base in base_list['data']:
-        attributes = base['attributes']
+    for base in base_list["data"]:
+        attributes = base["attributes"]
         data = {
             "paldeaId": attributes["paldeaId"],
             "nationalId": attributes["nationalId"],
             "nameZh": attributes["nameZh"],
             "nameJp": attributes["nameJp"],
             "nameEn": attributes["nameEn"],
-            "types": attributes["types"],
+            "types": [t["attributes"]["Name"] for t in attributes["typeList"]["data"]],
             "stats": [
                 attributes["statsHp"],
                 attributes["statsAtk"],
@@ -35,5 +37,5 @@ if __name__ == '__main__':
 
         output.append(data)
 
-    with open('../src/data/base_list.json', 'wt', encoding='utf-8') as fout:
+    with open("../src/data/base_list.json", "wt", encoding="utf-8") as fout:
         fout.write(json.dumps(output))
