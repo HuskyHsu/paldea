@@ -16,6 +16,7 @@ if __name__ == "__main__":
     output = []
     for base in base_list["data"]:
         attributes = base["attributes"]
+        print(attributes["nameZh"])
         data = {
             "paldeaId": attributes["paldeaId"],
             "nationalId": attributes["nationalId"],
@@ -33,6 +34,12 @@ if __name__ == "__main__":
                 attributes["statsTotal"],
             ],
             "altForm": attributes["altForm"],
+            "abilities": [
+                t["attributes"]["nameZh"] for t in attributes["abilities"]["data"]
+            ],
+            "hiddenAbility": attributes["hiddenAbility"]["data"]["attributes"]["nameZh"]
+            if attributes["hiddenAbility"]["data"]
+            else None,
         }
 
         output.append(data)
