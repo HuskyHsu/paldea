@@ -22,7 +22,7 @@ if __name__ == "__main__":
             "nameZh": attributes["nameZh"],
             "nameJp": attributes["nameJp"],
             "nameEn": attributes["nameEn"],
-            "types": [t["attributes"]["Name"] for t in attributes["typeList"]["data"]],
+            "types": [t["attributes"]["name"] for t in attributes["typeList"]["data"]],
             "stats": [
                 attributes["statsHp"],
                 attributes["statsAtk"],
