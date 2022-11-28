@@ -7,6 +7,8 @@ export interface BasePokemon {
   types: string[];
   stats?: number[];
   altForm: string | null;
+  abilities: string[];
+  hiddenAbility: string | null;
 }
 
 export enum NameSuffix {

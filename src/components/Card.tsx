@@ -27,7 +27,6 @@ export function Card({ pokemon }: Props) {
           {pokemon.nameZh}
           {pokemon.altForm && <sub>({pokemon.altForm})</sub>}
         </p>
-
         <p className="flex gap-x-2">
           {pokemon.types.map((type) => (
             <TypeIcon type={type} key={type} />
