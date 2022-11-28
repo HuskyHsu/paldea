@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/paldea/static/css/main.d7cc0b47.css",
-    "main.js": "/paldea/static/js/main.c0f287b6.js",
+    "main.js": "/paldea/static/js/main.f14c0694.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
     "index.html": "/paldea/index.html",
     "main.d7cc0b47.css.map": "/paldea/static/css/main.d7cc0b47.css.map",
-    "main.c0f287b6.js.map": "/paldea/static/js/main.c0f287b6.js.map",
+    "main.f14c0694.js.map": "/paldea/static/js/main.f14c0694.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d7cc0b47.css",
-    "static/js/main.c0f287b6.js"
+    "static/js/main.f14c0694.js"
   ]
 }
