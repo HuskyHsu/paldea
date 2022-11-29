@@ -54,6 +54,7 @@ export function Card({ pokemon }: Props) {
               <TypeIcon type={type} key={type} />
             ))}
           </div>
+          {pokemon.version && <sub>({pokemon.version})</sub>}
         </div>
       </div>
     </div>
