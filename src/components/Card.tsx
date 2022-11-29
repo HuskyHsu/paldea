@@ -15,7 +15,7 @@ export function Card({ pokemon }: Props) {
     : "";
 
   return (
-    <div className="w-[calc(100%/3-12px)] md:max-w-[180px]">
+    <div className="w-[calc(100%/3-12px)] md:max-w-[180px] -mt-6">
       <header
         className={clsx(
           "flex flex-col-reverse items-center justify-center",
