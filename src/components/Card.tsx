@@ -1,4 +1,4 @@
-import { clsx } from "clsx";
+import clsx from "clsx";
 
 import { BasePokemon, NameSuffix } from "../models";
 import { TypeIcon } from "./TypeIcon";
@@ -36,7 +36,7 @@ export function Card({ pokemon }: Props) {
         className={clsx(
           "rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white",
           "px-3 pt-10 md:px-4 text-center md:text-start",
-          pokemon.specific && "rounded-b-none"
+          pokemon.version && "rounded-b-none"
         )}
       >
         <div
@@ -55,6 +55,7 @@ export function Card({ pokemon }: Props) {
               <TypeIcon type={type} key={type} />
             ))}
           </div>
+          {pokemon.version && <sub>({pokemon.version})</sub>}
         </div>
       </div>
 
