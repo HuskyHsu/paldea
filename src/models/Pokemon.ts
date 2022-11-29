@@ -18,3 +18,8 @@ export enum NameSuffix {
   "帕底亞-火熾種" = "b",
   "帕底亞-水瀾種" = "a",
 }
+
+export enum VersionType {
+  "Scarlet" = "朱",
+  "Violet" = "紫"
+}
