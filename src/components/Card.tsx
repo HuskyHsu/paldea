@@ -15,7 +15,7 @@ export function Card({ pokemon }: Props) {
     : "";
 
   return (
-    <div className="w-[calc(100%/3-12px)] md:max-w-[180px] -mt-6">
+    <div className="w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6">
       <header
         className={clsx(
           "flex flex-col-reverse items-center justify-center",
@@ -25,8 +25,10 @@ export function Card({ pokemon }: Props) {
       >
         <span className="hidden md:block leading-none">#{paldeaId}</span>
         <img
+          className="min-h-[83px] md:min-h-[148x]"
           src={`${process.env.PUBLIC_URL}/image/icon/${pid}${altForm}.png`}
           alt={pokemon.nameZh}
+          loading="lazy"
         />
       </header>
 
