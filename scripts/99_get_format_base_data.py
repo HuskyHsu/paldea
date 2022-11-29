@@ -40,6 +40,7 @@ if __name__ == "__main__":
             "hiddenAbility": attributes["hiddenAbility"]["data"]["attributes"]["nameZh"]
             if attributes["hiddenAbility"]["data"]
             else None,
+            "version": attributes["version"]
         }
 
         output.append(data)
