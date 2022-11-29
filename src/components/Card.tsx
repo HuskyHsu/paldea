@@ -35,7 +35,8 @@ export function Card({ pokemon }: Props) {
       <div
         className={clsx(
           "rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white",
-          "px-3 pt-10 md:px-4 text-center md:text-start"
+          "px-3 pt-10 md:px-4 text-center md:text-start",
+          pokemon.specific && "rounded-b-none"
         )}
       >
         <div
@@ -56,6 +57,12 @@ export function Card({ pokemon }: Props) {
           </div>
         </div>
       </div>
+
+      {/* {pokemon.specific && ( */}
+        <div className={clsx("w-full flex justify-center", "bg-red-500 text-white text-sm")}>
+          <p><span className="hidden md:block">版本</span>限定{'('}{')'}</p>
+        </div>
+        {/* )} */}
     </div>
   );
 }
