@@ -9,6 +9,7 @@ export interface BasePokemon {
   altForm: string | null;
   abilities: string[];
   hiddenAbility: string | null;
+  specific?: string | null;
 }
 
 export enum NameSuffix {
