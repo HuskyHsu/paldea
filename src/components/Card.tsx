@@ -15,31 +15,44 @@ export function Card({ pokemon }: Props) {
     : "";
 
   return (
-    <div className="w-28 md:w-44">
-      <header className="flex flex-row items-end justify-between px-4 -mb-8">
-        <p>#{paldeaId}</p>
+    <div className="w-[calc(100%/3-12px)] md:max-w-[180px] -mt-6">
+      <header
+        className={clsx(
+          "flex flex-col-reverse items-center justify-center",
+          "md:flex-row md:items-end md:justify-between",
+          "-mb-8 px-3 md:px-4"
+        )}
+      >
+        <span className="hidden md:block leading-none">#{paldeaId}</span>
         <img
-          className="w-36"
           src={`${process.env.PUBLIC_URL}/image/icon/${pid}${altForm}.png`}
           alt={pokemon.nameZh}
         />
       </header>
+
       <div
         className={clsx(
-          "flex flex-col md:items-stretch items-center",
-          "px-2 md:px-4 pb-4 pt-8",
-          "rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white"
+          "rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white",
+          "px-3 pt-10 md:px-4 text-center md:text-start"
         )}
       >
-        <p className="pt-2 mt-2 border-0 border-t-[1px] border-[#A29834]">
-          {pokemon.nameZh}
-          {pokemon.altForm && <sub>({pokemon.altForm})</sub>}
-        </p>
-        <p className="flex gap-x-2">
-          {pokemon.types.map((type) => (
-            <TypeIcon type={type} key={type} />
-          ))}
-        </p>
+        <div
+          className={clsx(
+            "border-0 border-t-[1px] border-[#A29834]",
+            "flex flex-col gap-y-1 pt-2 pb-4"
+          )}
+        >
+          <p className="md:hidden">#{paldeaId}</p>
+          <p className="">
+            {pokemon.nameZh}
+            {pokemon.altForm && <sub>({pokemon.altForm})</sub>}
+          </p>
+          <div className="flex gap-x-2 justify-center md:justify-start">
+            {pokemon.types.map((type) => (
+              <TypeIcon type={type} key={type} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
