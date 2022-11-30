@@ -1,8 +1,15 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { BasePokemon, NameSuffix, TypeMap, TypeShow } from "../models";
-import { useFilterStore } from "../store";
-import { TypeIcon } from "./TypeIcon";
+import {
+  BasePokemon,
+  NameSuffix,
+  VersionType,
+  TypeMap,
+  TypeShow,
+} from '../models';
+import { VersionIcon } from './icon';
+import { useFilterStore } from '../store';
+import { TypeIcon } from './TypeIcon';
 
 interface Props {
   pokemon: BasePokemon;
@@ -22,26 +29,29 @@ function isDisplay(pm: BasePokemon, types: TypeShow) {
 }
 
 export function Card({ pokemon }: Props) {
-  const pid = pokemon.nationalId.toString().padStart(3, "0");
-  const paldeaId = pokemon.paldeaId.toString().padStart(3, "0");
+  const pid = pokemon.nationalId.toString().padStart(3, '0');
+  const paldeaId = pokemon.paldeaId.toString().padStart(3, '0');
   const altForm = pokemon.altForm
-    ? "-" + NameSuffix[pokemon.altForm as keyof typeof NameSuffix]
-    : "";
+    ? '-' + NameSuffix[pokemon.altForm as keyof typeof NameSuffix]
+    : '';
+  const version = pokemon.version
+    ? VersionType[pokemon.version as keyof typeof VersionType]
+    : '';
 
   const types = useFilterStore((state) => state.types);
   const display = isDisplay(pokemon, types);
 
   return (
     <div
-      className={clsx("w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6", {
+      className={clsx('w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6', {
         hidden: !display,
       })}
     >
       <header
         className={clsx(
-          "flex flex-col-reverse items-center justify-center",
-          "md:flex-row md:items-end md:justify-between",
-          "-mb-8 px-3 md:px-4"
+          'flex flex-col-reverse items-center justify-center',
+          'md:flex-row md:items-end md:justify-between',
+          '-mb-8 px-3 md:px-4'
         )}
       >
         <span className="hidden md:block leading-none">#{paldeaId}</span>
@@ -55,18 +65,19 @@ export function Card({ pokemon }: Props) {
 
       <div
         className={clsx(
-          "rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white",
-          "px-3 pt-10 md:px-4 text-center md:text-start"
+          'rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white',
+          'px-3 pt-10 md:px-4 text-center md:text-start',
+          pokemon.version && 'rounded-b-none'
         )}
       >
         <div
           className={clsx(
-            "border-0 border-t-[1px] border-[#A29834]",
-            "flex flex-col gap-y-1 pt-2 pb-4"
+            'border-0 border-t-[1px] border-[#A29834]',
+            'flex flex-col gap-y-1 pt-2 pb-4'
           )}
         >
           <p className="md:hidden">#{paldeaId}</p>
-          <p className="">
+          <p>
             {pokemon.nameZh}
             {pokemon.altForm && <sub>({pokemon.altForm})</sub>}
           </p>
@@ -75,9 +86,32 @@ export function Card({ pokemon }: Props) {
               <TypeIcon type={type} key={type} />
             ))}
           </div>
-          {pokemon.version && <sub>({pokemon.version})</sub>}
         </div>
       </div>
+
+      {pokemon.version && (
+        <div
+          className={clsx(
+            'w-full flex justify-center',
+            'py-1 rounded-b-xl',
+            'text-white text-sm',
+            pokemon.version === 'Scarlet' ? 'bg-scarlet' : 'bg-violet'
+          )}
+        >
+          <p className="flex items-center w-full justify-center md:justify-start md:pl-4">
+            {pokemon.version === 'Scarlet' ? (
+              <VersionIcon.Scarlet className="w-4 mr-1" />
+            ) : (
+              <VersionIcon.Violet className="w-4 mr-1" />
+            )}
+            <span className="hidden md:block">版本</span>
+            限定
+            {'('}
+            {version}
+            {')'}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
