@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.ec255d3c.css",
-    "main.js": "/paldea/static/js/main.87a40fca.js",
+    "main.css": "/paldea/static/css/main.0979d7b8.css",
+    "main.js": "/paldea/static/js/main.b8506761.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
     "static/media/Scarlet.svg": "/paldea/static/media/Scarlet.ee1d48300df5510d898de2066863a7bf.svg",
     "static/media/Violet.svg": "/paldea/static/media/Violet.7e97e82528f7b0f1ba6f83819d7ddcd7.svg",
     "index.html": "/paldea/index.html",
-    "main.ec255d3c.css.map": "/paldea/static/css/main.ec255d3c.css.map",
-    "main.87a40fca.js.map": "/paldea/static/js/main.87a40fca.js.map",
+    "main.0979d7b8.css.map": "/paldea/static/css/main.0979d7b8.css.map",
+    "main.b8506761.js.map": "/paldea/static/js/main.b8506761.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec255d3c.css",
-    "static/js/main.87a40fca.js"
+    "static/css/main.0979d7b8.css",
+    "static/js/main.b8506761.js"
   ]
 }
