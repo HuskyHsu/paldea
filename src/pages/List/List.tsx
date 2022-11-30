@@ -1,10 +1,9 @@
-import clsx from "clsx";
-import data from "../../data/base_list.json";
+import clsx from 'clsx';
+import data from '../../data/base_list.json';
 
-import { Card } from "../../components/Card";
-import { TypeIcon } from "../../components/TypeIcon";
-import { TypeMap } from "../../models";
-import { useFilterStore } from "../../store";
+import { Card, Icon } from '../../components';
+import { TypeMap } from '../../models';
+import { useFilterStore } from '../../store';
 
 function List() {
   const { types, targetType } = useFilterStore((state) => state);
@@ -16,10 +15,10 @@ function List() {
           <li className="w-full md:w-5/6 flex flex-wrap justify-center items-center gap-4">
             {Object.keys(TypeMap).map((type) => (
               <div key={type} className="group relative h-8">
-                <TypeIcon
+                <Icon.Type
                   type={type}
-                  className={clsx("w-8 h-8", {
-                    "opacity-30": !types[type],
+                  className={clsx('w-8 h-8', {
+                    'opacity-30': !types[type],
                   })}
                   button={true}
                   clickFn={() => targetType(type)}

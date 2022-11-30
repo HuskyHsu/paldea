@@ -1,4 +1,4 @@
-import { TypeMap } from "../models";
+import { TypeMap } from '../../models';
 
 interface TypeIconInterface {
   type: string;
@@ -7,9 +7,9 @@ interface TypeIconInterface {
   clickFn?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const TypeIcon = ({
+export const Type = ({
   type,
-  className = "w-5 h-5",
+  className = 'w-5 h-5',
   button = false,
   clickFn = () => {},
 }: TypeIconInterface) => {
