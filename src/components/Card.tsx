@@ -1,10 +1,24 @@
 import clsx from "clsx";
 
-import { BasePokemon, NameSuffix } from "../models";
+import { BasePokemon, NameSuffix, TypeMap, TypeShow } from "../models";
+import { useFilterStore } from "../store";
 import { TypeIcon } from "./TypeIcon";
 
 interface Props {
   pokemon: BasePokemon;
+}
+
+function isDisplay(pm: BasePokemon, types: TypeShow) {
+  let display = true;
+
+  if (Object.values(TypeMap).some((type) => !types[type])) {
+    display = pm.types.find((type) => types[type]) !== undefined;
+  }
+  if (!display) {
+    return display;
+  }
+
+  return display;
 }
 
 export function Card({ pokemon }: Props) {
@@ -14,8 +28,15 @@ export function Card({ pokemon }: Props) {
     ? "-" + NameSuffix[pokemon.altForm as keyof typeof NameSuffix]
     : "";
 
+  const types = useFilterStore((state) => state.types);
+  const display = isDisplay(pokemon, types);
+
   return (
-    <div className="w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6">
+    <div
+      className={clsx("w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6", {
+        hidden: !display,
+      })}
+    >
       <header
         className={clsx(
           "flex flex-col-reverse items-center justify-center",

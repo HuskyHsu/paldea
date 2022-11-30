@@ -18,3 +18,7 @@ export enum TypeMap {
   "Dark" = "Dark",
   "Dragon" = "Dragon",
 }
+
+export interface TypeShow {
+  [propName: string]: boolean;
+}
