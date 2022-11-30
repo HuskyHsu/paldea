@@ -97,14 +97,14 @@ function Body({ pokemon, paldeaId }: BodyProps) {
           >
             {pokemon.abilities.map((ability) => (
               <span
-                className="bg-blue-100 text-blue-800 text-xs text-center font-semibold px-2.5 py-0.5 rounded"
+                className="bg-blue-100 text-blue-800 text-xs text-center font-semibold px-1.5 py-0.5 rounded"
                 key={ability}
               >
                 {ability}
               </span>
             ))}
             {pokemon.hiddenAbility && (
-              <span className="bg-gray-100 text-gray-800 text-xs text-center font-semibold px-2.5 py-0.5 rounded">
+              <span className="bg-gray-100 text-gray-800 text-xs text-center font-semibold px-1.5 py-0.5 rounded">
                 {pokemon.hiddenAbility}
               </span>
             )}
