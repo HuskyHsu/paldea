@@ -1,11 +1,31 @@
 import clsx from 'clsx';
 
-import { BasePokemon, NameSuffix, VersionType } from '../models';
-import { TypeIcon } from './TypeIcon';
+import {
+  BasePokemon,
+  NameSuffix,
+  VersionType,
+  TypeMap,
+  TypeShow,
+} from '../models';
 import { VersionIcon } from './icon';
+import { useFilterStore } from '../store';
+import { TypeIcon } from './TypeIcon';
 
 interface Props {
   pokemon: BasePokemon;
+}
+
+function isDisplay(pm: BasePokemon, types: TypeShow) {
+  let display = true;
+
+  if (Object.values(TypeMap).some((type) => !types[type])) {
+    display = pm.types.find((type) => types[type]) !== undefined;
+  }
+  if (!display) {
+    return display;
+  }
+
+  return display;
 }
 
 export function Card({ pokemon }: Props) {
@@ -18,13 +38,20 @@ export function Card({ pokemon }: Props) {
     ? VersionType[pokemon.version as keyof typeof VersionType]
     : '';
 
+  const types = useFilterStore((state) => state.types);
+  const display = isDisplay(pokemon, types);
+
   return (
-    <div className="w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6">
+    <div
+      className={clsx('w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6', {
+        hidden: !display,
+      })}
+    >
       <header
         className={clsx(
           'flex flex-col-reverse items-center justify-center',
           'md:flex-row md:items-end md:justify-between',
-          '-mb-8 px-3 md:px-4',
+          '-mb-8 px-3 md:px-4'
         )}
       >
         <span className="hidden md:block leading-none">#{paldeaId}</span>
@@ -40,13 +67,13 @@ export function Card({ pokemon }: Props) {
         className={clsx(
           'rounded-xl shadow-[0_5px_25px_rgba(0,0,0,0.1)] bg-white',
           'px-3 pt-10 md:px-4 text-center md:text-start',
-          pokemon.version && 'rounded-b-none',
+          pokemon.version && 'rounded-b-none'
         )}
       >
         <div
           className={clsx(
             'border-0 border-t-[1px] border-[#A29834]',
-            'flex flex-col gap-y-1 pt-2 pb-4',
+            'flex flex-col gap-y-1 pt-2 pb-4'
           )}
         >
           <p className="md:hidden">#{paldeaId}</p>
@@ -68,7 +95,7 @@ export function Card({ pokemon }: Props) {
             'w-full flex justify-center',
             'py-1 rounded-b-xl',
             'text-white text-sm',
-            pokemon.version === 'Scarlet' ? 'bg-scarlet' : 'bg-violet',
+            pokemon.version === 'Scarlet' ? 'bg-scarlet' : 'bg-violet'
           )}
         >
           <p className="flex items-center w-full justify-center">

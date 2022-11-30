@@ -4,8 +4,11 @@ import data from "../../data/base_list.json";
 import { Card } from "../../components/Card";
 import { TypeIcon } from "../../components/TypeIcon";
 import { TypeMap } from "../../models";
+import { useFilterStore } from "../../store";
 
 function List() {
+  const { types, targetType } = useFilterStore((state) => state);
+
   return (
     <div className="rounded-xl bg-orange-50">
       <form className="pt-6 px-4">
@@ -15,9 +18,11 @@ function List() {
               <div key={type} className="group relative h-8">
                 <TypeIcon
                   type={type}
-                  className={clsx("w-8 h-8")}
+                  className={clsx("w-8 h-8", {
+                    "opacity-30": !types[type],
+                  })}
                   button={true}
-                  clickFn={() => {}}
+                  clickFn={() => targetType(type)}
                 />
               </div>
             ))}
