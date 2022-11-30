@@ -98,7 +98,7 @@ export function Card({ pokemon }: Props) {
             pokemon.version === 'Scarlet' ? 'bg-scarlet' : 'bg-violet'
           )}
         >
-          <p className="flex items-center w-full justify-center">
+          <p className="flex items-center w-full justify-center md:justify-start md:pl-4">
             {pokemon.version === 'Scarlet' ? (
               <VersionIcon.Scarlet className="w-4 mr-1" />
             ) : (
