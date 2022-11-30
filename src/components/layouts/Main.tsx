@@ -5,7 +5,7 @@ import { Icon } from '../../components';
 
 function Main() {
   return (
-    <div className='flex flex-col md:flex-row'>
+    <div className='flex flex-col md:flex-row max-h-screen md:max-h-full'>
       <aside
         className={clsx(
           'flex flex-col w-screen md:w-64 md:h-screen md:p-4 space-y-2',
