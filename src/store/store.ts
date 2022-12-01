@@ -1,7 +1,10 @@
-import create from "zustand";
-import { TypeMap, TypeShow } from "../models";
+import create from 'zustand';
+
+import { BasePokemon, TypeMap, TypeShow } from '../models';
+import pokemonList from '../data/base_list.json';
 
 interface Filter {
+  pokemonList: BasePokemon[];
   types: TypeShow;
   keyword: string;
   targetType: Function;
@@ -37,10 +40,34 @@ const targetType = (types: TypeShow, type: keyof TypeMap) => {
   };
 };
 
+const isDisplay = (pm: BasePokemon, types: TypeShow) => {
+  let display = pm.types.some((type) => types[type]);
+  if (pm.display !== display) {
+    return { ...pm, display: display };
+  }
+
+  return pm;
+};
+
+const newPokemonList = pokemonList.map((pm) => {
+  return {
+    ...pm,
+    display: true,
+  };
+});
+
 export const useFilterStore = create<Filter>((set) => ({
+  pokemonList: newPokemonList,
   types: allOn,
-  keyword: "",
+  keyword: '',
   targetType: (type: keyof TypeMap) =>
-    set((state) => (state.types = targetType(state.types, type))),
+    set((state) => {
+      state.types = targetType(state.types, type);
+
+      return {
+        types: state.types,
+        pokemonList: state.pokemonList.map((pm) => isDisplay(pm, state.types)),
+      };
+    }),
   updateKeyword: (keyword: string) => set(() => ({ keyword })),
 }));

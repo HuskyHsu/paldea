@@ -1,13 +1,7 @@
+import { memo } from 'react';
 import clsx from 'clsx';
 
-import {
-  BasePokemon,
-  NameSuffix,
-  VersionType,
-  TypeMap,
-  TypeShow,
-} from '../models';
-import { useFilterStore } from '../store';
+import { BasePokemon, NameSuffix, VersionType } from '../models';
 import { Icon } from '.';
 
 interface Props {
@@ -26,19 +20,6 @@ interface BodyProps {
   paldeaId: string;
 }
 
-function isDisplay(pm: BasePokemon, types: TypeShow) {
-  let display = true;
-
-  if (Object.values(TypeMap).some((type) => !types[type])) {
-    display = pm.types.find((type) => types[type]) !== undefined;
-  }
-  if (!display) {
-    return display;
-  }
-
-  return display;
-}
-
 function Header({ paldeaId, pid, name, altForm }: HeaderProps) {
   return (
     <header
@@ -48,12 +29,12 @@ function Header({ paldeaId, pid, name, altForm }: HeaderProps) {
         '-mb-8 px-3 md:px-4'
       )}
     >
-      <span className="hidden md:block leading-none">#{paldeaId}</span>
+      <span className='hidden md:block leading-none'>#{paldeaId}</span>
       <img
-        className="min-h-[83px] md:min-h-[148x]"
+        className='min-h-[83px] md:min-h-[148x]'
         src={`${process.env.PUBLIC_URL}/image/icon/${pid}${altForm}.png`}
         alt={name}
-        loading="lazy"
+        loading='lazy'
       />
     </header>
   );
@@ -74,15 +55,15 @@ function Body({ pokemon, paldeaId }: BodyProps) {
           'flex flex-col gap-y-1 pt-2 pb-4'
         )}
       >
-        <p className="md:hidden">#{paldeaId}</p>
+        <p className='md:hidden'>#{paldeaId}</p>
         <p>
           {pokemon.nameZh}{' '}
           {pokemon.altForm && (
-            <span className="text-xs font-thin">({pokemon.altForm})</span>
+            <span className='text-xs font-thin'>({pokemon.altForm})</span>
           )}
         </p>
-        <div className="flex justify-center md:justify-between">
-          <div className="flex gap-x-2 justify-center md:justify-start">
+        <div className='flex justify-center md:justify-between'>
+          <div className='flex gap-x-2 justify-center md:justify-start'>
             {pokemon.types.map((type) => (
               <Icon.Type type={type} key={type} />
             ))}
@@ -97,14 +78,14 @@ function Body({ pokemon, paldeaId }: BodyProps) {
           >
             {pokemon.abilities.map((ability) => (
               <span
-                className="bg-blue-100 text-blue-800 text-xs text-center font-semibold px-1.5 py-0.5 rounded"
+                className='bg-blue-100 text-blue-800 text-xs text-center font-semibold px-1.5 py-0.5 rounded'
                 key={ability}
               >
                 {ability}
               </span>
             ))}
             {pokemon.hiddenAbility && (
-              <span className="bg-gray-100 text-gray-800 text-xs text-center font-semibold px-1.5 py-0.5 rounded">
+              <span className='bg-gray-100 text-gray-800 text-xs text-center font-semibold px-1.5 py-0.5 rounded'>
                 {pokemon.hiddenAbility}
               </span>
             )}
@@ -129,13 +110,13 @@ function Footer({ pokemon }: Props) {
         pokemon.version === 'Scarlet' ? 'bg-scarlet' : 'bg-violet'
       )}
     >
-      <p className="flex items-center w-full justify-center md:justify-start md:pl-4">
+      <p className='flex items-center w-full justify-center md:justify-start md:pl-4'>
         {pokemon.version === 'Scarlet' ? (
-          <Icon.Version.Scarlet className="w-4 mr-1" />
+          <Icon.Version.Scarlet className='w-4 mr-1' />
         ) : (
-          <Icon.Version.Violet className="w-4 mr-1" />
+          <Icon.Version.Violet className='w-4 mr-1' />
         )}
-        <span className="hidden md:block">版本</span>
+        <span className='hidden md:block'>版本</span>
         限定
         {'('}
         {version}
@@ -145,20 +126,17 @@ function Footer({ pokemon }: Props) {
   );
 }
 
-export function Card({ pokemon }: Props) {
+const Card = memo(({ pokemon }: Props) => {
   const pid = pokemon.nationalId.toString().padStart(3, '0');
   const paldeaId = pokemon.paldeaId.toString().padStart(3, '0');
   const altForm = pokemon.altForm
     ? '-' + NameSuffix[pokemon.altForm as keyof typeof NameSuffix]
     : '';
 
-  const types = useFilterStore((state) => state.types);
-  const display = isDisplay(pokemon, types);
-
   return (
     <div
       className={clsx('w-[calc(100%/3-12px)] md:max-w-[180px] -mt-2 md:-mt-6', {
-        hidden: !display,
+        hidden: !pokemon.display,
       })}
     >
       <Header
@@ -172,4 +150,6 @@ export function Card({ pokemon }: Props) {
       {pokemon.version && <Footer pokemon={pokemon} />}
     </div>
   );
-}
+});
+
+export { Card };

@@ -1,12 +1,11 @@
 import clsx from 'clsx';
-import data from '../../data/base_list.json';
 
 import { Card, Icon } from '../../components';
 import { TypeMap } from '../../models';
 import { useFilterStore } from '../../store';
 
 function List() {
-  const { types, targetType } = useFilterStore((state) => state);
+  const { pokemonList, types, targetType } = useFilterStore();
 
   return (
     <div className='rounded-xl bg-orange-50'>
@@ -29,7 +28,7 @@ function List() {
         </ul>
       </form>
       <div className='flex flex-wrap justify-around gap-4 p-4'>
-        {data.map((pm) => (
+        {pokemonList.map((pm) => (
           <Card pokemon={pm} key={pm.paldeaId.toString() + pm.altForm} />
         ))}
       </div>
