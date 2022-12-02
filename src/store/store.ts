@@ -1,26 +1,32 @@
 import create from 'zustand';
+import { combine, devtools, NamedSet } from 'zustand/middleware';
+import pokemonList from '@/data/base_list.json';
+import { BasePokemon, TypeMap, TypeShow, TYPE_MAP } from '@/models';
 
-import { BasePokemon, TypeMap, TypeShow } from '../models';
-import pokemonList from '../data/base_list.json';
+type FilterAction = {
+  actions: {
+    targetType: (type: string) => void;
+    updateKeyword: (keyword: string) => void;
+  };
+};
 
-interface Filter {
+type FilterState = {
   pokemonList: BasePokemon[];
   types: TypeShow;
   keyword: string;
-  targetType: Function;
-}
+};
 
-const allOn = Object.keys(TypeMap).reduce((acc, cur) => {
+const allOn = TYPE_MAP.reduce((acc, cur) => {
   acc[cur] = true;
   return acc;
 }, {} as TypeShow);
 
-const allOff = Object.keys(TypeMap).reduce((acc, cur) => {
+const allOff = TYPE_MAP.reduce((acc, cur) => {
   acc[cur] = false;
   return acc;
 }, {} as TypeShow);
 
-const targetType = (types: TypeShow, type: keyof TypeMap) => {
+const genTargetType = (types: TypeShow, type: string) => {
   const isAllShow = Object.values(types).every(Boolean);
   if (isAllShow) {
     return {
@@ -49,25 +55,34 @@ const isDisplay = (pm: BasePokemon, types: TypeShow) => {
   return pm;
 };
 
-const newPokemonList = pokemonList.map((pm) => {
+const newPokemonList = pokemonList.map<BasePokemon>((pm) => {
   return {
     ...pm,
     display: true,
   };
 });
 
-export const useFilterStore = create<Filter>((set) => ({
+const state = {
   pokemonList: newPokemonList,
   types: allOn,
   keyword: '',
-  targetType: (type: keyof TypeMap) =>
-    set((state) => {
-      state.types = targetType(state.types, type);
+};
 
-      return {
-        types: state.types,
-        pokemonList: state.pokemonList.map((pm) => isDisplay(pm, state.types)),
-      };
-    }),
-  updateKeyword: (keyword: string) => set(() => ({ keyword })),
-}));
+const actions = (set: NamedSet<FilterState>): FilterAction => ({
+  actions: {
+    targetType: (type) =>
+      set((state) => {
+        state.types = genTargetType(state.types, type);
+
+        return {
+          types: state.types,
+          pokemonList: state.pokemonList.map((pm) => isDisplay(pm, state.types)),
+        };
+      }),
+    updateKeyword: (keyword) => set(() => ({ keyword })),
+  },
+});
+
+const store = combine<FilterState, FilterAction>(state, actions);
+export const useFilterStore = create(devtools(store, { name: 'Paldea filter' }));
+export const useFilterActions = () => useFilterStore((state) => state.actions);

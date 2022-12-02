@@ -1,33 +1,34 @@
 import clsx from 'clsx';
-
-import { Card, Icon } from '../../components';
-import { TypeMap } from '../../models';
-import { useFilterStore } from '../../store';
+import { Card, Icon } from '@/components';
+import { TYPE_MAP } from '@/models';
+import { useFilterActions, useFilterStore } from '@/store';
 
 function List() {
-  const { pokemonList, types, targetType } = useFilterStore();
+  const pokemonList = useFilterStore((state) => state.pokemonList);
+  const types = useFilterStore((state) => state.types);
+  const { targetType } = useFilterActions();
 
   return (
-    <div className='rounded-xl bg-orange-50'>
-      <form className='pt-6 px-4'>
-        <ul className='flex flex-col items-center gap-y-8'>
-          <li className='w-full md:w-5/6 flex flex-wrap justify-center items-center gap-4'>
-            {Object.keys(TypeMap).map((type) => (
-              <div key={type} className='group relative h-8'>
+    <div className="rounded-xl bg-orange-50">
+      <form className="px-4 pt-6">
+        <ul className="flex flex-col items-center gap-y-8">
+          <li className="flex w-full flex-wrap items-center justify-center gap-4 md:w-5/6">
+            {TYPE_MAP.map((type) => (
+              <div key={type} className="group relative h-8">
                 <Icon.Type
                   type={type}
-                  className={clsx('w-8 h-8', {
+                  className={clsx('h-8 w-8', {
                     'opacity-30': !types[type],
                   })}
                   button={true}
-                  clickFn={() => targetType(type)}
+                  onClick={() => targetType(type)}
                 />
               </div>
             ))}
           </li>
         </ul>
       </form>
-      <div className='flex flex-wrap justify-around gap-4 p-4'>
+      <div className="flex flex-wrap justify-around gap-4 p-4">
         {pokemonList.map((pm) => (
           <Card pokemon={pm} key={pm.paldeaId.toString() + pm.altForm} />
         ))}
