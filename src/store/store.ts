@@ -56,7 +56,7 @@ const newPokemonList = pokemonList.map((pm) => {
   };
 });
 
-export const useFilterStore = create<Filter>((set) => ({
+export const useFilterStore = create<Filter>()((set) => ({
   pokemonList: newPokemonList,
   types: allOn,
   keyword: '',
