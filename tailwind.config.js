@@ -12,6 +12,7 @@ module.exports = {
         green: '#4DB040',
         blue: '#0E90D3',
         orange: '#FC8002',
+        gold: '#A29834',
       },
       type: {
         bug: '#A2A329',
@@ -34,7 +35,11 @@ module.exports = {
         water: '#339DDF',
       },
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        18: 'repeat(18, minmax(0, 1fr))',
+      },
+    },
   },
   plugins: [require('flowbite/plugin')],
 };

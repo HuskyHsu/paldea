@@ -10,11 +10,14 @@ type FilterAction = {
   };
 };
 
-type FilterState = {
-  pokemonList: BasePokemon[];
+type FilterObject = {
   types: TypeShow;
   keyword: string;
 };
+
+interface FilterState extends FilterObject {
+  pokemonList: BasePokemon[];
+}
 
 const allOn = TYPE_MAP.reduce((acc, cur) => {
   acc[cur] = true;
@@ -46,10 +49,25 @@ const genTargetType = (types: TypeShow, type: string) => {
   };
 };
 
-const isDisplay = (pm: BasePokemon, types: TypeShow) => {
-  let display = pm.types.some((type) => types[type]);
-  if (pm.display !== display) {
-    return { ...pm, display: display };
+const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
+  let oldDisplay = pm.display;
+
+  let newDisplay = pm.types.some((type) => types[type]);
+
+  if (keyword) {
+    if (newDisplay) {
+      newDisplay =
+        pm.paldeaId.toString().includes(keyword) ||
+        pm.nameZh.includes(keyword) ||
+        pm.nameJp.includes(keyword) ||
+        pm.nameEn.includes(keyword) ||
+        pm.abilities.some((ability) => ability.includes(keyword)) ||
+        (pm.hiddenAbility ? pm.hiddenAbility?.includes(keyword) : false);
+    }
+  }
+
+  if (oldDisplay !== newDisplay) {
+    return { ...pm, display: newDisplay };
   }
 
   return pm;
@@ -76,10 +94,20 @@ const actions = (set: NamedSet<FilterState>): FilterAction => ({
 
         return {
           types: state.types,
-          pokemonList: state.pokemonList.map((pm) => isDisplay(pm, state.types)),
+          pokemonList: state.pokemonList.map((pm) =>
+            isDisplay(pm, { types: state.types, keyword: state.keyword })
+          ),
         };
       }),
-    updateKeyword: (keyword) => set(() => ({ keyword })),
+    updateKeyword: (keyword) =>
+      set((state) => {
+        return {
+          keyword: keyword,
+          pokemonList: state.pokemonList.map((pm) =>
+            isDisplay(pm, { types: state.types, keyword: keyword })
+          ),
+        };
+      }),
   },
 });
 

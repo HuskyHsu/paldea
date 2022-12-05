@@ -1,30 +1,39 @@
 import clsx from 'clsx';
-import { Card, Icon } from '@/components';
-import { TYPE_MAP } from '@/models';
-import { useFilterActions, useFilterStore } from '@/store';
+import { Card } from '@/components';
+import { useFilterStore } from '@/store';
+import { SearchBar } from './SearchBar';
+import { FilterTypeButton } from './FilterTypeButton';
+import { Hr } from './Hr';
 
 function List() {
   const pokemonList = useFilterStore((state) => state.pokemonList);
-  const types = useFilterStore((state) => state.types);
-  const { targetType } = useFilterActions();
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+  };
 
   return (
     <div className="rounded-xl bg-orange-50">
-      <form className="px-4 pt-6">
-        <ul className="flex flex-col items-center gap-y-8">
-          <li className="flex w-full flex-wrap items-center justify-center gap-4 md:w-5/6">
-            {TYPE_MAP.map((type) => (
-              <div key={type} className="group relative h-8">
-                <Icon.Type
-                  type={type}
-                  className={clsx('h-8 w-8', {
-                    'opacity-30': !types[type],
-                  })}
-                  button={true}
-                  onClick={() => targetType(type)}
-                />
-              </div>
-            ))}
+      <form className="px-4 pt-6" onSubmit={handleSubmit}>
+        <ul className="flex flex-col items-center gap-y-4">
+          <li
+            className={clsx(
+              'flex w-full flex-col items-center justify-between md:flex-row',
+              'gap-4 px-4'
+            )}
+          >
+            <SearchBar />
+          </li>
+          <li className="relative w-full">
+            <Hr />
+          </li>
+          <li
+            className={clsx(
+              'grid w-full gap-4 md:w-5/6',
+              'grid-cols-6 md:grid-cols-9 xl:grid-cols-18'
+            )}
+          >
+            <FilterTypeButton />
           </li>
         </ul>
       </form>
