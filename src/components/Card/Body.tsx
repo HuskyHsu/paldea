@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { BasePokemon } from '@/models';
+import { useFilterActions } from '@/store';
 import { Icon } from '..';
 
 interface BodyProps {
@@ -8,6 +9,8 @@ interface BodyProps {
 }
 
 export function Body({ pokemon, paldeaId }: BodyProps) {
+  const { updateKeyword } = useFilterActions();
+
   return (
     <div
       className={clsx(
@@ -41,17 +44,21 @@ export function Body({ pokemon, paldeaId }: BodyProps) {
             )}
           >
             {pokemon.abilities.map((ability) => (
-              <span
+              <button
                 className="rounded bg-blue-100 px-1.5 py-0.5 text-center text-xs font-semibold text-blue-800"
                 key={ability}
+                onClick={() => updateKeyword(ability)}
               >
                 {ability}
-              </span>
+              </button>
             ))}
             {pokemon.hiddenAbility && (
-              <span className="rounded bg-gray-100 px-1.5 py-0.5 text-center text-xs font-semibold text-gray-800">
+              <button
+                className="rounded bg-gray-100 px-1.5 py-0.5 text-center text-xs font-semibold text-gray-800"
+                onClick={() => updateKeyword(pokemon.hiddenAbility as string)}
+              >
                 {pokemon.hiddenAbility}
-              </span>
+              </button>
             )}
           </div>
         </div>

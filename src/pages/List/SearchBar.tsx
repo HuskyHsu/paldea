@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 
 import { Icon } from '@/components';
-import { useFilterActions } from '@/store';
+import { useFilterActions, useFilterStore } from '@/store';
 
 export function SearchBar() {
   const { updateKeyword } = useFilterActions();
+  const keyword = useFilterStore((state) => state.keyword);
   return (
     <>
       <div className="flex w-full items-start gap-2 md:items-center">
@@ -25,6 +26,7 @@ export function SearchBar() {
               'bg-gray-50 p-2 pl-10 text-sm text-gray-900'
             )}
             placeholder="搜尋編號/名稱"
+            value={keyword}
             onChange={(e) => updateKeyword(e.target.value)}
           />
         </div>
