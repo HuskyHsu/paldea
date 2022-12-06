@@ -13,7 +13,7 @@ function List() {
   };
 
   return (
-    <div className="rounded-xl bg-orange-50">
+    <div className="min-h-full rounded-xl bg-orange-50">
       <form className="px-4 pt-6" onSubmit={handleSubmit}>
         <ul className="flex flex-col items-center gap-y-4">
           <li

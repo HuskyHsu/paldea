@@ -5,7 +5,7 @@ import { Item } from './Item';
 
 function MainLayout() {
   return (
-    <div className="flex max-h-screen flex-col md:max-h-full md:flex-row">
+    <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
       <aside
         className={clsx(
           'flex w-screen flex-col space-y-2 md:h-screen md:w-64 md:p-4',
@@ -33,7 +33,7 @@ function MainLayout() {
           </Item>
         </div>
       </aside>
-      <div className="max-h-screen w-full overflow-y-auto md:p-4">
+      <div className="h-full max-h-screen w-full overflow-y-auto md:p-4">
         <Outlet />
       </div>
     </div>
