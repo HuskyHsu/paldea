@@ -16,5 +16,5 @@
 
 ### Issues
 
-- [ ] home page types button rwd to 6x3 grid
+- [x] home page types button rwd to 6x3 grid
 - [ ] special method for pokemon(Charizard, Perrserker, ...)
