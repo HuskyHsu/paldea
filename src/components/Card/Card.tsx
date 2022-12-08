@@ -12,9 +12,7 @@ export interface CardProps {
 export const Card = memo(({ pokemon }: CardProps) => {
   const pid = pokemon.nationalId.toString().padStart(3, '0');
   const paldeaId = pokemon.paldeaId.toString().padStart(3, '0');
-  const altForm = pokemon.altForm
-    ? '-' + NameSuffix[pokemon.altForm as keyof typeof NameSuffix]
-    : '';
+  const nameSuffix = pokemon.altForm ? NameSuffix[pokemon.altForm as keyof typeof NameSuffix] : '';
 
   return (
     <div
@@ -22,7 +20,12 @@ export const Card = memo(({ pokemon }: CardProps) => {
         hidden: !pokemon.display,
       })}
     >
-      <Header paldeaId={paldeaId} pid={pid} name={pokemon.nameZh} altForm={altForm} />
+      <Header
+        paldeaId={paldeaId}
+        pid={pid}
+        name={pokemon.nameZh}
+        altForm={`${nameSuffix && '-'}${nameSuffix}`}
+      />
       <Body pokemon={pokemon} paldeaId={paldeaId} />
 
       {pokemon.version && <Footer pokemon={pokemon} />}

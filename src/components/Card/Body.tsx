@@ -27,8 +27,8 @@ export function Body({ pokemon, paldeaId }: BodyProps) {
       >
         <p className="md:hidden">#{paldeaId}</p>
         <p>
-          {pokemon.nameZh}{' '}
-          {pokemon.altForm && <span className="text-xs font-thin">({pokemon.altForm})</span>}
+          {pokemon.nameZh}
+          {pokemon.altForm && <span className="block text-xs font-thin">({pokemon.altForm})</span>}
         </p>
         <div className="flex justify-center md:justify-between">
           <div className="flex justify-center gap-x-2 md:justify-start">
@@ -39,7 +39,7 @@ export function Body({ pokemon, paldeaId }: BodyProps) {
           <div
             className={clsx(
               'gap-y-2',
-              (pokemon.altForm === null || pokemon.altForm.length < 4) && '-mt-6',
+              pokemon.altForm === null ? '-mt-6' : '-mt-10',
               'hidden md:flex md:flex-col'
             )}
           >
