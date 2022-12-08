@@ -4,7 +4,7 @@ import json
 
 def get_list():
     response = requests.get(
-        "https://paldea.fly.dev/api/pokemons?sort=paldeaId&populate=*"
+        "https://paldea.fly.dev/api/pokemons?sort[0]=paldeaId&sort[1]=subId&pagination[limit]=500&populate[0]=typeList&populate[1]=abilities&populate[2]=hiddenAbility"
     )
     return response.json()
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             "hiddenAbility": attributes["hiddenAbility"]["data"]["attributes"]["nameZh"]
             if attributes["hiddenAbility"]["data"]
             else None,
-            "version": attributes["version"]
+            "version": attributes["version"],
         }
 
         output.append(data)
