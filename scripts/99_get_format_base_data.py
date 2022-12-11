@@ -17,6 +17,7 @@ if __name__ == "__main__":
     for base in base_list["data"]:
         attributes = base["attributes"]
         print(attributes["nameZh"])
+
         data = {
             "paldeaId": attributes["paldeaId"],
             "nationalId": attributes["nationalId"],
