@@ -9,6 +9,26 @@ def get_list():
     return response.json()
 
 
+def get_detail(id):
+    response = requests.get(
+        f"https://paldea.fly.dev/api/pokemons/{id}?populate[0]=levelingUps.move.type&populate[1]=technicalMachines.move.type&populate[2]=eggMoves.type"
+    )
+    return response.json()["data"]
+
+
+NameSuffix = {
+    "帕底亞": "p",
+    "帕底亞-鬥戰種": "p",
+    "帕底亞-火熾種": "b",
+    "帕底亞-水瀾種": "a",
+    "伽勒爾": "g",
+    "雌性": "f",
+    "黑夜": "m",
+    "黃昏": "d",
+    "低調": "l",
+    "全能形態": "h",
+}
+
 if __name__ == "__main__":
 
     base_list = get_list()
@@ -45,6 +65,77 @@ if __name__ == "__main__":
         }
 
         output.append(data)
+
+        detail = get_detail(base["id"])
+
+        detail_out = {
+            "levelingUps": [
+                {
+                    "level": item["attributes"]["level"],
+                    "nameZh": item["attributes"]["move"]["data"]["attributes"][
+                        "nameZh"
+                    ],
+                    "type": item["attributes"]["move"]["data"]["attributes"]["type"][
+                        "data"
+                    ]["attributes"]["nameZh"],
+                    "category": item["attributes"]["move"]["data"]["attributes"][
+                        "category"
+                    ],
+                    "accuracy": item["attributes"]["move"]["data"]["attributes"][
+                        "accuracy"
+                    ],
+                    "PP": item["attributes"]["move"]["data"]["attributes"]["PP"],
+                    "description": item["attributes"]["move"]["data"]["attributes"][
+                        "description"
+                    ],
+                }
+                for item in detail["attributes"]["levelingUps"]["data"]
+            ],
+            "technicalMachines": [
+                {
+                    "pid": item["attributes"]["pid"],
+                    "nameZh": item["attributes"]["move"]["data"]["attributes"][
+                        "nameZh"
+                    ],
+                    "type": item["attributes"]["move"]["data"]["attributes"]["type"][
+                        "data"
+                    ]["attributes"]["nameZh"],
+                    "category": item["attributes"]["move"]["data"]["attributes"][
+                        "category"
+                    ],
+                    "accuracy": item["attributes"]["move"]["data"]["attributes"][
+                        "accuracy"
+                    ],
+                    "PP": item["attributes"]["move"]["data"]["attributes"]["PP"],
+                    "description": item["attributes"]["move"]["data"]["attributes"][
+                        "description"
+                    ],
+                }
+                for item in detail["attributes"]["technicalMachines"]["data"]
+            ],
+            "eggMoves": [
+                {
+                    "nameZh": item["attributes"]["nameZh"],
+                    "type": item["attributes"]["type"]["data"]["attributes"]["nameZh"],
+                    "category": item["attributes"]["category"],
+                    "accuracy": item["attributes"]["accuracy"],
+                    "PP": item["attributes"]["PP"],
+                    "description": item["attributes"]["description"],
+                }
+                for item in detail["attributes"]["eggMoves"]["data"]
+            ],
+        }
+
+        file_name = str(attributes["nationalId"]).zfill(3)
+        if attributes["altForm"] in NameSuffix:
+            file_name += "-" + NameSuffix[attributes["altForm"]]
+
+        with open(
+            f"../public/data/pokemon/{file_name}.json",
+            "wt",
+            encoding="utf-8",
+        ) as fout:
+            fout.write(json.dumps(detail_out))
 
     with open("../src/data/base_list.json", "wt", encoding="utf-8") as fout:
         fout.write(json.dumps(output))
