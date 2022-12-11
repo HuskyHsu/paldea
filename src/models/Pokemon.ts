@@ -26,6 +26,8 @@ export enum NameSuffix {
   '黃昏' = 'd',
   '高調' = '',
   '低調' = 'l',
+  '平凡形態' = '',
+  '全能形態' = 'h',
 }
 
 export enum VersionType {
