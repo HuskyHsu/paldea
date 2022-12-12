@@ -1,16 +1,27 @@
 export interface BasePokemon {
-  paldeaId: number;
+  link: string;
+  paldeaId: string;
   nationalId: number;
   nameZh: string;
   nameJp: string;
   nameEn: string;
   types: string[];
-  stats?: number[];
+  stats: number[];
   altForm: string | null;
   abilities: string[];
   hiddenAbility: string | null;
   version: string | null;
   display: boolean;
+}
+
+export enum Stats {
+  Hp = 0,
+  Atk = 1,
+  Def = 2,
+  SpAtk = 3,
+  SpDef = 4,
+  Spd = 5,
+  Total = 6,
 }
 
 export enum NameSuffix {
@@ -26,6 +37,9 @@ export enum NameSuffix {
   '黃昏' = 'd',
   '高調' = '',
   '低調' = 'l',
+  '平凡形態' = '',
+  '全能形態' = 'h',
+  '特殊' = '',
 }
 
 export enum VersionType {
