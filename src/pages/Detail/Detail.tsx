@@ -32,7 +32,7 @@ function Detail() {
   }
 
   return (
-    <div className="p-2">
+    <div className="md:p-2">
       {data.levelingUps.length > 0 && <LevelUpMoveTable data={data.levelingUps} />}
       {data.technicalMachines.length > 0 && <TMMoveTable data={data.technicalMachines} />}
       {data.eggMoves.length > 0 && <EggMoveTable data={data.eggMoves} />}

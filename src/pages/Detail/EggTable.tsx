@@ -56,7 +56,7 @@ export function EggMoveTable({ data }: EggMoveTableProps) {
         {table.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <th scope="col" className="py-3 px-6" key={header.id}>
+              <th scope="col" className="py-3 px-2 md:px-6" key={header.id}>
                 {header.isPlaceholder
                   ? null
                   : flexRender(header.column.columnDef.header, header.getContext())}
@@ -69,7 +69,7 @@ export function EggMoveTable({ data }: EggMoveTableProps) {
         {table.getRowModel().rows.map((row) => (
           <tr className="border-b bg-white" key={row.id}>
             {row.getVisibleCells().map((cell) => (
-              <td className="py-3 px-6" key={cell.id}>
+              <td className="py-3 px-2 md:px-6" key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </td>
             ))}
