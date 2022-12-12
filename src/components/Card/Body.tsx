@@ -43,21 +43,27 @@ export function Body({ pokemon }: BodyProps) {
             )}
           >
             {pokemon.abilities.map((ability) => (
-              <button
+              <span
                 className="rounded bg-blue-100 px-1.5 py-0.5 text-center text-xs font-semibold text-blue-800"
                 key={ability}
-                onClick={() => updateKeyword(ability)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  updateKeyword(ability);
+                }}
               >
                 {ability}
-              </button>
+              </span>
             ))}
             {pokemon.hiddenAbility && (
-              <button
+              <span
                 className="rounded bg-gray-100 px-1.5 py-0.5 text-center text-xs font-semibold text-gray-800"
-                onClick={() => updateKeyword(pokemon.hiddenAbility as string)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  updateKeyword(pokemon.hiddenAbility as string);
+                }}
               >
                 {pokemon.hiddenAbility}
-              </button>
+              </span>
             )}
           </div>
         </div>
