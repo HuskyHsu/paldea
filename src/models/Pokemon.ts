@@ -1,5 +1,6 @@
 export interface BasePokemon {
-  paldeaId: number;
+  link: string;
+  paldeaId: string;
   nationalId: number;
   nameZh: string;
   nameJp: string;

@@ -5,10 +5,9 @@ import { Icon } from '..';
 
 interface BodyProps {
   pokemon: BasePokemon;
-  paldeaId: string;
 }
 
-export function Body({ pokemon, paldeaId }: BodyProps) {
+export function Body({ pokemon }: BodyProps) {
   const { updateKeyword } = useFilterActions();
 
   return (
@@ -25,7 +24,7 @@ export function Body({ pokemon, paldeaId }: BodyProps) {
           'flex flex-col gap-y-1 pt-2 pb-4'
         )}
       >
-        <p className="md:hidden">#{paldeaId}</p>
+        <p className="md:hidden">#{pokemon.paldeaId}</p>
         <p>
           {pokemon.nameZh}
           {pokemon.altForm && <span className="block text-xs font-thin">({pokemon.altForm})</span>}
