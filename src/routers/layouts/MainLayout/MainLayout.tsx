@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
-import { Icon } from '@/components';
+import { Icon, BackToTopButton } from '@/components';
 import { Item } from './Item';
 
 function MainLayout() {
@@ -36,6 +36,7 @@ function MainLayout() {
       <div className="h-full max-h-screen w-full overflow-y-auto md:p-4">
         <Outlet />
       </div>
+      <BackToTopButton />
     </div>
   );
 }

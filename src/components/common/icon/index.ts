@@ -5,6 +5,7 @@ import { ReactComponent as Compass } from '@/assets/icon/Compass.svg';
 import { ReactComponent as Search } from '@/assets/icon/Search.svg';
 import { ReactComponent as Scarlet } from '@/assets/icon/Scarlet.svg';
 import { ReactComponent as Violet } from '@/assets/icon/Violet.svg';
+import { ReactComponent as BackToTop } from '@/assets/icon/BackToTop.svg';
 
 import { Type } from './TypeIcon';
 
@@ -13,4 +14,4 @@ const Version = {
   Violet,
 };
 
-export { Bag, Book, Books, Compass, Search, Version, Type };
+export { Bag, Book, Books, Compass, Search, Version, BackToTop, Type };
