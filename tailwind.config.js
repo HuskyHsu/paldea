@@ -13,6 +13,7 @@ module.exports = {
         blue: '#0E90D3',
         orange: '#FC8002',
         gold: '#A29834',
+        lightgrey: '#FCFAF7',
       },
       type: {
         bug: '#A2A329',

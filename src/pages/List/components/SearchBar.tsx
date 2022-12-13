@@ -6,6 +6,7 @@ import { useFilterActions, useFilterStore } from '@/store';
 export function SearchBar() {
   const { updateKeyword } = useFilterActions();
   const keyword = useFilterStore((state) => state.keyword);
+
   return (
     <>
       <div className="flex w-full items-start gap-2 md:items-center">
@@ -14,7 +15,7 @@ export function SearchBar() {
         </div>
         <h2 className="text-2xl">圖鑑清單</h2>
       </div>
-      <div className="w-full md:w-72">
+      <div className="w-full md:w-96">
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <Icon.Search className="h-5 w-5" />
