@@ -13,7 +13,7 @@ export interface CardProps {
 export const Card = memo(({ pokemon }: CardProps) => {
   const navigate = useNavigate();
   function handleClick() {
-    navigate(`/${pokemon.link}`, { state: { pokemon } });
+    navigate(`/${pokemon.link}`);
   }
 
   return (
