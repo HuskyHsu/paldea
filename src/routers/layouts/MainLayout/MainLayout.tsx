@@ -8,10 +8,20 @@ function MainLayout() {
   const { ref, toggleVisibility } = useBackToTopContext();
 
   useEffect(() => {
-    ref.current?.addEventListener('scroll', () => {
+    if (!ref.current) return;
+
+    const current = ref.current;
+
+    current.addEventListener('scroll', () => {
       toggleVisibility();
     });
-  });
+
+    return () => {
+      current.removeEventListener('scroll', () => {
+        toggleVisibility();
+      });
+    };
+  }, [ref, toggleVisibility]);
 
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">

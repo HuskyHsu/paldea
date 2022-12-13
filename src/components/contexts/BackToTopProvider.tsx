@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useRef } from 'react';
+import { createContext, useContext, useState, useRef, PropsWithChildren } from 'react';
 import clsx from 'clsx';
 import { Icon } from '..';
 
@@ -9,14 +9,14 @@ interface BackToTopContextType {
   toggleVisibility: () => void;
 }
 
-export const BackToTopContext = createContext<BackToTopContextType>(null!);
-export const useBackToTopContext = () => useContext(BackToTopContext);
+export const BackToTopContext = createContext<BackToTopContextType>({
+  isVisible: false,
+  setIsVisible: () => {},
+  ref: { current: null },
+  toggleVisibility: () => {},
+});
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export const BackToTopProvider = ({ children }: Props) => {
+export const BackToTopProvider = ({ children }: PropsWithChildren) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -29,7 +29,7 @@ export const BackToTopProvider = ({ children }: Props) => {
   };
 
   const toggleVisibility = () => {
-    if (ref.current === null) return;
+    if (!ref.current) return;
     if (ref.current.scrollTop > 200) {
       setIsVisible(true);
     } else {
@@ -50,3 +50,4 @@ export const BackToTopProvider = ({ children }: Props) => {
     </BackToTopContext.Provider>
   );
 };
+export const useBackToTopContext = () => useContext(BackToTopContext);
