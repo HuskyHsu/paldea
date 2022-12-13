@@ -14,7 +14,7 @@ export const useBackToTopContext = () => useContext(BackToTopContext);
 
 type Props = {
   children: React.ReactNode;
-}
+};
 
 export const BackToTopProvider = ({ children }: Props) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +26,7 @@ export const BackToTopProvider = ({ children }: Props) => {
       top: 0,
       behavior: 'smooth',
     });
-  }
+  };
 
   const toggleVisibility = () => {
     if (ref.current === null) return;
@@ -35,18 +35,18 @@ export const BackToTopProvider = ({ children }: Props) => {
     } else {
       setIsVisible(false);
     }
-  }
+  };
 
   return (
     <BackToTopContext.Provider value={{ isVisible, setIsVisible, ref, toggleVisibility }}>
       {children}
       <button
-      type="button"
-      className={clsx('fixed bottom-8 right-8', !isVisible && 'pointer-events-none opacity-0')}
-      onClick={scrollToTop}
-    >
-      <Icon.BackToTop />
-    </button>
+        type="button"
+        className={clsx('fixed bottom-8 right-8', !isVisible && 'pointer-events-none opacity-0')}
+        onClick={scrollToTop}
+      >
+        <Icon.BackToTop />
+      </button>
     </BackToTopContext.Provider>
   );
 };

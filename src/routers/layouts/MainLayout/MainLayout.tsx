@@ -5,13 +5,13 @@ import { Item } from './Item';
 import { useEffect } from 'react';
 
 function MainLayout() {
-  const { ref, toggleVisibility} = useBackToTopContext();
+  const { ref, toggleVisibility } = useBackToTopContext();
 
   useEffect(() => {
     ref.current?.addEventListener('scroll', () => {
       toggleVisibility();
     });
-  })
+  });
 
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
@@ -42,9 +42,9 @@ function MainLayout() {
           </Item>
         </div>
       </aside>
-        <div className="h-full max-h-screen w-full overflow-y-auto md:p-4" ref={ref}>
-          <Outlet />
-        </div>
+      <div className="h-full max-h-screen w-full overflow-y-auto md:p-4" ref={ref}>
+        <Outlet />
+      </div>
     </div>
   );
 }
