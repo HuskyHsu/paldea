@@ -1,10 +1,11 @@
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
-import { useLocation, useParams } from 'react-router-dom';
-import { BasePokemon, Stats } from '@/models';
+import { useParams } from 'react-router-dom';
+import { Stats } from '@/models';
 import { Icon } from '@/components';
 import { EggMoveTable } from './EggTable';
 import { LevelUpMoveTable } from './LevelUpTable';
 import { TMMoveTable } from './MTTable';
+import { useFilterStore } from '@/store';
 
 const queryClient = new QueryClient();
 
@@ -17,10 +18,9 @@ function App() {
 }
 
 function Detail() {
-  const { state } = useLocation();
-  const pokemon: BasePokemon = state.pokemon;
-
   let { link } = useParams();
+  const pokemonList = useFilterStore((state) => state.pokemonList);
+  const pokemon = pokemonList.find((pm) => pm.link === link) ?? pokemonList[0];
 
   const { isLoading, isError, data, error } = useQuery({
     queryKey: [link],
