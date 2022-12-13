@@ -46,3 +46,20 @@ export enum VersionType {
   'Scarlet' = '朱',
   'Violet' = '紫',
 }
+
+export interface BaseMove {
+  nameZh: string;
+  type: string;
+  category: string;
+  power: number;
+  accuracy: number;
+  PP: number;
+  description: string;
+}
+export interface LevelUpMove extends BaseMove {
+  level: number;
+}
+
+export interface TMMove extends BaseMove {
+  pid: number;
+}

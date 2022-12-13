@@ -9,14 +9,17 @@ export function Footer({ pokemon }: CardProps) {
   const { updateKeyword } = useFilterActions();
 
   return (
-    <button
+    <div
       className={clsx(
         'flex w-full justify-center',
         'rounded-b-xl py-1',
         'text-sm text-white',
         pokemon.version === 'Scarlet' ? 'bg-scarlet' : 'bg-violet'
       )}
-      onClick={() => updateKeyword(version)}
+      onClick={(event) => {
+        event.stopPropagation();
+        updateKeyword(version);
+      }}
     >
       <p className="flex w-full items-center justify-center md:justify-start md:pl-4">
         {pokemon.version === 'Scarlet' ? (
@@ -28,6 +31,6 @@ export function Footer({ pokemon }: CardProps) {
         限定
         {`(${version})`}
       </p>
-    </button>
+    </div>
   );
 }

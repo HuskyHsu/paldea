@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if False:
+        if True:
             detail = get_detail(base["id"])
 
             detail_out = {
@@ -86,6 +86,9 @@ if __name__ == "__main__":
                         ]["data"]["attributes"]["nameZh"],
                         "category": item["attributes"]["move"]["data"]["attributes"][
                             "category"
+                        ],
+                        "power": item["attributes"]["move"]["data"]["attributes"][
+                            "power"
                         ],
                         "accuracy": item["attributes"]["move"]["data"]["attributes"][
                             "accuracy"
@@ -109,6 +112,9 @@ if __name__ == "__main__":
                         "category": item["attributes"]["move"]["data"]["attributes"][
                             "category"
                         ],
+                        "power": item["attributes"]["move"]["data"]["attributes"][
+                            "power"
+                        ],
                         "accuracy": item["attributes"]["move"]["data"]["attributes"][
                             "accuracy"
                         ],
@@ -126,6 +132,7 @@ if __name__ == "__main__":
                             "nameZh"
                         ],
                         "category": item["attributes"]["category"],
+                        "power": item["attributes"]["power"],
                         "accuracy": item["attributes"]["accuracy"],
                         "PP": item["attributes"]["PP"],
                         "description": item["attributes"]["description"],
