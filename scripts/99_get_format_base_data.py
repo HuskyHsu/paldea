@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if True:
+        if attributes["paldeaId"] == 9999:
             detail = get_detail(base["id"])
 
             detail_out = {
