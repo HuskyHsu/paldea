@@ -44,7 +44,9 @@ if __name__ == "__main__":
 
         data = {
             "link": link_str,
-            "paldeaId": str(attributes["paldeaId"]).zfill(3),
+            "paldeaId": "---"
+            if attributes["paldeaId"] == 9999
+            else str(attributes["paldeaId"]).zfill(3),
             "nationalId": attributes["nationalId"],
             "nameZh": attributes["nameZh"],
             "nameJp": attributes["nameJp"],
@@ -71,7 +73,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if attributes["paldeaId"] == 9999:
+        if False:
             detail = get_detail(base["id"])
 
             detail_out = {

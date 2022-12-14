@@ -15,7 +15,7 @@ export function Header({ paldeaId, name, link }: HeaderProps) {
         '-mb-8 px-3 md:px-4'
       )}
     >
-      <span className="hidden leading-none md:block">#{paldeaId}</span>
+      <span className="hidden whitespace-nowrap leading-none md:block">{`#${paldeaId}`}</span>
       <img
         className="min-h-[83px] md:min-h-[148px]"
         src={`${process.env.PUBLIC_URL}/image/icon/${link}.png`}

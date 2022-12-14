@@ -9,8 +9,8 @@ function List() {
     <div className="min-h-full rounded-xl bg-custom-lightgrey drop-shadow-xl">
       <Header />
       <div className="flex flex-wrap justify-around gap-4 p-4">
-        {pokemonList.map((pm) => (
-          <Card pokemon={pm} key={pm.paldeaId.toString() + pm.altForm} />
+        {pokemonList.map((pm, i) => (
+          <Card pokemon={pm} key={pm.paldeaId.toString() + pm.altForm + String(i)} />
         ))}
       </div>
     </div>
