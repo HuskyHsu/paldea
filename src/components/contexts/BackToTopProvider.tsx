@@ -9,7 +9,7 @@ interface BackToTopContextType {
   toggleVisibility: () => void;
 }
 
-export const BackToTopContext = createContext<BackToTopContextType>({
+const BackToTopContext = createContext<BackToTopContextType>({
   isVisible: false,
   setIsVisible: () => {},
   ref: { current: null },
@@ -28,14 +28,14 @@ export const BackToTopProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
-  const toggleVisibility = () => {
+  function toggleVisibility() {
     if (!ref.current) return;
     if (ref.current.scrollTop > 200) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
     }
-  };
+  }
 
   return (
     <BackToTopContext.Provider value={{ isVisible, setIsVisible, ref, toggleVisibility }}>

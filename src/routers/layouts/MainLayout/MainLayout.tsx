@@ -12,14 +12,10 @@ function MainLayout() {
 
     const current = ref.current;
 
-    const fn = () => {
-      toggleVisibility();
-    };
-
-    current.addEventListener('scroll', fn);
+    current.addEventListener('scroll', toggleVisibility);
 
     return () => {
-      current.removeEventListener('scroll', fn);
+      current.removeEventListener('scroll', toggleVisibility);
     };
   }, [ref, toggleVisibility]);
 
