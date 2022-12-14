@@ -1,9 +1,24 @@
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
-import { Icon } from '@/components';
+import { Icon, useBackToTopContext } from '@/components';
 import { Item } from './Item';
+import { useEffect } from 'react';
 
 function MainLayout() {
+  const { ref, toggleVisibility } = useBackToTopContext();
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const current = ref.current;
+
+    current.addEventListener('scroll', toggleVisibility);
+
+    return () => {
+      current.removeEventListener('scroll', toggleVisibility);
+    };
+  }, [ref, toggleVisibility]);
+
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
       <aside
@@ -33,7 +48,7 @@ function MainLayout() {
           </Item>
         </div>
       </aside>
-      <div className="h-full max-h-screen w-full overflow-y-auto md:p-4">
+      <div className="h-full max-h-screen w-full overflow-y-auto md:p-4" ref={ref}>
         <Outlet />
       </div>
     </div>
