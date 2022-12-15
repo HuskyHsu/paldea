@@ -22,7 +22,7 @@ export const Card = memo(({ pokemon }: CardProps) => {
         hidden: !pokemon.display,
       })}
     >
-      <button onClick={handleClick}>
+      <button className='w-full' onClick={handleClick}>
         <Header paldeaId={pokemon.paldeaId} name={pokemon.nameZh} link={pokemon.link} />
         <Body pokemon={pokemon} />
 
