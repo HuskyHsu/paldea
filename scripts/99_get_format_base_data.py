@@ -69,6 +69,11 @@ if __name__ == "__main__":
             if attributes["hiddenAbility"]["data"]
             else None,
             "version": attributes["version"],
+            "basePoint": attributes["basePoint"],
+            "gender": {
+                "M": int(attributes["gender"][1]),
+                "F": int(attributes["gender"][3]),
+            },
         }
 
         output.append(data)

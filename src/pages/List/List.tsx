@@ -21,7 +21,7 @@ function List() {
           .filter((pm) => pm.display)
           .filter((_, i) => i < displayCount)
           .map((pm, i) => {
-            const key = pm.paldeaId.toString() + pm.altForm + String(i);
+            const key = pm.link + String(i);
             return (
               <Card
                 pokemon={pm}

@@ -1,3 +1,7 @@
+interface Gender {
+  M: number;
+  F: number;
+}
 export interface BasePokemon {
   link: string;
   paldeaId: string;
@@ -12,6 +16,8 @@ export interface BasePokemon {
   hiddenAbility: string | null;
   version: string | null;
   display: boolean;
+  basePoint: string;
+  gender: Gender;
 }
 
 export enum Stats {

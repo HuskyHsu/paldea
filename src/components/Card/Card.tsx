@@ -1,4 +1,4 @@
-import { memo, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { useNavigate } from 'react-router-dom';
 import { BasePokemon } from '@/models';
@@ -27,9 +27,11 @@ export const Card = memo(
     const entry = useIntersectionObserver(ref, {});
     const isVisible = !!entry?.isIntersecting;
 
-    if (isVisible && maxIndex === index + 1) {
-      updateDisplayCount();
-    }
+    useEffect(() => {
+      if (isVisible && maxIndex === index + 1) {
+        updateDisplayCount();
+      }
+    }, [isVisible, index, maxIndex, updateDisplayCount]);
 
     return (
       <div
