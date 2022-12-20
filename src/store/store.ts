@@ -63,7 +63,7 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
         pm.nameEn.includes(keyword) ||
         pm.abilities.some((ability) => ability.includes(keyword)) ||
         (pm.hiddenAbility ? pm.hiddenAbility?.includes(keyword) : false) ||
-        pm.basePoint.includes(keyword) ||
+        pm.basePoint.startsWith(keyword) ||
         (keyword === '朱' && pm.version === 'Scarlet') ||
         (keyword === '紫' && pm.version === 'Violet');
     }
