@@ -22,7 +22,8 @@ def get_move_list(start):
         "populate[0]": "type",
         "populate[1]": "levelingUps.pokemon",
         "populate[2]": "technicalMachine.pokemon",
-        "populate[3]": "eggPokemons&sort[0]=pid",
+        "populate[3]": "eggPokemons",
+        "sort[0]": "pid",
         "pagination[limit]": 50,
         "pagination[start]": start,
     }
@@ -75,8 +76,31 @@ if __name__ == "__main__":
             attributes = base["attributes"]
             print(attributes["nameZh"])
 
-            if len(attributes["levelingUps"]["data"]) == 0:
+            if (
+                len(attributes["levelingUps"]["data"]) == 0
+                and attributes["technicalMachine"]["data"] is None
+                and len(attributes["eggPokemons"]["data"]) == 0
+            ):
                 continue
+
+            technicalMachine = None
+            if attributes["technicalMachine"]["data"] is not None:
+                technicalMachine = {
+                    "leaguePoint": attributes["technicalMachine"]["data"]["attributes"][
+                        "leaguePoint"
+                    ],
+                    "material": attributes["technicalMachine"]["data"]["attributes"][
+                        "material"
+                    ],
+                    "pokemon": [
+                        pm["attributes"]["link"]
+                        for pm in attributes["technicalMachine"]["data"]["attributes"][
+                            "pokemon"
+                        ]["data"]
+                    ],
+                }
+
+            # print(attributes["eggPokemons"])
 
             data = {
                 "nameZh": attributes["nameZh"],
@@ -97,10 +121,14 @@ if __name__ == "__main__":
                     }
                     for levelingUp in attributes["levelingUps"]["data"]
                 ],
+                "technicalMachine": technicalMachine,
+                "eggPokemons": [
+                    pm["attributes"]["link"] for pm in attributes["eggPokemons"]["data"]
+                ],
             }
 
             with open(
-                f"../public/data/relation/moves/{attributes['pid']}.json",
+                f"../public/data/relation/moves/{attributes['nameZh']}.json",
                 "wt",
                 encoding="utf-8",
             ) as fout:
