@@ -1,6 +1,5 @@
 import { memo, useEffect, useRef } from 'react';
 import clsx from 'clsx';
-import { useNavigate } from 'react-router-dom';
 import { BasePokemon } from '@/models';
 import { Footer } from './Footer';
 import { Body } from './Body';
@@ -18,11 +17,6 @@ export const Card = memo(
     index,
     updateDisplayCount,
   }: CardProps & { maxIndex: number; index: number; updateDisplayCount: Function }) => {
-    const navigate = useNavigate();
-    function handleClick() {
-      navigate(`/${pokemon.link}`);
-    }
-
     const ref = useRef<HTMLDivElement | null>(null);
     const entry = useIntersectionObserver(ref, {});
     const isVisible = !!entry?.isIntersecting;
@@ -40,12 +34,12 @@ export const Card = memo(
         })}
         ref={ref}
       >
-        <button className="w-full" onClick={handleClick}>
+        <div className="w-full">
           <Header paldeaId={pokemon.paldeaId} name={pokemon.nameZh} link={pokemon.link} />
           <Body pokemon={pokemon} />
 
           {pokemon.version && <Footer pokemon={pokemon} />}
-        </button>
+        </div>
       </div>
     );
   }

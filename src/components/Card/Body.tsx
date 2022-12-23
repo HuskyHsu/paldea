@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useNavigate } from 'react-router-dom';
 import { BasePokemon } from '@/models';
 import { useFilterActions } from '@/store';
 import { Icon } from '..';
@@ -9,14 +10,20 @@ interface BodyProps {
 
 export function Body({ pokemon }: BodyProps) {
   const { updateKeyword } = useFilterActions();
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate(`/${pokemon.link}`);
+  }
 
   return (
     <div
       className={clsx(
         'rounded-xl bg-white shadow-[0_5px_25px_rgba(0,0,0,0.1)]',
         'px-3 pt-10 text-center md:px-4 md:text-start',
+        'cursor-pointer',
         pokemon.version && 'rounded-b-none'
       )}
+      onClick={handleClick}
     >
       <div
         className={clsx(
