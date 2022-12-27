@@ -59,7 +59,7 @@ function Detail() {
           ))}
       </ul>
 
-      <p>基礎點數: {pokemon.basePoint}</p>
+      <p>基礎點數: {JSON.stringify(pokemon.basePoint)}</p>
       <p>
         性別比例: 公{(pokemon.gender.M / 8) * 100}% 母{(pokemon.gender.F / 8) * 100}%
       </p>

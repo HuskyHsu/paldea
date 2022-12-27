@@ -42,6 +42,20 @@ if __name__ == "__main__":
         if attributes["altForm"] in NameSuffix:
             link_str += "-" + NameSuffix[attributes["altForm"]]
 
+        base_point = {
+            "Hp": 0,
+            "Atk": 0,
+            "Def": 0,
+            "SpAtk": 0,
+            "SpDef": 0,
+            "Spd": 0,
+            "Total": 0,
+        }
+
+        for bp in attributes["basePoint"].split(","):
+            base_point[bp.split("=")[0]] = int(bp.split("=")[1])
+            base_point["Total"] += base_point[bp.split("=")[0]]
+
         data = {
             "link": link_str,
             "paldeaId": "---"
@@ -69,7 +83,7 @@ if __name__ == "__main__":
             if attributes["hiddenAbility"]["data"]
             else None,
             "version": attributes["version"],
-            "basePoint": attributes["basePoint"],
+            "basePoint": base_point,
             "gender": {
                 "M": int(attributes["gender"][1]),
                 "F": int(attributes["gender"][3]),

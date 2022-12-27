@@ -2,6 +2,17 @@ interface Gender {
   M: number;
   F: number;
 }
+
+interface BasePoint {
+  Hp: number;
+  Atk: number;
+  Def: number;
+  SpAtk: number;
+  SpDef: number;
+  Spd: number;
+  Total: number;
+}
+
 export interface BasePokemon {
   link: string;
   paldeaId: string;
@@ -16,7 +27,7 @@ export interface BasePokemon {
   hiddenAbility: string | null;
   version: string | null;
   display: boolean;
-  basePoint: string;
+  basePoint: BasePoint;
   gender: Gender;
 }
 

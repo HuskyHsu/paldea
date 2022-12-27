@@ -1,7 +1,7 @@
 import create from 'zustand';
 import { combine, devtools, NamedSet } from 'zustand/middleware';
 import pokemonList from '@/data/base_list.json';
-import { BasePokemon, TypeMap, TypeShow, TYPE_MAP } from '@/models';
+import { BasePokemon, Stats, TypeMap, TypeShow, TYPE_MAP } from '@/models';
 
 type FilterAction = {
   actions: {
@@ -63,7 +63,7 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
         pm.nameEn.includes(keyword) ||
         pm.abilities.some((ability) => ability.includes(keyword)) ||
         (pm.hiddenAbility ? pm.hiddenAbility?.includes(keyword) : false) ||
-        pm.basePoint.startsWith(keyword) ||
+        pm.basePoint[keyword as keyof typeof Stats] > 0 ||
         (keyword === '朱' && pm.version === 'Scarlet') ||
         (keyword === '紫' && pm.version === 'Violet');
     }
