@@ -53,10 +53,14 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
   let oldDisplay = pm.display;
   let newDisplay = false;
 
-  if (Object.values(types).filter(Boolean).length === 1) {
+  const trueCount = Object.values(types).filter(Boolean).length;
+
+  if (trueCount === 1) {
     newDisplay = pm.types.some((type) => types[type]);
-  } else if (Object.values(types).filter(Boolean).length === 2 && pm.types.length === 2) {
+  } else if (trueCount === 2 && pm.types.length === 2) {
     newDisplay = pm.types.every((type) => types[type]);
+  } else if (trueCount === 18) {
+    newDisplay = true;
   }
 
   if (keyword) {
