@@ -17,7 +17,7 @@ export function Header() {
         >
           <SearchBar />
         </li>
-        <li className="relative w-full">
+        <li className="w-full">
           <Hr />
         </li>
         <li

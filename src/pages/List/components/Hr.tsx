@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 export function Hr() {
   return (
-    <>
+    <div className="relative">
       <hr className="border-b-1 h-px w-full border-custom-gold" />
       <div
         className={clsx(
@@ -22,6 +22,6 @@ export function Hr() {
           'border-l-custom-gold border-b-transparent'
         )}
       />
-    </>
+    </div>
   );
 }

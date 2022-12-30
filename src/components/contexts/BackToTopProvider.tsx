@@ -37,6 +37,8 @@ export const BackToTopProvider = ({ children }: PropsWithChildren) => {
     }
   }
 
+  const isMobile = window.screen.width < 768;
+
   return (
     <BackToTopContext.Provider value={{ isVisible, setIsVisible, ref, toggleVisibility }}>
       {children}
@@ -45,7 +47,7 @@ export const BackToTopProvider = ({ children }: PropsWithChildren) => {
         className={clsx('fixed bottom-8 right-8', !isVisible && 'pointer-events-none opacity-0')}
         onClick={scrollToTop}
       >
-        <Icon.BackToTop />
+        <Icon.BackToTop className={clsx(isMobile ? 'h-12 w-12' : 'h-16 w-16')} />
       </button>
     </BackToTopContext.Provider>
   );
