@@ -71,7 +71,7 @@ function Moves() {
   return (
     <div className="flex justify-center">
       <table className="w-full max-w-4xl rounded-lg text-left text-sm text-gray-500 shadow-md">
-        <thead className="bg-gray-200 text-xs uppercase text-gray-700">
+        <thead className="sticky top-0 bg-gray-200 text-xs uppercase text-gray-700">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
