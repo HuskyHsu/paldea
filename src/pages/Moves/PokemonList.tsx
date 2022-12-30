@@ -11,7 +11,7 @@ function PokemonBadge({ pm, getText }: { pm: BasePokemon; getText: Function }) {
   return (
     <span
       className={clsx(
-        'mr-2 break-words rounded px-2.5 py-0.5 text-xs font-semibold text-white',
+        'mr-2 break-normal rounded px-2.5 py-0.5 text-xs font-semibold text-white',
         'bg-gradient-to-r',
         BgFromClass[pm.types[0] as keyof typeof BgClass],
         BgToClass[pm.types[pm.types.length - 1] as keyof typeof BgClass]
