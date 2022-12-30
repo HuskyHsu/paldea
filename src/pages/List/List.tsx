@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import clsx from 'clsx';
 
 import { Card } from '@/components';
 import { useFilterStore } from '@/store';
@@ -14,10 +15,12 @@ function List() {
     setDisplayCount((prev) => prev + 20);
   };
 
+  const otherPmList = pokemonList.filter((pm) => pm.paldeaId === '---').filter((pm) => pm.display);
+
   return (
     <div className="min-h-full rounded-xl bg-custom-lightgrey drop-shadow-xl">
       <Header />
-      <div className="flex flex-wrap justify-around gap-4 p-4">
+      <div className="grid grid-cols-list-mobile justify-around gap-4 p-4 md:grid-cols-list">
         {pokemonList
           .filter((pm) => pm.paldeaId !== '---')
           .filter((pm) => pm.display)
@@ -35,27 +38,26 @@ function List() {
             );
           })}
       </div>
-      <div className="p-4">
+      <div
+        className={clsx('p-4', {
+          hidden: otherPmList.length === 0,
+        })}
+      >
         <Hr />
       </div>
-      <div className="flex flex-col items-center px-4 pb-4">
-        <div className="flex flex-wrap justify-around gap-4">
-          {pokemonList
-            .filter((pm) => pm.paldeaId === '---')
-            .filter((pm) => pm.display)
-            .map((pm, i) => {
-              const key = pm.link + String(i);
-              return (
-                <Card
-                  pokemon={pm}
-                  maxIndex={displayCount}
-                  index={i}
-                  updateDisplayCount={updateDisplayCount}
-                  key={key}
-                />
-              );
-            })}
-        </div>
+      <div className="grid grid-cols-list-mobile justify-around gap-4 px-4 pb-4 md:grid-cols-list">
+        {otherPmList.map((pm, i) => {
+          const key = pm.link + String(i);
+          return (
+            <Card
+              pokemon={pm}
+              maxIndex={9999}
+              index={i}
+              updateDisplayCount={updateDisplayCount}
+              key={key}
+            />
+          );
+        })}
       </div>
     </div>
   );

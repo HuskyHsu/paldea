@@ -39,6 +39,8 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         18: 'repeat(18, minmax(0, 1fr))',
+        list: 'repeat(auto-fill, 180px)',
+        'list-mobile': 'repeat(auto-fill, 30%)',
       },
     },
   },

@@ -29,7 +29,7 @@ export const Card = memo(
 
     return (
       <div
-        className={clsx('-mt-2 w-[calc(100%/3-12px)] md:-mt-6 md:max-w-[180px]', {
+        className={clsx('-mt-2 w-full md:-mt-6 md:max-w-[180px]', {
           hidden: !pokemon.display,
         })}
         ref={ref}

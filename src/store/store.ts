@@ -51,8 +51,13 @@ const genTargetType = (types: TypeShow, type: string) => {
 
 const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
   let oldDisplay = pm.display;
+  let newDisplay = false;
 
-  let newDisplay = pm.types.some((type) => types[type]);
+  if (Object.values(types).filter(Boolean).length === 1) {
+    newDisplay = pm.types.some((type) => types[type]);
+  } else if (Object.values(types).filter(Boolean).length === 2 && pm.types.length === 2) {
+    newDisplay = pm.types.every((type) => types[type]);
+  }
 
   if (keyword) {
     if (newDisplay) {
