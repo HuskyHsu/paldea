@@ -8,12 +8,22 @@ export async function api<T>(url: string): Promise<T> {
   return data as T;
 }
 
-export function useApi<T>({ queryKey, path }: { queryKey: string; path: string }) {
+export function useApi<T>({
+  queryKey,
+  path,
+  initialData,
+}: {
+  queryKey: string;
+  path: string;
+  initialData: T;
+}) {
   const query = useQuery({
     queryKey: [queryKey],
     queryFn: () => api<T>(path),
+    initialData: initialData as T,
+    enabled: true,
     refetchInterval: false,
-    refetchOnMount: false,
+    refetchOnMount: 'always',
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
   });

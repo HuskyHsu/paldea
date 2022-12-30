@@ -31,7 +31,9 @@ export function Body({ pokemon }: BodyProps) {
           'flex flex-col gap-y-1 pt-2 pb-4'
         )}
       >
-        <p className="md:hidden">#{pokemon.paldeaId}</p>
+        <p className="md:hidden">
+          #{pokemon.paldeaId !== '---' ? pokemon.paldeaId : pokemon.nationalId}
+        </p>
         <p>
           {pokemon.nameZh}
           {pokemon.altForm && <span className="block text-xs font-thin">({pokemon.altForm})</span>}
