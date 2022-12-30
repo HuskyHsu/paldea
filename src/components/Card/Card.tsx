@@ -35,7 +35,11 @@ export const Card = memo(
         ref={ref}
       >
         <div className="w-full">
-          <Header paldeaId={pokemon.paldeaId} name={pokemon.nameZh} link={pokemon.link} />
+          <Header
+            paldeaId={pokemon.paldeaId !== '---' ? pokemon.paldeaId : pokemon.nationalId}
+            name={pokemon.nameZh}
+            link={pokemon.link}
+          />
           <Body pokemon={pokemon} />
 
           {pokemon.version && <Footer pokemon={pokemon} />}

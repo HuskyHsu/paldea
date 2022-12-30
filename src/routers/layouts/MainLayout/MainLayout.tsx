@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { Icon, useBackToTopContext } from '@/components';
 import { Item } from './Item';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function MainLayout() {
   const { ref, toggleVisibility } = useBackToTopContext();
@@ -19,6 +19,14 @@ function MainLayout() {
     };
   }, [ref, toggleVisibility]);
 
+  const [hash, setHash] = useState(window.location.hash.replace('#/', ''));
+
+  const navigate = useNavigate();
+  const updateNav = (to: string) => {
+    setHash(to);
+    navigate(to);
+  };
+
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
       <aside
@@ -34,13 +42,23 @@ function MainLayout() {
             'bg-primary text-sm text-white'
           )}
         >
-          <Item text={'圖鑑清單'} color="bg-custom-red" selected={true}>
+          <Item
+            text={'圖鑑清單'}
+            color="bg-custom-red"
+            selected={hash === ''}
+            onClick={() => updateNav('')}
+          >
             <Icon.Books className="fill-current h-5 w-5" />
           </Item>
           <Item text={'地圖'} color="bg-custom-blue">
             <Icon.Compass className="fill-current h-5 w-5" />
           </Item>
-          <Item text={'招式清單'} color="bg-custom-green">
+          <Item
+            text={'招式清單'}
+            color="bg-custom-green"
+            selected={hash === 'moves'}
+            onClick={() => updateNav('moves')}
+          >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
           <Item text={'道具清單'} color="bg-custom-orange">

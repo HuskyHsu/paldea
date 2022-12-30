@@ -16,7 +16,7 @@ interface BasePoint {
 export interface BasePokemon {
   link: string;
   paldeaId: string;
-  nationalId: number;
+  nationalId: string;
   nameZh: string;
   nameJp: string;
   nameEn: string;
@@ -64,6 +64,22 @@ export enum VersionType {
   'Violet' = '紫',
 }
 
+export enum CategoryType {
+  'Physical' = '物理',
+  'Special' = '特殊',
+  'Status' = '變化',
+}
+
+export enum LevelMap {
+  '回憶' = -2,
+  '進化' = -1,
+  '—' = 0,
+}
+
+export enum Accuracy {
+  '變化' = -1,
+  '—' = 0,
+}
 export interface BaseMove {
   nameZh: string;
   type: string;
@@ -73,6 +89,23 @@ export interface BaseMove {
   PP: number;
   description: string;
 }
+
+interface LevelingUps {
+  level: number;
+  link: string;
+}
+
+interface TechnicalMachine {
+  leaguePoint: number;
+  material: string;
+  pokemon: string[];
+}
+export interface Move extends BaseMove {
+  eggPokemons: string[];
+  levelingUps: LevelingUps[];
+  technicalMachine: TechnicalMachine | null;
+}
+
 export interface LevelUpMove extends BaseMove {
   level: number;
 }

@@ -69,6 +69,7 @@ if __name__ == "__main__":
     ) as fout:
         fout.write(json.dumps(output))
 
+    moves = []
     for i in range(0, 900, 50):
         base_list = get_move_list(i)
 
@@ -106,7 +107,7 @@ if __name__ == "__main__":
                 "nameZh": attributes["nameZh"],
                 "nameJp": attributes["nameJp"],
                 "nameEn": attributes["nameEn"],
-                "type": attributes["type"]["data"]["attributes"]["nameZh"],
+                "type": attributes["type"]["data"]["attributes"]["name"],
                 "category": attributes["category"],
                 "power": attributes["power"],
                 "accuracy": attributes["accuracy"],
@@ -127,9 +128,26 @@ if __name__ == "__main__":
                 ],
             }
 
+            moves.append(
+                {
+                    "nameZh": attributes["nameZh"],
+                    "nameJp": attributes["nameJp"],
+                    "nameEn": attributes["nameEn"],
+                    "type": attributes["type"]["data"]["attributes"]["name"],
+                    "category": attributes["category"],
+                    "power": attributes["power"],
+                    "accuracy": attributes["accuracy"],
+                    "PP": attributes["PP"],
+                    "description": attributes["description"],
+                }
+            )
+
             with open(
                 f"../public/data/relation/moves/{attributes['nameZh']}.json",
                 "wt",
                 encoding="utf-8",
             ) as fout:
                 fout.write(json.dumps(data))
+
+    with open(f"../public/data/relation/moves.json", "wt", encoding="utf-8") as fout:
+        fout.write(json.dumps(moves))
