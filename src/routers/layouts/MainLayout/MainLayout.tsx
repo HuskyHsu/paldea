@@ -53,7 +53,13 @@ function MainLayout() {
           </Item>
         </div>
       </aside>
-      <div className="h-full max-h-screen w-full overflow-y-auto md:p-4" ref={ref}>
+      <div
+        className="h-full max-h-screen w-full overflow-y-auto md:p-4"
+        ref={ref}
+        style={{
+          scrollbarGutter: 'stable',
+        }}
+      >
         <Outlet />
       </div>
     </div>
