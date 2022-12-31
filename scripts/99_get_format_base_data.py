@@ -59,7 +59,7 @@ if __name__ == "__main__":
         data = {
             "link": link_str,
             "paldeaId": "---"
-            if attributes["paldeaId"] == 9999
+            if attributes["paldeaId"] > 9000
             else str(attributes["paldeaId"]).zfill(3),
             "nationalId": str(attributes["nationalId"]).zfill(3),
             "nameZh": attributes["nameZh"],
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if False:
+        if attributes["paldeaId"] > 9990:
             detail = get_detail(base["id"])
 
             detail_out = {
