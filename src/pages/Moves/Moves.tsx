@@ -12,20 +12,25 @@ import { Icon, PokemonList } from '@/components';
 import { Accuracy, BaseMove, CategoryType } from '@/models';
 
 import { Header } from './Header';
+import clsx from 'clsx';
 
 const columnHelper = createColumnHelper<BaseMove>();
 
 const columns = [
   columnHelper.accessor('nameZh', {
     header: '招式名稱',
+    cell: (info) => <span className="whitespace-nowrap">{info.getValue()}</span>,
+    meta: 'w-2/12',
   }),
   columnHelper.accessor('type', {
     header: '屬性',
-    cell: (info) => <Icon.Type type={info.getValue()} className="h-6 w-6" />,
+    cell: (info) => <Icon.Type type={info.getValue()} className="h-6 w-full" />,
+    meta: 'w-2/12',
   }),
   columnHelper.accessor('category', {
     header: '分類',
     cell: (info) => CategoryType[info.getValue() as keyof typeof CategoryType],
+    meta: 'w-2/12',
   }),
   columnHelper.accessor('power', {
     header: '威力',
@@ -33,6 +38,7 @@ const columns = [
       info.getValue() < 0
         ? Accuracy[info.getValue().toString() as keyof typeof Accuracy]
         : info.getValue(),
+    meta: 'w-2/12',
   }),
   columnHelper.accessor('accuracy', {
     header: '命中',
@@ -40,9 +46,11 @@ const columns = [
       info.getValue() < 0
         ? Accuracy[info.getValue().toString() as keyof typeof Accuracy]
         : info.getValue(),
+    meta: 'w-2/12',
   }),
   columnHelper.accessor('PP', {
     header: 'PP',
+    meta: 'w-2/12',
   }),
 ];
 
@@ -73,12 +81,15 @@ function Moves() {
     <>
       <Header />
       <div className="flex justify-center p-4">
-        <table className="w-full max-w-4xl rounded-lg text-left text-sm text-gray-500 shadow-md">
+        <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
           <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <th key={header.id} className="w-2/12 py-3 px-2 md:px-6">
+                  <th
+                    key={header.id}
+                    className={clsx('py-3 px-2 text-center md:px-6', header.column.columnDef.meta)}
+                  >
                     {header.isPlaceholder
                       ? null
                       : flexRender(header.column.columnDef.header, header.getContext())}
@@ -91,12 +102,12 @@ function Moves() {
             {table.getRowModel().rows.map((row) => (
               <Fragment key={row.id}>
                 <tr
-                  className="border-b bg-white hover:bg-gray-50"
+                  className="cursor-pointer border-b bg-white hover:bg-gray-50"
                   key={row.id}
                   onClick={row.getToggleExpandedHandler()}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <td className="cursor-pointer py-3 px-2 md:px-6" key={cell.id}>
+                    <td className="py-3 px-2 text-center md:px-6" key={cell.id}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
                   ))}
