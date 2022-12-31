@@ -1,7 +1,5 @@
-import { useState } from 'react';
-
 import { FilterTypeButton, Hr, Icon, SearchBar } from '@/components';
-import { allOn, allOff, TypeShow } from '@/models';
+import { TypeShow } from '@/models';
 
 interface Prop {
   types: TypeShow;
