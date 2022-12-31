@@ -20,12 +20,12 @@ const columns = [
   columnHelper.accessor('nameZh', {
     header: '招式名稱',
     cell: (info) => <span className="whitespace-nowrap">{info.getValue()}</span>,
-    meta: 'w-2/12',
+    meta: 'w-3/12',
   }),
   columnHelper.accessor('type', {
     header: '屬性',
     cell: (info) => <Icon.Type type={info.getValue()} className="h-6 w-full" />,
-    meta: 'w-2/12',
+    meta: 'w-1/12',
   }),
   columnHelper.accessor('category', {
     header: '分類',
@@ -91,7 +91,7 @@ function Moves() {
   return (
     <>
       <Header types={types} targetType={targetType} />
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center px-0 py-4 md:px-4">
         <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
           <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
             {table.getHeaderGroups().map((headerGroup) => (
@@ -99,7 +99,10 @@ function Moves() {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className={clsx('py-3 px-2 text-center', header.column.columnDef.meta)}
+                    className={clsx(
+                      'whitespace-nowrap py-3 px-2 text-center',
+                      header.column.columnDef.meta
+                    )}
                   >
                     {header.isPlaceholder
                       ? null
@@ -121,7 +124,7 @@ function Moves() {
                     onClick={row.getToggleExpandedHandler()}
                   >
                     {row.getVisibleCells().map((cell) => (
-                      <td className="py-3 px-2 text-center" key={cell.id}>
+                      <td className="whitespace-nowrap py-3 px-2 text-center" key={cell.id}>
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </td>
                     ))}
