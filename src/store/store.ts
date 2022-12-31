@@ -1,7 +1,7 @@
 import create from 'zustand';
 import { combine, devtools, NamedSet } from 'zustand/middleware';
 import pokemonList from '@/data/base_list.json';
-import { BasePokemon, Stats, TypeMap, TypeShow, TYPE_MAP } from '@/models';
+import { allOn, allOff, BasePokemon, Stats, TypeMap, TypeShow } from '@/models';
 
 type FilterAction = {
   actions: {
@@ -18,16 +18,6 @@ type FilterObject = {
 interface FilterState extends FilterObject {
   pokemonList: BasePokemon[];
 }
-
-const allOn = TYPE_MAP.reduce((acc, cur) => {
-  acc[cur] = true;
-  return acc;
-}, {} as TypeShow);
-
-const allOff = TYPE_MAP.reduce((acc, cur) => {
-  acc[cur] = false;
-  return acc;
-}, {} as TypeShow);
 
 const genTargetType = (types: TypeShow, type: string) => {
   const isAllShow = Object.values(types).every(Boolean);

@@ -88,6 +88,12 @@ export const allOn = TYPE_MAP.reduce((acc, cur) => {
   acc[cur] = true;
   return acc;
 }, {} as TypeShow);
+
+export const allOff = TYPE_MAP.reduce((acc, cur) => {
+  acc[cur] = false;
+  return acc;
+}, {} as TypeShow);
+
 export interface TypeShow {
   [propName: string]: boolean;
 }

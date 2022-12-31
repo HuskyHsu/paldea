@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   createColumnHelper,
   flexRender,
@@ -9,7 +9,7 @@ import {
 
 import { useApi } from '@/utils';
 import { Icon, PokemonList } from '@/components';
-import { Accuracy, BaseMove, CategoryType } from '@/models';
+import { Accuracy, allOff, allOn, BaseMove, CategoryType } from '@/models';
 
 import { Header } from './Header';
 import clsx from 'clsx';
@@ -69,6 +69,17 @@ function Moves() {
     getExpandedRowModel: getExpandedRowModel(),
   });
 
+  const [types, setTypes] = useState(allOn);
+
+  const targetType = function (type: string) {
+    const onTypes = Object.entries(types).filter(([_, val]) => Boolean(val));
+    if (onTypes.length === 1 && onTypes[0][0] === type) {
+      setTypes(allOn);
+    } else {
+      setTypes({ ...allOff, [type]: true });
+    }
+  };
+
   if (isLoading) {
     return <span>Loading</span>;
   }
@@ -79,7 +90,7 @@ function Moves() {
 
   return (
     <>
-      <Header />
+      <Header types={types} targetType={targetType} />
       <div className="flex justify-center p-4">
         <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
           <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
@@ -88,7 +99,7 @@ function Moves() {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className={clsx('py-3 px-2 text-center md:px-6', header.column.columnDef.meta)}
+                    className={clsx('py-3 px-2 text-center', header.column.columnDef.meta)}
                   >
                     {header.isPlaceholder
                       ? null
@@ -99,28 +110,31 @@ function Moves() {
             ))}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((row) => (
-              <Fragment key={row.id}>
-                <tr
-                  className="cursor-pointer border-b bg-white hover:bg-gray-50"
-                  key={row.id}
-                  onClick={row.getToggleExpandedHandler()}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <td className="py-3 px-2 text-center md:px-6" key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </td>
-                  ))}
-                </tr>
-                {row.getIsExpanded() && (
-                  <tr className="border-b bg-gray-100">
-                    <td colSpan={row.getVisibleCells().length} className="py-3 px-2 md:px-6">
-                      <PokemonList name={row.original.nameZh} />
-                    </td>
+            {table
+              .getRowModel()
+              .rows.filter((row) => types[row.getValue('type') as string])
+              .map((row) => (
+                <Fragment key={row.id}>
+                  <tr
+                    className="cursor-pointer border-b bg-white hover:bg-gray-50"
+                    key={row.id}
+                    onClick={row.getToggleExpandedHandler()}
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <td className="py-3 px-2 text-center" key={cell.id}>
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </td>
+                    ))}
                   </tr>
-                )}
-              </Fragment>
-            ))}
+                  {row.getIsExpanded() && (
+                    <tr className="border-b bg-gray-100">
+                      <td colSpan={row.getVisibleCells().length} className="p-4">
+                        <PokemonList name={row.original.nameZh} />
+                      </td>
+                    </tr>
+                  )}
+                </Fragment>
+              ))}
           </tbody>
         </table>
       </div>

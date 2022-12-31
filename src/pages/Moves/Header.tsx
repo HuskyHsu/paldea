@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
 import { FilterTypeButton, Hr, Icon, SearchBar } from '@/components';
-import { allOn } from '@/models';
+import { allOn, allOff, TypeShow } from '@/models';
 
-export function Header() {
-  const [types, setTypes] = useState(allOn);
+interface Prop {
+  types: TypeShow;
+  targetType: Function;
+}
 
-  const targetType = function (type: string) {
-    setTypes({ ...types, [type]: !types[type] });
-  };
-
+export function Header({ types, targetType }: Prop) {
   return (
     <div className="flex flex-col items-center gap-y-4 px-4 pt-6">
       <SearchBar
