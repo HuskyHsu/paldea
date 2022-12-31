@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import {
   createColumnHelper,
   flexRender,
@@ -7,10 +8,10 @@ import {
 } from '@tanstack/react-table';
 
 import { useApi } from '@/utils';
-import { Icon } from '@/components';
+import { Icon, PokemonList } from '@/components';
 import { Accuracy, BaseMove, CategoryType } from '@/models';
-import { Fragment } from 'react';
-import { PokemonList } from './PokemonList';
+
+import { Header } from './Header';
 
 const columnHelper = createColumnHelper<BaseMove>();
 
@@ -61,7 +62,7 @@ function Moves() {
   });
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return <span>Loading</span>;
   }
 
   if (isError) {
@@ -69,47 +70,50 @@ function Moves() {
   }
 
   return (
-    <div className="flex justify-center">
-      <table className="w-full max-w-4xl rounded-lg text-left text-sm text-gray-500 shadow-md">
-        <thead className="sticky top-0 bg-gray-200 text-xs uppercase text-gray-700">
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id} className="py-3 px-2 md:px-6">
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(header.column.columnDef.header, header.getContext())}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <Fragment key={row.id}>
-              <tr
-                className="border-b bg-white hover:bg-gray-50"
-                key={row.id}
-                onClick={row.getToggleExpandedHandler()}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <td className="cursor-pointer py-3 px-2 md:px-6" key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td>
+    <>
+      <Header />
+      <div className="flex justify-center p-4">
+        <table className="w-full max-w-4xl rounded-lg text-left text-sm text-gray-500 shadow-md">
+          <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id} className="w-2/12 py-3 px-2 md:px-6">
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(header.column.columnDef.header, header.getContext())}
+                  </th>
                 ))}
               </tr>
-              {row.getIsExpanded() && (
-                <tr className="border-b bg-gray-100">
-                  <td colSpan={row.getVisibleCells().length} className="py-3 px-2 md:px-6">
-                    <PokemonList name={row.original.nameZh} />
-                  </td>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map((row) => (
+              <Fragment key={row.id}>
+                <tr
+                  className="border-b bg-white hover:bg-gray-50"
+                  key={row.id}
+                  onClick={row.getToggleExpandedHandler()}
+                >
+                  {row.getVisibleCells().map((cell) => (
+                    <td className="cursor-pointer py-3 px-2 md:px-6" key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </td>
+                  ))}
                 </tr>
-              )}
-            </Fragment>
-          ))}
-        </tbody>
-      </table>
-    </div>
+                {row.getIsExpanded() && (
+                  <tr className="border-b bg-gray-100">
+                    <td colSpan={row.getVisibleCells().length} className="py-3 px-2 md:px-6">
+                      <PokemonList name={row.original.nameZh} />
+                    </td>
+                  </tr>
+                )}
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 

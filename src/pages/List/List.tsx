@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { Card } from '@/components';
+import { Card, Hr } from '@/components';
 import { useFilterStore } from '@/store';
 import { Header } from './Header';
-import { Hr } from './components';
 
 function List() {
   const pokemonList = useFilterStore((state) => state.pokemonList);
@@ -17,7 +16,7 @@ function List() {
   const otherPmList = pokemonList.filter((pm) => pm.paldeaId === '---').filter((pm) => pm.display);
 
   return (
-    <div className="min-h-full rounded-xl bg-custom-lightgrey drop-shadow-xl">
+    <>
       <Header />
       <div className="grid grid-cols-list-mobile justify-around gap-4 px-4 pt-4 pb-8 md:grid-cols-list">
         {pokemonList
@@ -58,7 +57,7 @@ function List() {
           })}
         </div>
       )}
-    </div>
+    </>
   );
 }
 

@@ -61,9 +61,9 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
-          <Item text={'道具清單'} color="bg-custom-orange">
+          {/* <Item text={'道具清單'} color="bg-custom-orange">
             <Icon.Bag className="fill-current h-5 w-5" />
-          </Item>
+          </Item> */}
         </div>
       </aside>
       <div
@@ -73,7 +73,9 @@ function MainLayout() {
           scrollbarGutter: 'stable',
         }}
       >
-        <Outlet />
+        <div className="min-h-full rounded-xl bg-custom-lightgrey drop-shadow-xl">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

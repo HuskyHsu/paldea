@@ -84,6 +84,10 @@ export enum BgToClass {
 
 export const TYPE_MAP = Object.keys(TypeMap);
 
+export const allOn = TYPE_MAP.reduce((acc, cur) => {
+  acc[cur] = true;
+  return acc;
+}, {} as TypeShow);
 export interface TypeShow {
   [propName: string]: boolean;
 }

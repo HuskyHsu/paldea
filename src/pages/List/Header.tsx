@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { FilterTypeButton, Hr, SearchBar } from './components';
+import { Hr } from '@/components';
+import { FilterTypeButton, SearchBar } from './components';
 
 export function Header() {
   const handleSubmit = (event: React.FormEvent) => {
