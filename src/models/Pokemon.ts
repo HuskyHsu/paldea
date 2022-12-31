@@ -96,6 +96,7 @@ interface LevelingUps {
 }
 
 interface TechnicalMachine {
+  pid: number;
   leaguePoint: number;
   material: string;
   pokemon: string[];

@@ -54,27 +54,32 @@ export function PokemonList({ name }: Porp) {
     <>
       <p className="text-lg">說明</p>
       {data.description}
-      <h2 className="text-lg">升等學習</h2>
-      <div className="flex flex-wrap gap-y-2">
-        {pokemonList
-          .filter((pm) => data.levelingUps.find(({ link }) => pm.link === link))
-          .map((pm) => {
-            const levelingUps = data.levelingUps.find(({ link }) => pm.link === link);
-            let level = levelingUps?.level ?? 0;
+      {data.levelingUps.length > 0 && (
+        <>
+          <h2 className="text-lg">升等學習</h2>
+          <div className="flex flex-wrap gap-y-2">
+            {pokemonList
+              .filter((pm) => data.levelingUps.find(({ link }) => pm.link === link))
+              .map((pm) => {
+                const levelingUps = data.levelingUps.find(({ link }) => pm.link === link);
+                let level = levelingUps?.level ?? 0;
 
-            return (
-              <PokemonBadge
-                pm={pm}
-                getText={(pm: BasePokemon) =>
-                  `${pm.nameZh}: ${level > 0 ? 'Lv' + level : LevelMap[level]}`
-                }
-              />
-            );
-          })}
-      </div>
+                return (
+                  <PokemonBadge
+                    pm={pm}
+                    getText={(pm: BasePokemon) =>
+                      `${pm.nameZh}: ${level > 0 ? 'Lv' + level : LevelMap[level]}`
+                    }
+                  />
+                );
+              })}
+          </div>
+        </>
+      )}
       {data.technicalMachine && (
         <>
           <h2 className="text-lg">招式機</h2>
+          <p>編號：{data.technicalMachine.pid}</p>
           <p>聯盟點數：{data.technicalMachine.leaguePoint}</p>
           <p>材料：{data.technicalMachine.material}</p>
           <div className="flex flex-wrap gap-y-2">

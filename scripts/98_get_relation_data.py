@@ -87,6 +87,7 @@ if __name__ == "__main__":
             technicalMachine = None
             if attributes["technicalMachine"]["data"] is not None:
                 technicalMachine = {
+                    "pid": attributes["technicalMachine"]["data"]["attributes"]["pid"],
                     "leaguePoint": attributes["technicalMachine"]["data"]["attributes"][
                         "leaguePoint"
                     ],
