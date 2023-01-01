@@ -122,8 +122,18 @@ export function PokemonList({ name }: Prop) {
 
   return (
     <>
-      <h6 className="text-lg font-bold">說明</h6>
-      {data.description}
+      <div className="space-x-2">
+        <span className="inline text-lg font-bold">說明</span>
+        <a
+          href={`https://wiki.52poke.com/zh-hant/${data.nameZh}（招式）`}
+          target="_blank"
+          rel="noreferrer"
+          className="text-lg font-bold text-blue-800 underline"
+        >
+          wiki
+        </a>
+      </div>
+      <p>{data.description}</p>
       {data.levelingUps.length > 0 && <LevelingUps pokemonList={pokemonList} move={data} />}
       {data.technicalMachine && <TechnicalMachine pokemonList={pokemonList} move={data} />}
       {data.eggPokemons.length > 0 && <EggPokemons pokemonList={pokemonList} move={data} />}

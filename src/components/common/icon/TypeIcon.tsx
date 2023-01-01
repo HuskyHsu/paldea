@@ -1,4 +1,4 @@
-import { TypeMap } from '@/models';
+import { CategoryMap, TypeMap } from '@/models';
 
 interface TypeIconInterface {
   type: string;
@@ -13,11 +13,14 @@ export const Type = ({
   button = false,
   onClick = () => {},
 }: TypeIconInterface) => {
+  const link =
+    TypeMap[type as keyof typeof TypeMap] || CategoryMap[type as keyof typeof CategoryMap];
+
   if (button) {
     return (
       <button type="button" onClick={onClick}>
         <img
-          src={`${process.env.PUBLIC_URL}/image/type/${TypeMap[type as keyof typeof TypeMap]}.svg`}
+          src={`${process.env.PUBLIC_URL}/image/type/${link}.svg`}
           alt={type}
           className={className}
         />
@@ -26,7 +29,7 @@ export const Type = ({
   }
   return (
     <img
-      src={`${process.env.PUBLIC_URL}/image/type/${TypeMap[type as keyof typeof TypeMap]}.svg`}
+      src={`${process.env.PUBLIC_URL}/image/type/${link}.svg`}
       alt={type}
       className={className}
     />

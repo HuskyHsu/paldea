@@ -19,6 +19,12 @@ export enum TypeMap {
   'Dragon' = 'Dragon',
 }
 
+export enum CategoryMap {
+  'Physical' = 'Physical',
+  'Special' = 'Special',
+  'Status' = 'Status',
+}
+
 export enum BgClass {
   'Bug' = 'bg-type-bug',
   'Dark' = 'bg-type-dark',

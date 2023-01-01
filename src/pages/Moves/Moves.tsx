@@ -9,7 +9,7 @@ import {
 
 import { useApi } from '@/utils';
 import { Icon, PokemonList } from '@/components';
-import { Accuracy, allOff, allOn, BaseMove, CategoryType } from '@/models';
+import { Accuracy, allOff, allOn, BaseMove } from '@/models';
 
 import { Header } from './Header';
 import clsx from 'clsx';
@@ -20,7 +20,7 @@ const columns = [
   columnHelper.accessor('nameZh', {
     header: '招式名稱',
     cell: (info) => <span className="whitespace-nowrap">{info.getValue()}</span>,
-    meta: 'w-3/12',
+    meta: 'w-4/12',
   }),
   columnHelper.accessor('type', {
     header: '屬性',
@@ -29,13 +29,13 @@ const columns = [
   }),
   columnHelper.accessor('category', {
     header: '分類',
-    cell: (info) => CategoryType[info.getValue() as keyof typeof CategoryType],
-    meta: 'w-2/12',
+    cell: (info) => <Icon.Type type={info.getValue()} className="h-6 w-full" />,
+    meta: 'w-1/12',
   }),
   columnHelper.accessor('power', {
     header: '威力',
     cell: (info) =>
-      info.getValue() < 0
+      info.getValue() <= 0
         ? Accuracy[info.getValue().toString() as keyof typeof Accuracy]
         : info.getValue(),
     meta: 'w-2/12',
@@ -43,7 +43,7 @@ const columns = [
   columnHelper.accessor('accuracy', {
     header: '命中',
     cell: (info) =>
-      info.getValue() < 0
+      info.getValue() <= 0
         ? Accuracy[info.getValue().toString() as keyof typeof Accuracy]
         : info.getValue(),
     meta: 'w-2/12',
