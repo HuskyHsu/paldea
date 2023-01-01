@@ -92,7 +92,7 @@ function Moves() {
   return (
     <>
       <Header types={types} targetType={targetType} keyword={keyword} updateKeyword={setKeyword} />
-      <div className="flex justify-center px-0 py-4 md:px-4">
+      <div className="flex justify-center px-0 pt-4 pb-0 md:px-4 md:pb-4">
         <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
           <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
             {table.getHeaderGroups().map((headerGroup) => (
@@ -138,7 +138,7 @@ function Moves() {
                   </tr>
                   {row.getIsExpanded() && (
                     <tr className="border-b bg-gray-100">
-                      <td colSpan={row.getVisibleCells().length} className="p-4">
+                      <td colSpan={row.getVisibleCells().length} className="p-4 md:px-8">
                         <PokemonList name={row.original.nameZh} />
                       </td>
                     </tr>
