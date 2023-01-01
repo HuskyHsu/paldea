@@ -15,7 +15,8 @@ interface MoveProp {
 function LevelingUps({ pokemonList, move }: MoveProp) {
   return (
     <>
-      <h2 className="text-lg">升等學習</h2>
+      <hr className="my-3 h-px border-0 bg-gray-200" />
+      <h6 className="text-lg font-bold">升等學習</h6>
       <div className="flex flex-wrap gap-y-2">
         {pokemonList
           .filter((pm) => move.levelingUps.find(({ link }) => pm.link === link))
@@ -45,11 +46,14 @@ function TechnicalMachine({ pokemonList, move }: MoveProp) {
 
   return (
     <>
-      <h2 className="text-lg">招式機</h2>
-      <p>編號：{move.technicalMachine.pid}</p>
-      <p>聯盟點數：{move.technicalMachine.leaguePoint}</p>
-      <p>材料：{move.technicalMachine.material}</p>
-      <div className="flex flex-wrap gap-y-2">
+      <hr className="my-3 h-px border-0 bg-gray-200" />
+      <h6 className="text-lg font-bold">招式機</h6>
+      <ul className="text-gray-5000 max-w-md list-inside list-disc space-y-1">
+        <li>編號：{move.technicalMachine.pid}</li>
+        <li>聯盟點數：{move.technicalMachine.leaguePoint}</li>
+        <li>材料：{move.technicalMachine.material}</li>
+      </ul>
+      <div className="mt-2 flex flex-wrap gap-y-2">
         {pokemonList
           .filter((pm) => move.technicalMachine?.pokemon.includes(pm.link))
           .map((pm, i) => (
@@ -67,7 +71,8 @@ function TechnicalMachine({ pokemonList, move }: MoveProp) {
 function EggPokemons({ pokemonList, move }: MoveProp) {
   return (
     <>
-      <h2 className="text-lg">蛋招式</h2>
+      <hr className="my-3 h-px border-0 bg-gray-200" />
+      <h6 className="text-lg font-bold">蛋招式</h6>
       <div className="flex flex-wrap gap-y-2">
         {pokemonList
           .filter((pm) => move.eggPokemons.find((link) => pm.link === link))
@@ -117,7 +122,7 @@ export function PokemonList({ name }: Prop) {
 
   return (
     <>
-      <p className="text-lg">說明</p>
+      <h6 className="text-lg font-bold">說明</h6>
       {data.description}
       {data.levelingUps.length > 0 && <LevelingUps pokemonList={pokemonList} move={data} />}
       {data.technicalMachine && <TechnicalMachine pokemonList={pokemonList} move={data} />}
