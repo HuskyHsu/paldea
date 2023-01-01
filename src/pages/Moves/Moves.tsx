@@ -70,6 +70,7 @@ function Moves() {
   });
 
   const [types, setTypes] = useState(allOn);
+  const [keyword, setKeyword] = useState('');
 
   const targetType = function (type: string) {
     const onTypes = Object.entries(types).filter(([_, val]) => Boolean(val));
@@ -90,7 +91,7 @@ function Moves() {
 
   return (
     <>
-      <Header types={types} targetType={targetType} />
+      <Header types={types} targetType={targetType} keyword={keyword} updateKeyword={setKeyword} />
       <div className="flex justify-center px-0 py-4 md:px-4">
         <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
           <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
@@ -115,7 +116,13 @@ function Moves() {
           <tbody>
             {table
               .getRowModel()
-              .rows.filter((row) => types[row.getValue('type') as string])
+              .rows.filter((row) => {
+                let display = true;
+                if (keyword !== '') {
+                  display = (row.getValue('nameZh') as string).includes(keyword);
+                }
+                return display && types[row.getValue('type') as string];
+              })
               .map((row) => (
                 <Fragment key={row.id}>
                   <tr

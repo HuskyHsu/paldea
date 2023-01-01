@@ -7,10 +7,11 @@ interface Prop {
   icon: JSX.Element;
   iconColor: string;
   placeholder: string;
-  onChange: React.ChangeEventHandler;
+  value: string;
+  onChange: Function;
 }
 
-export function SearchBar({ title, icon, iconColor, placeholder, onChange }: Prop) {
+export function SearchBar({ title, icon, iconColor, placeholder, value, onChange }: Prop) {
   return (
     <div
       className={clsx(
@@ -34,7 +35,8 @@ export function SearchBar({ title, icon, iconColor, placeholder, onChange }: Pro
               'bg-gray-50 p-2 pl-10 text-sm text-gray-900'
             )}
             placeholder={placeholder}
-            onChange={onChange}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
           />
         </div>
       </div>
