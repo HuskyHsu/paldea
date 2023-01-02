@@ -25,6 +25,27 @@ export enum CategoryMap {
   'Status' = 'Status',
 }
 
+export enum TypeNameMap {
+  'Normal' = '一般',
+  'Grass' = '草',
+  'Fire' = '火',
+  'Water' = '水',
+  'Electric' = '電',
+  'Bug' = '蟲',
+  'Fairy' = '妖精',
+  'Fighting' = '格鬥',
+  'Flying' = '飛行',
+  'Ghost' = '幽靈',
+  'Ground' = '地面',
+  'Rock' = '岩石',
+  'Ice' = '冰',
+  'Poison' = '毒',
+  'Psychic' = '超能力',
+  'Steel' = '鋼',
+  'Dark' = '惡',
+  'Dragon' = '龍',
+}
+
 export enum BgClass {
   'Bug' = 'bg-type-bug',
   'Dark' = 'bg-type-dark',
@@ -86,6 +107,27 @@ export enum BgToClass {
   'Rock' = 'to-type-rock/60',
   'Steel' = 'to-type-steel/60',
   'Water' = 'to-type-water/60',
+}
+
+export enum TypeColor {
+  'Bug' = '#A2A329',
+  'Dark' = '#4E4646',
+  'Dragon' = '#5871BD',
+  'Electric' = '#E2BE2A',
+  'Fairy' = '#E28EE3',
+  'Fighting' = '#E39423',
+  'Fire' = '#E5633F',
+  'Flying' = '#77AFD4',
+  'Ghost' = '#6C456E',
+  'Grass' = '#49983A',
+  'Ground' = '#A6753B',
+  'Ice' = '#4CCBC8',
+  'Normal' = '#848383',
+  'Poison' = '#9556CB',
+  'Psychic' = '#EA708A',
+  'Rock' = '#AFA781',
+  'Steel' = '#6EB0C7',
+  'Water' = '#339DDF',
 }
 
 export const TYPE_MAP = Object.keys(TypeMap);

@@ -3,7 +3,7 @@ interface Gender {
   F: number;
 }
 
-interface BasePoint {
+export interface BasePoint {
   Hp: number;
   Atk: number;
   Def: number;
@@ -101,6 +101,7 @@ interface TechnicalMachine {
   material: string;
   pokemon: string[];
 }
+
 export interface Move extends BaseMove {
   eggPokemons: string[];
   levelingUps: LevelingUps[];
@@ -113,4 +114,8 @@ export interface LevelUpMove extends BaseMove {
 
 export interface TMMove extends BaseMove {
   pid: number;
+}
+
+export interface PMMove extends BaseMove {
+  source: string;
 }

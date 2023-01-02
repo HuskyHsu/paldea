@@ -1,58 +1,13 @@
 import { Fragment, useState } from 'react';
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  getExpandedRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
+import { flexRender } from '@tanstack/react-table';
 
 import { useApi } from '@/utils';
-import { Icon, PokemonList } from '@/components';
-import { Accuracy, allOff, allOn, BaseMove } from '@/models';
+import { PokemonList } from '@/components';
+import { allOff, allOn, BaseMove } from '@/models';
 
 import { Header } from './Header';
 import clsx from 'clsx';
-
-const columnHelper = createColumnHelper<BaseMove>();
-
-const columns = [
-  columnHelper.accessor('nameZh', {
-    header: '招式名稱',
-    cell: (info) => <span className="whitespace-nowrap">{info.getValue()}</span>,
-    meta: 'w-4/12',
-  }),
-  columnHelper.accessor('type', {
-    header: '屬性',
-    cell: (info) => <Icon.Type type={info.getValue()} className="h-6 w-full" />,
-    meta: 'w-1/12',
-  }),
-  columnHelper.accessor('category', {
-    header: '分類',
-    cell: (info) => <Icon.Type type={info.getValue()} className="h-6 w-full" />,
-    meta: 'w-1/12',
-  }),
-  columnHelper.accessor('power', {
-    header: '威力',
-    cell: (info) =>
-      info.getValue() <= 0
-        ? Accuracy[info.getValue().toString() as keyof typeof Accuracy]
-        : info.getValue(),
-    meta: 'w-2/12',
-  }),
-  columnHelper.accessor('accuracy', {
-    header: '命中',
-    cell: (info) =>
-      info.getValue() <= 0
-        ? Accuracy[info.getValue().toString() as keyof typeof Accuracy]
-        : info.getValue(),
-    meta: 'w-2/12',
-  }),
-  columnHelper.accessor('PP', {
-    header: 'PP',
-    meta: 'w-2/12',
-  }),
-];
+import { useMoveTable } from './Table';
 
 function Moves() {
   const { isLoading, isError, data, error } = useApi<BaseMove[]>({
@@ -61,13 +16,7 @@ function Moves() {
     initialData: [],
   });
 
-  const table = useReactTable({
-    data,
-    columns,
-    getRowCanExpand: () => true,
-    getCoreRowModel: getCoreRowModel(),
-    getExpandedRowModel: getExpandedRowModel(),
-  });
+  const table = useMoveTable(data);
 
   const [types, setTypes] = useState(allOn);
   const [keyword, setKeyword] = useState('');

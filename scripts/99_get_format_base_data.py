@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if attributes["paldeaId"] > 9990:
+        if attributes["paldeaId"] > 9990 or True:
             detail = get_detail(base["id"])
 
             detail_out = {
@@ -104,7 +104,7 @@ if __name__ == "__main__":
                         ],
                         "type": item["attributes"]["move"]["data"]["attributes"][
                             "type"
-                        ]["data"]["attributes"]["nameZh"],
+                        ]["data"]["attributes"]["name"],
                         "category": item["attributes"]["move"]["data"]["attributes"][
                             "category"
                         ],
@@ -129,7 +129,7 @@ if __name__ == "__main__":
                         ],
                         "type": item["attributes"]["move"]["data"]["attributes"][
                             "type"
-                        ]["data"]["attributes"]["nameZh"],
+                        ]["data"]["attributes"]["name"],
                         "category": item["attributes"]["move"]["data"]["attributes"][
                             "category"
                         ],
@@ -150,7 +150,7 @@ if __name__ == "__main__":
                     {
                         "nameZh": item["attributes"]["nameZh"],
                         "type": item["attributes"]["type"]["data"]["attributes"][
-                            "nameZh"
+                            "name"
                         ],
                         "category": item["attributes"]["category"],
                         "power": item["attributes"]["power"],

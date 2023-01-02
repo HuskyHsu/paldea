@@ -49,7 +49,7 @@ function TechnicalMachine({ pokemonList, move }: MoveProp) {
       <hr className="my-3 h-px border-0 bg-gray-200" />
       <h6 className="text-lg font-bold">招式機</h6>
       <ul className="text-gray-5000 max-w-md list-inside list-disc space-y-1">
-        <li>編號：{move.technicalMachine.pid}</li>
+        <li>編號：#{move.technicalMachine.pid.toString().padStart(3, '0')}</li>
         <li>聯盟點數：{move.technicalMachine.leaguePoint}</li>
         <li>材料：{move.technicalMachine.material}</li>
       </ul>
