@@ -123,7 +123,11 @@ function Moves() {
           </div>
         </InfoCard>
       </div>
-      <Table {...table} />
+      <div className="flex justify-center">
+        <div className="w-full md:w-5/6">
+          <Table {...table} />
+        </div>
+      </div>
     </>
   );
 }

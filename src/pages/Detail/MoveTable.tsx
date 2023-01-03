@@ -53,7 +53,7 @@ function Table({
 }: TableReturn<PMMove>) {
   return (
     <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md">
-      <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
+      <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
         <tr>
           {getHeader().map((th, i) => (
             <th

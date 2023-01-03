@@ -43,7 +43,7 @@ function Moves() {
       <Header types={types} targetType={targetType} keyword={keyword} updateKeyword={setKeyword} />
       <div className="flex justify-center px-0 pt-4 pb-0 md:px-4 md:pb-4">
         <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
-          <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
+          <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
