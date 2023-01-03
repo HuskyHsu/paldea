@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -14,17 +14,19 @@ import {
   PMMove,
   TMMove,
 } from '@/models';
-// import { PokemonList } from '@/components';
 
 import { Header, Base, InfoCard, Hero, Statistic } from './components';
-import { useMoveTable } from './MoveTable';
+import { columns, Table } from './MoveTable';
+import { useTable } from '@/components';
 
-function Moves() {
-  let { link } = useParams();
-  const pokemonList = useFilterStore((state) => state.pokemonList);
-  const pokemon = pokemonList.find((pm) => pm.link === link);
+interface MoveProps {
+  levelingUps: LevelUpMove[];
+  technicalMachines: TMMove[];
+  eggMoves: BaseMove[];
+}
 
-  const { isError, data, error } = useApi({
+function useGetData(link: string) {
+  return useApi<MoveProps>({
     queryKey: `pm:${link}`,
     path: `/data/pokemon/${link}.json`,
     initialData: {
@@ -33,8 +35,10 @@ function Moves() {
       technicalMachines: [] as TMMove[],
     },
   });
+}
 
-  const mergeMove: PMMove[] = [
+function mergeMove(data: MoveProps): PMMove[] {
+  return [
     data.levelingUps.map((move) => {
       const { level, ...rest } = move;
       return {
@@ -45,7 +49,7 @@ function Moves() {
     data.technicalMachines.map((move) => {
       const { pid, ...rest } = move;
       return {
-        source: `TM${pid}`,
+        source: `TM${pid.toString().padStart(3, '0')}`,
         ...rest,
       };
     }),
@@ -56,8 +60,20 @@ function Moves() {
       };
     }),
   ].flat();
+}
 
-  const table = useMoveTable(mergeMove);
+function Moves() {
+  let { link } = useParams();
+  const pokemonList = useFilterStore((state) => state.pokemonList);
+  const pokemon = pokemonList.find((pm) => pm.link === link);
+
+  const { isError, data, error } = useGetData(link || '906');
+
+  const tableDataMemo = useMemo(() => {
+    return mergeMove(data);
+  }, [data]);
+
+  const table = useTable<PMMove>(tableDataMemo, columns);
 
   if (isError) {
     return <span>{`Error ${error}`}</span>;
@@ -107,28 +123,7 @@ function Moves() {
           </div>
         </InfoCard>
       </div>
-      <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md">
-        <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100">
-          <tr>
-            {table.getHeader().map((th, i) => (
-              <th key={i} className={clsx('whitespace-nowrap py-3 px-2 text-center')}>
-                {th}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {table.tableData.map((row, i) => (
-            <tr className="cursor-pointer border-b bg-white hover:bg-gray-50" key={i}>
-              {table.getRow(row).map((val, j) => (
-                <td className="whitespace-nowrap py-3 px-2 text-center" key={j}>
-                  {val}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Table {...table} />
     </>
   );
 }

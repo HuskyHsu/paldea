@@ -1,12 +1,12 @@
 import { Fragment, useState } from 'react';
 import { flexRender } from '@tanstack/react-table';
+import clsx from 'clsx';
 
 import { useApi } from '@/utils';
-import { PokemonList } from '@/components';
+import { MovePokemonList } from '@/components';
 import { allOff, allOn, BaseMove } from '@/models';
 
 import { Header } from './Header';
-import clsx from 'clsx';
 import { useMoveTable } from './Table';
 
 function Moves() {
@@ -88,7 +88,7 @@ function Moves() {
                   {row.getIsExpanded() && (
                     <tr className="border-b bg-gray-100">
                       <td colSpan={row.getVisibleCells().length} className="p-4 md:px-8">
-                        <PokemonList name={row.original.nameZh} />
+                        <MovePokemonList name={row.original.nameZh} />
                       </td>
                     </tr>
                   )}

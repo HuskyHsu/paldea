@@ -88,7 +88,7 @@ function EggPokemons({ pokemonList, move }: MoveProp) {
   );
 }
 
-export function PokemonList({ name }: Prop) {
+export function MovePokemonList({ name }: Prop) {
   const pokemonList = useFilterStore((state) => state.pokemonList);
 
   const { isLoading, isError, data, error } = useApi<Move>({

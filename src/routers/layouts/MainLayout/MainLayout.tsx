@@ -58,9 +58,6 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
-          <Item text={'地圖'} color="bg-custom-blue">
-            <Icon.Compass className="fill-current h-5 w-5" />
-          </Item>
         </div>
       </aside>
       <div
