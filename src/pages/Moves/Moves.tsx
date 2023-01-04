@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 import { useApi } from '@/utils';
 import { MovePokemonList } from '@/components';
-import { allOff, allOn, BaseMove } from '@/models';
+import { allOff, allOn, BaseMove, categoryAllOff, categoryAllOn } from '@/models';
 
 import { Header } from './Header';
 import { useMoveTable } from './Table';
@@ -19,6 +19,7 @@ function Moves() {
   const table = useMoveTable(data);
 
   const [types, setTypes] = useState(allOn);
+  const [categoryType, setCategoryType] = useState(categoryAllOn);
   const [keyword, setKeyword] = useState('');
 
   const targetType = function (type: string) {
@@ -27,6 +28,19 @@ function Moves() {
       setTypes(allOn);
     } else {
       setTypes({ ...allOff, [type]: true });
+    }
+  };
+
+  const targetCategory = function (category: string) {
+    const onCategoryTypes = Object.entries(categoryType).filter(([_, val]) => Boolean(val));
+
+    if (onCategoryTypes.length === 1 && onCategoryTypes[0][0] === category) {
+      setCategoryType(categoryAllOn);
+    } else {
+      setCategoryType({
+        ...categoryAllOff,
+        [category]: true,
+      });
     }
   };
 
@@ -40,7 +54,14 @@ function Moves() {
 
   return (
     <>
-      <Header types={types} targetType={targetType} keyword={keyword} updateKeyword={setKeyword} />
+      <Header
+        types={types}
+        targetType={targetType}
+        categoryType={categoryType}
+        targetCategory={targetCategory}
+        keyword={keyword}
+        updateKeyword={setKeyword}
+      />
       <div className="flex justify-center px-0 pt-4 pb-0 md:px-4 md:pb-4">
         <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md md:w-5/6">
           <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
@@ -70,7 +91,11 @@ function Moves() {
                 if (keyword !== '') {
                   display = (row.getValue('nameZh') as string).includes(keyword);
                 }
-                return display && types[row.getValue('type') as string];
+                return (
+                  display &&
+                  categoryType[row.getValue('category') as string] &&
+                  types[row.getValue('type') as string]
+                );
               })
               .map((row) => (
                 <Fragment key={row.id}>

@@ -6,14 +6,18 @@ import { Icon } from '@/components';
 interface Prop {
   types: TypeShow;
   targetType: Function;
+  set?: Set<string>;
 }
 
-export function FilterTypeButton({ types, targetType }: Prop) {
+export function FilterTypeButton({ types, targetType, set }: Prop) {
+  const typesetting =
+    set === undefined
+      ? 'grid grid-cols-6 md:grid-cols-9 xl:grid-cols-18'
+      : 'flex justify-around flex-wrap';
+
   return (
-    <div
-      className={clsx('grid w-full gap-4 md:w-5/6', 'grid-cols-6 md:grid-cols-9 xl:grid-cols-18')}
-    >
-      {TYPE_MAP.map((type) => (
+    <div className={clsx(typesetting, 'w-full gap-4 md:w-5/6')}>
+      {TYPE_MAP.filter((type) => (set !== undefined ? set.has(type) : true)).map((type) => (
         <div key={type} className="group relative h-8 justify-self-center">
           <Icon.Type
             type={type}

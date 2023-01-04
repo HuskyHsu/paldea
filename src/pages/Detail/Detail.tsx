@@ -124,7 +124,7 @@ function Moves() {
         </InfoCard>
       </div>
       <div className="flex justify-center">
-        <div className="w-full md:w-5/6">
+        <div className="w-full md:mb-4 md:w-5/6">
           <Table {...table} />
         </div>
       </div>
