@@ -109,11 +109,11 @@ function Table({
           </tr>
         </thead>
         <tbody>
-          {tableData
-            .filter((row) => {
-              return categoryType[row.category] && types[row.type];
-            })
-            .map((row, i) => (
+          {tableData.map((row, i) => {
+            if (!(categoryType[row.category] && types[row.type])) {
+              return null;
+            }
+            return (
               <Fragment key={i}>
                 <tr
                   className="cursor-pointer border-b bg-white hover:bg-gray-50"
@@ -133,7 +133,8 @@ function Table({
                   </tr>
                 )}
               </Fragment>
-            ))}
+            );
+          })}
         </tbody>
       </table>
     </>
