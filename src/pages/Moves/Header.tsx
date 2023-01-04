@@ -1,23 +1,11 @@
-import { FilterCategoryButton, FilterTypeButton, Hr, Icon, SearchBar } from '@/components';
-import { CategoryShow, TypeShow } from '@/models';
+import { Hr, Icon, SearchBar } from '@/components';
 
 interface Prop {
-  types: TypeShow;
-  targetType: Function;
-  categoryType: CategoryShow;
-  targetCategory: Function;
   keyword: string;
   updateKeyword: Function;
 }
 
-export function Header({
-  types,
-  targetType,
-  categoryType,
-  targetCategory,
-  keyword,
-  updateKeyword,
-}: Prop) {
+export function Header({ keyword, updateKeyword }: Prop) {
   return (
     <div className="flex flex-col items-center gap-y-4 px-4 pt-6">
       <SearchBar
@@ -29,8 +17,6 @@ export function Header({
         onChange={updateKeyword}
       />
       <Hr />
-      <FilterTypeButton types={types} targetType={targetType} />
-      <FilterCategoryButton categories={categoryType} targetCategory={targetCategory} />
     </div>
   );
 }
