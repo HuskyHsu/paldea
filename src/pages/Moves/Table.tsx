@@ -78,15 +78,10 @@ function Table({
     }
   };
 
-  const typeSet = tableData.reduce((acc, cur) => {
-    acc.add(cur.type);
-    return acc;
-  }, new Set<string>());
-
   return (
     <>
       <div className="mb-4 flex justify-center px-4">
-        <FilterTypeButton types={types} targetType={targetType} set={typeSet} />
+        <FilterTypeButton types={types} targetType={targetType} />
       </div>
       <div className="mb-4 flex justify-center">
         <FilterCategoryButton categories={categoryType} targetCategory={targetCategory} />
