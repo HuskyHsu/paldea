@@ -7,10 +7,26 @@ import {
   Icon,
   MovePokemonList,
   TableReturn,
+  TableTools,
 } from '@/components';
 import { Accuracy, allOff, allOn, PMMove, categoryAllOn, categoryAllOff } from '@/models';
 
 const columns = [
+  {
+    header: '挑選',
+    value: (row: PMMove & TableTools, toggleSelected: Function) => (
+      <div>
+        <input
+          type="checkbox"
+          checked={row.selected}
+          onChange={(e) => toggleSelected(row, e.target.checked)}
+          onClick={(e) => e.stopPropagation()}
+          className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 "
+        />
+      </div>
+    ),
+    meta: 'w-1/12',
+  },
   {
     header: '來源',
     value: (row: PMMove) => row.source,
@@ -46,7 +62,7 @@ const columns = [
   {
     header: 'PP',
     value: (row: PMMove) => row.PP,
-    meta: 'w-2/12',
+    meta: 'w-1/12',
   },
 ];
 
@@ -110,10 +126,11 @@ function Table({
         </thead>
         <tbody>
           {tableData
-            .filter((row) => categoryType[row.category] && types[row.type])
-            .map((row, i) => {
+            .filter((row) => row.selected || (categoryType[row.category] && types[row.type]))
+            .sort((a, b) => Number(b.selected) - Number(a.selected))
+            .map((row) => {
               return (
-                <Fragment key={i}>
+                <Fragment key={row._pid}>
                   <tr
                     className="cursor-pointer border-b bg-white hover:bg-gray-50"
                     onClick={() => toggleExpanded(row)}

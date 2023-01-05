@@ -104,9 +104,9 @@ function Table({
             .filter(
               (row) => row.nameZh.includes(keyword) && categoryType[row.category] && types[row.type]
             )
-            .map((row, i) => {
+            .map((row) => {
               return (
-                <Fragment key={i}>
+                <Fragment key={row._pid}>
                   <tr
                     className="cursor-pointer border-b bg-white hover:bg-gray-50"
                     onClick={() => toggleExpanded(row)}

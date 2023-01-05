@@ -47,11 +47,20 @@ function useTable<T>(data: T[], columns: Column[]): TableReturn<T> {
     setTableData(newData);
   };
 
+  const toggleSelected = (row: T & TableTools, checked: boolean) => {
+    const newData = [...tableData];
+    const currentRow = newData.find((r) => r._pid === row._pid);
+    if (currentRow) {
+      currentRow.selected = checked;
+    }
+    setTableData(newData);
+  };
+
   return {
     tableData: tableData,
     getHeader: () => columns.map((col) => col.header),
     getColumnMeta: () => columns.map((col) => col.meta),
-    getRowItems: (row: T) => columns.map((col) => col.value(row)),
+    getRowItems: (row: T) => columns.map((col) => col.value(row, toggleSelected)),
     toggleExpanded,
   };
 }
