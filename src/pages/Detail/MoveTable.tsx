@@ -117,7 +117,7 @@ function Table({
               <Fragment key={i}>
                 <tr
                   className="cursor-pointer border-b bg-white hover:bg-gray-50"
-                  onClick={() => toggleExpanded(i)}
+                  onClick={() => toggleExpanded(row)}
                 >
                   {getRowItems(row).map((val, j) => (
                     <td className="whitespace-nowrap py-3 px-2 text-center" key={j}>

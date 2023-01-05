@@ -6,18 +6,26 @@ interface Column {
   meta?: string;
 }
 
+export interface TableTools {
+  _pid: number;
+  expanded: boolean;
+  selected: boolean;
+}
+
 export interface TableReturn<T> {
-  tableData: (T & { expanded: boolean })[];
+  tableData: (T & TableTools)[];
   getHeader: () => string[];
   getColumnMeta: () => (string | undefined)[];
-  getRowItems: (row: T) => JSX.Element[];
-  toggleExpanded: (i: number) => void;
+  getRowItems: (row: T & TableTools) => JSX.Element[];
+  toggleExpanded: (row: T & TableTools) => void;
 }
 
 function getCanExpandedData<T>(data: T[]) {
-  return data.map((row) => {
+  return data.map((row, i) => {
     return {
+      _pid: i,
       expanded: false,
+      selected: false,
       ...row,
     };
   });
@@ -30,9 +38,12 @@ function useTable<T>(data: T[], columns: Column[]): TableReturn<T> {
     setTableData(getCanExpandedData<T>(data));
   }, [data]);
 
-  const toggleExpanded = (i: number) => {
+  const toggleExpanded = (row: T & TableTools) => {
     const newData = [...tableData];
-    newData[i].expanded = !newData[i].expanded;
+    const currentRow = newData.find((r) => r._pid === row._pid);
+    if (currentRow) {
+      currentRow.expanded = !currentRow.expanded;
+    }
     setTableData(newData);
   };
 
