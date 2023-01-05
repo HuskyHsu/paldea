@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQueries, useQuery } from '@tanstack/react-query';
 
 const HOST = process.env.PUBLIC_URL;
 
@@ -29,4 +29,30 @@ export function useApi<T>({
   });
 
   return query;
+}
+
+export function useMultApi<T>({
+  queryKey,
+  paths,
+  initialData,
+}: {
+  queryKey: string;
+  paths: string[];
+  initialData: T;
+}) {
+  const queries = useQueries({
+    queries: paths.map((path) => {
+      return {
+        queryKey: [queryKey, path],
+        queryFn: () => api<T>(path),
+        initialData: { ...initialData } as T,
+        enabled: true,
+        // refetchInterval: false,
+        // refetchOnMount: 'always',
+        // refetchOnWindowFocus: false,
+        // refetchOnReconnect: false,
+      };
+    }),
+  });
+  return queries;
 }

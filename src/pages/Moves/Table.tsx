@@ -8,13 +8,30 @@ import {
   Icon,
   MovePokemonList,
   TableReturn,
+  TableTools,
 } from '@/components';
+import { Intersection } from './Intersection';
 
 const columns = [
   {
+    header: '挑選',
+    value: (row: BaseMove & TableTools, toggleSelected: Function) => (
+      <div>
+        <input
+          type="checkbox"
+          checked={row.selected}
+          onChange={(e) => toggleSelected(row, e.target.checked)}
+          onClick={(e) => e.stopPropagation()}
+          className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 "
+        />
+      </div>
+    ),
+    meta: 'w-1/12',
+  },
+  {
     header: '招式名稱',
     value: (row: BaseMove) => <span className="whitespace-nowrap">{row.nameZh}</span>,
-    meta: 'w-4/12',
+    meta: 'w-3/12',
   },
   {
     header: '屬性',
@@ -78,8 +95,15 @@ function Table({
     }
   };
 
+  const selectedMoves = tableData.filter((row) => row.selected);
+
   return (
     <>
+      <div className="px-4">
+        {selectedMoves.length >= 2 && selectedMoves.length <= 4 && (
+          <Intersection moves={selectedMoves.map((row) => row.nameZh)} />
+        )}
+      </div>
       <div className="mb-4 flex justify-center px-4">
         <FilterTypeButton types={types} targetType={targetType} />
       </div>
@@ -102,13 +126,18 @@ function Table({
         <tbody>
           {tableData
             .filter(
-              (row) => row.nameZh.includes(keyword) && categoryType[row.category] && types[row.type]
+              (row) =>
+                row.selected ||
+                (row.nameZh.includes(keyword) && categoryType[row.category] && types[row.type])
             )
+            .sort((a, b) => Number(b.selected) - Number(a.selected))
             .map((row) => {
               return (
                 <Fragment key={row._pid}>
                   <tr
-                    className="cursor-pointer border-b bg-white hover:bg-gray-50"
+                    className={clsx('cursor-pointer border-b bg-white hover:bg-gray-50', {
+                      'bg-gray-100': row.selected,
+                    })}
                     onClick={() => toggleExpanded(row)}
                   >
                     {getRowItems(row).map((val, j) => (

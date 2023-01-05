@@ -17,7 +17,7 @@ import {
 
 import { Header, Base, InfoCard, Hero, Statistic } from './components';
 import { columns, Table } from './MoveTable';
-import { useTable } from '@/components';
+import { Hr, useTable } from '@/components';
 
 interface MoveProps {
   levelingUps: LevelUpMove[];
@@ -124,7 +124,8 @@ function Moves() {
         </InfoCard>
       </div>
       <div className="flex justify-center">
-        <div className="w-full md:mb-4 md:w-5/6">
+        <div className="flex w-full flex-col gap-4 md:mb-4 md:w-5/6">
+          <Hr />
           <Table {...table} />
         </div>
       </div>

@@ -15,6 +15,7 @@ function Moves() {
   });
 
   const [keyword, setKeyword] = useState('');
+
   const tableDataMemo = useMemo(() => {
     return data;
   }, [data]);
@@ -32,7 +33,7 @@ function Moves() {
   return (
     <>
       <Header keyword={keyword} updateKeyword={setKeyword} />
-      <div className="mt-4 flex justify-center">
+      <div className="flex justify-center">
         <div className="w-full md:mb-4 md:w-5/6">
           <Table {...table} keyword={keyword} />
         </div>

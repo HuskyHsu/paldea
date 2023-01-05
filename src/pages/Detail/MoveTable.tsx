@@ -132,7 +132,9 @@ function Table({
               return (
                 <Fragment key={row._pid}>
                   <tr
-                    className="cursor-pointer border-b bg-white hover:bg-gray-50"
+                    className={clsx('cursor-pointer border-b bg-white hover:bg-gray-50', {
+                      'bg-gray-100': row.selected,
+                    })}
                     onClick={() => toggleExpanded(row)}
                   >
                     {getRowItems(row).map((val, j) => (

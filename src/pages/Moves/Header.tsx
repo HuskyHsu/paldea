@@ -7,7 +7,7 @@ interface Prop {
 
 export function Header({ keyword, updateKeyword }: Prop) {
   return (
-    <div className="flex flex-col items-center gap-y-4 px-4 pt-6">
+    <div className="mb-4 flex flex-col items-center gap-y-4 px-4 pt-6">
       <SearchBar
         title="招式清單"
         icon={<Icon.Book className="fill-current h-5 w-5" />}
