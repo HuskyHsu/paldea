@@ -4,9 +4,9 @@ import { BasePokemon } from '@/models';
 import { useFilterActions } from '@/store';
 import { Icon } from '..';
 
-interface BodyProps {
+type BodyProps = {
   pokemon: BasePokemon;
-}
+};
 
 export function Body({ pokemon }: BodyProps) {
   const { updateKeyword } = useFilterActions();

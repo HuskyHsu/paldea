@@ -60,6 +60,12 @@ export interface PMMove extends BaseMove {
   source: string;
 }
 
+export type PMSourceMove = {
+  levelingUps: LevelUpMove[];
+  technicalMachines: TMMove[];
+  eggMoves: BaseMove[];
+};
+
 export const CATGEORY_MAP = Object.keys(Categories);
 
 export interface CategoryShow {
@@ -75,3 +81,16 @@ export const categoryAllOff = CATGEORY_MAP.reduce((acc, cur) => {
   acc[cur] = false;
   return acc;
 }, {} as CategoryShow);
+
+export const MOVE_INIT = {
+  nameZh: '',
+  type: 'Normal',
+  category: '',
+  power: 0,
+  accuracy: 100,
+  PP: 0,
+  description: '',
+  eggPokemons: [],
+  levelingUps: [],
+  technicalMachine: null,
+} as Move;

@@ -2,21 +2,22 @@ import { BasePoint } from '@/models';
 
 const radius = 100;
 const center = [radius * 1.5, radius * 1.5];
-interface RadarPorps {
+
+type RadarPorps = {
   stats: number[];
   color: string;
   basePoint: BasePoint;
-}
+};
 
-interface LinePorps {
+type LinePorps = {
   deg: number;
-}
+};
 
-interface TextPorps {
+type TextPorps = {
   deg?: number;
   text?: string;
   value: number;
-}
+};
 
 const getPosition = (deg: number, radius: number) => {
   const radians = (deg * 2 * Math.PI) / 360;

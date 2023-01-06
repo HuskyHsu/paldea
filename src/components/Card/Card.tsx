@@ -6,9 +6,9 @@ import { Body } from './Body';
 import { Header } from './Header';
 import { useIntersectionObserver } from './Hooks';
 
-export interface CardProps {
+export type CardProps = {
   pokemon: BasePokemon;
-}
+};
 
 export const Card = memo(
   ({

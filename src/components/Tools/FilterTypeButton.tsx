@@ -3,13 +3,13 @@ import clsx from 'clsx';
 import { TypeShow, TYPE_MAP } from '@/models';
 import { Icon } from '@/components';
 
-interface Prop {
+type Props = {
   types: TypeShow;
   targetType: Function;
   set?: Set<string>;
-}
+};
 
-export function FilterTypeButton({ types, targetType, set }: Prop) {
+export function FilterTypeButton({ types, targetType, set }: Props) {
   const typesetting =
     set === undefined
       ? 'grid grid-cols-6 md:grid-cols-9 xl:grid-cols-18'

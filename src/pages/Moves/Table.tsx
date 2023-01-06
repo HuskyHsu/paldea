@@ -6,7 +6,7 @@ import {
   FilterCategoryButton,
   FilterTypeButton,
   Icon,
-  MovePokemonList,
+  MoveInfo,
   TableReturn,
   TableTools,
 } from '@/components';
@@ -149,7 +149,7 @@ function Table({
                   {row.expanded && (
                     <tr className="border-b bg-gray-100">
                       <td colSpan={getHeader().length} className="p-4 md:px-8">
-                        <MovePokemonList name={row.nameZh} />
+                        <MoveInfo name={row.nameZh} />
                       </td>
                     </tr>
                   )}

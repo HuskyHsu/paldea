@@ -2,16 +2,16 @@ import clsx from 'clsx';
 
 import { Icon, PageHeader } from '@/components';
 
-interface Prop {
+type Props = {
   title: string;
   icon: JSX.Element;
   iconColor: string;
   placeholder: string;
   value: string;
   onChange: Function;
-}
+};
 
-export function SearchBar({ title, icon, iconColor, placeholder, value, onChange }: Prop) {
+export function SearchBar({ title, icon, iconColor, placeholder, value, onChange }: Props) {
   return (
     <PageHeader title={title} icon={icon} iconColor={iconColor}>
       <div className="relative">
