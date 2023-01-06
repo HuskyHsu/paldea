@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import clsx from 'clsx';
+import debounce from 'lodash/debounce';
 
 import { Icon, PageHeader } from '@/components';
 
@@ -12,6 +14,15 @@ interface Prop {
 }
 
 export function SearchBar({ title, icon, iconColor, placeholder, value, onChange }: Prop) {
+  const [input, setInput] = useState(value);
+
+  const onDelayedChange = debounce((val: string) => onChange(val), 400);
+
+  const handleChange = (val: string) => {
+    setInput(val);
+    onDelayedChange(val);
+  };
+
   return (
     <PageHeader title={title} icon={icon} iconColor={iconColor}>
       <div className="relative">
@@ -25,8 +36,8 @@ export function SearchBar({ title, icon, iconColor, placeholder, value, onChange
             'bg-gray-50 p-2 pl-10 text-sm text-gray-900'
           )}
           placeholder={placeholder}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
+          value={input}
+          onChange={(e) => handleChange(e.target.value)}
         />
       </div>
     </PageHeader>
