@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import { Accuracy, allOff, allOn, BaseMove, categoryAllOff, categoryAllOn } from '@/models';
@@ -11,6 +11,7 @@ import {
   TableTools,
 } from '@/components';
 import { Intersection } from './Intersection';
+import { useIntersectionObserver } from '@/components/Card/Hooks';
 
 const columns = [
   {
@@ -62,6 +63,78 @@ const columns = [
   },
 ];
 
+const PAGE_COUNT = 20;
+
+function Header({
+  getHeader,
+  getColumnMeta,
+}: Pick<TableReturn<BaseMove>, 'getHeader' | 'getColumnMeta'>) {
+  return (
+    <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
+      <tr>
+        {getHeader().map((th, i) => (
+          <th
+            key={i}
+            className={clsx('whitespace-nowrap py-3 px-2 text-center', getColumnMeta()[i])}
+          >
+            {th}
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+}
+
+function Row({
+  row,
+  maxIndex,
+  index,
+  updateDisplayCount,
+  toggleExpanded,
+  getRowItems,
+  getHeader,
+}: {
+  row: BaseMove & TableTools;
+  maxIndex: number;
+  index: number;
+  updateDisplayCount: Function;
+} & Pick<TableReturn<BaseMove>, 'toggleExpanded' | 'getRowItems' | 'getHeader'>) {
+  const ref = useRef<HTMLTableRowElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
+  useEffect(() => {
+    if (isVisible && maxIndex === index + 1) {
+      updateDisplayCount();
+    }
+  }, [isVisible, index, maxIndex, updateDisplayCount]);
+
+  return (
+    <Fragment key={row._pid}>
+      <tr
+        className={clsx('cursor-pointer border-b bg-white hover:bg-gray-50', {
+          'bg-gray-100': row.selected,
+        })}
+        onClick={() => toggleExpanded(row)}
+        ref={ref}
+      >
+        {getRowItems(row).map((val, j) => (
+          <td className="whitespace-nowrap py-3 px-2 text-center" key={j}>
+            {val}
+          </td>
+        ))}
+      </tr>
+      {row.expanded && (
+        <tr className="border-b bg-gray-100">
+          <td colSpan={getHeader().length} className="p-4 md:px-8">
+            <MoveInfo name={row.nameZh} />
+          </td>
+        </tr>
+      )}
+    </Fragment>
+  );
+}
+
 function Table({
   tableData,
   getHeader,
@@ -72,6 +145,7 @@ function Table({
 }: TableReturn<BaseMove> & { keyword: string }) {
   const [types, setTypes] = useState(allOn);
   const [categoryType, setCategoryType] = useState(categoryAllOn);
+  const [displayCount, setDisplayCount] = useState(PAGE_COUNT);
 
   const targetType = function (type: string) {
     const onTypes = Object.entries(types).filter(([_, val]) => Boolean(val));
@@ -95,7 +169,23 @@ function Table({
     }
   };
 
+  const updateDisplayCount = () => {
+    setDisplayCount((prev) => prev + PAGE_COUNT);
+  };
+
+  useEffect(() => {
+    setDisplayCount(PAGE_COUNT);
+  }, [types, categoryType]);
+
   const selectedMoves = tableData.filter((row) => row.selected);
+  const displayList = tableData
+    .filter(
+      (row) =>
+        row.selected ||
+        (row.nameZh.includes(keyword) && categoryType[row.category] && types[row.type])
+    )
+    .sort((a, b) => Number(b.selected) - Number(a.selected))
+    .filter((_, i) => i < displayCount);
 
   return (
     <>
@@ -111,51 +201,22 @@ function Table({
         <FilterCategoryButton categories={categoryType} targetCategory={targetCategory} />
       </div>
       <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md">
-        <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
-          <tr>
-            {getHeader().map((th, i) => (
-              <th
-                key={i}
-                className={clsx('whitespace-nowrap py-3 px-2 text-center', getColumnMeta()[i])}
-              >
-                {th}
-              </th>
-            ))}
-          </tr>
-        </thead>
+        <Header getHeader={getHeader} getColumnMeta={getColumnMeta} />
         <tbody>
-          {tableData
-            .filter(
-              (row) =>
-                row.selected ||
-                (row.nameZh.includes(keyword) && categoryType[row.category] && types[row.type])
-            )
-            .sort((a, b) => Number(b.selected) - Number(a.selected))
-            .map((row) => {
-              return (
-                <Fragment key={row._pid}>
-                  <tr
-                    className={clsx('cursor-pointer border-b bg-white hover:bg-gray-50', {
-                      'bg-gray-100': row.selected,
-                    })}
-                    onClick={() => toggleExpanded(row)}
-                  >
-                    {getRowItems(row).map((val, j) => (
-                      <td className="whitespace-nowrap py-3 px-2 text-center" key={j}>
-                        {val}
-                      </td>
-                    ))}
-                  </tr>
-                  {row.expanded && (
-                    <tr className="border-b bg-gray-100">
-                      <td colSpan={getHeader().length} className="p-4 md:px-8">
-                        <MoveInfo name={row.nameZh} />
-                      </td>
-                    </tr>
-                  )}
-                </Fragment>
-              );
-            })}
+          {displayList.map((row, i) => {
+            return (
+              <Row
+                key={row.nameZh}
+                row={row}
+                maxIndex={displayCount}
+                index={i}
+                updateDisplayCount={updateDisplayCount}
+                toggleExpanded={toggleExpanded}
+                getRowItems={getRowItems}
+                getHeader={getHeader}
+              />
+            );
+          })}
         </tbody>
       </table>
     </>
