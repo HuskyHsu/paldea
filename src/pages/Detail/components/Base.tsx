@@ -36,7 +36,7 @@ export function Base({ pokemon }: Props) {
           {pokemon.types.map((type) => (
             <li
               className={clsx(
-                'flex h-6 items-center gap-2 rounded-full px-7 text-xs',
+                'flex h-6 items-center gap-2 rounded-full pr-4 pl-6 text-xs',
                 BgClass[type as keyof typeof TypeMap],
                 'relative',
                 'whitespace-nowrap'
