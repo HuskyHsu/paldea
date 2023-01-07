@@ -175,7 +175,7 @@ function Table({
 
   useEffect(() => {
     setDisplayCount(PAGE_COUNT);
-  }, [tableData, types, categoryType]);
+  }, [types, categoryType]);
 
   const selectedMoves = tableData.filter((row) => row.selected);
   const displayList = tableData
