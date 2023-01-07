@@ -20,7 +20,7 @@ export interface TableReturn<T> {
   toggleExpanded: (row: T & TableTools) => void;
 }
 
-function getCanExpandedData<T>(data: T[]) {
+function getTableData<T>(data: T[]) {
   return data.map((row, i) => {
     return {
       _pid: i,
@@ -32,10 +32,10 @@ function getCanExpandedData<T>(data: T[]) {
 }
 
 function useTable<T>(data: T[], columns: Column[]): TableReturn<T> {
-  const [tableData, setTableData] = useState(getCanExpandedData<T>(data));
+  const [tableData, setTableData] = useState(getTableData<T>(data));
 
   useEffect(() => {
-    setTableData(getCanExpandedData<T>(data));
+    setTableData(getTableData<T>(data));
   }, [data]);
 
   const toggleExpanded = (row: T & TableTools) => {

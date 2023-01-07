@@ -3,9 +3,9 @@ import { BasePokemon, TypeColor, TypeMap } from '@/models';
 import clsx from 'clsx';
 import { useState } from 'react';
 
-interface Prop {
+type Props = {
   pokemon: BasePokemon;
-}
+};
 
 function calStatistic(
   species: number,
@@ -25,7 +25,7 @@ function calStatistic(
   return nature === 'up' ? Math.floor(value * 1.1) : Math.floor(value * 0.9);
 }
 
-export function Statistic({ pokemon }: Prop) {
+export function Statistic({ pokemon }: Props) {
   const [lv, setLv] = useState(75);
 
   const cases = [

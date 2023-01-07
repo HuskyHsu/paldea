@@ -4,16 +4,16 @@ import debounce from 'lodash/debounce';
 
 import { Icon, PageHeader } from '@/components';
 
-interface Prop {
+type Props = {
   title: string;
   icon: JSX.Element;
   iconColor: string;
   placeholder: string;
   value: string;
   onChange: Function;
-}
+};
 
-export function SearchBar({ title, icon, iconColor, placeholder, value, onChange }: Prop) {
+export function SearchBar({ title, icon, iconColor, placeholder, value, onChange }: Props) {
   const [input, setInput] = useState(value);
 
   const onDelayedChange = debounce((val: string) => onChange(val), 400);

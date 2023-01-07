@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 
-interface Prop {
+type Props = {
   title: string;
   icon: JSX.Element;
   iconColor: string;
   children?: JSX.Element;
-}
+};
 
-export function PageHeader({ title, icon, iconColor, children }: Prop) {
+export function PageHeader({ title, icon, iconColor, children }: Props) {
   return (
     <div
       className={clsx(

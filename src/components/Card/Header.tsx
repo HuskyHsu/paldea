@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 
-interface HeaderProps {
+type HeaderProps = {
   paldeaId: string;
   name: string;
   link: string;
-}
+};
 
 export function Header({ paldeaId, name, link }: HeaderProps) {
   return (

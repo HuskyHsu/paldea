@@ -1,11 +1,11 @@
 import { Hr, Icon, SearchBar } from '@/components';
 
-interface Prop {
+type Props = {
   keyword: string;
   updateKeyword: Function;
-}
+};
 
-export function Header({ keyword, updateKeyword }: Prop) {
+export function Header({ keyword, updateKeyword }: Props) {
   return (
     <div className="mb-4 flex flex-col items-center gap-y-4 px-4 pt-6">
       <SearchBar

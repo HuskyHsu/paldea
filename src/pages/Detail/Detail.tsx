@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { useFilterStore } from '@/store';
-import { useApi } from '@/utils';
 import {
   BaseMove,
   BgClass,
@@ -18,24 +17,13 @@ import {
 import { Header, Base, InfoCard, Hero, Statistic } from './components';
 import { columns, Table } from './MoveTable';
 import { Hr, useTable } from '@/components';
+import { usePokemonInfo } from './api';
 
-interface MoveProps {
+type MoveProps = {
   levelingUps: LevelUpMove[];
   technicalMachines: TMMove[];
   eggMoves: BaseMove[];
-}
-
-function useGetData(link: string) {
-  return useApi<MoveProps>({
-    queryKey: `pm:${link}`,
-    path: `/data/pokemon/${link}.json`,
-    initialData: {
-      eggMoves: [] as BaseMove[],
-      levelingUps: [] as LevelUpMove[],
-      technicalMachines: [] as TMMove[],
-    },
-  });
-}
+};
 
 function mergeMove(data: MoveProps): PMMove[] {
   return [
@@ -67,7 +55,7 @@ function Moves() {
   const pokemonList = useFilterStore((state) => state.pokemonList);
   const pokemon = pokemonList.find((pm) => pm.link === link);
 
-  const { isError, data, error } = useGetData(link || '906');
+  const { data } = usePokemonInfo(link);
 
   const tableDataMemo = useMemo(() => {
     return mergeMove(data);
@@ -75,12 +63,8 @@ function Moves() {
 
   const table = useTable<PMMove>(tableDataMemo, columns);
 
-  if (isError) {
-    return <span>{`Error ${error}`}</span>;
-  }
-
   if (pokemon === undefined) {
-    return <span>undefined</span>;
+    return <span>not found No. {link} pokemon</span>;
   }
 
   return (

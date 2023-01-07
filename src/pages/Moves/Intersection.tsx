@@ -1,31 +1,25 @@
+import { useQueries } from '@tanstack/react-query';
+
 import { PokemonBadge } from '@/components';
-import { BasePokemon, Move } from '@/models';
+import { Move, MOVE_INIT } from '@/models';
 import { useFilterStore } from '@/store';
-import { useMultApi } from '@/utils';
+import { api } from '@/utils';
 
-interface Props {
+type Props = {
   moves: String[];
-}
-
-const init = {
-  nameZh: '',
-  type: 'Normal',
-  category: '',
-  power: 0,
-  accuracy: 100,
-  PP: 0,
-  description: '',
-  eggPokemons: [],
-  levelingUps: [],
-  technicalMachine: null,
 };
 
-function useData(names: String[]) {
-  return useMultApi<Move>({
-    queryKey: `move`,
-    paths: names.map((name) => `/data/relation/moves/${name}.json`),
-    initialData: init,
+function useData(paths: String[]) {
+  const results = useQueries({
+    queries: paths.map((path) => {
+      return {
+        queryKey: [`move:${path}`],
+        queryFn: () => api<Move>(`/data/relation/moves/${path}.json`),
+      };
+    }),
   });
+
+  return results.map((result) => result.data || MOVE_INIT);
 }
 
 function addtoSet(acc: Record<string, Set<string>>, link: string, move: Move) {
@@ -38,25 +32,15 @@ function addtoSet(acc: Record<string, Set<string>>, link: string, move: Move) {
 
 export function Intersection({ moves }: Props) {
   const pokemonList = useFilterStore((state) => state.pokemonList);
+  const moveInfoList = useData(moves);
 
-  const queries = useData(moves);
-  if (queries.some((query) => query.isLoading)) {
-    return <span>Loading</span>;
-  }
+  const summary = moveInfoList.reduce((acc, move) => {
+    move.levelingUps.forEach(({ link }) => addtoSet(acc, link, move));
+    move.technicalMachine?.pokemon.forEach((link) => addtoSet(acc, link, move));
+    move.eggPokemons.forEach((link) => addtoSet(acc, link, move));
 
-  if (queries.some((query) => query.isError)) {
-    return <span>Error</span>;
-  }
-
-  const summary = queries
-    .map((query) => query.data || init)
-    .reduce((acc, move) => {
-      move.levelingUps.forEach(({ link }) => addtoSet(acc, link, move));
-      move.technicalMachine?.pokemon.forEach((link) => addtoSet(acc, link, move));
-      move.eggPokemons.forEach((link) => addtoSet(acc, link, move));
-
-      return acc;
-    }, {} as Record<string, Set<string>>);
+    return acc;
+  }, {} as Record<string, Set<string>>);
 
   const intersectionList = new Set(
     Object.entries(summary)
@@ -77,11 +61,7 @@ export function Intersection({ moves }: Props) {
         {pokemonList
           .filter((pm) => intersectionList.has(pm.link))
           .map((pm, i) => (
-            <PokemonBadge
-              pm={pm}
-              getText={(pm: BasePokemon) => pm.nameZh}
-              key={pm.link + String(i)}
-            />
+            <PokemonBadge pm={pm} key={pm.link + String(i)} />
           ))}
       </div>
       <hr className="my-3 h-px border-0 bg-gray-200" />

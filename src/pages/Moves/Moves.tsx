@@ -1,34 +1,16 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
-import { useApi } from '@/utils';
 import { useTable } from '@/components';
 import { BaseMove } from '@/models';
 
 import { Header } from './Header';
 import { columns, Table } from './Table';
+import { useMoveList } from './api';
 
 function Moves() {
-  const { isLoading, isError, data, error } = useApi<BaseMove[]>({
-    queryKey: 'moves',
-    path: '/data/relation/moves.json',
-    initialData: [],
-  });
-
+  const { data } = useMoveList();
   const [keyword, setKeyword] = useState('');
-
-  const tableDataMemo = useMemo(() => {
-    return data;
-  }, [data]);
-
-  const table = useTable<BaseMove>(tableDataMemo, columns);
-
-  if (isLoading) {
-    return <span>Loading</span>;
-  }
-
-  if (isError) {
-    return <span>{`Error ${error}`}</span>;
-  }
+  const table = useTable<BaseMove>(data, columns);
 
   return (
     <>

@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 import { BasePokemon } from '@/models';
 
-interface Prop {
+type Props = {
   pokemon: BasePokemon;
-}
+};
 
-export function Hero({ pokemon }: Prop) {
+export function Hero({ pokemon }: Props) {
   return (
     <div
       className={clsx(

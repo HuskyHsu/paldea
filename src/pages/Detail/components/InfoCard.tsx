@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 
-interface Prop {
+type Props = {
   children: JSX.Element;
-}
+};
 
-export function InfoCard({ children }: Prop) {
+export function InfoCard({ children }: Props) {
   return (
     <div className="mt-4 flex flex-col items-center">
       <div

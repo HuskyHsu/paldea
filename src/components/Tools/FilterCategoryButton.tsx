@@ -3,12 +3,12 @@ import clsx from 'clsx';
 import { Icon } from '@/components';
 import { CategoryShow, CategoryType, CATGEORY_MAP } from '@/models';
 
-interface Prop {
+type Props = {
   categories: CategoryShow;
   targetCategory: Function;
-}
+};
 
-export function FilterCategoryButton({ categories, targetCategory }: Prop) {
+export function FilterCategoryButton({ categories, targetCategory }: Props) {
   return (
     <div className={clsx('flex justify-evenly', 'w-full gap-4 md:w-5/6')}>
       {CATGEORY_MAP.map((category) => (

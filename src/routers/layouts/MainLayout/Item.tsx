@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 
-interface Props {
+type Props = {
   text: string;
   color: string;
   children: JSX.Element;
   selected?: boolean;
   onClick?: () => void;
-}
+};
 
 export function Item({ text, color, children, onClick, selected = false }: Props) {
   return (

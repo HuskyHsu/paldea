@@ -2,11 +2,11 @@ import clsx from 'clsx';
 import { BasePokemon, BgClass, TypeMap, TypeNameMap } from '@/models';
 import { Icon } from '@/components';
 
-interface Prop {
+type Props = {
   pokemon: BasePokemon;
-}
+};
 
-export function Base({ pokemon }: Prop) {
+export function Base({ pokemon }: Props) {
   return (
     <dl className={clsx('max-w-md divide-gray-200 text-white', 'grid grid-cols-1', 'space-y-3')}>
       <div className={clsx('flex flex-col', 'hidden md:block')}>
