@@ -1,17 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Card, Hr } from '@/components';
 import { useFilterStore } from '@/store';
 import { Header } from './Header';
 
+const PAGE_COUNT = 20;
+
 function List() {
   const pokemonList = useFilterStore((state) => state.pokemonList);
 
-  const [displayCount, setDisplayCount] = useState(20);
+  const [displayCount, setDisplayCount] = useState(PAGE_COUNT);
 
   const updateDisplayCount = () => {
-    setDisplayCount((prev) => prev + 20);
+    setDisplayCount((prev) => prev + PAGE_COUNT);
   };
+
+  useEffect(() => {
+    setDisplayCount(PAGE_COUNT);
+  }, [pokemonList]);
 
   const otherPmList = pokemonList.filter((pm) => pm.paldeaId === '---').filter((pm) => pm.display);
 
