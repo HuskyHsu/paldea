@@ -22,7 +22,12 @@ export function Base({ pokemon }: Props) {
           </a>
         </dt>
         <dd className="flex items-center justify-end gap-3 text-lg">
-          <span>{pokemon.nameZh}</span>
+          <p>
+            {pokemon.nameZh}
+            {pokemon.altForm && (
+              <span className="block text-xs font-thin">({pokemon.altForm})</span>
+            )}
+          </p>
           <div className="hidden md:block">
             <span className="block text-xs">{pokemon.nameJp}</span>
             <span className="block text-xs">{pokemon.nameEn}</span>

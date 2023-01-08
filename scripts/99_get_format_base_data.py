@@ -36,7 +36,7 @@ if __name__ == "__main__":
     output = []
     for base in base_list["data"]:
         attributes = base["attributes"]
-        print(attributes["nameZh"])
+        print(attributes["paldeaId"], attributes["nameZh"])
 
         link_str = str(attributes["nationalId"]).zfill(3)
         if attributes["altForm"] in NameSuffix:
@@ -121,31 +121,36 @@ if __name__ == "__main__":
                     }
                     for item in detail["attributes"]["levelingUps"]["data"]
                 ],
-                "technicalMachines": [
-                    {
-                        "pid": item["attributes"]["pid"],
-                        "nameZh": item["attributes"]["move"]["data"]["attributes"][
-                            "nameZh"
-                        ],
-                        "type": item["attributes"]["move"]["data"]["attributes"][
-                            "type"
-                        ]["data"]["attributes"]["name"],
-                        "category": item["attributes"]["move"]["data"]["attributes"][
-                            "category"
-                        ],
-                        "power": item["attributes"]["move"]["data"]["attributes"][
-                            "power"
-                        ],
-                        "accuracy": item["attributes"]["move"]["data"]["attributes"][
-                            "accuracy"
-                        ],
-                        "PP": item["attributes"]["move"]["data"]["attributes"]["PP"],
-                        "description": item["attributes"]["move"]["data"]["attributes"][
-                            "description"
-                        ],
-                    }
-                    for item in detail["attributes"]["technicalMachines"]["data"]
-                ],
+                "technicalMachines": sorted(
+                    [
+                        {
+                            "pid": item["attributes"]["pid"],
+                            "nameZh": item["attributes"]["move"]["data"]["attributes"][
+                                "nameZh"
+                            ],
+                            "type": item["attributes"]["move"]["data"]["attributes"][
+                                "type"
+                            ]["data"]["attributes"]["name"],
+                            "category": item["attributes"]["move"]["data"][
+                                "attributes"
+                            ]["category"],
+                            "power": item["attributes"]["move"]["data"]["attributes"][
+                                "power"
+                            ],
+                            "accuracy": item["attributes"]["move"]["data"][
+                                "attributes"
+                            ]["accuracy"],
+                            "PP": item["attributes"]["move"]["data"]["attributes"][
+                                "PP"
+                            ],
+                            "description": item["attributes"]["move"]["data"][
+                                "attributes"
+                            ]["description"],
+                        }
+                        for item in detail["attributes"]["technicalMachines"]["data"]
+                    ],
+                    key=lambda row: row["pid"],
+                ),
                 "eggMoves": [
                     {
                         "nameZh": item["attributes"]["nameZh"],
