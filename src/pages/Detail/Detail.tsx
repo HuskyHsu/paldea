@@ -16,7 +16,7 @@ import {
 
 import { Header, Base, InfoCard, Hero, Statistic } from './components';
 import { columns, Table } from './MoveTable';
-import { Hr, useTable } from '@/components';
+import { Hr, useTable, Weakness } from '@/components';
 import { usePokemonInfo } from './api';
 
 type MoveProps = {
@@ -104,6 +104,19 @@ function Moves() {
           >
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-100">能力值</h5>
             <Statistic pokemon={pokemon} />
+          </div>
+        </InfoCard>
+        <InfoCard>
+          <div
+            className={clsx(
+              'rounded-lg p-4',
+              'bg-gradient-to-b',
+              BgFromClass[pokemon.types[0] as keyof typeof BgClass],
+              BgToClass[pokemon.types[pokemon.types.length - 1] as keyof typeof BgClass]
+            )}
+          >
+            <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-100">屬性相剋</h5>
+            {<Weakness types={pokemon.types} />}
           </div>
         </InfoCard>
       </div>
