@@ -11,7 +11,7 @@ def get_list():
 
 def get_detail(id):
     response = requests.get(
-        f"https://paldea.fly.dev/api/pokemons/{id}?populate[0]=levelingUps.move.type&populate[1]=technicalMachines.move.type&populate[2]=eggMoves.type"
+        f"https://paldea.fly.dev/api/pokemons/{id}?populate[0]=levelingUps.move.type&populate[1]=technicalMachines.move.type&populate[2]=eggMoves.type&populate[3]=raid.moves.type"
     )
     return response.json()["data"]
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if attributes["paldeaId"] > 9990 or True:
+        if True:  # attributes["paldeaId"] > 9990 or
             detail = get_detail(base["id"])
 
             detail_out = {
@@ -166,6 +166,24 @@ if __name__ == "__main__":
                     for item in detail["attributes"]["eggMoves"]["data"]
                 ],
             }
+
+            if detail["attributes"]["raid"]["data"] != None:
+                detail_out["raidMoves"] = [
+                    {
+                        "nameZh": item["attributes"]["nameZh"],
+                        "type": item["attributes"]["type"]["data"]["attributes"][
+                            "name"
+                        ],
+                        "category": item["attributes"]["category"],
+                        "power": item["attributes"]["power"],
+                        "accuracy": item["attributes"]["accuracy"],
+                        "PP": item["attributes"]["PP"],
+                        "description": item["attributes"]["description"],
+                    }
+                    for item in detail["attributes"]["raid"]["data"]["attributes"][
+                        "moves"
+                    ]["data"]
+                ]
 
             with open(
                 f"../public/data/pokemon/{link_str}.json",

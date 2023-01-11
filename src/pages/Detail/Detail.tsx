@@ -20,13 +20,14 @@ import { Hr, useTable, Weakness } from '@/components';
 import { usePokemonInfo } from './api';
 
 type MoveProps = {
-  levelingUps: LevelUpMove[];
-  technicalMachines: TMMove[];
-  eggMoves: BaseMove[];
+  levelingUps: (LevelUpMove & { selected?: boolean })[];
+  technicalMachines: (TMMove & { selected?: boolean })[];
+  eggMoves: (BaseMove & { selected?: boolean })[];
+  raidMoves?: BaseMove[];
 };
 
 function mergeMove(data: MoveProps): PMMove[] {
-  return [
+  const list = [
     data.levelingUps.map((move) => {
       const { level, ...rest } = move;
       return {
@@ -48,6 +49,23 @@ function mergeMove(data: MoveProps): PMMove[] {
       };
     }),
   ].flat();
+
+  if (data.raidMoves !== undefined) {
+    data.raidMoves.forEach((move) => {
+      const matchMove = list.find((item) => item.nameZh === move.nameZh);
+      if (matchMove) {
+        matchMove.selected = true;
+      } else {
+        list.push({
+          source: '太晶',
+          selected: true,
+          ...move,
+        });
+      }
+    });
+  }
+
+  return list;
 }
 
 function Moves() {
