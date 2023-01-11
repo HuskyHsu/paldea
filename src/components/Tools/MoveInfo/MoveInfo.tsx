@@ -3,6 +3,7 @@ import { useMove } from './api';
 import { EggPokemons } from './EggPokemons';
 import { LevelingUps } from './LevelingUps';
 import { TechnicalMachine } from './TechnicalMachine';
+import { Effective } from './Effective';
 
 type Props = {
   name: string;
@@ -26,6 +27,7 @@ export function MoveInfo({ name }: Props) {
         </a>
       </div>
       <p>{data.description}</p>
+      <Effective move={data} />
       {data.levelingUps.length > 0 && <LevelingUps pokemonList={pokemonList} move={data} />}
       {data.technicalMachine && <TechnicalMachine pokemonList={pokemonList} move={data} />}
       {data.eggPokemons.length > 0 && <EggPokemons pokemonList={pokemonList} move={data} />}

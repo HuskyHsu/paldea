@@ -52,3 +52,20 @@ export function Weakness({ types }: Props) {
     </>
   );
 }
+
+export function SuperEffective({ type }: { type: string }) {
+  return (
+    <>
+      {TYPE_MAP.map((targetType) => {
+        return {
+          type: targetType,
+          rate: (weaknessMap as WeaknessMap)[type][targetType],
+        };
+      })
+        .filter(({ rate }) => rate > 1)
+        .map(({ type }) => (
+          <Icon.Type type={type} className={clsx('h-6 w-6')} key={type} />
+        ))}
+    </>
+  );
+}
