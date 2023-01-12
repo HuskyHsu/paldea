@@ -11,6 +11,7 @@ import {
   LevelMap,
   LevelUpMove,
   PMMove,
+  RaidMove,
   TMMove,
 } from '@/models';
 
@@ -23,7 +24,7 @@ type MoveProps = {
   levelingUps: (LevelUpMove & { selected?: boolean })[];
   technicalMachines: (TMMove & { selected?: boolean })[];
   eggMoves: (BaseMove & { selected?: boolean })[];
-  raidMoves?: BaseMove[];
+  raidMoves?: RaidMove[];
 };
 
 function mergeMove(data: MoveProps): PMMove[] {
@@ -51,17 +52,31 @@ function mergeMove(data: MoveProps): PMMove[] {
   ].flat();
 
   if (data.raidMoves !== undefined) {
-    data.raidMoves.forEach((move) => {
-      const matchMove = list.find((item) => item.nameZh === move.nameZh);
-      if (matchMove) {
-        matchMove.selected = true;
-      } else {
-        list.push({
-          source: '太晶',
-          selected: true,
-          ...move,
-        });
-      }
+    data.raidMoves.forEach(({ level, moves, addMoves }) => {
+      moves.forEach((move) => {
+        const matchMove = list.find((item) => item.nameZh === move.nameZh);
+        if (matchMove) {
+          matchMove.selected = level >= 6;
+        } else {
+          list.push({
+            source: `${level}*太晶`,
+            selected: true,
+            ...move,
+          });
+        }
+      });
+      addMoves.forEach((move) => {
+        const matchMove = list.find((item) => item.nameZh === move.nameZh);
+        if (matchMove) {
+          matchMove.selected = level >= 6;
+        } else {
+          list.push({
+            source: `${level}*太晶(盾)`,
+            selected: true,
+            ...move,
+          });
+        }
+      });
     });
   }
 

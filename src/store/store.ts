@@ -66,7 +66,7 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
         (keyword === '朱' && pm.version === 'Scarlet') ||
         (keyword === '紫' && pm.version === 'Violet') ||
         (['六星', '6星'].includes(keyword) &&
-          (pm.raid?.some((raid) => raid === '6_STAR') ?? false));
+          (pm.raids?.some((raid) => raid === '6_STAR') ?? false));
     }
   }
 

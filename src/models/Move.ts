@@ -42,10 +42,16 @@ interface TechnicalMachine {
   pokemon: string[];
 }
 
+interface Raid {
+  level: number;
+  link: string;
+}
+
 export interface Move extends BaseMove {
   eggPokemons: string[];
   levelingUps: LevelingUps[];
   technicalMachine: TechnicalMachine | null;
+  raids?: Raid[];
 }
 
 export interface LevelUpMove extends BaseMove {
@@ -60,11 +66,17 @@ export interface PMMove extends BaseMove {
   source: string;
 }
 
+export interface RaidMove {
+  level: number;
+  moves: BaseMove[];
+  addMoves: BaseMove[];
+}
+
 export type PMSourceMove = {
   levelingUps: LevelUpMove[];
   technicalMachines: TMMove[];
   eggMoves: BaseMove[];
-  raidMoves?: BaseMove[];
+  raidMoves?: RaidMove[];
 };
 
 export const CATGEORY_MAP = Object.keys(Categories);

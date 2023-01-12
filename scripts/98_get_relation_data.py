@@ -23,6 +23,7 @@ def get_move_list(start):
         "populate[1]": "levelingUps.pokemon",
         "populate[2]": "technicalMachine.pokemon",
         "populate[3]": "eggPokemons",
+        "populate[4]": "raids.pokemon",
         "sort[0]": "pid",
         "pagination[limit]": 50,
         "pagination[start]": start,
@@ -75,12 +76,13 @@ if __name__ == "__main__":
 
         for base in base_list["data"]:
             attributes = base["attributes"]
-            print(attributes["nameZh"])
+            print(attributes["pid"], attributes["nameZh"])
 
             if (
                 len(attributes["levelingUps"]["data"]) == 0
                 and attributes["technicalMachine"]["data"] is None
                 and len(attributes["eggPokemons"]["data"]) == 0
+                and len(attributes["raids"]["data"]) == 0
             ):
                 continue
 
@@ -128,6 +130,38 @@ if __name__ == "__main__":
                     pm["attributes"]["link"] for pm in attributes["eggPokemons"]["data"]
                 ],
             }
+
+            for raid in attributes["raids"]["data"]:
+                link = raid["attributes"]["pokemon"]["data"]["attributes"]["link"]
+
+                match = (
+                    [
+                        levelingUp["link"]
+                        for levelingUp in data["levelingUps"]
+                        if levelingUp["link"] == link
+                    ]
+                    + [
+                        eggPokemon
+                        for eggPokemon in data["eggPokemons"]
+                        if eggPokemon == link
+                    ]
+                    + [
+                        pokemon
+                        for pokemon in (
+                            []
+                            if data["technicalMachine"] == None
+                            else data["technicalMachine"]["pokemon"]
+                        )
+                        if pokemon == link
+                    ]
+                )
+
+                if len(match) == 0:
+                    if "raids" not in data:
+                        data["raids"] = []
+                    data["raids"].append(
+                        {"level": raid["attributes"]["level"], "link": link}
+                    )
 
             moves.append(
                 {

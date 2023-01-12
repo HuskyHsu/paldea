@@ -4,6 +4,7 @@ import { EggPokemons } from './EggPokemons';
 import { LevelingUps } from './LevelingUps';
 import { TechnicalMachine } from './TechnicalMachine';
 import { Effective } from './Effective';
+import { Raids } from './Raids';
 
 type Props = {
   name: string;
@@ -31,6 +32,7 @@ export function MoveInfo({ name }: Props) {
       {data.levelingUps.length > 0 && <LevelingUps pokemonList={pokemonList} move={data} />}
       {data.technicalMachine && <TechnicalMachine pokemonList={pokemonList} move={data} />}
       {data.eggPokemons.length > 0 && <EggPokemons pokemonList={pokemonList} move={data} />}
+      {data.raids && <Raids pokemonList={pokemonList} move={data} />}
     </>
   );
 }

@@ -4,14 +4,14 @@ import json
 
 def get_list():
     response = requests.get(
-        "https://paldea.fly.dev/api/pokemons?sort[0]=paldeaId&sort[1]=subId&pagination[limit]=500&populate[0]=typeList&populate[1]=abilities&populate[2]=hiddenAbility&populate[3]=raid.moves.type"
+        "https://paldea.fly.dev/api/pokemons?sort[0]=paldeaId&sort[1]=subId&pagination[limit]=500&populate[0]=typeList&populate[1]=abilities&populate[2]=hiddenAbility&populate[3]=raids.moves.type&populate[4]=raids.additional.type"
     )
     return response.json()
 
 
 def get_detail(id):
     response = requests.get(
-        f"https://paldea.fly.dev/api/pokemons/{id}?populate[0]=levelingUps.move.type&populate[1]=technicalMachines.move.type&populate[2]=eggMoves.type&populate[3]=raid.moves.type"
+        f"https://paldea.fly.dev/api/pokemons/{id}?populate[0]=levelingUps.move.type&populate[1]=technicalMachines.move.type&populate[2]=eggMoves.type&populate[3]=raids.moves.type&populate[4]=raids.additional.type"
     )
     return response.json()["data"]
 
@@ -88,8 +88,11 @@ if __name__ == "__main__":
             },
         }
 
-        if attributes["raid"]["data"] != None:
-            data["raid"] = ["6_STAR"]
+        if len(attributes["raids"]["data"]) > 0:
+            data["raids"] = [
+                f"{raid['attributes']['level']}_STAR"
+                for raid in attributes["raids"]["data"]
+            ]
 
         output.append(data)
 
@@ -168,23 +171,44 @@ if __name__ == "__main__":
                 ],
             }
 
-            if detail["attributes"]["raid"]["data"] != None:
-                detail_out["raidMoves"] = [
-                    {
-                        "nameZh": item["attributes"]["nameZh"],
-                        "type": item["attributes"]["type"]["data"]["attributes"][
-                            "name"
-                        ],
-                        "category": item["attributes"]["category"],
-                        "power": item["attributes"]["power"],
-                        "accuracy": item["attributes"]["accuracy"],
-                        "PP": item["attributes"]["PP"],
-                        "description": item["attributes"]["description"],
-                    }
-                    for item in detail["attributes"]["raid"]["data"]["attributes"][
-                        "moves"
-                    ]["data"]
-                ]
+            if len(detail["attributes"]["raids"]["data"]) > 0:
+                detail_out["raidMoves"] = []
+                for raidMoves in detail["attributes"]["raids"]["data"]:
+                    detail_out["raidMoves"].append(
+                        {
+                            "level": raidMoves["attributes"]["level"],
+                            "moves": [
+                                {
+                                    "nameZh": item["attributes"]["nameZh"],
+                                    "type": item["attributes"]["type"]["data"][
+                                        "attributes"
+                                    ]["name"],
+                                    "category": item["attributes"]["category"],
+                                    "power": item["attributes"]["power"],
+                                    "accuracy": item["attributes"]["accuracy"],
+                                    "PP": item["attributes"]["PP"],
+                                    "description": item["attributes"]["description"],
+                                }
+                                for item in raidMoves["attributes"]["moves"]["data"]
+                            ],
+                            "addMoves": [
+                                {
+                                    "nameZh": item["attributes"]["nameZh"],
+                                    "type": item["attributes"]["type"]["data"][
+                                        "attributes"
+                                    ]["name"],
+                                    "category": item["attributes"]["category"],
+                                    "power": item["attributes"]["power"],
+                                    "accuracy": item["attributes"]["accuracy"],
+                                    "PP": item["attributes"]["PP"],
+                                    "description": item["attributes"]["description"],
+                                }
+                                for item in raidMoves["attributes"]["additional"][
+                                    "data"
+                                ]
+                            ],
+                        }
+                    )
 
             with open(
                 f"../public/data/pokemon/{link_str}.json",

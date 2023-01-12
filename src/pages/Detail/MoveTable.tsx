@@ -9,7 +9,7 @@ import {
   TableReturn,
   TableTools,
 } from '@/components';
-import { Accuracy, allOff, allOn, PMMove, categoryAllOn, categoryAllOff, BaseMove } from '@/models';
+import { Accuracy, allOff, allOn, PMMove, categoryAllOn, categoryAllOff, RaidMove } from '@/models';
 import { RaidMoves, UnionType } from './components';
 
 const columns = [
@@ -74,7 +74,9 @@ function Table({
   getRowItems,
   toggleExpanded,
   raidMoves,
-}: TableReturn<PMMove> & { raidMoves: BaseMove[] }) {
+}: TableReturn<PMMove> & {
+  raidMoves: RaidMove[];
+}) {
   const [types, setTypes] = useState(allOn);
   const [categoryType, setCategoryType] = useState(categoryAllOn);
 
@@ -115,7 +117,7 @@ function Table({
       <div className="flex justify-center">
         <FilterCategoryButton categories={categoryType} targetCategory={targetCategory} />
       </div>
-      <div className="space-y-2 px-4 md:px-0">
+      <div className="-mb-2 space-y-2 px-4 md:px-0">
         {UnionMoves.length > 0 && (
           <UnionType types={Array.from(new Set(UnionMoves.map((move) => move.type)))} />
         )}
