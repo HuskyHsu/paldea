@@ -22,7 +22,7 @@ export function RaidMoves({ raidMoves }: Porps) {
               {move.nameZh}
             </span>
           ))}
-          為開盾後額外使用的狀態招式
+          為開盾後額外使用
         </p>
       )}
     </div>

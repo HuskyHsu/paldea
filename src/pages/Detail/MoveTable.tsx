@@ -10,7 +10,7 @@ import {
   TableTools,
 } from '@/components';
 import { Accuracy, allOff, allOn, PMMove, categoryAllOn, categoryAllOff, BaseMove } from '@/models';
-import { RaidMoves } from './components';
+import { RaidMoves, UnionType } from './components';
 
 const columns = [
   {
@@ -105,6 +105,8 @@ function Table({
     return acc;
   }, new Set<string>());
 
+  const UnionMoves = tableData.filter((move) => move.selected && move.category !== 'Status');
+
   return (
     <>
       <div className="flex justify-center px-4">
@@ -113,7 +115,12 @@ function Table({
       <div className="flex justify-center">
         <FilterCategoryButton categories={categoryType} targetCategory={targetCategory} />
       </div>
-      {raidMoves.length > 0 && <RaidMoves raidMoves={raidMoves} />}
+      <div className="space-y-2 px-4 md:px-0">
+        {UnionMoves.length > 0 && (
+          <UnionType types={Array.from(new Set(UnionMoves.map((move) => move.type)))} />
+        )}
+        {raidMoves.length > 0 && <RaidMoves raidMoves={raidMoves} />}
+      </div>
       <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md">
         <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
           <tr>

@@ -90,3 +90,22 @@ export function MoveEffective({ title, type, targetRate }: EffectiveProps) {
     </div>
   );
 }
+
+export function AttackRange({ types }: Props) {
+  return (
+    <div className="flex flex-wrap gap-x-2">
+      {TYPE_MAP.map((type) => {
+        return {
+          type: type,
+          rates: types
+            .map((atkType) => (weaknessMap as WeaknessMap)[atkType][type])
+            .filter((rate) => rate > 1),
+        };
+      })
+        .filter(({ rates }) => rates.length > 0)
+        .map(({ type }) => (
+          <Icon.Type type={type} className={clsx('h-6 w-6')} key={type} />
+        ))}
+    </div>
+  );
+}
