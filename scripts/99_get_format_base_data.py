@@ -38,9 +38,7 @@ if __name__ == "__main__":
         attributes = base["attributes"]
         print(attributes["paldeaId"], attributes["nameZh"])
 
-        link_str = str(attributes["nationalId"]).zfill(3)
-        if attributes["altForm"] in NameSuffix:
-            link_str += "-" + NameSuffix[attributes["altForm"]]
+        link_str = attributes["link"]
 
         base_point = {
             "Hp": 0,
@@ -95,7 +93,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if False:  # attributes["paldeaId"] > 9990 or True
+        if True:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
 
             detail_out = {
