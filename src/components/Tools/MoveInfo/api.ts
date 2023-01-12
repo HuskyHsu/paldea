@@ -12,11 +12,11 @@ export const useMove = (name: string) => {
     data: data ?? {
       nameZh: '',
       type: 'Normal',
-      category: '',
+      category: 'Status',
       power: 0,
       accuracy: 100,
       PP: 0,
-      description: '',
+      description: 'Loading...',
       eggPokemons: [],
       levelingUps: [],
       technicalMachine: null,

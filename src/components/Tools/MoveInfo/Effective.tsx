@@ -1,4 +1,4 @@
-import { SuperEffective } from '@/components';
+import { MoveEffective } from '@/components';
 import { BaseMove } from '@/models';
 
 type Porps = {
@@ -6,15 +6,15 @@ type Porps = {
 };
 
 export function Effective({ move }: Porps) {
+  if (move.category === 'Status') {
+    return <></>;
+  }
+
   return (
-    <>
-      {move.category !== 'Status' && (
-        <>
-          <hr className="my-3 h-px border-0 bg-gray-200" />
-          <h6 className="text-lg font-bold">效果絕佳</h6>
-          <div className="flex flex-wrap gap-x-2">{<SuperEffective type={move.type} />}</div>
-        </>
-      )}
-    </>
+    <div className="flex gap-4">
+      <MoveEffective title={'效果絕佳'} type={move.type} targetRate={2} />
+      <MoveEffective title={'效果不好'} type={move.type} targetRate={0.5} />
+      <MoveEffective title={'沒有效果'} type={move.type} targetRate={0} />
+    </div>
   );
 }

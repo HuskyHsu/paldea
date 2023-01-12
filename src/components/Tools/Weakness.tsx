@@ -15,6 +15,12 @@ type RateProps = {
   targetRate: number;
 } & Props;
 
+type EffectiveProps = {
+  type: string;
+  targetRate: number;
+  title: string;
+};
+
 function TypeRate({ targetRate, types }: RateProps) {
   const matchType = TYPE_MAP.map((type) => {
     return {
@@ -53,19 +59,34 @@ export function Weakness({ types }: Props) {
   );
 }
 
-export function SuperEffective({ type }: { type: string }) {
+export function MoveEffective({ title, type, targetRate }: EffectiveProps) {
+  const showList = TYPE_MAP.map((targetType) => {
+    return {
+      type: targetType,
+      rate: (weaknessMap as WeaknessMap)[type][targetType],
+    };
+  }).filter(({ rate }) => rate === targetRate);
+
+  if (showList.length === 0) {
+    return <></>;
+  }
+
   return (
-    <>
-      {TYPE_MAP.map((targetType) => {
-        return {
-          type: targetType,
-          rate: (weaknessMap as WeaknessMap)[type][targetType],
-        };
-      })
-        .filter(({ rate }) => rate > 1)
-        .map(({ type }) => (
-          <Icon.Type type={type} className={clsx('h-6 w-6')} key={type} />
-        ))}
-    </>
+    <div>
+      <hr className="my-3 h-px border-0 bg-gray-200" />
+      <h6 className="text-lg font-bold">{title}</h6>
+      <div className="flex flex-wrap gap-x-2">
+        {TYPE_MAP.map((targetType) => {
+          return {
+            type: targetType,
+            rate: (weaknessMap as WeaknessMap)[type][targetType],
+          };
+        })
+          .filter(({ rate }) => rate === targetRate)
+          .map(({ type }) => (
+            <Icon.Type type={type} className={clsx('h-6 w-6')} key={type} />
+          ))}
+      </div>
+    </div>
   );
 }
