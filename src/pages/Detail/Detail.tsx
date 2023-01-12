@@ -143,7 +143,7 @@ function Moves() {
       </div>
       <div className="flex justify-center">
         <div className="flex w-full flex-col gap-4 md:mb-4 md:w-5/6">
-          <Table {...table} />
+          <Table {...table} raidMoves={data.raidMoves || []} />
         </div>
       </div>
     </>

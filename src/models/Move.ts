@@ -64,6 +64,7 @@ export type PMSourceMove = {
   levelingUps: LevelUpMove[];
   technicalMachines: TMMove[];
   eggMoves: BaseMove[];
+  raidMoves?: BaseMove[];
 };
 
 export const CATGEORY_MAP = Object.keys(Categories);

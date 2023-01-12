@@ -9,7 +9,8 @@ import {
   TableReturn,
   TableTools,
 } from '@/components';
-import { Accuracy, allOff, allOn, PMMove, categoryAllOn, categoryAllOff } from '@/models';
+import { Accuracy, allOff, allOn, PMMove, categoryAllOn, categoryAllOff, BaseMove } from '@/models';
+import { RaidMoves } from './components';
 
 const columns = [
   {
@@ -72,7 +73,8 @@ function Table({
   getColumnMeta,
   getRowItems,
   toggleExpanded,
-}: TableReturn<PMMove>) {
+  raidMoves,
+}: TableReturn<PMMove> & { raidMoves: BaseMove[] }) {
   const [types, setTypes] = useState(allOn);
   const [categoryType, setCategoryType] = useState(categoryAllOn);
 
@@ -105,12 +107,13 @@ function Table({
 
   return (
     <>
-      <div className="mb-4 flex justify-center px-4">
+      <div className="flex justify-center px-4">
         <FilterTypeButton types={types} targetType={targetType} set={typeSet} />
       </div>
-      <div className="mb-4 flex justify-center">
+      <div className="flex justify-center">
         <FilterCategoryButton categories={categoryType} targetCategory={targetCategory} />
       </div>
+      {raidMoves.length > 0 && <RaidMoves raidMoves={raidMoves} />}
       <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md">
         <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">
           <tr>

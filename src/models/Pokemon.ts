@@ -29,6 +29,7 @@ export interface BasePokemon {
   display: boolean;
   basePoint: BasePoint;
   gender: Gender;
+  raid?: string[];
 }
 
 export enum Stats {

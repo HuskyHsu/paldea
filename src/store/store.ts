@@ -64,7 +64,9 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
         (pm.hiddenAbility ? pm.hiddenAbility?.includes(keyword) : false) ||
         pm.basePoint[keyword as keyof typeof Stats] > 0 ||
         (keyword === '朱' && pm.version === 'Scarlet') ||
-        (keyword === '紫' && pm.version === 'Violet');
+        (keyword === '紫' && pm.version === 'Violet') ||
+        (['六星', '6星'].includes(keyword) &&
+          (pm.raid?.some((raid) => raid === '6_STAR') ?? false));
     }
   }
 

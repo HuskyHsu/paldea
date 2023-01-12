@@ -4,7 +4,7 @@ import json
 
 def get_list():
     response = requests.get(
-        "https://paldea.fly.dev/api/pokemons?sort[0]=paldeaId&sort[1]=subId&pagination[limit]=500&populate[0]=typeList&populate[1]=abilities&populate[2]=hiddenAbility"
+        "https://paldea.fly.dev/api/pokemons?sort[0]=paldeaId&sort[1]=subId&pagination[limit]=500&populate[0]=typeList&populate[1]=abilities&populate[2]=hiddenAbility&populate[3]=raid.moves.type"
     )
     return response.json()
 
@@ -90,9 +90,12 @@ if __name__ == "__main__":
             },
         }
 
+        if attributes["raid"]["data"] != None:
+            data["raid"] = ["6_STAR"]
+
         output.append(data)
 
-        if True:  # attributes["paldeaId"] > 9990 or
+        if False:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
 
             detail_out = {
