@@ -31,3 +31,4 @@
 - [野生太晶伊布們](https://youtu.be/fX0uqTbQVxw)
 - [各種色違寶可夢的點位](https://forum.gamer.com.tw/C.php?bsn=1647&snA=121134)
 - [朱紫團戰打手與輔助手](http://www.ptt.cc/bbs/PokeMon/M.1672875869.A.EA9.html)
+- [團戰打手推薦](https://forum.gamer.com.tw/C.php?bsn=1647&snA=122237&tnum=6)
