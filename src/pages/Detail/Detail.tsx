@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -14,11 +14,12 @@ import {
   PMMove,
   RaidMove,
   TMMove,
+  TYPE_MAP,
 } from '@/models';
 
 import { Header, Base, InfoCard, Hero, Statistic } from './components';
 import { columns, Table } from './MoveTable';
-import { Hr, useTable, Weakness } from '@/components';
+import { Hr, Icon, useTable, Weakness } from '@/components';
 import { usePokemonInfo } from './api';
 
 type MoveProps = {
@@ -109,6 +110,15 @@ function Moves() {
   const targetPmIndex = pokemonList.findIndex((pm) => pm.link === link);
   const pokemon = pokemonList[targetPmIndex];
 
+  const [terasType, setTerasType] = useState<string | null>(null);
+  const targetTerasType = (type: string) => {
+    if (type === terasType) {
+      setTerasType(null);
+    } else {
+      setTerasType(type);
+    }
+  };
+
   const { data } = usePokemonInfo(link);
 
   const tableDataMemo = useMemo(() => {
@@ -172,7 +182,22 @@ function Moves() {
             )}
           >
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-100">屬性相剋</h5>
-            {<Weakness types={pokemon.types} />}
+            {<Weakness types={pokemon.types} terasType={terasType} />}
+            <h5 className="my-2 font-bold tracking-tight text-gray-100">切換太晶屬性</h5>
+            <div className="grid grid-cols-6 gap-4 md:grid-cols-9">
+              {TYPE_MAP.map((type) => (
+                <div key={type} className="group relative h-8 justify-self-center">
+                  <Icon.Type
+                    type={type}
+                    className={clsx('h-8 w-8', {
+                      'opacity-30': terasType !== type,
+                    })}
+                    button={true}
+                    onClick={() => targetTerasType(type)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </InfoCard>
       </div>

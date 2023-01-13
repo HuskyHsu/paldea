@@ -9,6 +9,7 @@ type WeaknessMap = Record<string, Record<string, number>>;
 
 type Props = {
   types: string[];
+  terasType?: string | null;
 };
 
 type RateProps = {
@@ -47,12 +48,12 @@ function TypeRate({ targetRate, types }: RateProps) {
   );
 }
 
-export function Weakness({ types }: Props) {
+export function Weakness({ types, terasType = null }: Props) {
   return (
     <>
       <div className="grid grid-cols-2 gap-x-2 md:flex md:justify-around">
         {[4, 2, 0.5, 0.25, 0].map((rate) => (
-          <TypeRate targetRate={rate} types={types} key={rate} />
+          <TypeRate targetRate={rate} types={terasType != null ? [terasType] : types} key={rate} />
         ))}
       </div>
     </>
