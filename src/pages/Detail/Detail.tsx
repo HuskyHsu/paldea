@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { useFilterStore } from '@/store';
 import {
   BaseMove,
+  BasePokemon,
   BgClass,
   BgFromClass,
   BgToClass,
@@ -83,10 +84,30 @@ function mergeMove(data: MoveProps): PMMove[] {
   return list;
 }
 
+const getSubList = (pokemonList: BasePokemon[], range: number, link: string) => {
+  const listIndex = pokemonList.findIndex((pm) => pm.link === link);
+  const listRange = [
+    listIndex - range < 0 ? 0 : listIndex - range,
+    listIndex + range + 1 > pokemonList.length ? pokemonList.length : listIndex + range + 1,
+  ];
+  let subList = pokemonList.slice(...listRange);
+  if (subList.length < range * 2 + 1) {
+    if (listRange[0] === 0) {
+      subList = pokemonList
+        .slice(pokemonList.length - range * 2 - 1 + subList.length, pokemonList.length)
+        .concat(subList);
+    } else if (listRange[1] === pokemonList.length) {
+      subList = subList.concat(pokemonList.slice(0, range * 2 + 1 - subList.length));
+    }
+  }
+  return subList;
+};
+
 function Moves() {
-  let { link } = useParams();
+  let { link = '906' } = useParams();
   const pokemonList = useFilterStore((state) => state.pokemonList);
-  const pokemon = pokemonList.find((pm) => pm.link === link);
+  const targetPmIndex = pokemonList.findIndex((pm) => pm.link === link);
+  const pokemon = pokemonList[targetPmIndex];
 
   const { data } = usePokemonInfo(link);
 
@@ -100,9 +121,11 @@ function Moves() {
     return <span>not found No. {link} pokemon</span>;
   }
 
+  const quickListPm = getSubList(pokemonList, 1, link);
+
   return (
     <>
-      <Header />
+      <Header quickListPm={quickListPm} />
       <div className="space-y-8 px-6 pb-6">
         <InfoCard>
           <div
