@@ -1,7 +1,7 @@
-import { createContext, useContext, useState, useRef, PropsWithChildren } from 'react';
+import { createContext, useContext, useState, useRef, PropsWithChildren, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import { Icon } from '..';
-
 interface BackToTopContextType {
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
@@ -19,6 +19,15 @@ const BackToTopContext = createContext<BackToTopContextType>({
 export const BackToTopProvider = ({ children }: PropsWithChildren) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!ref.current) return;
+    ref.current.scrollTo({
+      top: 0,
+    });
+  }, [location]);
 
   const scrollToTop = () => {
     if (!ref.current) return;
