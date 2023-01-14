@@ -26,7 +26,7 @@ export function RaidMoves({ raidMoves }: Porps) {
                     {move.nameZh}
                   </span>
                 ))}
-                為開盾後額外使用
+                為團體戰額外使用招式，捕捉後未習得
               </p>
             )}
           </div>
