@@ -28,7 +28,14 @@ export function Hero({ pokemon }: Props) {
         )}
       >
         <span className="text-xs">No.{pokemon.paldeaId}</span>
-        <span className="pl-4">{pokemon.nameZh}</span>
+        <a
+          href={`https://wiki.52poke.com/zh-hant/${pokemon.nameZh}`}
+          target="_blank"
+          rel="noreferrer"
+          className="underline underline-offset-[3px]"
+        >
+          <span className="pl-4">{pokemon.nameZh}</span>
+        </a>
       </p>
     </div>
   );
