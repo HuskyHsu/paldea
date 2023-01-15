@@ -67,7 +67,7 @@ function MainLayout() {
           scrollbarGutter: 'stable',
         }}
       >
-        <div className="min-h-full rounded-xl bg-custom-lightgrey drop-shadow-xl">
+        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey drop-shadow-xl">
           <Outlet />
         </div>
       </div>

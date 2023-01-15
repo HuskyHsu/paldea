@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useTable } from '@/components';
 import { BaseMove } from '@/models';
@@ -11,6 +11,10 @@ function Moves() {
   const { data } = useMoveList();
   const [keyword, setKeyword] = useState('');
   const table = useTable<BaseMove>(data, columns);
+
+  useEffect(() => {
+    document.title = `Pokédex Moves`;
+  }, []);
 
   return (
     <>

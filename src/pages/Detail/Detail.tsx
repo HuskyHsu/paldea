@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -109,6 +109,10 @@ function Moves() {
   const pokemonList = useFilterStore((state) => state.pokemonList);
   const targetPmIndex = pokemonList.findIndex((pm) => pm.link === link);
   const pokemon = pokemonList[targetPmIndex];
+
+  useEffect(() => {
+    document.title = `Pokédex ${pokemon.nameZh}`;
+  }, []);
 
   const [terasType, setTerasType] = useState<string | null>(null);
   const targetTerasType = (type: string) => {

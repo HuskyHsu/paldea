@@ -17,6 +17,7 @@ function List() {
 
   useEffect(() => {
     setDisplayCount(PAGE_COUNT);
+    document.title = 'Paldea Pokédex';
   }, [pokemonList]);
 
   const otherPmList = pokemonList.filter((pm) => pm.paldeaId === '---').filter((pm) => pm.display);
