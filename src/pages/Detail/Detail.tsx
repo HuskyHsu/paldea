@@ -112,7 +112,7 @@ function Moves() {
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
-  }, []);
+  }, [pokemon]);
 
   const [terasType, setTerasType] = useState<string | null>(null);
   const targetTerasType = (type: string) => {

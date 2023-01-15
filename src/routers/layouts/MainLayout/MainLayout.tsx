@@ -1,11 +1,14 @@
+import { useEffect, useState } from 'react';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
-import { Outlet, useNavigate } from 'react-router-dom';
+import ReactGA from 'react-ga4';
+
 import { Icon, useBackToTopContext } from '@/components';
 import { Item } from './Item';
-import { useEffect, useState } from 'react';
 
 function MainLayout() {
   const { ref, toggleVisibility } = useBackToTopContext();
+  const location = useLocation();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -18,6 +21,20 @@ function MainLayout() {
       current.removeEventListener('scroll', toggleVisibility);
     };
   }, [ref, toggleVisibility]);
+
+  useEffect(() => {
+    ReactGA.initialize('G-CCR1VSQL3X');
+    ReactGA.send({
+      hitType: 'pageview',
+      page: location.pathname,
+    });
+    if (location.search) {
+      ReactGA.event({
+        category: location.pathname,
+        action: location.search,
+      });
+    }
+  }, [location]);
 
   const [hash, setHash] = useState(window.location.hash.replace('#/', ''));
 
