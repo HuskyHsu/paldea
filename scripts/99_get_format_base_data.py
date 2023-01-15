@@ -210,6 +210,10 @@ if __name__ == "__main__":
                         }
                     )
 
+                detail_out["raidMoves"] = sorted(
+                    detail_out["raidMoves"], key=lambda row: row["level"]
+                )
+
             with open(
                 f"../public/data/pokemon/{link_str}.json",
                 "wt",
