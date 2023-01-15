@@ -19,7 +19,7 @@ export function Header({ paldeaId, name, link }: HeaderProps) {
     >
       <span className="hidden whitespace-nowrap leading-none md:block">{`#${paldeaId}`}</span>
       <img
-        className="pointer-events-none h-full w-auto"
+        className="pointer-events-none h-auto w-auto"
         src={`${process.env.PUBLIC_URL}/image/icon/${link}.png`}
         alt={name}
         loading="lazy"
