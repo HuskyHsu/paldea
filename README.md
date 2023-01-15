@@ -9,15 +9,51 @@
   2. [x] move list(leveling up, TM, egg)
   3. [x] abilities
   4. [x] gender
-  5. [ ] weakness
+  5. [x] weakness
   6. [ ] evolutionary chain
   7. [ ] get methods
-  8. [ ] move query
+  8. [x] move query
 
 ### Issues
 
 - [x] home page types button rwd to 6x3 grid
 - [x] special method for pokemon(Charizard, Perrserker, ...)
+
+### Guide
+
+#### 1. 圖鑑查詢
+
+關鍵字支援以下幾種
+
+- 編號
+- 中日英名稱
+- 特性/夢特
+- 朱/紫
+- 六星/6 星
+- 努力值>0 的(Atk, Def, SpAtk, SpDef, Hp, Spd)
+
+屬性查詢的時候為交集
+
+![](doc/introduce/%E6%8A%95%E5%BD%B1%E7%89%871.png)
+
+#### 2. 圖鑑詳細資料
+
+![](doc/introduce/%E6%8A%95%E5%BD%B1%E7%89%872.png)
+![](doc/introduce/%E6%8A%95%E5%BD%B1%E7%89%873.png)
+![](doc/introduce/%E6%8A%95%E5%BD%B1%E7%89%874.png)
+
+#### 3. 該寶可夢招式查詢
+
+![](doc/introduce/%E6%8A%95%E5%BD%B1%E7%89%875.png)
+
+#### 4. 全招式查詢
+
+![](doc/introduce/%E6%8A%95%E5%BD%B1%E7%89%876.png)
+
+斗笠菇(6 星)-蘑菇孢子
+小磁怪(2 星)-電網
+母愛管侍(5 星)-戲法空間
+以上三種為太晶戰捕捉限定招式也有收錄
 
 ### For Dummies
 
