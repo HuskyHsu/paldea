@@ -17,7 +17,7 @@ export function Header({ quickListPm }: Props) {
           {quickListPm.map((pm, i) => {
             if (i === (quickListPm.length - 1) / 2) {
               return (
-                <span className="hidden py-0.5 text-xs md:inline" key={pm.link}>
+                <span className="hidden whitespace-nowrap py-0.5 text-xs md:inline" key={pm.link}>
                   {pm.nameZh}
                 </span>
               );

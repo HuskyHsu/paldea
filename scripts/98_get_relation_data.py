@@ -140,11 +140,11 @@ if __name__ == "__main__":
                         for levelingUp in data["levelingUps"]
                         if levelingUp["link"] == link
                     ]
-                    + [
-                        eggPokemon
-                        for eggPokemon in data["eggPokemons"]
-                        if eggPokemon == link
-                    ]
+                    # + [
+                    #     eggPokemon
+                    #     for eggPokemon in data["eggPokemons"]
+                    #     if eggPokemon == link
+                    # ]
                     + [
                         pokemon
                         for pokemon in (
@@ -155,6 +155,13 @@ if __name__ == "__main__":
                         if pokemon == link
                     ]
                 )
+
+                if attributes["nameZh"] != "電網":
+                    match = match + [
+                        eggPokemon
+                        for eggPokemon in data["eggPokemons"]
+                        if eggPokemon == link
+                    ]
 
                 if len(match) == 0:
                     if "raids" not in data:

@@ -57,12 +57,12 @@ function mergeMove(data: MoveProps): PMMove[] {
     data.raidMoves.forEach(({ level, moves, addMoves }) => {
       moves.forEach((move) => {
         const matchMove = list.find((item) => item.nameZh === move.nameZh);
-        if (matchMove) {
+        if (matchMove && move.nameZh !== '電網') {
           matchMove.selected = level >= 6;
         } else {
           list.push({
             source: `${level}*太晶`,
-            selected: true,
+            selected: level >= 6,
             ...move,
           });
         }
@@ -74,7 +74,7 @@ function mergeMove(data: MoveProps): PMMove[] {
         } else {
           list.push({
             source: `${level}*太晶(盾)`,
-            selected: true,
+            selected: level >= 6,
             ...move,
           });
         }
