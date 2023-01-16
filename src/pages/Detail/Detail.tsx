@@ -53,34 +53,39 @@ function mergeMove(data: MoveProps): PMMove[] {
     }),
   ].flat();
 
-  if (data.raidMoves !== undefined) {
-    data.raidMoves.forEach(({ level, moves, addMoves }) => {
-      moves.forEach((move) => {
-        const matchMove = list.find((item) => item.nameZh === move.nameZh);
-        if (matchMove && move.nameZh !== '電網') {
-          matchMove.selected = level >= 6;
-        } else {
-          list.push({
-            source: `${level}*太晶`,
-            selected: level >= 6,
-            ...move,
-          });
-        }
-      });
-      addMoves.forEach((move) => {
-        const matchMove = list.find((item) => item.nameZh === move.nameZh);
-        if (matchMove) {
-          matchMove.selected = level >= 6;
-        } else {
-          list.push({
-            source: `${level}*太晶(盾)`,
-            selected: level >= 6,
-            ...move,
-          });
-        }
-      });
-    });
+  if (data.raidMoves === undefined) {
+    return list;
   }
+
+  data.raidMoves.forEach(({ level, moves, addMoves }) => {
+    moves.forEach((move) => {
+      const matchMove = list.find((item) => item.nameZh === move.nameZh);
+      if (matchMove && move.nameZh !== '電網') {
+        matchMove.selected = level >= 6;
+      } else {
+        list.push({
+          source: `${level}*太晶`,
+          selected: level >= 6,
+          ...move,
+        });
+      }
+    });
+    if (level < 6) {
+      return;
+    }
+    addMoves.forEach((move) => {
+      const matchMove = list.find((item) => item.nameZh === move.nameZh);
+      if (matchMove) {
+        matchMove.selected = level >= 6;
+      } else {
+        list.push({
+          source: `${level}*太晶(增)`,
+          selected: level >= 6,
+          ...move,
+        });
+      }
+    });
+  });
 
   return list;
 }
