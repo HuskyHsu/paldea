@@ -96,7 +96,7 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if True:  # attributes["paldeaId"] > 9990 or True
+        if False:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
 
             detail_out = {
