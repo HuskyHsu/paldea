@@ -18,16 +18,18 @@ export function MoveInfo({ name }: Props) {
 
   return (
     <>
-      <div className="flex space-x-3">
-        <span className="inline text-lg font-bold">說明</span>
-        <a
-          href={`https://wiki.52poke.com/zh-hant/${data.nameZh}（招式）`}
-          target="_blank"
-          rel="noreferrer"
-          className="inline text-lg font-bold text-blue-800 underline"
-        >
-          wiki
-        </a>
+      <div className="flex justify-between">
+        <div className="flex gap-4">
+          <span className="inline text-lg font-bold">說明</span>
+          <a
+            href={`https://wiki.52poke.com/zh-hant/${data.nameZh}（招式）`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline text-lg font-bold text-blue-800 underline"
+          >
+            wiki
+          </a>
+        </div>
         <div className="flex items-center">
           <input
             id={name}
@@ -36,7 +38,7 @@ export function MoveInfo({ name }: Props) {
             className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-800 focus:ring-1 focus:ring-blue-800"
             onChange={() => setEvolution(!evolution)}
           />
-          <label htmlFor={name} className="ml-2 text-sm font-medium">
+          <label htmlFor={name} className="ml-2">
             僅顯示進化型
           </label>
         </div>
