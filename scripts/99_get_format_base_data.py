@@ -3,15 +3,38 @@ import json
 
 
 def get_list():
+    params = {
+        "sort[0]": "paldeaId",
+        "sort[1]": "subId",
+        "pagination[limit]": "500",
+        "populate[0]": "typeList",
+        "populate[1]": "abilities",
+        "populate[2]": "hiddenAbility",
+        "populate[3]": "raids.moves.type",
+        "populate[4]": "raids.additional.type",
+        "populate[5]": "evolutions.to",
+    }
+
     response = requests.get(
-        "https://paldea.fly.dev/api/pokemons?sort[0]=paldeaId&sort[1]=subId&pagination[limit]=500&populate[0]=typeList&populate[1]=abilities&populate[2]=hiddenAbility&populate[3]=raids.moves.type&populate[4]=raids.additional.type"
+        "https://paldea.fly.dev/api/pokemons",
+        params=params,
     )
     return response.json()
 
 
 def get_detail(id):
+
+    params = {
+        "populate[0]": "levelingUps.move.type",
+        "populate[1]": "technicalMachines.move.type",
+        "populate[2]": "eggMoves.type",
+        "populate[3]": "raids.moves.type",
+        "populate[4]": "raids.additional.type",
+    }
+
     response = requests.get(
-        f"https://paldea.fly.dev/api/pokemons/{id}?populate[0]=levelingUps.move.type&populate[1]=technicalMachines.move.type&populate[2]=eggMoves.type&populate[3]=raids.moves.type&populate[4]=raids.additional.type"
+        f"https://paldea.fly.dev/api/pokemons/{id}",
+        params=params,
     )
     return response.json()["data"]
 
@@ -92,6 +115,17 @@ if __name__ == "__main__":
             data["raids"] = [
                 f"{raid['attributes']['level']}_STAR"
                 for raid in attributes["raids"]["data"]
+            ]
+
+        if len(attributes["evolutions"]["data"]) > 0:
+            data["evolutions"] = [
+                {
+                    "condition": evolutions["attributes"]["condition"],
+                    "link": evolutions["attributes"]["to"]["data"]["attributes"][
+                        "link"
+                    ],
+                }
+                for evolutions in attributes["evolutions"]["data"]
             ]
 
         output.append(data)
