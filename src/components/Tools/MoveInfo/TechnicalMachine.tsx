@@ -4,9 +4,10 @@ import { BasePokemon, Move } from '@/models';
 type MoveProps = {
   pokemonList: BasePokemon[];
   move: Move;
+  evolution: boolean;
 };
 
-export function TechnicalMachine({ pokemonList, move }: MoveProps) {
+export function TechnicalMachine({ pokemonList, move, evolution }: MoveProps) {
   if (move.technicalMachine === null) {
     return <></>;
   }
@@ -23,6 +24,17 @@ export function TechnicalMachine({ pokemonList, move }: MoveProps) {
       <div className="mt-2 flex flex-wrap gap-y-2">
         {pokemonList
           .filter((pm) => move.technicalMachine?.pokemon.includes(pm.link))
+          .filter((pm) => {
+            if (!evolution) {
+              return true;
+            }
+            if (pm.evolutions === undefined) {
+              return true;
+            }
+            return !pm.evolutions.some((evolution) =>
+              move.technicalMachine?.pokemon.includes(evolution.link)
+            );
+          })
           .map((pm, i) => (
             <PokemonBadge pm={pm} key={pm.link + String(i)} />
           ))}

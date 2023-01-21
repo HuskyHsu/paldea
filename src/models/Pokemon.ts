@@ -30,6 +30,7 @@ export interface BasePokemon {
   basePoint: BasePoint;
   gender: Gender;
   raids?: string[];
+  evolutions?: { condition: string; link: string }[];
 }
 
 export enum Stats {
