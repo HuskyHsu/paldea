@@ -10,7 +10,7 @@ export function PokemonBadge({ pm, getText, size = 'text-xs', direction = 'h' }:
       className={clsx(
         'whitespace-nowrap rounded font-semibold text-white',
         size,
-        direction === 'h' ? 'px-2.5 py-0.5' : 'px-0.5 py-0.5',
+        direction === 'h' ? 'px-2.5 py-0.5' : 'px-0.5 py-0.5 leading-6',
         'bg-gradient-to-r',
         BgFromClass[pm.types[0] as keyof typeof BgClass],
         BgToClass[pm.types[pm.types.length - 1] as keyof typeof BgClass]
