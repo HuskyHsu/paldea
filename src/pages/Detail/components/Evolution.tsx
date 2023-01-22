@@ -96,7 +96,7 @@ export function Evolution({ pokemonList, source }: Props) {
         <PokemonBadge
           pm={evolutionChain.pm}
           size={clsx(
-            'text-sm',
+            'text-xs',
             rows === 'row-span-1' && secRows === 'row-span-2' ? 'row-span-2' : rows
           )}
           key={keyId}
@@ -106,7 +106,7 @@ export function Evolution({ pokemonList, source }: Props) {
 
     rowElement = rowElement.concat([
       <Condition {...evolution} className={rowsClass} key={keyId + 1} />,
-      <PokemonBadge pm={evolution.pm} size={clsx('text-sm', rowsClass)} key={keyId + 2} />,
+      <PokemonBadge pm={evolution.pm} size={clsx('text-xs', rowsClass)} key={keyId + 2} />,
     ]);
 
     acc = acc.concat(rowElement.slice(0));
@@ -115,7 +115,7 @@ export function Evolution({ pokemonList, source }: Props) {
       evolution.evolutions.forEach((evolution_) => {
         acc = acc.concat([
           <Condition {...evolution_} key={keyId} />,
-          <PokemonBadge pm={evolution_.pm} size="text-sm" key={keyId + 1} />,
+          <PokemonBadge pm={evolution_.pm} key={keyId + 1} />,
         ]);
         keyId += 2;
       });
@@ -125,6 +125,6 @@ export function Evolution({ pokemonList, source }: Props) {
   }, [] as JSX.Element[]);
 
   return (
-    <div className={clsx('grid items-center justify-center gap-4', cols)}>{evolutionPath}</div>
+    <div className={clsx('grid items-center justify-center gap-y-4', cols)}>{evolutionPath}</div>
   );
 }
