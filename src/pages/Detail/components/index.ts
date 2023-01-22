@@ -5,3 +5,4 @@ export * from './Hero';
 export * from './Statistic';
 export * from './RaidMoves';
 export * from './Union';
+export * from './Evolution';

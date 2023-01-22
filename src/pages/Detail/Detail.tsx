@@ -17,9 +17,9 @@ import {
   TYPE_MAP,
 } from '@/models';
 
-import { Header, Base, InfoCard, Hero, Statistic } from './components';
+import { Header, Base, InfoCard, Hero, Statistic, Evolution } from './components';
 import { columns, Table } from './MoveTable';
-import { Hr, Icon, PokemonBadge, useTable, Weakness } from '@/components';
+import { Hr, Icon, useTable, Weakness } from '@/components';
 import { usePokemonInfo } from './api';
 
 type MoveProps = {
@@ -109,60 +109,12 @@ const getSubList = (pokemonList: BasePokemon[], range: number, link: string) => 
   return subList;
 };
 
-const getEvolution = (pokemonList: BasePokemon[], source: string) => {
-  interface evolutionChain {
-    pm: BasePokemon;
-    evolutions?: {
-      pm: BasePokemon;
-      condition: string;
-      evolutions?: { pm: BasePokemon; condition: string }[];
-    }[];
-  }
-
-  const basePm = pokemonList.find((pm) => pm.link === source) as BasePokemon;
-  const chain = { pm: basePm } as evolutionChain;
-
-  if (basePm.evolutions === undefined) {
-    return chain;
-  }
-
-  basePm.evolutions.forEach((evolution) => {
-    const targetPm = pokemonList.find((pm) => pm.link === evolution.link) as BasePokemon;
-
-    if (chain.evolutions === undefined) {
-      chain.evolutions = [];
-    }
-
-    const subChain = {
-      pm: targetPm,
-      condition: evolution.condition,
-    } as {
-      pm: BasePokemon;
-      condition: string;
-      evolutions?: { pm: BasePokemon; condition: string }[];
-    };
-
-    if (targetPm.evolutions !== undefined) {
-      subChain.evolutions = targetPm.evolutions.map((evolution) => {
-        return {
-          pm: pokemonList.find((pm) => pm.link === evolution.link) as BasePokemon,
-          condition: evolution.condition,
-        };
-      });
-    }
-
-    chain.evolutions.push(subChain);
-  });
-
-  return chain;
-};
-
 function Moves() {
   let { link = '906' } = useParams();
   const pokemonList = useFilterStore((state) => state.pokemonList);
   const targetPmIndex = pokemonList.findIndex((pm) => pm.link === link);
   const pokemon = pokemonList[targetPmIndex];
-  const evolutionChain = getEvolution(pokemonList, pokemon.source);
+  const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
@@ -190,7 +142,6 @@ function Moves() {
   }
 
   const quickListPm = getSubList(pokemonList, 1, link);
-  const isMobile = window.screen.width < 768;
 
   return (
     <>
@@ -231,7 +182,7 @@ function Moves() {
             <Statistic pokemon={pokemon} />
           </div>
         </InfoCard>
-        {evolutionChain.evolutions !== undefined && (
+        {basePm.evolutions !== undefined && (
           <InfoCard>
             <div
               className={clsx(
@@ -242,57 +193,7 @@ function Moves() {
               )}
             >
               <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-100">進化途徑</h5>
-              <div className="mx-auto flex items-center gap-4 text-gray-100 [writing-mode:vertical-lr] md:flex-row md:justify-around md:[writing-mode:horizontal-tb]">
-                <PokemonBadge
-                  pm={evolutionChain.pm}
-                  size="text-sm"
-                  direction={isMobile ? 'v' : 'h'}
-                />
-                <div className="flex flex-col gap-2 [writing-mode:vertical-lr] md:gap-1 md:[writing-mode:horizontal-tb]">
-                  {evolutionChain.evolutions?.map((evolution) => (
-                    <span
-                      className="whitespace-nowrap text-sm leading-6"
-                      key={evolution.pm.link}
-                    >{`▪ ${evolution.condition} ➜`}</span>
-                  ))}
-                </div>
-                <div className="flex flex-col gap-2 [writing-mode:vertical-lr] md:gap-1 md:[writing-mode:horizontal-tb]">
-                  {evolutionChain.evolutions?.map((evolution) => (
-                    <PokemonBadge
-                      pm={evolution.pm}
-                      key={evolution.pm.link}
-                      size="text-sm"
-                      direction={isMobile ? 'v' : 'h'}
-                    />
-                  ))}
-                </div>
-                {evolutionChain.evolutions?.every((e) => e.evolutions) && (
-                  <div className="flex flex-col gap-1">
-                    {evolutionChain.evolutions?.map((evolution) =>
-                      evolution.evolutions?.map((evolution) => (
-                        <span
-                          className="whitespace-nowrap text-sm leading-6"
-                          key={evolution.pm.link}
-                        >{`▪ ${evolution.condition} ➜`}</span>
-                      ))
-                    )}
-                  </div>
-                )}
-                {evolutionChain.evolutions?.every((e) => e.evolutions) && (
-                  <div className="flex flex-col gap-2 [writing-mode:vertical-lr] md:gap-1 md:[writing-mode:horizontal-tb]">
-                    {evolutionChain.evolutions?.map((evolution) =>
-                      evolution.evolutions?.map((evolution) => (
-                        <PokemonBadge
-                          pm={evolution.pm}
-                          key={evolution.pm.link}
-                          size="text-sm"
-                          direction={isMobile ? 'v' : 'h'}
-                        />
-                      ))
-                    )}
-                  </div>
-                )}
-              </div>
+              <Evolution pokemonList={pokemonList} source={pokemon.source} />
             </div>
           </InfoCard>
         )}
@@ -300,7 +201,7 @@ function Moves() {
           <div
             className={clsx(
               'rounded-lg p-4',
-              evolutionChain.evolutions !== undefined ? 'bg-gradient-to-t' : 'bg-gradient-to-b',
+              basePm.evolutions !== undefined ? 'bg-gradient-to-t' : 'bg-gradient-to-b',
               BgFromClass[pokemon.types[0] as keyof typeof BgClass],
               BgToClass[pokemon.types[pokemon.types.length - 1] as keyof typeof BgClass]
             )}
