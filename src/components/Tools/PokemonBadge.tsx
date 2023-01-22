@@ -8,9 +8,9 @@ export function PokemonBadge({ pm, getText, size = 'text-xs', direction = 'h' }:
   return (
     <Link
       className={clsx(
-        'whitespace-nowrap rounded font-semibold text-white',
+        'whitespace-nowrap rounded align-middle font-semibold text-white',
         size,
-        direction === 'h' ? 'px-2.5 py-0.5' : 'px-0.5 py-0.5 leading-6',
+        direction === 'h' ? 'px-2.5 py-0.5' : 'px-0.5 py-0.5',
         'bg-gradient-to-r',
         BgFromClass[pm.types[0] as keyof typeof BgClass],
         BgToClass[pm.types[pm.types.length - 1] as keyof typeof BgClass]
