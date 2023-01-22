@@ -54,7 +54,9 @@ const getEvolution = (pokemonList: BasePokemon[], source: string) => {
 };
 
 const Condition = ({ condition, className = '' }: BaseEvolution & { className?: string }) => {
-  return <span className={clsx('text-center text-sm', className)}>{condition} ⇨</span>;
+  return (
+    <span className={clsx('text-center text-sm text-gray-100', className)}>{condition} ⇨</span>
+  );
 };
 
 export function Evolution({ pokemonList, source }: Props) {
