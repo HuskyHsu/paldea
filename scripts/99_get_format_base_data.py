@@ -13,6 +13,7 @@ def get_list():
         "populate[3]": "raids.moves.type",
         "populate[4]": "raids.additional.type",
         "populate[5]": "evolutions.to",
+        "populate[6]": "source",
     }
 
     response = requests.get(
@@ -109,6 +110,7 @@ if __name__ == "__main__":
                 "M": int(attributes["gender"][1]),
                 "F": int(attributes["gender"][3]),
             },
+            "source": attributes["source"]["data"]["attributes"]["link"],
         }
 
         if len(attributes["raids"]["data"]) > 0:

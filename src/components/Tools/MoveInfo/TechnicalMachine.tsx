@@ -21,7 +21,7 @@ export function TechnicalMachine({ pokemonList, move, evolution }: MoveProps) {
         <li>聯盟點數：{move.technicalMachine.leaguePoint}</li>
         <li>材料：{move.technicalMachine.material}</li>
       </ul>
-      <div className="mt-2 flex flex-wrap gap-y-2">
+      <div className="mt-2 flex flex-wrap gap-2">
         {pokemonList
           .filter((pm) => move.technicalMachine?.pokemon.includes(pm.link))
           .filter((pm) => {

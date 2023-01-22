@@ -29,6 +29,7 @@ export interface BasePokemon {
   display: boolean;
   basePoint: BasePoint;
   gender: Gender;
+  source: string;
   raids?: string[];
   evolutions?: { condition: string; link: string }[];
 }

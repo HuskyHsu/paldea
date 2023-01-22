@@ -11,7 +11,7 @@ export function Raids({ pokemonList, move }: MoveProps) {
     <>
       <hr className="my-3 h-px border-0 bg-gray-200" />
       <h6 className="text-lg font-bold">太晶團體戰</h6>
-      <div className="flex flex-wrap gap-y-2">
+      <div className="flex flex-wrap gap-2">
         {pokemonList
           .filter((pm) => (move.raids || []).find(({ link }) => pm.link === link))
           .map((pm, i) => {

@@ -12,7 +12,7 @@ export function EggPokemons({ pokemonList, move, evolution }: MoveProps) {
     <>
       <hr className="my-3 h-px border-0 bg-gray-200" />
       <h6 className="text-lg font-bold">蛋招式</h6>
-      <div className="flex flex-wrap gap-y-2">
+      <div className="flex flex-wrap gap-2">
         {pokemonList
           .filter((pm) => move.eggPokemons.find((link) => pm.link === link))
           .filter((pm) => {
