@@ -279,7 +279,7 @@ function Moves() {
                   </div>
                 )}
                 {evolutionChain.evolutions?.every((e) => e.evolutions) && (
-                  <div className="flex flex-row gap-1 md:flex-col">
+                  <div className="flex flex-col gap-2 [writing-mode:vertical-lr] md:gap-1 md:[writing-mode:horizontal-tb]">
                     {evolutionChain.evolutions?.map((evolution) =>
                       evolution.evolutions?.map((evolution) => (
                         <PokemonBadge
