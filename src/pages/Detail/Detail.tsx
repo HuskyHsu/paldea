@@ -15,8 +15,6 @@ import {
   PMMove,
   RaidMove,
   TMMove,
-  TypeMap,
-  TypeNameMap,
   TYPE_MAP,
 } from '@/models';
 
