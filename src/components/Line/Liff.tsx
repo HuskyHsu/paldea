@@ -33,6 +33,7 @@ export function Liff() {
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile();
         setProfile(profile);
+        window.location.href = window.location.href.replace(window.location.search, '');
       }
     } catch (error) {
       setMessage('LIFF init failed.');
