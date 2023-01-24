@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
@@ -8,8 +8,8 @@ import { Item } from './Item';
 
 function MainLayout() {
   const { ref, toggleVisibility } = useBackToTopContext();
-  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!ref.current) return;
@@ -24,6 +24,14 @@ function MainLayout() {
   }, [ref, toggleVisibility]);
 
   useEffect(() => {
+    if (location.pathname.includes('&')) {
+      navigate(location.pathname.split('&')[0]);
+    }
+
+    if (window.location.search) {
+      window.location.href = window.location.href.replace(window.location.search, '');
+    }
+
     ReactGA.initialize('G-CCR1VSQL3X');
     ReactGA.send({
       hitType: 'pageview',
@@ -35,25 +43,10 @@ function MainLayout() {
         action: location.search,
       });
     }
-  }, [location]);
-
-  useEffect(() => {
-    const removeList = ['code', 'state', 'liffRedirectUri', 'liffClientId'];
-
-    removeList.forEach((remove) => {
-      if (searchParams.has(remove)) {
-        const token = searchParams.get(remove);
-        if (token) {
-          searchParams.delete(remove);
-          setSearchParams(searchParams);
-        }
-      }
-    });
-  }, [searchParams, setSearchParams]);
+  }, [location, navigate]);
 
   const [hash, setHash] = useState(window.location.hash.replace('#/', ''));
 
-  const navigate = useNavigate();
   const updateNav = (to: string) => {
     setHash(to);
     navigate(to);
