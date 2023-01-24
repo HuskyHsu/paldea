@@ -194,7 +194,7 @@ const genFlex = ({
           contents: [
             {
               type: 'box',
-              layout: 'baseline',
+              layout: 'horizontal',
               spacing: 'sm',
               contents: [
                 {
@@ -416,7 +416,7 @@ function Moves() {
               ))}
             </div>
             <div>
-              {status.isLoggedIn && (
+              {!status.isLoggedIn && (
                 <>
                   <div className="relative z-0 mt-8 w-44">
                     <input
