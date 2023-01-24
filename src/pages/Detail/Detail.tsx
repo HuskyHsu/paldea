@@ -414,14 +414,17 @@ function Moves() {
               onClick={() => {
                 share([
                   {
-                    type: 'text',
-                    text: JSON.stringify(
-                      genFlex({
-                        code: '123AB',
-                        pm: pokemon,
-                        terasType: terasType || 'Normal',
-                        moves: table.tableData.filter((row) => row.selected),
-                      })
+                    type: 'flex',
+                    altText: pokemon.nameZh,
+                    contents: JSON.parse(
+                      JSON.stringify(
+                        genFlex({
+                          code: '123AB',
+                          pm: pokemon,
+                          terasType: terasType || 'Normal',
+                          moves: table.tableData.filter((row) => row.selected),
+                        })
+                      )
                     ),
                   },
                 ]);
