@@ -402,13 +402,6 @@ function Moves() {
             <div>
               {status.isLoggedIn && (
                 <>
-                  <button
-                    type="button"
-                    className="mr-2 mb-2 mt-8 rounded-lg bg-custom-green px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
-                    onClick={logout}
-                  >
-                    登出
-                  </button>
                   <div className="relative z-0 mt-8 w-44">
                     <input
                       type="text"
@@ -425,6 +418,36 @@ function Moves() {
                       太晶團體戰邀請代碼：
                     </label>
                   </div>
+                  <button
+                    className="mr-2 mb-2 mt-2 rounded-lg bg-custom-green px-2 py-1 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
+                    onClick={() => {
+                      share([
+                        {
+                          type: 'flex',
+                          altText: pokemon.nameZh,
+                          contents: JSON.parse(
+                            JSON.stringify(
+                              genFlex({
+                                code: code || '123ABC',
+                                pm: pokemon,
+                                terasType: terasType || 'Normal',
+                                moves: table.tableData.filter((row) => row.selected),
+                              })
+                            )
+                          ),
+                        },
+                      ]);
+                    }}
+                  >
+                    Share
+                  </button>
+                  <button
+                    type="button"
+                    className="mr-2 mb-2 mt-2 rounded-lg bg-custom-green px-2 py-1 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
+                    onClick={logout}
+                  >
+                    登出
+                  </button>
                 </>
               )}
 
@@ -440,33 +463,6 @@ function Moves() {
             </div>
           </div>
         </InfoCard>
-        <div>
-          <div>{profile.displayName}</div>
-          {status.isLoggedIn && (
-            <button
-              onClick={() => {
-                share([
-                  {
-                    type: 'flex',
-                    altText: pokemon.nameZh,
-                    contents: JSON.parse(
-                      JSON.stringify(
-                        genFlex({
-                          code: code || '123ABC',
-                          pm: pokemon,
-                          terasType: terasType || 'Normal',
-                          moves: table.tableData.filter((row) => row.selected),
-                        })
-                      )
-                    ),
-                  },
-                ]);
-              }}
-            >
-              Share
-            </button>
-          )}
-        </div>
       </div>
       <div className="px-4 pb-4">
         <Hr />
