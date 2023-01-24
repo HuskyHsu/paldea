@@ -24,9 +24,9 @@ function MainLayout() {
   }, [ref, toggleVisibility]);
 
   useEffect(() => {
-    if (location.pathname.includes('&')) {
-      navigate(location.pathname.split('&')[0]);
-    }
+    // if (location.pathname.includes('&')) {
+    //   navigate(location.pathname.split('&')[0]);
+    // }
 
     // if (window.location.search) {
     //   window.location.href = window.location.href.replace(window.location.search, '');
