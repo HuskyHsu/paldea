@@ -289,7 +289,7 @@ function Moves() {
   const pokemon = pokemonList[targetPmIndex];
   const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
 
-  const { status, login, logout, profile, share } = useLiffContext();
+  const { status, login, logout, share } = useLiffContext();
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
