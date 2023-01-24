@@ -19,7 +19,7 @@ import {
 
 import { Header, Base, InfoCard, Hero, Statistic, Evolution } from './components';
 import { columns, Table } from './MoveTable';
-import { Hr, Icon, useTable, Weakness } from '@/components';
+import { Hr, Icon, useLiffContext, useTable, Weakness } from '@/components';
 import { usePokemonInfo } from './api';
 
 type MoveProps = {
@@ -115,6 +115,8 @@ function Moves() {
   const targetPmIndex = pokemonList.findIndex((pm) => pm.link === link);
   const pokemon = pokemonList[targetPmIndex];
   const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
+
+  const { status, login, profile } = useLiffContext();
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
@@ -225,6 +227,10 @@ function Moves() {
             </div>
           </div>
         </InfoCard>
+        <div>
+          <div>{!status.isLoggedIn && <button onClick={login}>Login</button>}</div>
+          <div>{JSON.stringify(profile)}</div>
+        </div>
       </div>
       <div className="px-4 pb-4">
         <Hr />

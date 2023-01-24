@@ -3,7 +3,7 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
-import { Icon, Liff, useBackToTopContext } from '@/components';
+import { Icon, useBackToTopContext } from '@/components';
 import { Item } from './Item';
 
 function MainLayout() {
@@ -24,14 +24,6 @@ function MainLayout() {
   }, [ref, toggleVisibility]);
 
   useEffect(() => {
-    // if (location.pathname.includes('&')) {
-    //   navigate(location.pathname.split('&')[0]);
-    // }
-
-    // if (window.location.search) {
-    //   window.location.href = window.location.href.replace(window.location.search, '');
-    // }
-
     ReactGA.initialize('G-CCR1VSQL3X');
     ReactGA.send({
       hitType: 'pageview',
@@ -83,9 +75,6 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
-          <div>
-            <Liff />
-          </div>
         </div>
       </aside>
       <div

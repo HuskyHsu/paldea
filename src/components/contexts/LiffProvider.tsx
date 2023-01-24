@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useState, PropsWithChildren, useEffect } from 'react';
 import liff from '@line/liff';
 
 type Profile = {
@@ -8,8 +8,34 @@ type Profile = {
   statusMessage?: string;
 };
 
-export function useLiff() {
-  const [data, setData] = useState({
+type LiffStatus = {
+  isInClient: boolean;
+  os: string;
+  isInAppBrowser: boolean;
+  isLoggedIn: boolean;
+};
+
+interface LiffType {
+  logout: () => void;
+  login: () => void;
+  profile: Profile;
+  status: LiffStatus;
+}
+
+const LiffContext = createContext<LiffType>({
+  logout: () => null,
+  login: () => null,
+  profile: {} as Profile,
+  status: {
+    isInClient: false,
+    os: 'ios',
+    isInAppBrowser: false,
+    isLoggedIn: false,
+  },
+});
+
+export const LiffProvider = ({ children }: PropsWithChildren) => {
+  const [status, setStatus] = useState({
     isInClient: false,
     os: 'ios',
     isInAppBrowser: false,
@@ -21,7 +47,7 @@ export function useLiff() {
     try {
       await liff.init({ liffId: '1654570736-JRAEqoWN' });
       const { userAgent } = navigator;
-      setData({
+      setStatus({
         isInClient: liff.isInClient(),
         isLoggedIn: liff.isLoggedIn(),
         os: liff.getOS() as string,
@@ -36,10 +62,6 @@ export function useLiff() {
     }
   };
 
-  useEffect(() => {
-    liffInit();
-  }, []);
-
   const logout = () => {
     liff.logout();
   };
@@ -48,35 +70,15 @@ export function useLiff() {
     liff.login();
   };
 
-  const share = async (message: { type: string; text: string }[]) => {
-    await liff.shareTargetPicker([
-      {
-        type: 'text',
-        text: 'Hello World!',
-      },
-    ]);
-  };
+  useEffect(() => {
+    liffInit();
+  }, []);
 
-  //   const renderLoginButton = () => {
-  //     if (data.isLoggedIn) {
-  //       return (
-  //         <button data-testid="logout" onClick={logout}>
-  //           Logout
-  //         </button>
-  //       );
-  //     }
-  //     return (
-  //       <button data-testid="login" onClick={login}>
-  //         Login
-  //       </button>
-  //     );
-  //   };
+  return (
+    <LiffContext.Provider value={{ logout, login, status, profile }}>
+      {children}
+    </LiffContext.Provider>
+  );
+};
 
-  return {
-    logout,
-    login,
-    profile,
-    data,
-    share,
-  };
-}
+export const useLiffContext = () => useContext(LiffContext);
