@@ -116,7 +116,7 @@ function Moves() {
   const pokemon = pokemonList[targetPmIndex];
   const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
 
-  const { status, login, profile } = useLiffContext();
+  const { status, login, logout, profile } = useLiffContext();
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
@@ -228,8 +228,14 @@ function Moves() {
           </div>
         </InfoCard>
         <div>
-          <div>{!status.isLoggedIn && <button onClick={login}>Login</button>}</div>
-          <div>{JSON.stringify(profile)}</div>
+          <div>
+            {status.isLoggedIn ? (
+              <button onClick={logout}>Logout</button>
+            ) : (
+              <button onClick={login}>Login</button>
+            )}
+          </div>
+          <div>{profile.displayName}</div>
         </div>
       </div>
       <div className="px-4 pb-4">
