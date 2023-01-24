@@ -3,3 +3,4 @@ export * from './common';
 export * from './Card';
 export * from './contexts';
 export * from './Tools';
+export * from './Line';

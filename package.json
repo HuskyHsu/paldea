@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "@line/liff": "^2.21.4",
     "@tanstack/react-query": "^4.19.1",
     "clsx": "^1.2.1",
     "flowbite": "^1.5.4",
