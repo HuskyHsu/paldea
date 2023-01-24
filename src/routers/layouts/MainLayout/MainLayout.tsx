@@ -28,9 +28,9 @@ function MainLayout() {
       navigate(location.pathname.split('&')[0]);
     }
 
-    if (window.location.search) {
-      window.location.href = window.location.href.replace(window.location.search, '');
-    }
+    // if (window.location.search) {
+    //   window.location.href = window.location.href.replace(window.location.search, '');
+    // }
 
     ReactGA.initialize('G-CCR1VSQL3X');
     ReactGA.send({
