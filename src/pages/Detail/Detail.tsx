@@ -419,7 +419,7 @@ function Moves() {
                       genFlex({
                         code: '123AB',
                         pm: pokemon,
-                        terasType,
+                        terasType: terasType || 'Normal',
                         moves: table.tableData.filter((row) => row.selected),
                       })
                     ),
