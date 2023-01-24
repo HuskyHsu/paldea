@@ -125,17 +125,6 @@ const genFlex = ({
   return {
     type: 'bubble',
     size: 'mega',
-    header: {
-      type: 'box',
-      layout: 'vertical',
-      contents: [
-        {
-          type: 'text',
-          text: `邀請碼：${code}`,
-          size: 'xl',
-        },
-      ],
-    },
     hero: {
       type: 'image',
       url: `https://huskyhsu.github.io/paldea/image/icon/${pm.link}.png`,
@@ -218,8 +207,37 @@ const genFlex = ({
                   flex: 3,
                 },
                 {
+                  type: 'image',
+                  url: `https://huskyhsu.github.io/paldea/image/type/${terasType}.svg`,
+                  size: '26px',
+                  flex: 4,
+                  align: 'start',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'box',
+          layout: 'vertical',
+          margin: 'lg',
+          spacing: 'sm',
+          contents: [
+            {
+              type: 'box',
+              layout: 'baseline',
+              spacing: 'sm',
+              contents: [
+                {
                   type: 'text',
-                  text: TypeNameMap[terasType as keyof typeof TypeMap],
+                  text: '邀請碼',
+                  color: '#aaaaaa',
+                  size: 'lg',
+                  flex: 3,
+                },
+                {
+                  type: 'text',
+                  text: code,
                   wrap: true,
                   color: '#666666',
                   size: 'lg',
