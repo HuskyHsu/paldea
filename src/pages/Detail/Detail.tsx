@@ -409,7 +409,7 @@ function Moves() {
                       className="peer block w-full appearance-none border-0 border-b-2 border-gray-100 bg-transparent py-2.5 px-0 text-sm text-gray-100 focus:border-blue-800 focus:outline-none focus:ring-0"
                       placeholder=" "
                       value={code ?? ''}
-                      onChange={(e) => setCode(e.target.value)}
+                      onChange={(e) => setCode(e.target.value.toUpperCase())}
                     />
                     <label
                       htmlFor="floating_standard"
