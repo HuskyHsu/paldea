@@ -111,6 +111,177 @@ const getSubList = (pokemonList: BasePokemon[], range: number, link: string) => 
   return subList;
 };
 
+const genFlex = ({
+  code,
+  pm,
+  terasType,
+  moves,
+}: {
+  code: string;
+  pm: BasePokemon;
+  terasType: string;
+  moves: BaseMove[];
+}) => {
+  return {
+    type: 'bubble',
+    size: 'mega',
+    header: {
+      type: 'box',
+      layout: 'vertical',
+      contents: [
+        {
+          type: 'text',
+          text: `邀請碼：${code}`,
+          size: 'xl',
+        },
+      ],
+    },
+    hero: {
+      type: 'image',
+      url: `https://huskyhsu.github.io/paldea/image/icon/${pm.link}.png`,
+      size: 'full',
+      aspectMode: 'fit',
+      aspectRatio: '10:8',
+      backgroundColor: '#EA708A99',
+    },
+    body: {
+      type: 'box',
+      layout: 'vertical',
+      contents: [
+        {
+          type: 'text',
+          text: pm.nameZh,
+          weight: 'bold',
+          size: 'xl',
+        },
+        {
+          type: 'box',
+          layout: 'baseline',
+          margin: 'md',
+          contents: [
+            {
+              type: 'icon',
+              size: 'sm',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
+            },
+            {
+              type: 'icon',
+              size: 'sm',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
+            },
+            {
+              type: 'icon',
+              size: 'sm',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
+            },
+            {
+              type: 'icon',
+              size: 'sm',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
+            },
+            {
+              type: 'icon',
+              size: 'sm',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
+            },
+            {
+              type: 'icon',
+              size: 'sm',
+              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
+            },
+            {
+              type: 'text',
+              text: '6星',
+              size: 'sm',
+              color: '#999999',
+              margin: 'md',
+              flex: 0,
+            },
+          ],
+        },
+        {
+          type: 'box',
+          layout: 'vertical',
+          margin: 'lg',
+          spacing: 'sm',
+          contents: [
+            {
+              type: 'box',
+              layout: 'baseline',
+              spacing: 'sm',
+              contents: [
+                {
+                  type: 'text',
+                  text: '太晶',
+                  color: '#aaaaaa',
+                  size: 'lg',
+                  flex: 3,
+                },
+                {
+                  type: 'text',
+                  text: TypeNameMap[terasType as keyof typeof TypeMap],
+                  wrap: true,
+                  color: '#666666',
+                  size: 'lg',
+                  flex: 4,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'separator',
+          margin: 'md',
+        },
+        {
+          type: 'text',
+          text: '招式',
+          color: '#aaaaaa',
+          size: 'lg',
+          margin: 'md',
+        },
+        ...moves.map((move) => {
+          return {
+            type: 'box',
+            layout: 'horizontal',
+            contents: [
+              {
+                type: 'text',
+                text: move.nameZh,
+                flex: 3,
+              },
+              {
+                type: 'image',
+                url: `https://huskyhsu.github.io/paldea/image/type/${move.type}.svg`,
+                size: '20px',
+                flex: 1,
+              },
+              {
+                type: 'image',
+                url: `https://huskyhsu.github.io/paldea/image/type/${move.category}.svg`,
+                size: '20px',
+                flex: 1,
+              },
+              {
+                type: 'text',
+                text: move.power.toString(),
+                align: 'center',
+                flex: 1,
+              },
+              {
+                type: 'text',
+                text: move.accuracy.toString(),
+                align: 'center',
+                flex: 1,
+              },
+            ],
+          };
+        }),
+      ],
+    },
+  };
+};
+
 function Moves() {
   let { link = '906' } = useParams();
   const pokemonList = useFilterStore((state) => state.pokemonList);
@@ -244,9 +415,14 @@ function Moves() {
                 share([
                   {
                     type: 'text',
-                    text: `${pokemon.nameZh}: ${
-                      TypeNameMap[terasType as keyof typeof TypeMap]
-                    }太晶 - ${'團戰邀請碼測試啦～～'}`,
+                    text: JSON.stringify(
+                      genFlex({
+                        code: '123AB',
+                        pm: pokemon,
+                        terasType,
+                        moves: table.tableData.filter((row) => row.selected),
+                      })
+                    ),
                   },
                 ]);
               }}
