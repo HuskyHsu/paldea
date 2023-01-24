@@ -106,7 +106,7 @@ const genFlex = ({
                 },
                 {
                   type: 'image',
-                  url: `https://huskyhsu.github.io/paldea/image/type/${terasType}.svg`,
+                  url: `https://huskyhsu.github.io/paldea/image/type/png/${terasType}.png`,
                   size: '26px',
                   flex: 4,
                   align: 'start',
@@ -168,13 +168,13 @@ const genFlex = ({
               },
               {
                 type: 'image',
-                url: `https://huskyhsu.github.io/paldea/image/type/${move.type}.svg`,
+                url: `https://huskyhsu.github.io/paldea/image/type/png/${move.type}.png`,
                 size: '20px',
                 flex: 1,
               },
               {
                 type: 'image',
-                url: `https://huskyhsu.github.io/paldea/image/type/${move.category}.svg`,
+                url: `https://huskyhsu.github.io/paldea/image/type/png/${move.category}.png`,
                 size: '20px',
                 flex: 1,
               },
