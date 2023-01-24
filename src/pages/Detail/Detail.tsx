@@ -296,6 +296,7 @@ function Moves() {
   }, [pokemon]);
 
   const [terasType, setTerasType] = useState<string | null>(null);
+  const [code, setCode] = useState<string | null>(null);
   const targetTerasType = (type: string) => {
     if (type === terasType) {
       setTerasType(null);
@@ -398,16 +399,48 @@ function Moves() {
                 </div>
               ))}
             </div>
+            <div>
+              {status.isLoggedIn && (
+                <>
+                  <button
+                    type="button"
+                    className="mr-2 mb-2 mt-8 rounded-lg bg-custom-green px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
+                    onClick={logout}
+                  >
+                    登出
+                  </button>
+                  <div className="relative z-0 mt-8 w-44">
+                    <input
+                      type="text"
+                      id="floating_standard"
+                      className="peer block w-full appearance-none border-0 border-b-2 border-gray-100 bg-transparent py-2.5 px-0 text-sm text-gray-100 focus:border-blue-800 focus:outline-none focus:ring-0"
+                      placeholder=" "
+                      value={code ?? ''}
+                      onChange={(e) => setCode(e.target.value)}
+                    />
+                    <label
+                      htmlFor="floating_standard"
+                      className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-100 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-800"
+                    >
+                      太晶團體戰邀請代碼：
+                    </label>
+                  </div>
+                </>
+              )}
+
+              {!status.isLoggedIn && (
+                <button
+                  type="button"
+                  className="mr-2 mb-2 mt-8 rounded-lg bg-custom-green px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
+                  onClick={login}
+                >
+                  登入Line快速分享
+                </button>
+              )}
+            </div>
           </div>
         </InfoCard>
         <div>
-          <div>
-            {status.isLoggedIn ? (
-              <button onClick={logout}>Logout</button>
-            ) : (
-              <button onClick={login}>Login</button>
-            )}
-          </div>
           <div>{profile.displayName}</div>
           {status.isLoggedIn && (
             <button
@@ -419,7 +452,7 @@ function Moves() {
                     contents: JSON.parse(
                       JSON.stringify(
                         genFlex({
-                          code: '123AB',
+                          code: code || '123ABC',
                           pm: pokemon,
                           terasType: terasType || 'Normal',
                           moves: table.tableData.filter((row) => row.selected),
