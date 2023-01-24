@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
@@ -8,6 +8,7 @@ import { Item } from './Item';
 
 function MainLayout() {
   const { ref, toggleVisibility } = useBackToTopContext();
+  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
 
   useEffect(() => {
@@ -35,6 +36,20 @@ function MainLayout() {
       });
     }
   }, [location]);
+
+  useEffect(() => {
+    const removeList = ['code', 'state', 'liffRedirectUri', 'liffClientId'];
+
+    removeList.forEach((remove) => {
+      if (searchParams.has(remove)) {
+        const token = searchParams.get(remove);
+        if (token) {
+          searchParams.delete(remove);
+          setSearchParams(searchParams);
+        }
+      }
+    });
+  }, [searchParams, setSearchParams]);
 
   const [hash, setHash] = useState(window.location.hash.replace('#/', ''));
 
@@ -75,6 +90,9 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
+          <button className="text-primary" onClick={() => updateNav('liff')}>
+            _
+          </button>
         </div>
       </aside>
       <div

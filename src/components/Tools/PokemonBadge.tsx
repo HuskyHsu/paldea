@@ -5,7 +5,6 @@ import { BasePokemon, BgClass, BgFromClass, BgToClass } from '@/models';
 type Props = { pm: BasePokemon; getText?: Function; size?: string };
 
 export function PokemonBadge({ pm, getText, size = 'text-xs' }: Props) {
-  console.log(size);
   return (
     <Link
       className={clsx(
