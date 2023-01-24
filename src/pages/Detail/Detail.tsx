@@ -15,6 +15,8 @@ import {
   PMMove,
   RaidMove,
   TMMove,
+  TypeColor,
+  TypeMap,
   TYPE_MAP,
 } from '@/models';
 
@@ -129,7 +131,7 @@ const genFlex = ({
       size: 'full',
       aspectMode: 'fit',
       aspectRatio: '10:8',
-      backgroundColor: '#EA708A99',
+      backgroundColor: `${TypeColor[terasType as keyof typeof TypeMap]}99`,
     },
     body: {
       type: 'box',
