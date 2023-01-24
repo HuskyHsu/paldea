@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, PropsWithChildren, useEffect } from 'react';
 import liff from '@line/liff';
+import { SendMessagesParams } from '@liff/send-messages';
 
 type Profile = {
   userId: string;
@@ -20,6 +21,7 @@ interface LiffType {
   login: () => void;
   profile: Profile;
   status: LiffStatus;
+  share: (messages: SendMessagesParams) => Promise<void>;
 }
 
 const LiffContext = createContext<LiffType>({
@@ -32,6 +34,7 @@ const LiffContext = createContext<LiffType>({
     isInAppBrowser: false,
     isLoggedIn: false,
   },
+  share: async () => {},
 });
 
 export const LiffProvider = ({ children }: PropsWithChildren) => {
@@ -70,12 +73,16 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
     liff.login();
   };
 
+  const share = async (messages: SendMessagesParams) => {
+    await liff.shareTargetPicker(messages);
+  };
+
   useEffect(() => {
     liffInit();
   }, []);
 
   return (
-    <LiffContext.Provider value={{ logout, login, status, profile }}>
+    <LiffContext.Provider value={{ logout, login, status, profile, share }}>
       {children}
     </LiffContext.Provider>
   );

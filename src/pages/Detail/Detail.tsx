@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import clsx from 'clsx';
 
+import { Hr, Icon, useLiffContext, useTable, Weakness } from '@/components';
 import { useFilterStore } from '@/store';
 import {
   BaseMove,
@@ -14,12 +15,13 @@ import {
   PMMove,
   RaidMove,
   TMMove,
+  TypeMap,
+  TypeNameMap,
   TYPE_MAP,
 } from '@/models';
 
 import { Header, Base, InfoCard, Hero, Statistic, Evolution } from './components';
 import { columns, Table } from './MoveTable';
-import { Hr, Icon, useLiffContext, useTable, Weakness } from '@/components';
 import { usePokemonInfo } from './api';
 
 type MoveProps = {
@@ -116,7 +118,7 @@ function Moves() {
   const pokemon = pokemonList[targetPmIndex];
   const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
 
-  const { status, login, logout, profile } = useLiffContext();
+  const { status, login, logout, profile, share } = useLiffContext();
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
@@ -236,6 +238,22 @@ function Moves() {
             )}
           </div>
           <div>{profile.displayName}</div>
+          {status.isLoggedIn && (
+            <button
+              onClick={() => {
+                share([
+                  {
+                    type: 'text',
+                    text: `${pokemon.nameZh}: ${
+                      TypeNameMap[terasType as keyof typeof TypeMap]
+                    }太晶 - ${'團戰邀請碼測試啦～～'}`,
+                  },
+                ]);
+              }}
+            >
+              Share
+            </button>
+          )}
         </div>
       </div>
       <div className="px-4 pb-4">
