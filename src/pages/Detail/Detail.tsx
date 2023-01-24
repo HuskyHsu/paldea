@@ -418,7 +418,7 @@ function Moves() {
               ))}
             </div>
             <div>
-              {!status.isLoggedIn && (
+              {status.isLoggedIn && (
                 <>
                   <div className="relative z-0 mt-8 w-44">
                     <input
