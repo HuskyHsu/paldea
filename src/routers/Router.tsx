@@ -11,9 +11,8 @@ export function Router() {
           <Route path="/" element={<MainLayout />}>
             {/* 主頁 */}
             <Route index element={<List />} />
+            <Route path="liffIsEscapedFromApp=true" element={<Liff />} />
             <Route path="moves" element={<Moves />} />
-            <Route path="liff" element={<Liff />} />
-            <Route path="liff&liffIsEscapedFromApp=true" element={<Liff />} />
             <Route path=":link" element={<Detail />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />

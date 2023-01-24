@@ -79,7 +79,7 @@ export function Liff() {
 
   return (
     <div className="App">
-      <h1>create-liff-app</h1>
+      <h1>liff 測試</h1>
       {message && <p>{message}</p>}
       {error && (
         <p>
@@ -88,9 +88,6 @@ export function Liff() {
       )}
       {data && (
         <div>
-          <p data-testid="isInClient">liff.isInClient: {String(data.isInClient)}</p>
-          <p data-testid="os">liff.getOS: {data.os}</p>
-          <p data-testid="isInAppBrowser">isInAppBrowser: {String(data.isInAppBrowser)}</p>
           <p data-testid="isLoggedIn">liff.isLoggedIn: {String(data.isLoggedIn)}</p>
           {renderLoginButton()}
         </div>

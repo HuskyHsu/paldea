@@ -3,7 +3,7 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
-import { Icon, useBackToTopContext } from '@/components';
+import { Icon, Liff, useBackToTopContext } from '@/components';
 import { Item } from './Item';
 
 function MainLayout() {
@@ -83,9 +83,9 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
-          <button className="text-primary" onClick={() => updateNav('liff')}>
-            _
-          </button>
+          <div>
+            <Liff />
+          </div>
         </div>
       </aside>
       <div
