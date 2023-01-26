@@ -80,7 +80,9 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
       await liff.shareTargetPicker(messages);
     } catch (error) {
       if ((error as { code: string }).code === 'EXCEPTION_IN_SUBWINDOW') {
-        window.location.href = 'https://liff.line.me/1654527933-oYBnlV6e';
+        return alert(
+          '請使用外部瀏覽器開啟(share target picker 功能不支援內部瀏覽器，無法正常跳轉)'
+        );
       }
       alert(`發生錯誤：${JSON.stringify(error)}`);
     }
