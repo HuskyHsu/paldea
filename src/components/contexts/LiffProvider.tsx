@@ -62,7 +62,7 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
         setProfile(profile);
       }
     } catch (error) {
-      alert(JSON.stringify(error));
+      console.error(error);
     }
   };
 
@@ -76,7 +76,11 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
   };
 
   const share = async (messages: SendMessagesParams) => {
-    await liff.shareTargetPicker(messages);
+    try {
+      await liff.shareTargetPicker(messages);
+    } catch (error) {
+      alert(`發生錯誤：${JSON.stringify(error)}`);
+    }
   };
 
   useEffect(() => {
