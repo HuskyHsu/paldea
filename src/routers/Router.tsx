@@ -14,7 +14,7 @@ export function Router() {
               <Route index element={<List />} />
               <Route path="liffIsEscapedFromApp=true" element={<List />} />
               <Route path="moves" element={<Moves />} />
-              <Route path=":link" element={<Detail />} />
+              <Route path="pm/:link" element={<Detail />} />
             </Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

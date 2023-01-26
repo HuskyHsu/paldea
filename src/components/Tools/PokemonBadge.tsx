@@ -15,7 +15,7 @@ export function PokemonBadge({ pm, getText, size = 'text-xs' }: Props) {
         BgFromClass[pm.types[0] as keyof typeof BgClass],
         BgToClass[pm.types[pm.types.length - 1] as keyof typeof BgClass]
       )}
-      to={`/${pm.link}`}
+      to={`/pm/${pm.link}`}
     >
       {pm.nameZh}
       {pm.altForm && `-${pm.altForm}`}

@@ -12,7 +12,7 @@ export function Body({ pokemon }: BodyProps) {
   const { updateKeyword } = useFilterActions();
   const navigate = useNavigate();
   function handleClick() {
-    navigate(`/${pokemon.link}`);
+    navigate(`pm/${pokemon.link}`);
   }
 
   return (
