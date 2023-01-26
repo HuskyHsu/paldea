@@ -13,5 +13,12 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      if (window.location.hash.startsWith('#context_token')) {
+        setTimeout(() => {
+          window.location.href = `${window.location.origin}${window.location.pathname}`
+        }, 100)
+      }
+    </script>
   </body>
 </html>
