@@ -79,6 +79,9 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
     try {
       await liff.shareTargetPicker(messages);
     } catch (error) {
+      if ((error as { code: string }).code === 'EXCEPTION_IN_SUBWINDOW') {
+        window.location.href = 'https://liff.line.me/1654527933-oYBnlV6e';
+      }
       alert(`發生錯誤：${JSON.stringify(error)}`);
     }
   };

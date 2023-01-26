@@ -141,7 +141,7 @@ const genFlex = ({
                 },
                 {
                   type: 'text',
-                  text: code,
+                  text: code.replace(/([A-Za-z0-9]{3})([A-Za-z0-9]{3})/, '$1-$2'),
                   wrap: true,
                   color: '#666666',
                   size: 'lg',
@@ -377,8 +377,7 @@ export function LineShare({ pokemon, terasType, moves }: Porps) {
                   e.target.value
                     .replace(/[^A-Za-z0-9\s]/g, '')
                     .toUpperCase()
-                    .replace(/([A-Za-z0-9]{3})([A-Za-z0-9]{1,3})/, '$1-$2')
-                    .slice(0, 7)
+                    .slice(0, 6)
                 )
               }
             />
@@ -397,7 +396,7 @@ export function LineShare({ pokemon, terasType, moves }: Porps) {
                   return alert('請選擇太晶屬性');
                 }
 
-                if (code.length !== 7) {
+                if (code.length !== 6) {
                   return alert('請檢查密語長度');
                 }
 
