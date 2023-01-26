@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, PropsWithChildren, useEffect } from 'react';
 import liff from '@line/liff';
 import { SendMessagesParams } from '@liff/send-messages';
+import { CONFIG } from '@/config';
+import { join } from 'path';
 
 type Profile = {
   userId: string;
@@ -48,7 +50,7 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
 
   const liffInit = async () => {
     try {
-      await liff.init({ liffId: '1654570736-JRAEqoWN' });
+      await liff.init({ liffId: CONFIG.line.liffId });
       const { userAgent } = navigator;
       setStatus({
         isInClient: liff.isInClient(),
@@ -61,12 +63,13 @@ export const LiffProvider = ({ children }: PropsWithChildren) => {
         setProfile(profile);
       }
     } catch (error) {
-      console.error(error);
+      alert(JSON.stringify(error));
     }
   };
 
   const logout = () => {
     liff.logout();
+    window.location.reload();
   };
 
   const login = () => {

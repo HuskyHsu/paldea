@@ -14,6 +14,8 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn run build
+        env:
+          REACT_APP_LIFF_ID: ${{ secrets.REACT_APP_LIFF_ID }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
