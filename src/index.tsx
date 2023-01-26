@@ -6,6 +6,10 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
+if (window.location.hash.startsWith('#context_token')) {
+  window.location.href = `${window.location.origin}${window.location.pathname}`;
+}
+
 root.render(
   <HashRouter>
     <App />
