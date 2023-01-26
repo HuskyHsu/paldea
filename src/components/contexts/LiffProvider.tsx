@@ -2,7 +2,6 @@ import { createContext, useContext, useState, PropsWithChildren, useEffect } fro
 import liff from '@line/liff';
 import { SendMessagesParams } from '@liff/send-messages';
 import { CONFIG } from '@/config';
-import { join } from 'path';
 
 type Profile = {
   userId: string;
