@@ -22,15 +22,30 @@ type EffectiveProps = {
   title: string;
 };
 
-function TypeRate({ targetRate, types }: RateProps) {
-  const matchType = TYPE_MAP.map((type) => {
+export function getWeaknessType(types: string[]) {
+  return TYPE_MAP.map((type) => {
     return {
       type: type,
       rate: types.reduce((rate, pmType) => {
         return rate * (weaknessMap as WeaknessMap)[type][pmType];
       }, 1),
     };
-  }).filter(({ rate }) => rate === targetRate);
+  });
+}
+
+export function getAttackRange(types: string[]) {
+  return TYPE_MAP.map((type) => {
+    return {
+      type: type,
+      rates: types
+        .map((atkType) => (weaknessMap as WeaknessMap)[atkType][type])
+        .filter((rate) => rate > 1),
+    };
+  }).filter(({ rates }) => rates.length > 0);
+}
+
+function TypeRate({ targetRate, types }: RateProps) {
+  const matchType = getWeaknessType(types).filter(({ rate }) => rate === targetRate);
 
   if (matchType.length === 0) {
     return <></>;
@@ -95,18 +110,9 @@ export function MoveEffective({ title, type, targetRate }: EffectiveProps) {
 export function AttackRange({ types }: Props) {
   return (
     <div className="flex flex-wrap gap-x-2">
-      {TYPE_MAP.map((type) => {
-        return {
-          type: type,
-          rates: types
-            .map((atkType) => (weaknessMap as WeaknessMap)[atkType][type])
-            .filter((rate) => rate > 1),
-        };
-      })
-        .filter(({ rates }) => rates.length > 0)
-        .map(({ type }) => (
-          <Icon.Type type={type} className={clsx('h-6 w-6')} key={type} />
-        ))}
+      {getAttackRange(types).map(({ type }) => (
+        <Icon.Type type={type} className={clsx('h-6 w-6')} key={type} />
+      ))}
     </div>
   );
 }

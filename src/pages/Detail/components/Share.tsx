@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useLiffContext } from '@/components';
+import { useLiffContext, getWeaknessType, getAttackRange } from '@/components';
 import { BaseMove, BasePokemon, TypeColor, TypeMap } from '@/models';
 
 type Porps = {
@@ -17,29 +17,41 @@ const genFlex = ({
 }: {
   code: string;
   pm: BasePokemon;
-  terasType: string | null;
+  terasType: string;
   moves: BaseMove[];
 }) => {
   return {
     type: 'bubble',
     size: 'mega',
-    hero: {
-      type: 'image',
-      url: `https://huskyhsu.github.io/paldea/image/icon/${pm.link}.png`,
-      size: 'full',
-      aspectMode: 'fit',
-      aspectRatio: '10:8',
-      backgroundColor: `${TypeColor[terasType as keyof typeof TypeMap]}99`,
-    },
-    body: {
+    header: {
       type: 'box',
       layout: 'vertical',
       contents: [
         {
-          type: 'text',
-          text: pm.nameZh,
-          weight: 'bold',
-          size: 'xl',
+          type: 'image',
+          url: `https://huskyhsu.github.io/paldea/image/icon/${pm.link}.png`,
+          size: 'xxl',
+          aspectRatio: '10:8',
+        },
+        {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'text',
+              text: pm.nameZh,
+              color: '#FFFFFF',
+            },
+          ],
+          position: 'absolute',
+          offsetTop: '10%',
+          paddingStart: 'lg',
+          backgroundColor: '#00000066',
+          paddingEnd: 'lg',
+          offsetStart: '5%',
+          paddingTop: 'xs',
+          paddingBottom: 'xs',
+          cornerRadius: 'xxl',
         },
         {
           type: 'box',
@@ -76,33 +88,36 @@ const genFlex = ({
               size: 'sm',
               url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
             },
-            {
-              type: 'text',
-              text: '6星',
-              size: 'sm',
-              color: '#999999',
-              margin: 'md',
-              flex: 0,
-            },
           ],
+          position: 'absolute',
+          offsetTop: '35%',
+          offsetStart: '6%',
         },
+      ],
+      backgroundColor: `${TypeColor[terasType as keyof typeof TypeMap]}99`,
+      paddingBottom: 'lg',
+      paddingTop: 'none',
+      paddingStart: 'none',
+      paddingEnd: 'none',
+    },
+    body: {
+      type: 'box',
+      layout: 'vertical',
+      contents: [
         {
           type: 'box',
           layout: 'vertical',
-          margin: 'lg',
-          spacing: 'sm',
           contents: [
             {
               type: 'box',
               layout: 'horizontal',
-              spacing: 'sm',
               contents: [
                 {
                   type: 'text',
-                  text: '太晶',
+                  text: '太晶屬性',
                   color: '#aaaaaa',
                   size: 'lg',
-                  flex: 3,
+                  flex: 2,
                 },
                 {
                   type: 'image',
@@ -113,25 +128,16 @@ const genFlex = ({
                 },
               ],
             },
-          ],
-        },
-        {
-          type: 'box',
-          layout: 'vertical',
-          margin: 'lg',
-          spacing: 'sm',
-          contents: [
             {
               type: 'box',
-              layout: 'baseline',
-              spacing: 'sm',
+              layout: 'horizontal',
               contents: [
                 {
                   type: 'text',
-                  text: '邀請碼',
+                  text: '團戰密語',
                   color: '#aaaaaa',
                   size: 'lg',
-                  flex: 3,
+                  flex: 2,
                 },
                 {
                   type: 'text',
@@ -150,50 +156,203 @@ const genFlex = ({
           margin: 'md',
         },
         {
-          type: 'text',
-          text: '招式',
-          color: '#aaaaaa',
-          size: 'lg',
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'horizontal',
+                  contents: [
+                    {
+                      type: 'text',
+                      text: '招式',
+                      color: '#aaaaaa',
+                      size: 'lg',
+                      flex: 2,
+                    },
+                    {
+                      type: 'box',
+                      layout: 'horizontal',
+                      contents: [
+                        {
+                          type: 'text',
+                          text: '屬性',
+                          align: 'center',
+                          flex: 1,
+                          size: 'xs',
+                          color: '#aaaaaa',
+                          gravity: 'center',
+                        },
+                        {
+                          type: 'text',
+                          text: '分類',
+                          align: 'center',
+                          flex: 1,
+                          size: 'xs',
+                          color: '#aaaaaa',
+                          gravity: 'center',
+                        },
+                        {
+                          type: 'text',
+                          text: '威力',
+                          size: 'xs',
+                          align: 'center',
+                          color: '#aaaaaa',
+                          gravity: 'center',
+                          flex: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: '命中',
+                          size: 'xs',
+                          align: 'center',
+                          color: '#aaaaaa',
+                          gravity: 'center',
+                          flex: 1,
+                        },
+                      ],
+                      flex: 4,
+                    },
+                  ],
+                },
+                {
+                  type: 'box',
+                  layout: 'vertical',
+                  contents: moves.map((move) => {
+                    return {
+                      type: 'box',
+                      layout: 'horizontal',
+                      contents: [
+                        {
+                          type: 'text',
+                          text: move.nameZh,
+                          flex: 2,
+                        },
+                        {
+                          type: 'image',
+                          url: `https://huskyhsu.github.io/paldea/image/type/png/${move.type}.png`,
+                          size: '20px',
+                          flex: 1,
+                        },
+                        {
+                          type: 'image',
+                          url: `https://huskyhsu.github.io/paldea/image/type/png/${move.category}.png`,
+                          size: '20px',
+                          flex: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: move.power.toString(),
+                          align: 'center',
+                          flex: 1,
+                        },
+                        {
+                          type: 'text',
+                          text: move.accuracy.toString(),
+                          align: 'center',
+                          flex: 1,
+                        },
+                      ],
+                    };
+                  }),
+                },
+              ],
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'vertical',
+                  contents: [
+                    {
+                      type: 'box',
+                      layout: 'horizontal',
+                      contents: [
+                        {
+                          type: 'text',
+                          text: '打點',
+                          color: '#aaaaaa',
+                          flex: 2,
+                        },
+                        {
+                          type: 'box',
+                          layout: 'baseline',
+                          contents: getAttackRange(
+                            Array.from(new Set(moves.map((move) => move.type)))
+                          ).map((type) => {
+                            return {
+                              type: 'icon',
+                              url: `https://huskyhsu.github.io/paldea/image/type/png/${type.type}.png`,
+                            };
+                          }),
+                          flex: 4,
+                          justifyContent: 'space-around',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+              margin: 'md',
+            },
+          ],
           margin: 'md',
         },
-        ...moves.map((move) => {
-          return {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'text',
-                text: move.nameZh,
-                flex: 3,
-              },
-              {
-                type: 'image',
-                url: `https://huskyhsu.github.io/paldea/image/type/png/${move.type}.png`,
-                size: '20px',
-                flex: 1,
-              },
-              {
-                type: 'image',
-                url: `https://huskyhsu.github.io/paldea/image/type/png/${move.category}.png`,
-                size: '20px',
-                flex: 1,
-              },
-              {
-                type: 'text',
-                text: move.power.toString(),
-                align: 'center',
-                flex: 1,
-              },
-              {
-                type: 'text',
-                text: move.accuracy.toString(),
-                align: 'center',
-                flex: 1,
-              },
-            ],
-          };
-        }),
+        {
+          type: 'separator',
+          margin: 'md',
+        },
+        {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'horizontal',
+                  contents: [
+                    {
+                      type: 'text',
+                      text: '弱點',
+                      color: '#aaaaaa',
+                      size: 'lg',
+                      flex: 2,
+                    },
+                    {
+                      type: 'box',
+                      layout: 'horizontal',
+                      contents: getWeaknessType([terasType])
+                        .filter(({ rate }) => rate > 1)
+                        .map((weakness) => {
+                          return {
+                            type: 'image',
+                            url: `https://huskyhsu.github.io/paldea/image/type/png/${weakness.type}.png`,
+                            size: '26px',
+                            align: 'start',
+                          };
+                        }),
+                      flex: 4,
+                      alignItems: 'flex-start',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+          margin: 'md',
+        },
       ],
+      paddingStart: 'xl',
+      paddingEnd: 'xl',
     },
   };
 };
