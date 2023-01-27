@@ -53,46 +53,6 @@ const genFlex = ({
           paddingBottom: 'xs',
           cornerRadius: 'xxl',
         },
-        {
-          type: 'box',
-          layout: 'baseline',
-          margin: 'md',
-          contents: [
-            {
-              type: 'icon',
-              size: 'sm',
-              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
-            },
-            {
-              type: 'icon',
-              size: 'sm',
-              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
-            },
-            {
-              type: 'icon',
-              size: 'sm',
-              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
-            },
-            {
-              type: 'icon',
-              size: 'sm',
-              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
-            },
-            {
-              type: 'icon',
-              size: 'sm',
-              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
-            },
-            {
-              type: 'icon',
-              size: 'sm',
-              url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png',
-            },
-          ],
-          position: 'absolute',
-          offsetTop: '35%',
-          offsetStart: '6%',
-        },
       ],
       backgroundColor: `${TypeColor[terasType as keyof typeof TypeMap]}99`,
       paddingBottom: 'lg',
@@ -403,7 +363,10 @@ export function LineShare({ pokemon, terasType, moves }: Porps) {
                 share([
                   {
                     type: 'flex',
-                    altText: `${pokemon.nameZh}-太晶團戰: ${code}`,
+                    altText: `${pokemon.nameZh}-太晶團戰: ${code.replace(
+                      /([A-Za-z0-9]{3})([A-Za-z0-9]{3})/,
+                      '$1-$2'
+                    )}`,
                     contents: JSON.parse(
                       JSON.stringify(
                         genFlex({
