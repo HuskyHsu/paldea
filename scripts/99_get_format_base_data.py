@@ -58,6 +58,7 @@ if __name__ == "__main__":
     base_list = get_list()
 
     output = []
+    source_move_map = {}
     for base in base_list["data"]:
         attributes = base["attributes"]
         print(attributes["paldeaId"], attributes["nameZh"])
@@ -132,8 +133,9 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if attributes["paldeaId"] > 9990:  # attributes["paldeaId"] > 9990 or True
+        if True:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
+            # print(data["nameZh"])
 
             detail_out = {
                 "levelingUps": [
@@ -249,6 +251,81 @@ if __name__ == "__main__":
                 detail_out["raidMoves"] = sorted(
                     detail_out["raidMoves"], key=lambda row: row["level"]
                 )
+
+            if "evolutions" in data:
+                before_move = []
+                for move in detail_out["levelingUps"]:
+                    before_move.append(
+                        {
+                            "from": data["nameZh"],
+                            "fromType": "levelingUps",
+                            "level": move["level"],
+                            "nameZh": move["nameZh"],
+                            "type": move["type"],
+                            "category": move["category"],
+                            "power": move["power"],
+                            "accuracy": move["accuracy"],
+                            "PP": move["PP"],
+                            "description": move["description"],
+                        }
+                    )
+
+                for move in detail_out["technicalMachines"]:
+                    before_move.append(
+                        {
+                            "from": data["nameZh"],
+                            "fromType": "TM",
+                            "pid": move["pid"],
+                            "nameZh": move["nameZh"],
+                            "type": move["type"],
+                            "category": move["category"],
+                            "power": move["power"],
+                            "accuracy": move["accuracy"],
+                            "PP": move["PP"],
+                            "description": move["description"],
+                        }
+                    )
+
+                for move in detail_out["eggMoves"]:
+                    before_move.append(
+                        {
+                            "from": data["nameZh"],
+                            "fromType": "egg",
+                            "nameZh": move["nameZh"],
+                            "type": move["type"],
+                            "category": move["category"],
+                            "power": move["power"],
+                            "accuracy": move["accuracy"],
+                            "PP": move["PP"],
+                            "description": move["description"],
+                        }
+                    )
+
+                if data["source"] not in source_move_map:
+                    source_move_map[data["source"]] = []
+
+                source_move_map[data["source"]] += before_move
+
+            elif data["source"] in source_move_map:
+                before_move = source_move_map[data["source"]]
+                curr_move = set()
+                for move in detail_out["levelingUps"]:
+                    curr_move.add(move["nameZh"])
+
+                for move in detail_out["technicalMachines"]:
+                    curr_move.add(move["nameZh"])
+
+                for move in detail_out["eggMoves"]:
+                    curr_move.add(move["nameZh"])
+
+                loss_move = []
+                for move in before_move:
+                    if move["nameZh"] in curr_move:
+                        continue
+                    loss_move.append(move)
+
+                if len(loss_move) > 0:
+                    detail_out["beforeMoves"] = loss_move
 
             with open(
                 f"../public/data/pokemon/{link_str}.json",

@@ -27,6 +27,11 @@ type MoveProps = {
   technicalMachines: (TMMove & { selected?: boolean })[];
   eggMoves: (BaseMove & { selected?: boolean })[];
   raidMoves?: RaidMove[];
+  beforeMoves?: (BaseMove & { selected?: boolean; from: string; level?: number; pid?: string } & (
+      | { fromType: 'levelingUps'; level: number }
+      | { fromType: 'TM'; pid: string }
+      | { fromType: 'egg' }
+    ))[];
 };
 
 function mergeMove(data: MoveProps): PMMove[] {
@@ -49,6 +54,23 @@ function mergeMove(data: MoveProps): PMMove[] {
       return {
         source: '遺傳',
         ...move,
+      };
+    }),
+    (data.beforeMoves || []).map((move) => {
+      let source = move.from;
+      if (move.fromType === 'levelingUps') {
+        source += `-${move.level > 0 ? 'Lv' + move.level : LevelMap[move.level]}`;
+      } else if (move.fromType === 'TM') {
+        source += `-TM${move.pid.toString().padStart(3, '0')}`;
+      } else if (move.fromType === 'egg') {
+        source += `-蛋`;
+      }
+
+      const { from, fromType, level, pid, ...rest } = move;
+
+      return {
+        source: source,
+        ...rest,
       };
     }),
   ].flat();

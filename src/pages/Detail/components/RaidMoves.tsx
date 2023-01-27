@@ -10,7 +10,7 @@ export function RaidMoves({ raidMoves }: Porps) {
         .filter(({ level }) => level >= 6)
         .map(({ addMoves, level }) => (
           <div key={level}>
-            <p>預設勾選{level}星太晶團體戰使用招式</p>
+            <p>預設勾選{level}星太晶怪配招</p>
             {addMoves.length > 0 && (
               <p>
                 {addMoves.map((move) => (
