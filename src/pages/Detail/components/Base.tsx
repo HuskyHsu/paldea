@@ -1,12 +1,13 @@
 import clsx from 'clsx';
 import { BasePokemon, BgClass, TypeMap, TypeNameMap } from '@/models';
-import { Icon } from '@/components';
+import { Icon, PokemonBadge } from '@/components';
 
 type Props = {
   pokemon: BasePokemon;
+  samePm: BasePokemon[];
 };
 
-export function Base({ pokemon }: Props) {
+export function Base({ pokemon, samePm }: Props) {
   return (
     <dl className={clsx('max-w-md divide-gray-200 text-white', 'grid grid-cols-1', 'space-y-3')}>
       <div className={clsx('flex flex-col', 'hidden md:block')}>
@@ -98,6 +99,19 @@ export function Base({ pokemon }: Props) {
           )}
         </dd>
       </div>
+      {samePm.length > 1 && (
+        <>
+          <hr className="my-8 hidden h-px border-0 bg-gray-200 md:block" />
+          <div className="flex flex-col">
+            <dt className="md:text-md text-white">形態差異</dt>
+            <dd className="text-md grid grid-cols-2 gap-2">
+              {samePm.map((pm) => (
+                <PokemonBadge pm={pm} hiddenName={true} key={pm.link} />
+              ))}
+            </dd>
+          </div>
+        </>
+      )}
     </dl>
   );
 }

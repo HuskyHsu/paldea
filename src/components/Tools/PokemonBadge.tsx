@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { BasePokemon, BgClass, BgFromClass, BgToClass } from '@/models';
 
-type Props = { pm: BasePokemon; getText?: Function; size?: string };
+type Props = { pm: BasePokemon; getText?: Function; size?: string; hiddenName?: boolean };
 
-export function PokemonBadge({ pm, getText, size = 'text-xs' }: Props) {
+export function PokemonBadge({ pm, getText, size = 'text-xs', hiddenName = false }: Props) {
   return (
     <Link
       className={clsx(
@@ -17,8 +17,10 @@ export function PokemonBadge({ pm, getText, size = 'text-xs' }: Props) {
       )}
       to={`/pm/${pm.link}`}
     >
-      {pm.nameZh}
-      {pm.altForm && `-${pm.altForm}`}
+      {!hiddenName && pm.nameZh}
+      {!hiddenName && pm.altForm && '-'}
+      {pm.altForm && pm.altForm}
+      {hiddenName && pm.altForm === null && '一般'}
       {getText && `: ${getText(pm)}`}
     </Link>
   );

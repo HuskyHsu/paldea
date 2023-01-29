@@ -137,6 +137,7 @@ function Moves() {
   const targetPmIndex = pokemonList.findIndex((pm) => pm.link === link);
   const pokemon = pokemonList[targetPmIndex];
   const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
+  const samePm = pokemonList.filter((pm) => pm.nationalId === pokemon.nationalId);
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
@@ -187,7 +188,7 @@ function Moves() {
                 'rounded-t-none rounded-b-lg'
               )}
             >
-              <Base pokemon={pokemon} />
+              <Base pokemon={pokemon} samePm={samePm} />
             </div>
           </div>
         </InfoCard>
