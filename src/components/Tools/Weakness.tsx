@@ -90,8 +90,8 @@ export function MoveEffective({ title, type, targetRate }: EffectiveProps) {
   return (
     <div>
       <hr className="my-3 h-px border-0 bg-gray-200" />
-      <h6 className="text-lg font-bold">{title}</h6>
-      <div className="flex flex-wrap gap-x-2">
+      <h6 className="whitespace-nowrap text-lg font-bold">{title}</h6>
+      <div className="flex flex-wrap gap-2">
         {TYPE_MAP.map((targetType) => {
           return {
             type: targetType,
