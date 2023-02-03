@@ -133,7 +133,20 @@ if __name__ == "__main__":
 
         output.append(data)
 
-        if True:  # attributes["paldeaId"] > 9990 or True
+        if False:
+            url = f"https://www.serebii.net/scarletviolet/pokemon/new/{link_str}.png"
+            response = requests.get(url, stream=True)
+            if response.status_code == 200:
+                with open(f"../public/image/pm/{link_str}.png", "wb") as f:
+                    f.write(response.content)
+
+            url = f"https://www.serebii.net/Shiny/SV/new/{link_str}.png"
+            response = requests.get(url, stream=True)
+            if response.status_code == 200:
+                with open(f"../public/image/pm/{link_str}-s.png", "wb") as f:
+                    f.write(response.content)
+
+        if False:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
             # print(data["nameZh"])
 

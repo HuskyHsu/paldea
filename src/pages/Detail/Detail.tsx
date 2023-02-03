@@ -173,8 +173,8 @@ function Moves() {
         <InfoCard>
           <div
             className={clsx(
-              'grid grid-cols-1 gap-4 md:grid-cols-12',
-              'rounded-lg',
+              'grid grid-cols-1 gap-0 md:grid-cols-12 md:gap-4',
+              'relative rounded-lg',
               'bg-gradient-to-b',
               BgFromClass[pokemon.types[0] as keyof typeof BgClass],
               BgToClass[pokemon.types[pokemon.types.length - 1] as keyof typeof BgClass]
