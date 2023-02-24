@@ -57,7 +57,7 @@ export function Intersection({ moves }: Props) {
         的寶可夢
       </h6>
       <h6 className="text-xs text-gray-500">(最多查詢四種招式)</h6>
-      <div className="mt-2 flex flex-wrap gap-y-2">
+      <div className="mt-2 flex flex-wrap gap-2">
         {pokemonList
           .filter((pm) => intersectionList.has(pm.link))
           .map((pm, i) => (
