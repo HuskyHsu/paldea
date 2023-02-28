@@ -34,7 +34,7 @@ type MoveProps = {
     ))[];
 };
 
-function mergeMove(data: MoveProps): PMMove[] {
+function mergeMove(data: MoveProps, isEventPm: boolean): PMMove[] {
   const list = [
     data.levelingUps.map((move) => {
       const { level, ...rest } = move;
@@ -83,26 +83,26 @@ function mergeMove(data: MoveProps): PMMove[] {
     moves.forEach((move) => {
       const matchMove = list.find((item) => item.nameZh === move.nameZh);
       if (matchMove && move.nameZh !== '電網') {
-        matchMove.selected = level >= 6;
+        matchMove.selected = level >= 6 || isEventPm;
       } else {
         list.push({
           source: `${level}*太晶`,
-          selected: level >= 6,
+          selected: level >= 6 || isEventPm,
           ...move,
         });
       }
     });
-    if (level < 6) {
+    if (level < 6 && !isEventPm) {
       return;
     }
     addMoves.forEach((move) => {
       const matchMove = list.find((item) => item.nameZh === move.nameZh);
       if (matchMove) {
-        matchMove.selected = level >= 6;
+        matchMove.selected = level >= 6 || isEventPm;
       } else {
         list.push({
           source: `${level}*太晶(增)`,
-          selected: level >= 6,
+          selected: level >= 6 || isEventPm,
           ...move,
         });
       }
@@ -138,6 +138,7 @@ function Moves() {
   const pokemon = pokemonList[targetPmIndex];
   const basePm = pokemonList.find((pm) => pm.link === pokemon.source) as BasePokemon;
   const samePm = pokemonList.filter((pm) => pm.nationalId === pokemon.nationalId);
+  const isEventPm = pokemon.paldeaId === '---';
 
   useEffect(() => {
     document.title = `Pokédex ${pokemon.nameZh}`;
@@ -155,8 +156,8 @@ function Moves() {
   const { data } = usePokemonInfo(link);
 
   const tableDataMemo = useMemo(() => {
-    return mergeMove(data);
-  }, [data]);
+    return mergeMove(data, isEventPm);
+  }, [data, isEventPm]);
 
   const table = useTable<PMMove>(tableDataMemo, columns);
 
@@ -259,7 +260,7 @@ function Moves() {
       </div>
       <div className="flex justify-center">
         <div className="flex w-full flex-col gap-4 md:mb-4 md:w-5/6">
-          <Table {...table} raidMoves={data.raidMoves || []} />
+          <Table {...table} raidMoves={data.raidMoves || []} isEventPm={isEventPm} />
         </div>
       </div>
     </>

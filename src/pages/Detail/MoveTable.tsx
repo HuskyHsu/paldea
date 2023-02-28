@@ -74,8 +74,10 @@ function Table({
   getRowItems,
   toggleExpanded,
   raidMoves,
+  isEventPm,
 }: TableReturn<PMMove> & {
   raidMoves: RaidMove[];
+  isEventPm: boolean;
 }) {
   const [types, setTypes] = useState(allOn);
   const [categoryType, setCategoryType] = useState(categoryAllOn);
@@ -121,7 +123,7 @@ function Table({
         {UnionMoves.length > 0 && (
           <UnionType types={Array.from(new Set(UnionMoves.map((move) => move.type)))} />
         )}
-        {raidMoves.length > 0 && <RaidMoves raidMoves={raidMoves} />}
+        {raidMoves.length > 0 && <RaidMoves raidMoves={raidMoves} isEventPm={isEventPm} />}
       </div>
       <table className="w-full rounded-lg text-left text-sm text-gray-500 shadow-md">
         <thead className="sticky top-0 bg-custom-gold/50 text-xs uppercase text-gray-100 md:-top-4">

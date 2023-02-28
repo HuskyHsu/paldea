@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import { RaidMove, BgClass, BgFromClass, BgToClass } from '@/models';
 
-type Porps = { raidMoves: RaidMove[] };
+type Porps = { raidMoves: RaidMove[]; isEventPm: boolean };
 
-export function RaidMoves({ raidMoves }: Porps) {
+export function RaidMoves({ raidMoves, isEventPm }: Porps) {
   return (
     <div className="text-sm text-gray-500">
       {raidMoves
-        .filter(({ level }) => level >= 6)
+        .filter(({ level }) => level >= 6 || isEventPm)
         .map(({ addMoves, level }) => (
           <div key={level}>
             <p>預設勾選{level}星太晶怪配招</p>
