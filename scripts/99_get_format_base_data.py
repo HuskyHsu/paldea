@@ -146,10 +146,7 @@ if __name__ == "__main__":
                 with open(f"../public/image/pm/{link_str}-s.png", "wb") as f:
                     f.write(response.content)
 
-        if attributes["paldeaId"] in [
-            229,
-            228,
-        ]:  # attributes["paldeaId"] > 9990 or True
+        if attributes["paldeaId"] > 999:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
             # print(data["nameZh"])
 
