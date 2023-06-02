@@ -46,6 +46,8 @@ NameSuffix = {
     "帕底亞-火熾種": "b",
     "帕底亞-水瀾種": "a",
     "伽勒爾": "g",
+    "阿羅拉": "a",
+    "洗翠": "h",
     "雌性": "f",
     "黑夜": "m",
     "黃昏": "d",
@@ -146,7 +148,7 @@ if __name__ == "__main__":
                 with open(f"../public/image/pm/{link_str}-s.png", "wb") as f:
                     f.write(response.content)
 
-        if attributes["paldeaId"] > 999:  # attributes["paldeaId"] > 9990 or True
+        if attributes["paldeaId"] > 99999:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
             # print(data["nameZh"])
 

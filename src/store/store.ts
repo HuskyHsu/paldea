@@ -60,6 +60,7 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
         pm.nameZh.includes(keyword) ||
         pm.nameJp.includes(keyword) ||
         pm.nameEn.includes(keyword) ||
+        pm.altForm === keyword ||
         pm.abilities.some((ability) => ability.includes(keyword)) ||
         (pm.hiddenAbility ? pm.hiddenAbility?.includes(keyword) : false) ||
         pm.basePoint[keyword as keyof typeof Stats] > 0 ||
