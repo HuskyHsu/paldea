@@ -55,12 +55,22 @@ NameSuffix = {
     "全能形態": "h",
 }
 
+def sortPm(base):
+    attributes = base["attributes"]
+    if attributes["paldeaId"] > 999:
+        return (attributes["paldeaId"], attributes["nationalId"], attributes["subId"] or 0)
+    else:
+        return (attributes["paldeaId"], attributes["subId"] or 0)
+
 if __name__ == "__main__":
 
     base_list = get_list()
 
     output = []
     source_move_map = {}
+
+    base_list["data"] = sorted(base_list["data"], key=sortPm)
+
     for base in base_list["data"]:
         attributes = base["attributes"]
         print(attributes["paldeaId"], attributes["nameZh"])
@@ -148,7 +158,7 @@ if __name__ == "__main__":
                 with open(f"../public/image/pm/{link_str}-s.png", "wb") as f:
                     f.write(response.content)
 
-        if attributes["paldeaId"] > 99999:  # attributes["paldeaId"] > 9990 or True
+        if attributes["paldeaId"] > 999:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
             # print(data["nameZh"])
 
