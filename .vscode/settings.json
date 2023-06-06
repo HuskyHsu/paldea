@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["paldea"]
+  "cSpell.words": ["paldea"],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }

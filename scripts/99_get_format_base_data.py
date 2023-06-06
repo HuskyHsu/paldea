@@ -24,7 +24,6 @@ def get_list():
 
 
 def get_detail(id):
-
     params = {
         "populate[0]": "levelingUps.move.type",
         "populate[1]": "technicalMachines.move.type",
@@ -55,15 +54,20 @@ NameSuffix = {
     "全能形態": "h",
 }
 
+
 def sortPm(base):
     attributes = base["attributes"]
     if attributes["paldeaId"] > 999:
-        return (attributes["paldeaId"], attributes["nationalId"], attributes["subId"] or 0)
+        return (
+            attributes["paldeaId"],
+            attributes["nationalId"],
+            attributes["subId"] or 0,
+        )
     else:
         return (attributes["paldeaId"], attributes["subId"] or 0)
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     base_list = get_list()
 
     output = []
@@ -123,7 +127,9 @@ if __name__ == "__main__":
                 "M": int(attributes["gender"][1]),
                 "F": int(attributes["gender"][3]),
             },
-            "source": attributes["source"]["data"]["attributes"]["link"],
+            "source": attributes["source"]["data"]["attributes"]["link"]
+            if attributes["source"]
+            else attributes["link"],
         }
 
         if len(attributes["raids"]["data"]) > 0:
@@ -158,7 +164,7 @@ if __name__ == "__main__":
                 with open(f"../public/image/pm/{link_str}-s.png", "wb") as f:
                     f.write(response.content)
 
-        if attributes["nameZh"] == '幽尾玄魚':  # attributes["paldeaId"] > 9990 or True
+        if attributes["paldeaId"] > 9990:  # attributes["paldeaId"] > 9990 or True
             detail = get_detail(base["id"])
             # print(data["nameZh"])
 
