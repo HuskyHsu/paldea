@@ -6,7 +6,7 @@ def get_list():
     params = {
         "sort[0]": "paldeaId",
         "sort[1]": "subId",
-        "pagination[limit]": "500",
+        "pagination[limit]": "600",
         "populate[0]": "typeList",
         "populate[1]": "abilities",
         "populate[2]": "hiddenAbility",
