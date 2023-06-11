@@ -56,6 +56,7 @@ const isDisplay = (pm: BasePokemon, { keyword, types }: FilterObject) => {
   if (keyword) {
     if (newDisplay) {
       newDisplay =
+        (keyword === '非帕底亞' && pm.paldeaId === '---') ||
         pm.paldeaId.toString().includes(keyword) ||
         pm.nameZh.includes(keyword) ||
         pm.nameJp.includes(keyword) ||
