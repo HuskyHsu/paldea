@@ -4,7 +4,7 @@ import { Icon } from '@/components';
 
 type Props = {
   value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: (val: string) => void;
 };
 
 export function SearchBar({ value, onChange }: Props) {
@@ -22,7 +22,9 @@ export function SearchBar({ value, onChange }: Props) {
           )}
           placeholder="搜尋名稱"
           value={value}
-          onChange={onChange}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
         />
       </div>
     </>

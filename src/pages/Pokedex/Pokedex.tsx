@@ -1,23 +1,45 @@
-import { useSearchParams } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Pokemon } from '@/types/Pokemon';
 import { Hr, Loading } from '@/newComponents/';
 import { usePokemonList } from './api';
-import { Card, SearchBar } from './components';
+import { Card, Pagination, SearchBar } from './components';
 
 type Filter = {
   keyword: string;
   types: Set<string>;
 };
 
-function Pokedex() {
-  const { data, isLoading } = usePokemonList();
-  const [searchParams, setSearchParams] = useSearchParams();
+const itemsPerPage = 30;
 
-  const filter: Filter = {
+function Pokedex() {
+  const params = document.location.href.split('?');
+  const searchParams = useMemo(() => {
+    return new URLSearchParams(params.length > 1 ? params[1] : '');
+  }, [params]);
+
+  const [filter, setFilter] = useState<Filter>({
     keyword: searchParams.get('keyword') || '',
-    types: new Set(searchParams.get('types')?.split(',')),
-  };
+    types: new Set<string>(),
+  });
+
+  let { data, isLoading } = usePokemonList();
+  data = data.filter(FilterFn);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  data = data.slice(startIndex, startIndex + itemsPerPage);
+
+  useEffect(() => {
+    if (filter.keyword !== '') {
+      searchParams.set('keyword', filter.keyword);
+    } else {
+      searchParams.delete('keyword');
+    }
+
+    window.location.href = document.location.href.split('?')[0] + '?' + searchParams.toString();
+  }, [filter.keyword, searchParams]);
 
   if (isLoading) {
     return <Loading />;
@@ -36,32 +58,34 @@ function Pokedex() {
   // order: 圖鑑 > 全國, 帕底亞, 北上
 
   return (
-    <>
-      <header className="flex justify-end py-3">
-        <div className="flex w-full items-center gap-x-3 md:w-3/5 lg:w-1/3">
+    <div className="flex flex-col gap-y-4">
+      <header className="flex justify-end">
+        <div className="flex w-full items-center gap-x-3 md:w-64">
           <SearchBar
             value={filter.keyword}
-            onChange={(event) => {
-              const { value } = event.target;
-
-              setSearchParams((prev) => {
-                prev.set('keyword', value);
-                return prev;
-              });
+            onChange={(value) => {
+              setFilter((prev) => ({
+                ...prev,
+                keyword: value,
+              }));
             }}
           />
         </div>
       </header>
       <Hr />
-      <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
-        {data
-          .slice(0, 100)
-          .filter(FilterFn)
-          .map((pm) => (
-            <Card pokemon={pm} key={pm.link} />
-          ))}
+      <div className="grid grid-cols-list-mobile justify-around gap-4 py-8 md:grid-cols-list">
+        {data.map((pm) => (
+          <Card pokemon={pm} key={pm.link} />
+        ))}
       </div>
-    </>
+      <footer className="flex justify-end">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          setCurrentPage={setCurrentPage}
+        />
+      </footer>
+    </div>
   );
 }
 

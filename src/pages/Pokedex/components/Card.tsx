@@ -13,9 +13,9 @@ export function Card({ pokemon }: Props) {
   return (
     <div
       className={clsx(
-        'mt-8 p-4 pt-2 md:mt-16',
+        'mt-8 p-4 pt-2 md:mt-20',
         'flex flex-col gap-y-2',
-        'rounded-xl bg-white', //  shadow-[0_5px_25px_rgba(0,0,0,0.1)]
+        'rounded-xl bg-white',
         'shadow-list-items hover:shadow-list-items--hover',
         'hover:translate-x-[-0.2rem] hover:translate-y-[-0.2rem]'
       )}
