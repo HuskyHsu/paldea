@@ -1,0 +1,43 @@
+.wobbling {
+  height: 60px;
+  width: 60px;
+  position: relative;
+}
+.wobbling::before,
+.wobbling::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  transform-origin: bottom;
+}
+.wobbling::after {
+  background: radial-gradient(circle 5px, #fff 94%, #0000),
+    radial-gradient(circle 10px, #000 94%, #0000),
+    linear-gradient(#f93318 0 0) top / 100% calc(50% - 2px),
+    linear-gradient(#fff 0 0) bottom/100% calc(50% - 2px) #000;
+  background-repeat: no-repeat;
+  animation: w10 1s infinite cubic-bezier(0.5, 120, 0.5, -120);
+  width: 60px;
+  height: 60px;
+}
+
+.wobbling::before {
+  background: #ddd;
+  filter: blur(8px);
+  transform: scaleY(0.4) translate(-13px, 0px);
+  width: 60px;
+  height: 60px;
+}
+
+@keyframes w10 {
+  30%,
+  70% {
+    transform: rotate(0deg);
+  }
+  49.99% {
+    transform: rotate(0.2deg);
+  }
+  50% {
+    transform: rotate(-0.2deg);
+  }
+}

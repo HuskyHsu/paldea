@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
-import { Icon, useBackToTopContext } from '@/components';
+import { Icon, Loading, useBackToTopContext } from '@/components';
 import { Item } from './Item';
 
 function MainLayout() {
@@ -84,8 +84,10 @@ function MainLayout() {
           scrollbarGutter: 'stable',
         }}
       >
-        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey drop-shadow-xl">
-          <Outlet />
+        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey p-4 drop-shadow-xl">
+          <Suspense fallback={<Loading />}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </div>

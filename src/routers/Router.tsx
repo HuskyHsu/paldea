@@ -1,7 +1,9 @@
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import { QueryProvider } from '@/components';
-import { List, Pokedex } from '@/pages';
+
+const Pokedex = lazy(() => import(/* webpackChunkName: "Pokedex" */ '@/pages/Pokedex/Pokedex'));
 
 export function Router() {
   return (
@@ -9,11 +11,7 @@ export function Router() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           {/* 主頁 */}
-          <Route index element={<List />} />
-          <Route path="home" element={<Pokedex />} />
-
-          {/* <Route path="moves" element={<Moves />} />
-          <Route path="pm/:link" element={<Detail />} /> */}
+          <Route index element={<Pokedex />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
