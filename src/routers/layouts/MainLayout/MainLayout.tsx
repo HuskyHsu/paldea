@@ -46,12 +46,7 @@ function MainLayout() {
 
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
-      <aside
-        className={clsx(
-          'flex w-screen flex-col space-y-2 md:h-screen md:w-64 md:p-4',
-          'border-gray-200'
-        )}
-      >
+      <aside className={clsx('flex w-screen flex-col space-y-2 md:h-screen md:w-64 md:p-4')}>
         <div
           className={clsx(
             'flex justify-around md:flex-col md:space-y-2 md:p-4',
@@ -78,7 +73,7 @@ function MainLayout() {
         </div>
       </aside>
       <div
-        className="h-full max-h-screen w-full overflow-y-auto md:p-4"
+        className="relative h-full max-h-screen w-full overflow-y-auto md:p-4"
         ref={ref}
         style={{
           scrollbarGutter: 'stable',
@@ -89,6 +84,7 @@ function MainLayout() {
             <Outlet />
           </Suspense>
         </div>
+        <footer className="fixed bottom-0 left-0 right-0 bg-secondary/60">XD</footer>
       </div>
     </div>
   );

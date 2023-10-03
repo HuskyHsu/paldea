@@ -58,7 +58,7 @@ function Pokedex() {
   // order: 圖鑑 > 全國, 帕底亞, 北上
 
   return (
-    <div className="flex flex-col gap-y-4">
+    <div className="mb-4 flex flex-col gap-y-4">
       <header className="flex justify-end">
         <div className="flex w-full items-center gap-x-3 md:w-64">
           <SearchBar
@@ -78,13 +78,14 @@ function Pokedex() {
           <Card pokemon={pm} key={pm.link} />
         ))}
       </div>
-      <footer className="flex justify-end">
+      <footer className="hidden justify-end md:flex">
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
           setCurrentPage={setCurrentPage}
         />
       </footer>
+      <footer className="fixed bottom-0 left-0 right-0 bg-primary/60 text-right">QQ</footer>
     </div>
   );
 }
