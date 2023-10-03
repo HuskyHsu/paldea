@@ -1,13 +1,20 @@
+import clsx from 'clsx';
+
 import { Icon } from '@/newComponents/';
 import { Pokemon } from '@/types/Pokemon';
-import clsx from 'clsx';
+
+import { Filter } from '../Pokedex';
 
 type Props = {
   pokemon: Pokemon;
+  filter: Filter;
 };
 
-export function Card({ pokemon }: Props) {
-  const pid = pokemon.pid.toString().padStart(4, '0');
+export function Card({ pokemon, filter }: Props) {
+  const pid =
+    filter.pokedex === ''
+      ? pokemon.pid.toString().padStart(4, '0')
+      : (pokemon[filter.pokedex as 'kitakami' | 'paldea'] || 0).toString().padStart(4, '0');
   const link = pokemon.link;
 
   return (

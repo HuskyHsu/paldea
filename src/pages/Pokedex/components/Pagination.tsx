@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 
+import { Icon } from '@/newComponents/';
+
 type Props = {
   currentPage: number;
   totalPages: number;
@@ -114,5 +116,28 @@ export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
         </li>
       </ul>
     </nav>
+  );
+}
+
+export function PaginationMobile({
+  currentPage,
+  totalPages,
+  setCurrentPage,
+  length,
+}: Props & { length: number }) {
+  return (
+    <>
+      <button onClick={() => setCurrentPage((pre) => Math.max(1, pre - 1))}>
+        <Icon.ArrowBack className={clsx(currentPage === 1 ? 'fill-gray-400' : 'fill-white')} />
+      </button>
+      <p>
+        第{currentPage}頁，共{totalPages}頁 ｜ {length}種符合
+      </p>
+      <button onClick={() => setCurrentPage((pre) => Math.min(totalPages, pre + 1))}>
+        <Icon.ArrowForward
+          className={clsx(currentPage === totalPages ? 'fill-gray-400' : 'fill-white')}
+        />
+      </button>
+    </>
   );
 }

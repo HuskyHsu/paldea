@@ -79,12 +79,11 @@ function MainLayout() {
           scrollbarGutter: 'stable',
         }}
       >
-        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey p-4 drop-shadow-xl">
+        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey p-4 md:drop-shadow-xl">
           <Suspense fallback={<Loading />}>
             <Outlet />
           </Suspense>
         </div>
-        <footer className="fixed bottom-0 left-0 right-0 bg-secondary/60">XD</footer>
       </div>
     </div>
   );
