@@ -70,6 +70,14 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
+          <Item
+            text={'施工圖鑑'}
+            color="bg-custom-blue"
+            selected={hash === 'pokedex'}
+            onClick={() => updateNav('pokedex')}
+          >
+            <Icon.Books className="fill-current h-5 w-5" />
+          </Item>
         </div>
       </aside>
       <div

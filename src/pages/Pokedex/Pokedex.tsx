@@ -101,6 +101,7 @@ function Pokedex() {
 
   return (
     <div className="mb-4 flex flex-col gap-y-4">
+      新版圖鑑清單施工中。。。
       <header className="flex justify-end gap-x-2">
         <div className="flex w-full items-center gap-x-3 md:w-64">
           <SearchBar
