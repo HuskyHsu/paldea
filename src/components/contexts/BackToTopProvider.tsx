@@ -53,7 +53,7 @@ export const BackToTopProvider = ({ children }: PropsWithChildren) => {
       {children}
       <button
         type="button"
-        className={clsx('fixed bottom-8 right-8', !isVisible && 'pointer-events-none opacity-0')}
+        className={clsx('fixed bottom-16 right-8', !isVisible && 'pointer-events-none opacity-0')}
         onClick={scrollToTop}
       >
         <Icon.BackToTop className={clsx(isMobile ? 'h-12 w-12' : 'h-16 w-16')} />

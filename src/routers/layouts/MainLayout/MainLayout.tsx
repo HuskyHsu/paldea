@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
-import { Icon, useBackToTopContext } from '@/components';
+import { Icon, Loading, useBackToTopContext } from '@/components';
 import { Item } from './Item';
 
 function MainLayout() {
@@ -37,7 +37,7 @@ function MainLayout() {
     }
   }, [location, navigate]);
 
-  const [hash, setHash] = useState(window.location.hash.replace('#/', ''));
+  const [hash, setHash] = useState(window.location.hash.replace('#/', '').split('?')[0]);
 
   const updateNav = (to: string) => {
     setHash(to);
@@ -46,12 +46,7 @@ function MainLayout() {
 
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
-      <aside
-        className={clsx(
-          'flex w-screen flex-col space-y-2 md:h-screen md:w-64 md:p-4',
-          'border-gray-200'
-        )}
-      >
+      <aside className="flex w-screen flex-col space-y-2 md:h-screen md:w-64 md:p-4">
         <div
           className={clsx(
             'flex justify-around md:flex-col md:space-y-2 md:p-4',
@@ -75,6 +70,14 @@ function MainLayout() {
           >
             <Icon.Book className="fill-current h-5 w-5" />
           </Item>
+          <Item
+            text={'施工圖鑑'}
+            color="bg-custom-blue"
+            selected={hash === 'pokedex'}
+            onClick={() => updateNav('pokedex')}
+          >
+            <Icon.Books className="fill-current h-5 w-5" />
+          </Item>
         </div>
       </aside>
       <div
@@ -84,8 +87,10 @@ function MainLayout() {
           scrollbarGutter: 'stable',
         }}
       >
-        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey drop-shadow-xl">
-          <Outlet />
+        <div className="mx-auto min-h-full max-w-6xl rounded-xl bg-custom-lightgrey p-4 md:drop-shadow-xl">
+          <Suspense fallback={<Loading />}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </div>
