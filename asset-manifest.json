@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.7aabd1b2.css",
-    "main.js": "/paldea/static/js/main.395f60d5.js",
+    "main.css": "/paldea/static/css/main.20eda302.css",
+    "main.js": "/paldea/static/js/main.9ddd4fa3.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
     "static/media/bg.png": "/paldea/static/media/bg.7b5a0204a10fa00ccff3.png",
     "static/media/Scarlet.svg": "/paldea/static/media/Scarlet.16f7fd90321a770b189765e06fb2c678.svg",
     "static/media/Compass.svg": "/paldea/static/media/Compass.f965247e4629903da8f0a630a928d36e.svg",
+    "static/media/Filter.svg": "/paldea/static/media/Filter.9a31f4bac5ec9c78adc597751369bde6.svg",
     "static/media/Violet.svg": "/paldea/static/media/Violet.ed36da4a188cb1936cf9be04deb4fbfb.svg",
     "static/media/Books.svg": "/paldea/static/media/Books.88c6f0e5e47299e407dd8e08b7b626f3.svg",
     "static/media/Bag.svg": "/paldea/static/media/Bag.8dbd2c94baf038fdffb18305edd9f2cf.svg",
@@ -16,12 +17,12 @@
     "static/media/Search.svg": "/paldea/static/media/Search.70618b7533946d2ab5e393dce8e77709.svg",
     "static/media/ArrowBack.svg": "/paldea/static/media/ArrowBack.ec2c7f911771dddea2422db143e0cceb.svg",
     "static/media/ArrowForward.svg": "/paldea/static/media/ArrowForward.204ac83ab34908a616d745a4a46e7d3e.svg",
-    "main.7aabd1b2.css.map": "/paldea/static/css/main.7aabd1b2.css.map",
-    "main.395f60d5.js.map": "/paldea/static/js/main.395f60d5.js.map",
+    "main.20eda302.css.map": "/paldea/static/css/main.20eda302.css.map",
+    "main.9ddd4fa3.js.map": "/paldea/static/js/main.9ddd4fa3.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7aabd1b2.css",
-    "static/js/main.395f60d5.js"
+    "static/css/main.20eda302.css",
+    "static/js/main.9ddd4fa3.js"
   ]
 }
