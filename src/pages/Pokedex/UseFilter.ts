@@ -1,69 +1,36 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { Filter, BoolKeys, ValueKeys } from './Pokedex';
+import { Filter, ValueKeys } from './Pokedex';
 
 export function UseFilter() {
-  const params = document.location.href.split('?');
-  const searchParams = useMemo(() => {
-    return new URLSearchParams(params.length > 1 ? params[1] : '');
-  }, [params]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const [filter, setFilter] = useState<Filter>({
+  const filter: Filter = {
     keyword: searchParams.get('keyword') || '',
-    types: new Set<string>(),
-    pokedex: searchParams.get('pokedex') || 'kitakami',
-    displayFilter: false,
+    pokedex: searchParams.get('pokedex') || 'paldea',
     page: Number(searchParams.get('page') || 1),
-  });
-
-  useEffect(() => {
-    if (filter.keyword !== '') {
-      searchParams.set('keyword', filter.keyword);
-      searchParams.delete('page');
-    } else {
-      searchParams.delete('keyword');
-    }
-
-    if (filter.pokedex !== '') {
-      searchParams.set('pokedex', filter.pokedex);
-      searchParams.delete('page');
-    } else {
-      searchParams.delete('pokedex');
-    }
-
-    if (filter.page !== 1) {
-      searchParams.set('page', String(filter.page));
-    } else {
-      searchParams.delete('page');
-    }
-
-    window.location.href = document.location.href.split('?')[0] + '?' + searchParams.toString();
-  }, [filter, searchParams]);
-
-  const toggleState = (key: BoolKeys<Filter>[keyof Filter]) => {
-    return (bool: boolean) => {
-      setFilter((prev) => {
-        const newPrev = {
-          ...prev,
-          [key]: bool,
-        };
-
-        return newPrev;
-      });
-    };
   };
+
+  //   const toggleState = (key: BoolKeys<Filter>[keyof Filter]) => {
+  //     return (bool: boolean) => {
+  //       searchParams.set(key, String(bool));
+  //     };
+  //   };
 
   const updateState = (key: ValueKeys<Filter, string>[keyof Filter]) => {
     return (val: string) => {
-      setFilter((prev) => {
-        const newPrev = {
-          ...prev,
-          [key]: val,
-          page: 1,
-        };
-
-        return newPrev;
-      });
+      if (val === '') {
+        setSearchParams((prev) => {
+          prev.delete(key);
+          return prev;
+        });
+      } else {
+        setSearchParams((prev) => {
+          prev.set(key, val);
+          prev.delete('page');
+          return prev;
+        });
+      }
     };
   };
 
@@ -71,19 +38,18 @@ export function UseFilter() {
     key: ValueKeys<Filter, number>[keyof Filter],
     fn: (val: number) => number
   ) => {
-    setFilter((prev) => {
-      const newPrev = {
-        ...prev,
-        [key]: fn(prev[key]),
-      };
+    setSearchParams((prev) => {
+      const val = prev.get(key) || '0';
+      const newVal = fn(Number(val));
+      prev.set(key, String(newVal));
 
-      return newPrev;
+      return prev;
     });
   };
 
   return {
     filter,
-    toggleState,
+    // toggleState,
     updateState,
     updateNumberState,
   };

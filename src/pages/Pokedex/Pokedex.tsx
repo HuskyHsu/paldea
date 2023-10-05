@@ -8,10 +8,10 @@ import { UseFilter } from './UseFilter';
 
 export type Filter = {
   keyword: string;
-  types: Set<string>;
   pokedex: string;
-  displayFilter: boolean;
   page: number;
+  // types: Set<string>;
+  // displayFilter: boolean;
 };
 
 export type BoolKeys<T> = {
@@ -25,7 +25,7 @@ export type ValueKeys<T, L> = {
 const itemsPerPage = 30;
 
 function Pokedex() {
-  const { filter, toggleState, updateState, updateNumberState } = UseFilter();
+  const { filter, updateState, updateNumberState } = UseFilter();
 
   let { data, isLoading } = usePokemonList();
   data = data.filter(filterFn).filter(filterPokedex).sort(orderBy);
@@ -49,11 +49,11 @@ function Pokedex() {
   }
 
   function filterPokedex(pm: Pokemon) {
-    return filter.pokedex === '' || pm[filter.pokedex as 'kitakami' | 'paldea'];
+    return filter.pokedex === 'national' || pm[filter.pokedex as 'kitakami' | 'paldea'];
   }
 
   function orderBy(a: Pokemon, b: Pokemon) {
-    if (filter.pokedex === '') {
+    if (filter.pokedex === 'national') {
       if (a.pid - b.pid !== 0) {
         return a.pid - b.pid;
       } else {
@@ -78,7 +78,7 @@ function Pokedex() {
   return (
     <div className="mb-4 flex flex-col gap-y-4">
       新版圖鑑清單施工中。。。
-      <Header filter={filter} toggleState={toggleState} updateState={updateState} />
+      <Header filter={filter} updateState={updateState} />
       <Hr />
       <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
         {currentData.map((pm) => (

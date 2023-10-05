@@ -1,26 +1,26 @@
 import { SubTitleSlide } from '@/newComponents';
 
-import { Filter, ValueKeys, BoolKeys } from '../Pokedex';
-import { SearchBar, FilterButton, Buttons } from '.';
+import { Filter, ValueKeys } from '../Pokedex';
+import { SearchBar, Buttons } from '.';
 
 type Props = {
   filter: Filter;
   updateState: (key: ValueKeys<Filter, string>[keyof Filter]) => (val: string) => void;
-  toggleState: (key: BoolKeys<Filter>[keyof Filter]) => (bool: boolean) => void;
+  //   toggleState: (key: BoolKeys<Filter>[keyof Filter]) => (bool: boolean) => void;
 };
 
-export function Header({ filter, updateState, toggleState }: Props) {
+export function Header({ filter, updateState }: Props) {
   return (
     <header>
       <div className="flex justify-end gap-x-2">
         <div className="flex w-full items-center gap-x-3 md:w-64">
           <SearchBar value={filter.keyword} onChange={updateState('keyword')} />
-          <div className="relative">
+          {/* <div className="relative">
             <FilterButton
               checked={filter.displayFilter}
               toggleState={toggleState('displayFilter')}
             />
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
@@ -29,7 +29,7 @@ export function Header({ filter, updateState, toggleState }: Props) {
           list={[
             { name: '帕底亞圖鑑', val: 'paldea' },
             { name: '北上圖鑑', val: 'kitakami' },
-            { name: '全國圖鑑', val: '' },
+            { name: '全國圖鑑', val: 'national' },
           ]}
           currVal={filter.pokedex}
           updateState={updateState('pokedex')}
