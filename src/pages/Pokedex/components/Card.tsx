@@ -14,7 +14,7 @@ export function Card({ pokemon, filter }: Props) {
   const pid =
     filter.pokedex === ''
       ? pokemon.pid.toString().padStart(4, '0')
-      : (pokemon[filter.pokedex as 'kitakami' | 'paldea'] || 0).toString().padStart(4, '0');
+      : (pokemon[filter.pokedex as 'kitakami' | 'paldea'] || 0).toString().padStart(3, '0');
   const link = pokemon.link;
 
   return (
@@ -70,7 +70,6 @@ export function Card({ pokemon, filter }: Props) {
           </div>
         </div>
       </div>
-      {/* <p>{pokemon.link}</p> */}
     </div>
   );
 }

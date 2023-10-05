@@ -1,27 +1,32 @@
 import clsx from 'clsx';
 
 import { Icon } from '@/newComponents/';
+import { Filter, ValueKeys } from '../Pokedex';
 
 type Props = {
   currentPage: number;
   totalPages: number;
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  updateNumberState: (
+    key: ValueKeys<Filter, number>[keyof Filter],
+    fn: (val: number) => number
+  ) => void;
 };
 
 const pagingButtonLength = window.screen.width < 768 ? 1 : 3;
 
-export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
+export function Pagination({ currentPage, totalPages, updateNumberState }: Props) {
   return (
     <nav>
       <ul className="inline-flex -space-x-px text-sm">
         <li>
           <button
-            onClick={() => setCurrentPage((pre) => Math.max(1, pre - 1))}
+            onClick={() => updateNumberState('page', (n) => Math.max(1, n - 1))}
             className={clsx(
               'ml-0 flex h-8 items-center justify-center',
               'rounded-l-lg border border-gray-300',
               'bg-white px-3 leading-tight text-gray-500',
-              'hover:bg-gray-100 hover:text-gray-700'
+              'hover:bg-gray-100 hover:text-gray-700',
+              currentPage === 1 && 'cursor-not-allowed'
             )}
           >
             前一頁
@@ -31,7 +36,7 @@ export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
           <>
             <li>
               <button
-                onClick={() => setCurrentPage(1)}
+                onClick={() => updateNumberState('page', () => 1)}
                 className={clsx(
                   'ml-0 flex h-8 items-center justify-center',
                   'border border-gray-300',
@@ -62,7 +67,7 @@ export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
           .map((n) => (
             <li key={n}>
               <button
-                onClick={() => setCurrentPage(n)}
+                onClick={() => updateNumberState('page', () => n)}
                 className={clsx(
                   'ml-0 flex h-8 items-center justify-center',
                   'border border-gray-300',
@@ -88,7 +93,7 @@ export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
             </li>
             <li>
               <button
-                onClick={() => setCurrentPage(totalPages)}
+                onClick={() => updateNumberState('page', () => totalPages)}
                 className={clsx(
                   'ml-0 flex h-8 items-center justify-center',
                   'border border-gray-300',
@@ -103,12 +108,17 @@ export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
         )}
         <li>
           <button
-            onClick={() => setCurrentPage((pre) => Math.min(totalPages, pre + 1))}
+            onClick={() => {
+              updateNumberState('page', (n) => {
+                return Math.min(totalPages, n + 1);
+              });
+            }}
             className={clsx(
               'ml-0 flex h-8 items-center justify-center',
               'rounded-r-lg border border-gray-300',
               'bg-white px-3 leading-tight text-gray-500',
-              'hover:bg-gray-100 hover:text-gray-700'
+              'hover:bg-gray-100 hover:text-gray-700',
+              currentPage === totalPages && 'cursor-not-allowed'
             )}
           >
             後一頁
@@ -122,18 +132,18 @@ export function Pagination({ currentPage, totalPages, setCurrentPage }: Props) {
 export function PaginationMobile({
   currentPage,
   totalPages,
-  setCurrentPage,
+  updateNumberState,
   length,
 }: Props & { length: number }) {
   return (
     <>
-      <button onClick={() => setCurrentPage((pre) => Math.max(1, pre - 1))}>
+      <button onClick={() => updateNumberState('page', (n) => Math.max(1, n - 1))}>
         <Icon.ArrowBack className={clsx(currentPage === 1 ? 'fill-gray-400' : 'fill-white')} />
       </button>
       <p>
         第{currentPage}頁，共{totalPages}頁 ｜ {length}種符合
       </p>
-      <button onClick={() => setCurrentPage((pre) => Math.min(totalPages, pre + 1))}>
+      <button onClick={() => updateNumberState('page', (n) => Math.min(totalPages, n + 1))}>
         <Icon.ArrowForward
           className={clsx(currentPage === totalPages ? 'fill-gray-400' : 'fill-white')}
         />
