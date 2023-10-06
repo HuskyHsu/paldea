@@ -39,7 +39,7 @@ export function UseFilter() {
     fn: (val: number) => number
   ) => {
     setSearchParams((prev) => {
-      const val = prev.get(key) || '0';
+      const val = prev.get(key) || '1';
       const newVal = fn(Number(val));
       prev.set(key, String(newVal));
 
