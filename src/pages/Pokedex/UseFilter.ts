@@ -8,7 +8,7 @@ export function UseFilter() {
     keyword: searchParams.get('keyword') || '',
     pokedex: searchParams.get('pokedex') || 'paldea',
     page: Number(searchParams.get('page') || 1),
-    types: new Set((searchParams.get('types') || '').split(',').filter(Boolean)),
+    types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
   };
 
   //   const toggleState = (key: BoolKeys<Filter>[keyof Filter]) => {
@@ -37,13 +37,13 @@ export function UseFilter() {
   const updateSetState = (key: ValueKeys<Filter, Set<string>>[keyof Filter]) => {
     return (val: string) => {
       setSearchParams((prev) => {
-        const vals = new Set((prev.get(key) || '').split(',').filter(Boolean));
+        const vals = new Set((prev.get(key) || '').split('-').filter(Boolean));
         if (vals.has(val)) {
           vals.delete(val);
         } else {
           vals.add(val);
         }
-        prev.set(key, [...vals].join(','));
+        prev.set(key, [...vals].join('-'));
         return prev;
       });
     };
