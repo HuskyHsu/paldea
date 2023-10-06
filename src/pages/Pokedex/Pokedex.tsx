@@ -10,7 +10,7 @@ export type Filter = {
   keyword: string;
   pokedex: string;
   page: number;
-  // types: Set<string>;
+  types: Set<string>;
   // displayFilter: boolean;
 };
 
@@ -25,7 +25,7 @@ export type ValueKeys<T, L> = {
 const itemsPerPage = 30;
 
 function Pokedex() {
-  const { filter, updateState, updateNumberState } = UseFilter();
+  const { filter, updateState, updateNumberState, updateSetState } = UseFilter();
 
   let { data, isLoading } = usePokemonList();
   data = data.filter(filterFn).filter(filterPokedex).sort(orderBy);
@@ -43,6 +43,16 @@ function Pokedex() {
 
     if (filter.keyword !== '') {
       display = display && pm.nameZh.includes(filter.keyword);
+    }
+
+    if (filter.types.size > 0) {
+      if (filter.types.size === 1) {
+        display = display && pm.types.some((type) => filter.types.has(type));
+      } else if (filter.types.size === 2 && pm.types.length === 2) {
+        display = display && pm.types.every((type) => filter.types.has(type));
+      } else {
+        display = false;
+      }
     }
 
     return display;
@@ -78,7 +88,7 @@ function Pokedex() {
   return (
     <div className="mb-4 flex flex-col gap-y-4">
       新版圖鑑清單施工中。。。
-      <Header filter={filter} updateState={updateState} />
+      <Header filter={filter} updateState={updateState} updateSetState={updateSetState} />
       <Hr />
       <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
         {currentData.map((pm) => (
