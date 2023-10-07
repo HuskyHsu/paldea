@@ -8,7 +8,7 @@ type Props = {
 
 export function Buttons({ list, currVal, updateState }: Props) {
   return (
-    <div className="flex gap-4">
+    <div className="flex flex-wrap gap-4">
       {list.map((item) => {
         return (
           <button

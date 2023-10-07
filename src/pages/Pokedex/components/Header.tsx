@@ -8,13 +8,15 @@ import { SearchBar, Buttons } from '.';
 
 type Props = {
   filter: Filter;
+  abilities: string[];
   updateState: (key: ValueKeys<Filter, string>[keyof Filter]) => (val: string) => void;
   updateSetState: (key: ValueKeys<Filter, Set<string>>[keyof Filter]) => (val: string) => void;
   //   toggleState: (key: BoolKeys<Filter>[keyof Filter]) => (bool: boolean) => void;
 };
 
-export function Header({ filter, updateState, updateSetState }: Props) {
+export function Header({ filter, abilities, updateState, updateSetState }: Props) {
   const typeUpdate = updateSetState('types');
+  const abilityUpdate = updateState('ability');
 
   return (
     <header>
@@ -54,6 +56,33 @@ export function Header({ filter, updateState, updateSetState }: Props) {
             </button>
           ))}
         </div>
+        <SubTitleSlide title="特性" />
+        <div className="relative mb-2 w-60">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <Icon.Search className="h-5 w-5" />
+          </div>
+          <input
+            type="search"
+            className={clsx(
+              'block w-full rounded-lg border border-gray-300',
+              'bg-gray-50 p-2 pl-10 text-sm text-gray-900'
+            )}
+            placeholder="搜尋名稱"
+            value={filter.ability}
+            onChange={(e) => {
+              abilityUpdate(e.target.value);
+            }}
+          />
+        </div>
+        <Buttons
+          list={abilities
+            .filter((ability) => {
+              return ability.split('').some((char) => filter.ability.includes(char));
+            })
+            .map((ability) => ({ name: ability, val: ability }))}
+          currVal={filter.ability}
+          updateState={abilityUpdate}
+        />
       </div>
     </header>
   );

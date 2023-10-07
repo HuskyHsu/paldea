@@ -9,6 +9,7 @@ export function UseFilter() {
     pokedex: searchParams.get('pokedex') || 'paldea',
     page: Number(searchParams.get('page') || 1),
     types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
+    ability: searchParams.get('ability') || '',
   };
 
   //   const toggleState = (key: BoolKeys<Filter>[keyof Filter]) => {

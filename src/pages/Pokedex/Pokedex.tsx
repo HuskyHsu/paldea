@@ -11,6 +11,7 @@ export type Filter = {
   pokedex: string;
   page: number;
   types: Set<string>;
+  ability: string;
   // displayFilter: boolean;
 };
 
@@ -28,6 +29,16 @@ function Pokedex() {
   const { filter, updateState, updateNumberState, updateSetState } = UseFilter();
 
   let { data, isLoading } = usePokemonList();
+
+  const abilities = [
+    ...new Set(
+      data
+        .map((pm) => pm.abilities.concat([pm.hiddenAbility]))
+        .flat()
+        .filter(Boolean)
+    ),
+  ].sort();
+
   data = data.filter(filterFn).filter(filterPokedex).sort(orderBy);
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -53,6 +64,12 @@ function Pokedex() {
       } else {
         display = false;
       }
+    }
+
+    if (filter.ability !== '' && abilities.includes(filter.ability)) {
+      display =
+        display &&
+        [...pm.abilities, pm.hiddenAbility].some((ability) => ability === filter.ability);
     }
 
     return display;
@@ -88,7 +105,12 @@ function Pokedex() {
   return (
     <div className="mb-4 flex flex-col gap-y-4">
       新版圖鑑清單施工中。。。
-      <Header filter={filter} updateState={updateState} updateSetState={updateSetState} />
+      <Header
+        filter={filter}
+        abilities={abilities}
+        updateState={updateState}
+        updateSetState={updateSetState}
+      />
       <Hr />
       <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
         {currentData.map((pm) => (
