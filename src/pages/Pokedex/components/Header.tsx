@@ -57,7 +57,7 @@ export function Header({
             { name: '北上', val: 'kitakami' },
             { name: '洗翠', val: 'hisui' },
             { name: '全國', val: 'national' },
-            { name: 'HOME入境 or 活動', val: 'home' },
+            { name: 'HOME入境 / 活動', val: 'home' },
           ]}
           currVal={filter.pokedex}
           updateState={updateState('pokedex')}

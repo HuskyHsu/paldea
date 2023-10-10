@@ -117,11 +117,14 @@ function Pokedex() {
         toggleDisplay={toggleDisplay}
       />
       <Hr />
-      <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
-        {currentData.map((pm) => (
-          <Card pokemon={pm} key={pm.link} filter={filter} display={display} />
-        ))}
-      </div>
+      <p className={clsx(data.length > 0 && 'hidden')}>查無符合項目，請調整搜尋項目。</p>
+      {data.length > 0 && (
+        <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
+          {currentData.map((pm) => (
+            <Card pokemon={pm} key={pm.link} filter={filter} display={display} />
+          ))}
+        </div>
+      )}
       <footer className="hidden justify-end md:flex">
         <Pagination
           currentPage={filter.page}
