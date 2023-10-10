@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.22d86528.css",
-    "main.js": "/paldea/static/js/main.6c9be22e.js",
+    "main.css": "/paldea/static/css/main.96cd96a2.css",
+    "main.js": "/paldea/static/js/main.509e1b4f.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
     "static/media/bg.png": "/paldea/static/media/bg.7b5a0204a10fa00ccff3.png",
     "static/media/Scarlet.svg": "/paldea/static/media/Scarlet.16f7fd90321a770b189765e06fb2c678.svg",
@@ -12,17 +12,18 @@
     "static/media/Bag.svg": "/paldea/static/media/Bag.8dbd2c94baf038fdffb18305edd9f2cf.svg",
     "static/media/Shiny.svg": "/paldea/static/media/Shiny.82876923471bb8735437f6f531c179bf.svg",
     "static/media/Book.svg": "/paldea/static/media/Book.32a3a505f2783a46510df39a515ace12.svg",
+    "static/media/Close.svg": "/paldea/static/media/Close.74456237ec34e4a0eeed0bf6f2f433a5.svg",
     "index.html": "/paldea/index.html",
     "static/media/BackToTop.svg": "/paldea/static/media/BackToTop.a8bced5a5202f7cec14ebb101367bc04.svg",
     "static/media/Search.svg": "/paldea/static/media/Search.70618b7533946d2ab5e393dce8e77709.svg",
     "static/media/ArrowBack.svg": "/paldea/static/media/ArrowBack.ec2c7f911771dddea2422db143e0cceb.svg",
     "static/media/ArrowForward.svg": "/paldea/static/media/ArrowForward.204ac83ab34908a616d745a4a46e7d3e.svg",
-    "main.22d86528.css.map": "/paldea/static/css/main.22d86528.css.map",
-    "main.6c9be22e.js.map": "/paldea/static/js/main.6c9be22e.js.map",
+    "main.96cd96a2.css.map": "/paldea/static/css/main.96cd96a2.css.map",
+    "main.509e1b4f.js.map": "/paldea/static/js/main.509e1b4f.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22d86528.css",
-    "static/js/main.6c9be22e.js"
+    "static/css/main.96cd96a2.css",
+    "static/js/main.509e1b4f.js"
   ]
 }
