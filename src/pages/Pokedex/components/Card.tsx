@@ -105,12 +105,12 @@ export function Card({ pokemon, filter, display }: Props) {
         </div>
         <div className={clsx(display.EVs || display.ability ? 'block' : 'hidden')}>
           {display.ability && (
-            <p className="mt-2 flex flex-wrap justify-center gap-2 whitespace-nowrap md:justify-start">
+            <p className="mt-2 flex flex-col flex-wrap justify-center gap-2 whitespace-nowrap md:flex-row md:justify-start">
               <Abilities pokemon={pokemon} />
             </p>
           )}
           {display.EVs && (
-            <p className="mt-2 flex flex-wrap justify-center gap-2 whitespace-nowrap md:justify-start">
+            <p className="mt-2 flex flex-col flex-wrap justify-center gap-2 whitespace-nowrap md:flex-row md:justify-start">
               <EVs pokemon={pokemon} />
             </p>
           )}
