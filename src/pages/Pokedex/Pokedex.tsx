@@ -80,17 +80,17 @@ function Pokedex() {
   }
 
   function filterPokedex(pm: Pokemon) {
-    return filter.pokedex === 'national' || pm[filter.pokedex as 'kitakami' | 'paldea'];
+    if (['kitakami', 'paldea'].includes(filter.pokedex)) {
+      return pm[filter.pokedex as 'kitakami' | 'paldea'];
+    } else if (filter.pokedex === 'home') {
+      return pm.kitakami === null && pm.paldea === null;
+    } else {
+      return true;
+    }
   }
 
   function orderBy(a: Pokemon, b: Pokemon) {
-    if (filter.pokedex === 'national') {
-      if (a.pid - b.pid !== 0) {
-        return a.pid - b.pid;
-      } else {
-        return a.link.localeCompare(b.link);
-      }
-    } else {
+    if (['kitakami', 'paldea'].includes(filter.pokedex)) {
       if (
         (a[filter.pokedex as 'kitakami' | 'paldea'] || 0) -
           (b[filter.pokedex as 'kitakami' | 'paldea'] || 0) !==
@@ -100,6 +100,12 @@ function Pokedex() {
           (a[filter.pokedex as 'kitakami' | 'paldea'] || 0) -
           (b[filter.pokedex as 'kitakami' | 'paldea'] || 0)
         );
+      } else {
+        return a.link.localeCompare(b.link);
+      }
+    } else {
+      if (a.pid - b.pid !== 0) {
+        return a.pid - b.pid;
       } else {
         return a.link.localeCompare(b.link);
       }

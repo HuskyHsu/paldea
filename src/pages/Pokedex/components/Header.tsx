@@ -53,9 +53,10 @@ export function Header({
         <SubTitleSlide title="圖鑑分類" />
         <Buttons
           list={[
-            { name: '帕底亞圖鑑', val: 'paldea' },
-            { name: '北上圖鑑', val: 'kitakami' },
-            { name: '全國圖鑑', val: 'national' },
+            { name: '帕底亞', val: 'paldea' },
+            { name: '北上', val: 'kitakami' },
+            { name: '全國', val: 'national' },
+            { name: 'HOME入境 or 活動', val: 'home' },
           ]}
           currVal={filter.pokedex}
           updateState={updateState('pokedex')}

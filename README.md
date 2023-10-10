@@ -2,17 +2,9 @@
 
 ### Todo List
 
-- home page:
-  1. [ ] query string and search
-- detail page
-  1. [x] image
-  2. [x] move list(leveling up, TM, egg)
-  3. [x] abilities
-  4. [x] gender
-  5. [x] weakness
-  6. [ ] evolutionary chain
-  7. [ ] get methods
-  8. [x] move query
+- pokedex page:
+  1. [ ] 洗翠圖鑑
+  2. [ ] tags (傳說, 幻獸, 悖謬, 地區)
 
 ### Issues
 

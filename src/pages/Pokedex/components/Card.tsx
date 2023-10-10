@@ -55,10 +55,10 @@ const EVs = ({ pokemon }: { pokemon: Pokemon }) => {
 };
 
 export function Card({ pokemon, filter, display }: Props) {
-  const pid =
-    filter.pokedex === 'national'
-      ? pokemon.pid.toString().padStart(4, '0')
-      : (pokemon[filter.pokedex as 'kitakami' | 'paldea'] || 0).toString().padStart(3, '0');
+  const pid = ['kitakami', 'paldea'].includes(filter.pokedex)
+    ? (pokemon[filter.pokedex as 'kitakami' | 'paldea'] || 0).toString().padStart(3, '0')
+    : pokemon.pid.toString().padStart(4, '0');
+
   const link = pokemon.link;
 
   return (
