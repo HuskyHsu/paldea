@@ -1,13 +1,15 @@
 import { createContext, useContext, useState, useRef, PropsWithChildren, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import clsx from 'clsx';
-import { Icon } from '..';
-interface BackToTopContextType {
+
+import { Icon } from '@/newComponents';
+
+type BackToTopContextType = {
   isVisible: boolean;
   setIsVisible: (isVisible: boolean) => void;
   ref: React.RefObject<HTMLDivElement>;
   toggleVisibility: () => void;
-}
+};
 
 const BackToTopContext = createContext<BackToTopContextType>({
   isVisible: false,
@@ -61,4 +63,5 @@ export const BackToTopProvider = ({ children }: PropsWithChildren) => {
     </BackToTopContext.Provider>
   );
 };
+
 export const useBackToTopContext = () => useContext(BackToTopContext);

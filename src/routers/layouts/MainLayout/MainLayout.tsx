@@ -3,7 +3,8 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
-import { Icon, Loading, useBackToTopContext } from '@/components';
+import { Icon, Loading } from '@/components';
+import { useBackToTopContext } from '@/newComponents/contexts';
 import { Item } from './Item';
 
 function MainLayout() {
@@ -60,7 +61,7 @@ function MainLayout() {
             selected={hash === ''}
             onClick={() => updateNav('')}
           >
-            <Icon.Books className="fill-current h-5 w-5" />
+            <Icon.Books className="h-5 w-5 fill-current" />
           </Item>
           <Item
             text={'招式清單'}
@@ -68,7 +69,7 @@ function MainLayout() {
             selected={hash === 'moves'}
             onClick={() => updateNav('moves')}
           >
-            <Icon.Book className="fill-current h-5 w-5" />
+            <Icon.Book className="h-5 w-5 fill-current" />
           </Item>
           <Item
             text={'施工圖鑑'}
@@ -76,7 +77,7 @@ function MainLayout() {
             selected={hash === 'pokedex'}
             onClick={() => updateNav('pokedex')}
           >
-            <Icon.Books className="fill-current h-5 w-5" />
+            <Icon.Books className="h-5 w-5 fill-current" />
           </Item>
         </div>
       </aside>

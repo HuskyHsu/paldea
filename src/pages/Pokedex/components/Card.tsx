@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { Icon } from '@/newComponents/';
+import { Icon } from '@/newComponents';
 import { Pokemon } from '@/types/Pokemon';
 
 import { Filter } from '../Pokedex';

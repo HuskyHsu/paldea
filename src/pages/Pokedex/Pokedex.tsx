@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 import { Pokemon } from '@/types/Pokemon';
 import { Hr, Loading } from '@/newComponents';
-import { usePokemonList } from './api';
+import { usePokemonListContext } from '@/newComponents/contexts';
 import { Card, Pagination, PaginationMobile, Header } from './components';
 import { UseFilter } from './UseFilter';
 
@@ -12,15 +12,6 @@ export type Filter = {
   page: number;
   types: Set<string>;
   ability: string;
-  // displayFilter: boolean;
-};
-
-export type BoolKeys<T> = {
-  [K in keyof T]: T[K] extends boolean ? K : never;
-};
-
-export type ValueKeys<T, L> = {
-  [K in keyof T]: T[K] extends L ? K : never;
 };
 
 const itemsPerPage = 30;
@@ -28,7 +19,7 @@ const itemsPerPage = 30;
 function Pokedex() {
   const { filter, updateState, updateNumberState, updateSetState } = UseFilter();
 
-  let { data, isLoading } = usePokemonList();
+  let { pokemonList: data } = usePokemonListContext();
 
   const abilities = [
     ...new Set(
@@ -45,7 +36,7 @@ function Pokedex() {
   const startIndex = (filter.page - 1) * itemsPerPage;
   const currentData = data.slice(startIndex, startIndex + itemsPerPage);
 
-  if (isLoading) {
+  if (data.length === 0) {
     return <Loading />;
   }
 

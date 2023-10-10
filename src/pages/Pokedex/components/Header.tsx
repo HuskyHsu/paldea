@@ -2,8 +2,9 @@ import clsx from 'clsx';
 
 import { Icon, SubTitleSlide } from '@/newComponents';
 import { TypeEnum } from '@/types/Pokemon';
+import { ValueKeys } from '@/utils';
 
-import { Filter, ValueKeys } from '../Pokedex';
+import { Filter } from '../Pokedex';
 import { SearchBar, Buttons } from '.';
 
 type Props = {

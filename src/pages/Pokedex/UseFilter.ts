@@ -1,6 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
+import { ValueKeys } from '@/utils';
+import { Filter } from './Pokedex';
 
-import { Filter, ValueKeys } from './Pokedex';
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 

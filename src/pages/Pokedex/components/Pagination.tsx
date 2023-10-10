@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 
-import { Icon } from '@/newComponents/';
-import { Filter, ValueKeys } from '../Pokedex';
+import { Icon } from '@/newComponents';
+import { ValueKeys } from '@/utils';
+import { Filter } from '../Pokedex';
 
 type Props = {
   currentPage: number;
