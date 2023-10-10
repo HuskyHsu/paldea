@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { Pokemon } from '@/types/Pokemon';
+import { EVIndex, Pokemon } from '@/types/Pokemon';
 import { Hr, Loading } from '@/newComponents';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { Card, Pagination, PaginationMobile, Header } from './components';
@@ -12,14 +12,26 @@ export type Filter = {
   page: number;
   types: Set<string>;
   ability: string;
+  EV: string;
+};
+
+export type Display = {
+  advancedFilter: boolean;
+  ability: boolean;
+  EVs: boolean;
 };
 
 const itemsPerPage = 30;
 
 function Pokedex() {
-  const { filter, updateState, updateNumberState, updateSetState } = UseFilter();
+  const { filter, updateState, updateNumberState, updateSetState, display, toggleDisplay } =
+    UseFilter();
 
   let { pokemonList: data } = usePokemonListContext();
+
+  if (data.length === 0) {
+    return <Loading />;
+  }
 
   const abilities = [
     ...new Set(
@@ -35,10 +47,6 @@ function Pokedex() {
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const startIndex = (filter.page - 1) * itemsPerPage;
   const currentData = data.slice(startIndex, startIndex + itemsPerPage);
-
-  if (data.length === 0) {
-    return <Loading />;
-  }
 
   function filterFn(pm: Pokemon) {
     let display = true;
@@ -61,6 +69,11 @@ function Pokedex() {
       display =
         display &&
         [...pm.abilities, pm.hiddenAbility].some((ability) => ability === filter.ability);
+    }
+
+    if (filter.EV !== '') {
+      const index = EVIndex[filter.EV as keyof typeof EVIndex];
+      display = display && pm.EVs.every((ev, i) => (i === index ? ev > 0 : ev === 0));
     }
 
     return display;
@@ -101,11 +114,13 @@ function Pokedex() {
         abilities={abilities}
         updateState={updateState}
         updateSetState={updateSetState}
+        display={display}
+        toggleDisplay={toggleDisplay}
       />
       <Hr />
       <div className="grid grid-cols-list-mobile justify-around gap-4 pt-4 pb-8 md:grid-cols-list">
         {currentData.map((pm) => (
-          <Card pokemon={pm} key={pm.link} filter={filter} />
+          <Card pokemon={pm} key={pm.link} filter={filter} display={display} />
         ))}
       </div>
       <footer className="hidden justify-end md:flex">

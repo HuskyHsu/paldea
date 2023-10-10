@@ -4,5 +4,6 @@ import { ReactComponent as ArrowBack } from '@/assets/icon/ArrowBack.svg';
 import { ReactComponent as Search } from '@/assets/icon/Search.svg';
 import { ReactComponent as Filter } from '@/assets/icon/Filter.svg';
 import { ReactComponent as BackToTop } from '@/assets/icon/BackToTop.svg';
+import { ReactComponent as Close } from '@/assets/icon/Close.svg';
 
-export { Game, ArrowForward, ArrowBack, Search, Filter, BackToTop };
+export { Game, ArrowForward, ArrowBack, Search, Filter, BackToTop, Close };

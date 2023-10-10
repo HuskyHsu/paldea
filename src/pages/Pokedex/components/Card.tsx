@@ -1,16 +1,60 @@
 import clsx from 'clsx';
 
 import { Icon } from '@/newComponents';
-import { Pokemon } from '@/types/Pokemon';
+import { EVIndex, EVName, Pokemon } from '@/types/Pokemon';
 
-import { Filter } from '../Pokedex';
+import { Display, Filter } from '../Pokedex';
 
 type Props = {
   pokemon: Pokemon;
   filter: Filter;
+  display: Display;
 };
 
-export function Card({ pokemon, filter }: Props) {
+const Abilities = ({ pokemon }: { pokemon: Pokemon }) => {
+  return (
+    <>
+      {pokemon.abilities.map((ability) => (
+        <span
+          key={ability}
+          className="rounded bg-blue-100 px-1.5 py-0.5 text-center text-xs font-semibold text-blue-800"
+        >
+          {ability}
+        </span>
+      ))}
+      {pokemon.hiddenAbility && (
+        <span className="rounded bg-gray-100 px-1.5 py-0.5 text-center text-xs font-semibold text-gray-800">
+          {[pokemon.hiddenAbility]}
+        </span>
+      )}
+    </>
+  );
+};
+
+const EVs = ({ pokemon }: { pokemon: Pokemon }) => {
+  return (
+    <>
+      {Array(6)
+        .fill(0)
+        .map((_, i) => ({
+          key: EVName[EVIndex[String(i) as keyof typeof EVIndex] as unknown as keyof typeof EVName],
+          val: pokemon.EVs[i],
+        }))
+        .filter((item) => item.val > 0)
+        .map((item) => `${item.key}: ${item.val}`)
+        .map((t) => (
+          <span
+            key={t}
+            className="rounded bg-blue-100 px-1.5 py-0.5 text-center text-xs font-semibold text-blue-800"
+          >
+            {t}
+          </span>
+        ))}
+    </>
+  );
+};
+
+export function Card({ pokemon, filter, display }: Props) {
   const pid =
     filter.pokedex === 'national'
       ? pokemon.pid.toString().padStart(4, '0')
@@ -37,37 +81,39 @@ export function Card({ pokemon, filter }: Props) {
         />
       </header>
       <hr className="border-0 border-t-[1px] border-[#A29834]" />
-      <div className={clsx('grid grid-cols-1 md:grid-cols-2')}>
-        <div className="flex flex-col items-center gap-y-1 md:items-start">
-          <p className="text-center md:text-start">
-            <span className="block whitespace-nowrap md:hidden">#{pid}</span>
-            {pokemon.nameZh}
-            {pokemon.altForm && (
-              <span className="block text-xs font-thin">({pokemon.altForm})</span>
-            )}
-          </p>
-          <div className="flex gap-x-1">
-            {pokemon.types.map((type) => (
-              <Icon.Game.Type type={type} key={type} />
-            ))}
+      <div className="flex h-full flex-col justify-between gap-y-2">
+        <div className={clsx('grid grid-cols-1 md:grid-cols-2')}>
+          <div className="flex flex-col items-center gap-y-1 md:items-start">
+            <p className="text-center md:text-start">
+              <span className="block whitespace-nowrap md:hidden">#{pid}</span>
+              {pokemon.nameZh}
+              {pokemon.altForm && (
+                <span className="block text-xs font-thin">({pokemon.altForm})</span>
+              )}
+            </p>
+            <div className="flex gap-x-1">
+              {pokemon.types.map((type) => (
+                <Icon.Game.Type type={type} key={type} />
+              ))}
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <div className="flex flex-col gap-y-2">
+              <Abilities pokemon={pokemon} />
+            </div>
           </div>
         </div>
-        <div className="hidden md:block">
-          <div className="flex flex-col gap-y-2">
-            {pokemon.abilities.map((ability) => (
-              <span
-                key={ability}
-                className="rounded bg-blue-100 px-1.5 py-0.5 text-center text-xs font-semibold text-blue-800"
-              >
-                {ability}
-              </span>
-            ))}
-            {pokemon.hiddenAbility && (
-              <span className="rounded bg-gray-100 px-1.5 py-0.5 text-center text-xs font-semibold text-gray-800">
-                {[pokemon.hiddenAbility]}
-              </span>
-            )}
-          </div>
+        <div className={clsx(display.EVs || display.ability ? 'block' : 'hidden')}>
+          {display.ability && (
+            <p className="mt-2 flex flex-wrap justify-center gap-2 whitespace-nowrap md:justify-start">
+              <Abilities pokemon={pokemon} />
+            </p>
+          )}
+          {display.EVs && (
+            <p className="mt-2 flex flex-wrap justify-center gap-2 whitespace-nowrap md:justify-start">
+              <EVs pokemon={pokemon} />
+            </p>
+          )}
         </div>
       </div>
     </div>

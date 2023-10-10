@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ValueKeys } from '@/utils';
-import { Filter } from './Pokedex';
+import { BoolKeys, ValueKeys } from '@/utils';
+import { Filter, Display } from './Pokedex';
 
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -11,13 +12,14 @@ export function UseFilter() {
     page: Number(searchParams.get('page') || 1),
     types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
     ability: searchParams.get('ability') || '',
+    EV: searchParams.get('EV') || '',
   };
 
-  //   const toggleState = (key: BoolKeys<Filter>[keyof Filter]) => {
-  //     return (bool: boolean) => {
-  //       searchParams.set(key, String(bool));
-  //     };
-  //   };
+  const [display, setDisplay] = useState<Display>({
+    advancedFilter: false,
+    EVs: false,
+    ability: false,
+  });
 
   const updateState = (key: ValueKeys<Filter, string>[keyof Filter]) => {
     return (val: string) => {
@@ -28,7 +30,11 @@ export function UseFilter() {
         });
       } else {
         setSearchParams((prev) => {
-          prev.set(key, val);
+          if (prev.has(key) && prev.get(key) === val) {
+            prev.delete(key);
+          } else {
+            prev.set(key, val);
+          }
           prev.delete('page');
           return prev;
         });
@@ -45,7 +51,13 @@ export function UseFilter() {
         } else {
           vals.add(val);
         }
-        prev.set(key, [...vals].join('-'));
+
+        if (vals.size === 0) {
+          prev.delete(key);
+        } else {
+          prev.set(key, [...vals].join('-'));
+        }
+
         return prev;
       });
     };
@@ -64,11 +76,25 @@ export function UseFilter() {
     });
   };
 
+  const toggleDisplay = (key: BoolKeys<Display>[keyof Display]) => {
+    return (bool: boolean) => {
+      setDisplay((prev) => {
+        const newDisplay = {
+          ...prev,
+          [key]: bool,
+        };
+        return newDisplay;
+      });
+    };
+  };
+
   return {
     filter,
-    // toggleState,
     updateState,
     updateNumberState,
     updateSetState,
+
+    display,
+    toggleDisplay,
   };
 }

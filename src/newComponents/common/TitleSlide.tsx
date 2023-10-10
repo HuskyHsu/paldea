@@ -5,7 +5,7 @@ type Props = {
   color?: string;
 };
 
-export function TitleSlide({ title, color = 'bg-custom-green' }: Props) {
+export function TitleSlide({ title, color = 'bg-custom-gold' }: Props) {
   return (
     <div className="w-full">
       <div className={clsx('relative ml-4 box-content', color)}>

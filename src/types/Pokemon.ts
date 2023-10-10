@@ -33,3 +33,21 @@ export enum TypeEnum {
   '惡' = 'Dark',
   '龍' = 'Dragon',
 }
+
+export enum EVIndex {
+  HP = 0,
+  Atk = 1,
+  Def = 2,
+  SpA = 3,
+  SpD = 4,
+  Spe = 5,
+}
+
+export enum EVName {
+  'HP' = 'HP',
+  'Atk' = '攻擊',
+  'Def' = '防禦',
+  'SpA' = '特攻',
+  'SpD' = '特防',
+  'Spe' = '速度',
+}
