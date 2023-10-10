@@ -77,7 +77,7 @@ export function Header({
           ))}
         </div>
       </div>
-      <div className={clsx('flex-col gap-2', display.advancedFilter ? 'flex' : 'hidden')}>
+      <div className={clsx('mt-2 flex-col gap-2', display.advancedFilter ? 'flex' : 'hidden')}>
         <TitleSlide title="進階搜尋" />
         <SubTitleSlide title="特性" />
         <div className="block md:hidden">
