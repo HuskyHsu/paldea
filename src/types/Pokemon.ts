@@ -3,6 +3,7 @@ export type Pokemon = {
   pid: number;
   paldea: number | null;
   kitakami: number | null;
+  hisui: number | null;
   nameZh: string;
   altForm: string | null;
   hiddenAbility: string;
@@ -12,6 +13,10 @@ export type Pokemon = {
   baseStats_Total: number;
   EVs: number[];
 };
+
+export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
+
+export const PokedexList = ['kitakami', 'paldea', 'hisui'];
 
 export enum TypeEnum {
   '鋼' = 'Steel',

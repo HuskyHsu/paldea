@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { EVIndex, Pokemon } from '@/types/Pokemon';
+import { EVIndex, PokedexFrom, PokedexList, Pokemon } from '@/types/Pokemon';
 import { Hr, Loading } from '@/newComponents';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { Card, Pagination, PaginationMobile, Header } from './components';
@@ -8,7 +8,7 @@ import { UseFilter } from './UseFilter';
 
 export type Filter = {
   keyword: string;
-  pokedex: string;
+  pokedex: PokedexFrom | 'home' | 'national';
   page: number;
   types: Set<string>;
   ability: string;
@@ -80,8 +80,8 @@ function Pokedex() {
   }
 
   function filterPokedex(pm: Pokemon) {
-    if (['kitakami', 'paldea'].includes(filter.pokedex)) {
-      return pm[filter.pokedex as 'kitakami' | 'paldea'];
+    if (PokedexList.includes(filter.pokedex)) {
+      return pm[filter.pokedex as PokedexFrom];
     } else if (filter.pokedex === 'home') {
       return pm.kitakami === null && pm.paldea === null;
     } else {
@@ -90,16 +90,9 @@ function Pokedex() {
   }
 
   function orderBy(a: Pokemon, b: Pokemon) {
-    if (['kitakami', 'paldea'].includes(filter.pokedex)) {
-      if (
-        (a[filter.pokedex as 'kitakami' | 'paldea'] || 0) -
-          (b[filter.pokedex as 'kitakami' | 'paldea'] || 0) !==
-        0
-      ) {
-        return (
-          (a[filter.pokedex as 'kitakami' | 'paldea'] || 0) -
-          (b[filter.pokedex as 'kitakami' | 'paldea'] || 0)
-        );
+    if (PokedexList.includes(filter.pokedex)) {
+      if ((a[filter.pokedex as PokedexFrom] || 0) - (b[filter.pokedex as PokedexFrom] || 0) !== 0) {
+        return (a[filter.pokedex as PokedexFrom] || 0) - (b[filter.pokedex as PokedexFrom] || 0);
       } else {
         return a.link.localeCompare(b.link);
       }

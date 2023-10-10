@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { BoolKeys, ValueKeys } from '@/utils';
 import { Filter, Display } from './Pokedex';
+import { PokedexFrom } from '@/types/Pokemon';
 
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const filter: Filter = {
     keyword: searchParams.get('keyword') || '',
-    pokedex: searchParams.get('pokedex') || 'paldea',
+    pokedex: (searchParams.get('pokedex') || 'paldea') as PokedexFrom | 'home' | 'national',
     page: Number(searchParams.get('page') || 1),
     types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
     ability: searchParams.get('ability') || '',

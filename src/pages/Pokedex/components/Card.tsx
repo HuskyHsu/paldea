@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 import { Icon } from '@/newComponents';
-import { EVIndex, EVName, Pokemon } from '@/types/Pokemon';
+import { EVIndex, EVName, PokedexFrom, PokedexList, Pokemon } from '@/types/Pokemon';
 
 import { Display, Filter } from '../Pokedex';
 
@@ -55,8 +55,8 @@ const EVs = ({ pokemon }: { pokemon: Pokemon }) => {
 };
 
 export function Card({ pokemon, filter, display }: Props) {
-  const pid = ['kitakami', 'paldea'].includes(filter.pokedex)
-    ? (pokemon[filter.pokedex as 'kitakami' | 'paldea'] || 0).toString().padStart(3, '0')
+  const pid = PokedexList.includes(filter.pokedex)
+    ? (pokemon[filter.pokedex as PokedexFrom] || 0).toString().padStart(3, '0')
     : pokemon.pid.toString().padStart(4, '0');
 
   const link = pokemon.link;

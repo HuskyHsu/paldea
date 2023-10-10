@@ -3,7 +3,7 @@
 ### Todo List
 
 - pokedex page:
-  1. [ ] 洗翠圖鑑
+  1. [x] 洗翠圖鑑
   2. [ ] tags (傳說, 幻獸, 悖謬, 地區)
 
 ### Issues
