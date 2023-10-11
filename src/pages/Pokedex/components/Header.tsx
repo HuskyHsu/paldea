@@ -44,6 +44,7 @@ export function Header({
             onChange={updateState('keyword')}
             display={display}
             toggleDisplay={toggleDisplay}
+            hasFilter={hasFilter}
           />
         </div>
       </div>

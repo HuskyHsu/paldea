@@ -11,9 +11,11 @@ type Props = {
 
   display: Display;
   toggleDisplay: (key: BoolKeys<Display>[keyof Display]) => (bool: boolean) => void;
+
+  hasFilter: Boolean;
 };
 
-export function SearchBar({ value, onChange, display, toggleDisplay }: Props) {
+export function SearchBar({ value, onChange, display, toggleDisplay, hasFilter }: Props) {
   return (
     <>
       <div className="relative my-2 w-full">
@@ -37,7 +39,7 @@ export function SearchBar({ value, onChange, display, toggleDisplay }: Props) {
             checked={display.advancedFilter}
             toggleState={toggleDisplay('advancedFilter')}
           />
-          {true && (
+          {hasFilter && (
             <div className="relative -top-3 right-6">
               <Indicator />
             </div>
