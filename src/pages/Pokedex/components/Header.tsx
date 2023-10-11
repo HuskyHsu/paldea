@@ -1,11 +1,11 @@
 import clsx from 'clsx';
 
-import { Icon, Indicator, SubTitleSlide, TitleSlide, Toggle } from '@/newComponents';
+import { Icon, SubTitleSlide, TitleSlide, Toggle } from '@/newComponents';
 import { EVName, TypeEnum } from '@/types/Pokemon';
 import { BoolKeys, ValueKeys } from '@/utils';
 
 import { Filter, Display } from '../Pokedex';
-import { SearchBar, Buttons, FilterButton } from '.';
+import { SearchBar, Buttons } from '.';
 
 type Props = {
   filter: Filter;
@@ -38,15 +38,13 @@ export function Header({
   return (
     <header>
       <div className="flex justify-end gap-x-2">
-        <div className="flex w-full items-center gap-x-3 md:w-64">
-          <SearchBar value={filter.keyword} onChange={updateState('keyword')} />
-          <div className="relative">
-            <FilterButton
-              checked={display.advancedFilter}
-              toggleState={toggleDisplay('advancedFilter')}
-            />
-            {hasFilter && <Indicator />}
-          </div>
+        <div className="flex w-full items-center gap-x-3">
+          <SearchBar
+            value={filter.keyword}
+            onChange={updateState('keyword')}
+            display={display}
+            toggleDisplay={toggleDisplay}
+          />
         </div>
       </div>
       <div className="flex flex-col gap-2">
