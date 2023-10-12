@@ -52,17 +52,7 @@ function Pokedex() {
     let display = true;
 
     if (filter.keyword !== '') {
-      const checkList = [
-        pm.nameZh,
-        pm.nameEn,
-        pm.nameJp,
-        pm.altForm || '',
-        pm.abilities,
-        pm.hiddenAbility,
-      ]
-        .flat()
-        .filter(Boolean)
-        .map((val) => val.toLowerCase());
+      const checkList = [pm.nameZh, pm.nameEn.toLowerCase(), pm.nameJp, pm.altForm || ''];
       display =
         display &&
         checkList.some((val) => val !== null && val.includes(filter.keyword.toLowerCase()));
