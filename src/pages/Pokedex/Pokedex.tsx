@@ -53,12 +53,11 @@ function Pokedex() {
 
     if (filter.keyword !== '') {
       const checkList = [pm.nameZh, pm.nameEn.toLowerCase(), pm.nameJp, pm.altForm || ''];
-      display =
-        display &&
-        checkList.some((val) => val !== null && val.includes(filter.keyword.toLowerCase()));
+      const keyword = filter.keyword.toLowerCase();
+      display = display && checkList.some((val) => val.includes(keyword));
     }
 
-    if (filter.types.size > 0) {
+    if (display && filter.types.size > 0) {
       if (filter.types.size === 1) {
         display = display && pm.types.some((type) => filter.types.has(type));
       } else if (filter.types.size === 2 && pm.types.length === 2) {
@@ -68,13 +67,12 @@ function Pokedex() {
       }
     }
 
-    if (filter.ability !== '' && abilities.includes(filter.ability)) {
-      display =
-        display &&
-        [...pm.abilities, pm.hiddenAbility].some((ability) => ability === filter.ability);
+    if (display && filter.ability !== '' && abilities.includes(filter.ability)) {
+      const checkList = [...pm.abilities, pm.hiddenAbility];
+      display = display && checkList.some((ability) => ability === filter.ability);
     }
 
-    if (filter.EV !== '') {
+    if (display && filter.EV !== '') {
       const index = EVIndex[filter.EV as keyof typeof EVIndex];
       display = display && pm.EVs.every((ev, i) => (i === index ? ev > 0 : ev === 0));
     }
