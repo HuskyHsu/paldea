@@ -52,7 +52,20 @@ function Pokedex() {
     let display = true;
 
     if (filter.keyword !== '') {
-      display = display && pm.nameZh.includes(filter.keyword);
+      const checkList = [
+        pm.nameZh,
+        pm.nameEn,
+        pm.nameJp,
+        pm.altForm || '',
+        pm.abilities,
+        pm.hiddenAbility,
+      ]
+        .flat()
+        .filter(Boolean)
+        .map((val) => val.toLowerCase());
+      display =
+        display &&
+        checkList.some((val) => val !== null && val.includes(filter.keyword.toLowerCase()));
     }
 
     if (filter.types.size > 0) {
@@ -107,7 +120,6 @@ function Pokedex() {
 
   return (
     <div className="mb-4 flex flex-col gap-y-4">
-      新版圖鑑清單施工中。。。
       <Header
         filter={filter}
         abilities={abilities}

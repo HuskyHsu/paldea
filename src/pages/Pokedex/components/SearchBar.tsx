@@ -28,7 +28,7 @@ export function SearchBar({ value, onChange, display, toggleDisplay, hasFilter }
             'block w-full rounded-full border border-gray-300',
             'bg-gray-50 p-2 pl-10 text-sm text-gray-900'
           )}
-          placeholder="搜尋名稱"
+          placeholder="搜尋 名稱(中/英/日), 樣子, 特性"
           value={value}
           onChange={(e) => {
             onChange(e.target.value);

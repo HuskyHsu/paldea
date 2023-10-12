@@ -37,8 +37,8 @@ export function Header({
 
   return (
     <header>
-      <div className="flex justify-end gap-x-2">
-        <div className="flex w-full items-center gap-x-3">
+      <div className="flex items-center justify-between gap-x-2">
+        <div className="flex w-full items-center gap-x-3 md:w-96">
           <SearchBar
             value={filter.keyword}
             onChange={updateState('keyword')}
@@ -47,6 +47,7 @@ export function Header({
             hasFilter={hasFilter}
           />
         </div>
+        新版圖鑑清單施工中。。。
       </div>
       <div className="flex flex-col gap-2">
         <SubTitleSlide title="圖鑑分類" />

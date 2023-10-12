@@ -5,6 +5,8 @@ export type Pokemon = {
   kitakami: number | null;
   hisui: number | null;
   nameZh: string;
+  nameEn: string;
+  nameJp: string;
   altForm: string | null;
   hiddenAbility: string;
   types: string[];
