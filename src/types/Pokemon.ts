@@ -12,8 +12,10 @@ export type Pokemon = {
   types: string[];
   abilities: string[];
   baseStats: number[];
-  baseStats_Total: number;
+  baseStatsTotal: number;
   EVs: number[];
+  source: string;
+  genderRatio: number;
 };
 
 export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
