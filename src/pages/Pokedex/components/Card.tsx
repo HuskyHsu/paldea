@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { Icon } from '@/newComponents';
@@ -68,7 +69,8 @@ export function Card({ pokemon, filter, display }: Props) {
         'flex flex-col gap-y-2',
         'rounded-xl bg-white',
         'shadow-list-items hover:shadow-list-items--hover',
-        'hover:translate-x-[-0.2rem] hover:translate-y-[-0.2rem]'
+        'hover:translate-x-[-0.2rem] hover:translate-y-[-0.2rem]',
+        'relative'
       )}
     >
       <header className={'relative h-6 md:h-auto'}>
@@ -116,6 +118,7 @@ export function Card({ pokemon, filter, display }: Props) {
           )}
         </div>
       </div>
+      <Link className={'stretchedLink'} to={`/pokedex/${pokemon.link}`} />
     </div>
   );
 }

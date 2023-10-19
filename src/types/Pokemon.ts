@@ -18,6 +18,52 @@ export type Pokemon = {
   genderRatio: number;
 };
 
+type Move = {
+  pid: number;
+  nameZh: string;
+  nameJp: string;
+  nameEn: string;
+  type: string;
+  category: string;
+  power: number;
+  accuracy: number;
+  PP: number;
+  description: string;
+};
+
+type LevelingUp = Move & { level: number };
+
+type EggMove = Move & { level: number };
+
+type TM = Move & {
+  TMPid: number;
+  leaguePoint: number;
+  materials: {
+    material: string;
+    count: number;
+    pm: string;
+  }[];
+};
+
+type MoveInfo = {
+  levelingUps: LevelingUp[];
+  eggMoves: EggMove[];
+  TMs: TM[];
+};
+
+type Evolve = {
+  from: string;
+  to: string;
+  fromNameZh: string;
+  toNameZh: string;
+  condition: string;
+};
+
+export type FullPokemon = Pokemon & {
+  moves: MoveInfo;
+  evolves: (Evolve & { evolves?: Evolve[] })[];
+};
+
 export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
 
 export const PokedexList = ['kitakami', 'paldea', 'hisui'];
