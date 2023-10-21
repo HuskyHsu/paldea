@@ -9,10 +9,7 @@ export const usePokemonInfo = (link: string = '906') => {
 
   return {
     status,
-    data: data ?? {
-      moves: {},
-      evolves: [],
-    },
+    data: data as FullPokemon,
     ...rest,
   };
 };
