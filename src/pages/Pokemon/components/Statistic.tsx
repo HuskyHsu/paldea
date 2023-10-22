@@ -2,8 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { RadarChart } from './RadarChart';
-import { TypeColor, TypeMap } from '@/models';
-import { FullPokemon } from '@/types/Pokemon';
+import { FillType, FullPokemon } from '@/types/Pokemon';
 import { TitleSlide } from '@/newComponents';
 
 type Props = {
@@ -49,7 +48,7 @@ export function Statistic({ pokemon }: Props) {
             <RadarChart
               stats={pokemon.baseStats}
               EVs={pokemon.EVs}
-              color={TypeColor[pokemon.types[0] as keyof typeof TypeMap]}
+              color={FillType[pokemon.types[0] as keyof typeof FillType]}
             />
           </div>
         </div>

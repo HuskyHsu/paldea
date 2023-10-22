@@ -117,7 +117,7 @@ export function RadarChart({
         <Line deg={30} />
         <Line deg={90} />
       </g>
-      <polygon points={speciesStrength.flat().join(', ')} fill={color} fillOpacity="0.6" />
+      <polygon points={speciesStrength.flat().join(', ')} className={color} fillOpacity="0.6" />
       <g>
         {labels.map((label) => (
           <Text

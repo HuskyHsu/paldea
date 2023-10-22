@@ -129,6 +129,27 @@ export enum BgType {
   '水' = 'bg-type-water',
 }
 
+export enum FillType {
+  '蟲' = 'fill-type-bug',
+  '惡' = 'fill-type-dark',
+  '龍' = 'fill-type-dragon',
+  '電' = 'fill-type-electric',
+  '妖精' = 'fill-type-fairy',
+  '格鬥' = 'fill-type-fighting',
+  '火' = 'fill-type-fire',
+  '飛行' = 'fill-type-flying',
+  '幽靈' = 'fill-type-ghost',
+  '草' = 'fill-type-grass',
+  '地面' = 'fill-type-ground',
+  '冰' = 'fill-type-ice',
+  '一般' = 'fill-type-normal',
+  '毒' = 'fill-type-poison',
+  '超能力' = 'fill-type-psychic',
+  '岩石' = 'fill-type-rock',
+  '鋼' = 'fill-type-steel',
+  '水' = 'fill-type-water',
+}
+
 export enum BgFromType {
   '蟲' = 'from-type-bug/60',
   '惡' = 'from-type-dark/60',
