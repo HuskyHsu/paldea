@@ -30,37 +30,39 @@ function PokemonInfo() {
   }
 
   return (
-    <div className="-mt-4 flex flex-col gap-4">
-      <Header pm={pm} />
-      <h2 className="text-2xl">
-        #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
-        {pm.altForm && <span className="text-sm">({pm.altForm})</span>}
-        <a
-          href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
-          target="_blank"
-          rel="noreferrer"
-          className="ml-2 font-bold text-blue-800 underline"
-        >
-          wiki
-        </a>
-      </h2>
-      <BaseInfo pm={pm} />
+    <div className="flex justify-center">
+      <div className="-mt-4 flex max-w-3xl flex-col gap-4">
+        <Header pm={pm} />
+        <h2 className="text-2xl">
+          #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
+          {pm.altForm && <span className="text-sm">({pm.altForm})</span>}
+          <a
+            href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-2 font-bold text-blue-800 underline"
+          >
+            wiki
+          </a>
+        </h2>
+        <BaseInfo pm={pm} />
 
-      <Statistic pokemon={pm} />
+        <Statistic pokemon={pm} />
 
-      <SubTitleSlide title="進化" />
-      <details open>
-        <summary>進化</summary>
-        <pre>{JSON.stringify(pm.evolves, null, 2)}</pre>
-      </details>
+        <SubTitleSlide title="進化" />
+        <details open>
+          <summary>進化</summary>
+          <pre>{JSON.stringify(pm.evolves, null, 2)}</pre>
+        </details>
 
-      <SubTitleSlide title="招式" />
-      <details>
-        <summary>招式</summary>
-        <pre>{JSON.stringify(pm.moves, null, 2)}</pre>
-      </details>
+        <SubTitleSlide title="招式" />
+        <details>
+          <summary>招式</summary>
+          <pre>{JSON.stringify(pm.moves, null, 2)}</pre>
+        </details>
 
-      <button onClick={() => navigate(-1)}>back</button>
+        <button onClick={() => navigate(-1)}>back</button>
+      </div>
     </div>
   );
 }
