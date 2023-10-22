@@ -38,7 +38,9 @@ function MainLayout() {
     }
   }, [location, navigate]);
 
-  const [hash, setHash] = useState(window.location.hash.replace('#/', '').split('?')[0]);
+  const [hash, setHash] = useState(
+    window.location.hash.replace('#/', '').split('?')[0].split('/')[0]
+  );
 
   const updateNav = (to: string) => {
     setHash(to);

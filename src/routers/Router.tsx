@@ -23,7 +23,7 @@ export function Router() {
                 <Route path="pm/:link" element={<Detail />} />
 
                 <Route path="pokedex" element={<Pokedex />} />
-                <Route path="pokedex/:link" element={<Pokemon />} />
+                <Route path="pokedex/:nameId" element={<Pokemon />} />
               </Route>
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>

@@ -118,7 +118,10 @@ export function Card({ pokemon, filter, display }: Props) {
           )}
         </div>
       </div>
-      <Link className={'stretchedLink'} to={`/pokedex/${pokemon.link}`} />
+      <Link
+        className={'stretchedLink'}
+        to={`/pokedex/${pokemon.nameZh}${pokemon.altForm ? '-' + pokemon.altForm : ''}`}
+      />
     </div>
   );
 }
