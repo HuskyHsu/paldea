@@ -36,7 +36,7 @@ function Pokedex() {
   const abilities = [
     ...new Set(
       data
-        .map((pm) => pm.abilities.concat([pm.hiddenAbility]))
+        .map((pm) => pm.abilities.concat([pm.hiddenAbility || '']))
         .flat()
         .filter(Boolean)
     ),

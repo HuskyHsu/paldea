@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { SubTitleSlide } from '@/newComponents';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { usePokemonInfo } from './api';
-import { BaseInfo, Header } from './components';
+import { BaseInfo, Header, Statistic } from './components';
 
 function PokemonInfo() {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function PokemonInfo() {
   }
 
   return (
-    <div className="-mt-4 flex flex-col gap-2">
+    <div className="-mt-4 flex flex-col gap-4">
       <Header pm={pm} />
       <h2 className="text-2xl">
         #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
@@ -39,12 +39,14 @@ function PokemonInfo() {
           href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
           target="_blank"
           rel="noreferrer"
-          className="ml-2 text-lg font-bold text-blue-800 underline"
+          className="ml-2 font-bold text-blue-800 underline"
         >
           wiki
         </a>
       </h2>
       <BaseInfo pm={pm} />
+
+      <Statistic pokemon={pm} />
 
       <SubTitleSlide title="進化" />
       <details open>

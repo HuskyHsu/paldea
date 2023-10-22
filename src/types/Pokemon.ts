@@ -8,7 +8,7 @@ export type Pokemon = {
   nameEn: string;
   nameJp: string;
   altForm: string | null;
-  hiddenAbility: string;
+  hiddenAbility: string | null;
   types: string[];
   abilities: string[];
   baseStats: number[];

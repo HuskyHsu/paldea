@@ -85,21 +85,26 @@ const renderData: Render[] = [
   },
   {
     title: '隱藏特性',
-    Content: ({ pm }: ContentProps) => (
-      <span className="flex flex-wrap justify-center gap-2 md:justify-start">
-        <span
-          className={clsx(
-            'py-px',
-            'h-7 w-full md:w-2/5',
-            'border-2 border-solid border-scarlet',
-            'rounded-full bg-scarlet/30 text-center text-sm text-black',
-            'whitespace-nowrap'
-          )}
-        >
-          {pm.hiddenAbility}
+    Content: ({ pm }: ContentProps) => {
+      if (pm.hiddenAbility === null) {
+        return <></>;
+      }
+      return (
+        <span className="flex flex-wrap justify-center gap-2 md:justify-start">
+          <span
+            className={clsx(
+              'py-px',
+              'h-7 w-full md:w-2/5',
+              'border-2 border-solid border-scarlet',
+              'rounded-full bg-scarlet/30 text-center text-sm text-black',
+              'whitespace-nowrap'
+            )}
+          >
+            {pm.hiddenAbility}
+          </span>
         </span>
-      </span>
-    ),
+      );
+    },
   },
   {
     title: '蛋群',
