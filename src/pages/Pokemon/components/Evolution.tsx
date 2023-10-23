@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Evolve, FullPokemon } from '@/types/Pokemon';
+import { FullPokemon } from '@/types/Pokemon';
 
 type Props = {
   pm: FullPokemon;
