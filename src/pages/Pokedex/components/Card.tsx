@@ -65,7 +65,7 @@ export function Card({ pokemon, filter, display }: Props) {
   return (
     <div
       className={clsx(
-        'mt-8 p-4 pt-2 md:mt-20',
+        'mt-8 px-4 pt-2 md:mt-20',
         'flex flex-col gap-y-2',
         'rounded-xl bg-white',
         'shadow-list-items hover:shadow-list-items--hover',

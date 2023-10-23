@@ -42,7 +42,8 @@ const Line = ({ deg }: LinePorps) => {
 
 const Text = ({ deg, text, value }: TextPorps) => {
   const point = getPosition(deg as number, radius * 1.25);
-  const color = (text?.length ?? 0) > 2 ? 'fill-red-600 stroke-1 stroke-red-600' : 'fill-slate-600';
+  const color =
+    (text?.length ?? 0) > 2 ? 'fill-red-600 stroke-[0.5px] stroke-red-600' : 'fill-slate-600';
 
   return (
     <>
