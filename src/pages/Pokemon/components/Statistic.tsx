@@ -30,7 +30,7 @@ function calStatistic(
 export function Statistic({ pokemon }: Props) {
   const [lv, setLv] = useState(75);
   const [targetSpe, setTargetSpe] = useState(
-    calStatistic(pokemon.baseStats[5], 31, 0, lv, false, undefined)
+    calStatistic(pokemon.baseStats[5], 31, 0, lv, false, undefined) - 1
   );
 
   const speEv = Array(253)
