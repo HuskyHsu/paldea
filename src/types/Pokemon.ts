@@ -52,7 +52,7 @@ type MoveInfo = {
   TMs: TM[];
 };
 
-type Evolve = {
+export type Evolve = {
   from: string;
   to: string;
   fromNameZh: string;

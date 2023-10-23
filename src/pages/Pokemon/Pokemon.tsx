@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { SubTitleSlide } from '@/newComponents';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { usePokemonInfo } from './api';
-import { BaseInfo, Header, Statistic } from './components';
+import { BaseInfo, Evolution, Header, Statistic } from './components';
 
 function PokemonInfo() {
   const navigate = useNavigate();
@@ -50,10 +50,7 @@ function PokemonInfo() {
         <Statistic pokemon={pm} />
 
         <SubTitleSlide title="進化" />
-        <details open>
-          <summary>進化</summary>
-          <pre>{JSON.stringify(pm.evolves, null, 2)}</pre>
-        </details>
+        <Evolution pm={pm} />
 
         <SubTitleSlide title="招式" />
         <details>
