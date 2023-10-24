@@ -12,10 +12,11 @@ const Condition = ({ condition, className = '' }: { condition: string; className
       <span
         className={clsx(
           'absolute',
-          'inset-x-0 h-4 md:h-7',
-          'bottom-2 md:top-2/3',
+          'inset-x-0',
+          'top-1/2 -translate-y-1/3',
           'text-sm',
-          'flex justify-center text-center'
+          'flex justify-center text-center',
+          'text-[12px] md:text-base'
         )}
       >
         {condition} ⇨
@@ -27,23 +28,23 @@ const Condition = ({ condition, className = '' }: { condition: string; className
 const SubCard = ({ pm, className = '' }: { pm: SubPokemon; className?: string }) => {
   return (
     <div className={clsx(className, 'h-24 w-24 md:h-28 md:w-28', 'relative -mt-6')}>
-      <span className={clsx('absolute', 'inset-x-0', '-bottom-6', 'text-xs md:text-base')}>
-        {pm.nameZh}
-        {pm.altForm ? <span className="text-xs">({pm.altForm})</span> : ''}
-      </span>
       <span
         className={clsx(
           'absolute',
           'rounded-full',
-          'inset-x-0 h-4 md:h-7',
+          'inset-x-0 h-5 md:h-7',
           'bg-gradient-to-r',
-          'bottom-2 md:top-2/3',
+          'top-2/3 -translate-y-2/3',
           BgFromType[pm.types[0] as keyof typeof BgFromType],
           BgToType[(pm.types.length > 1 ? pm.types[1] : pm.types[0]) as keyof typeof BgToType]
         )}
       />
-      <span className={clsx('absolute', 'inset-x-0', 'top-1/2 -translate-y-1/2')}>
+      <span className={clsx('absolute', 'inset-x-0', 'top-1/3 -translate-y-1/2')}>
         <Icon.Game.PmIcon pm={pm} />
+      </span>
+      <span className={clsx('absolute', 'inset-x-0', '-bottom-1', 'text-xs md:text-base')}>
+        {pm.nameZh}
+        {pm.altForm ? <span className="text-xs">({pm.altForm})</span> : ''}
       </span>
     </div>
   );
@@ -114,7 +115,7 @@ export function Evolution({ pm }: Props) {
   return (
     <div
       className={clsx(
-        'mb-8 grid items-center justify-center gap-y-8 text-center',
+        'grid items-center justify-center gap-y-8 text-center',
         'justify-items-center',
         cols
       )}
