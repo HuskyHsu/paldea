@@ -8,15 +8,14 @@ type Props = {
 
 const Condition = ({ condition, className = '' }: { condition: string; className?: string }) => {
   return (
-    <span className="relative flex h-full w-full items-center text-right">
+    <span className={clsx('relative flex h-full w-full items-center text-right', className)}>
       <span
         className={clsx(
           'absolute',
           'inset-x-0 h-4 md:h-7',
           'bottom-2 md:top-2/3',
           'text-sm',
-          'flex justify-center text-center',
-          className
+          'flex justify-center text-center'
         )}
       >
         {condition} ⇨
@@ -27,7 +26,7 @@ const Condition = ({ condition, className = '' }: { condition: string; className
 
 const SubCard = ({ pm, className = '' }: { pm: SubPokemon; className?: string }) => {
   return (
-    <div className={clsx(className, 'h-28 w-28', 'relative -mt-6')}>
+    <div className={clsx(className, 'h-24 w-24 md:h-28 md:w-28', 'relative -mt-6')}>
       <span className={clsx('absolute', 'inset-x-0', '-bottom-6', 'text-xs md:text-base')}>
         {pm.nameZh}
         {pm.altForm ? <span className="text-xs">({pm.altForm})</span> : ''}
@@ -60,7 +59,7 @@ export function Evolution({ pm }: Props) {
 
   const cols = pm.evolves?.to.find((evolve) => evolve.to) ? 'grid-cols-5' : 'grid-cols-3';
   const rows =
-    pm.evolves && pm.evolves?.to.length > 1
+    pm.evolves && pm.evolves.to.length > 1
       ? pm.evolves?.to.length === 8
         ? 'row-[span_8_/_span_8]'
         : 'row-span-2'
