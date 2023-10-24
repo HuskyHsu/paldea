@@ -52,17 +52,26 @@ type MoveInfo = {
   TMs: TM[];
 };
 
-export type Evolve = {
-  from: string;
-  to: string;
-  fromNameZh: string;
-  toNameZh: string;
+export type SubPokemon = {
+  link: string;
+  nameZh: string;
+  altForm: string | null;
+  types: string[];
   condition: string;
+};
+
+type MidEvolve = SubPokemon & {
+  to?: SubPokemon[];
+};
+
+type StartEvolve = {
+  from: SubPokemon;
+  to: MidEvolve[];
 };
 
 export type FullPokemon = Pokemon & {
   moves: MoveInfo;
-  evolves: (Evolve & { evolves?: Evolve[] })[];
+  evolves?: StartEvolve;
 };
 
 export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';

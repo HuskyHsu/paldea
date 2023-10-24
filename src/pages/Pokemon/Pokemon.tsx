@@ -49,8 +49,12 @@ function PokemonInfo() {
 
         <Statistic pokemon={pm} />
 
-        <SubTitleSlide title="進化" />
-        <Evolution pm={pm} />
+        {pm.evolves !== undefined && (
+          <>
+            <SubTitleSlide title="進化" />
+            <Evolution pm={pm} />
+          </>
+        )}
 
         <SubTitleSlide title="招式" />
         <details>

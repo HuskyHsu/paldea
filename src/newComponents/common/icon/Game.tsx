@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Pokemon, TypeEnum } from '@/types/Pokemon';
+import { Pokemon, SubPokemon, TypeEnum } from '@/types/Pokemon';
 
 function Type({ type, className = 'w-5 h-5' }: { type: string; className?: string }) {
   const typeName = TypeEnum[type as keyof typeof TypeEnum];
@@ -13,7 +13,7 @@ function Type({ type, className = 'w-5 h-5' }: { type: string; className?: strin
   );
 }
 
-function PmIcon({ pm }: { pm: Pokemon }) {
+function PmIcon({ pm }: { pm: Pokemon | SubPokemon }) {
   return (
     <img
       className={clsx('pointer-events-none w-auto')}
