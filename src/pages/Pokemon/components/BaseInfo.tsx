@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { Icon, TitleSlide } from '@/newComponents';
+import { Icon, SubTitleSlide } from '@/newComponents';
 import { BgType, FullPokemon } from '@/types/Pokemon';
 
 type Props = {
@@ -132,7 +132,7 @@ const renderData: Render[] = [
 export function BaseInfo({ pm }: Props) {
   return (
     <>
-      <TitleSlide title="基本資訊" />
+      <SubTitleSlide title="基本資訊" />
       <ul className="grid grid-cols-2 gap-x-2 gap-y-4 md:gap-y-6">
         {renderData.map((data, index) => (
           <li

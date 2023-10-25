@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { RadarChart } from './RadarChart';
 import { FillType, FullPokemon } from '@/types/Pokemon';
-import { TitleSlide } from '@/newComponents';
+import { SubTitleSlide } from '@/newComponents';
 
 type Props = {
   pokemon: FullPokemon;
@@ -52,7 +52,7 @@ export function Statistic({ pokemon }: Props) {
 
   return (
     <>
-      <TitleSlide title="能力值" />
+      <SubTitleSlide title="能力值" />
       <div className="grid grid-cols-12 gap-3 text-gray-600">
         <div className="col-span-full flex justify-center md:col-span-5">
           <div className="w-10/12 md:w-full">
