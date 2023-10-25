@@ -6,6 +6,13 @@ type Props = {
   pm: FullPokemon;
 };
 
+const rowSpanMap = {
+  1: 'row-span-1',
+  2: 'row-span-2',
+  3: 'row-span-3',
+  8: 'row-[span_8_/_span_8]',
+};
+
 const Condition = ({ condition, className = '' }: { condition: string; className?: string }) => {
   return (
     <span className={clsx('relative flex h-full w-full items-center text-right', className)}>
@@ -51,30 +58,23 @@ const SubCard = ({ pm, className = '' }: { pm: SubPokemon; className?: string })
 };
 
 export function Evolution({ pm }: Props) {
-  // 1-1
   // 1-1-1
-  // 1-2-2
-  // 1-8
-  // 1-2
   // 1-1-2
+  // 1-2-2
+  // 1-1
+  // 1-2
+  // 1-3
+  // 1-8
 
   const cols = pm.evolves?.to.find((evolve) => evolve.to) ? 'grid-cols-5' : 'grid-cols-3';
-  const rows =
-    pm.evolves && pm.evolves.to.length > 1
-      ? pm.evolves?.to.length === 8
-        ? 'row-[span_8_/_span_8]'
-        : 'row-span-2'
-      : 'row-span-1';
+  const rows = rowSpanMap[(pm.evolves?.to.length || 1) as keyof typeof rowSpanMap];
 
   let keyId = 0;
 
   const evolutionPath = pm.evolves?.to.reduce((acc, evolution, i) => {
     let rowElement = [] as JSX.Element[];
 
-    let secRows = 'row-span-1';
-    if ((evolution.to?.length || 0) > 1) {
-      secRows = 'row-span-2';
-    }
+    const secRows = rowSpanMap[(evolution.to?.length || 1) as keyof typeof rowSpanMap];
 
     const rowsClass =
       rows === 'row-span-1' && secRows === 'row-span-2' ? 'row-span-2' : 'row-span-1';
