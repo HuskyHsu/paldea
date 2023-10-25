@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
+
 import { BgFromType, BgToType, FullPokemon, SubPokemon } from '@/types/Pokemon';
 import { Icon } from '@/newComponents';
 
@@ -53,6 +55,10 @@ const SubCard = ({ pm, className = '' }: { pm: SubPokemon; className?: string })
         {pm.nameZh}
         {pm.altForm ? <span className="text-xs">({pm.altForm})</span> : ''}
       </span>
+      <Link
+        className={'stretchedLink'}
+        to={`/pokedex/${pm.nameZh}${pm.altForm ? '-' + pm.altForm : ''}`}
+      />
     </div>
   );
 };
@@ -65,6 +71,10 @@ export function Evolution({ pm }: Props) {
   // 1-2
   // 1-3
   // 1-8
+
+  // const isMobile = window.screen.width < 768;
+  // mobile case:
+  // if cols >= 3 => transpose grid
 
   const cols = pm.evolves?.to.find((evolve) => evolve.to) ? 'grid-cols-5' : 'grid-cols-3';
   const rows = rowSpanMap[(pm.evolves?.to.length || 1) as keyof typeof rowSpanMap];
