@@ -46,6 +46,8 @@ type TM = Move & {
   }[];
 };
 
+export type PMMove = LevelingUp | EggMove;
+
 type MoveInfo = {
   levelingUps: LevelingUp[];
   eggMoves: EggMove[];
@@ -97,6 +99,12 @@ export enum TypeEnum {
   '岩石' = 'Rock',
   '惡' = 'Dark',
   '龍' = 'Dragon',
+}
+
+export enum MoveCategoryEnum {
+  '物理' = 'Physical',
+  '特殊' = 'Special',
+  '變化' = 'Status',
 }
 
 export enum EVIndex {

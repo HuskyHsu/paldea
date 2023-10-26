@@ -1,5 +1,17 @@
 import clsx from 'clsx';
-import { Pokemon, SubPokemon, TypeEnum } from '@/types/Pokemon';
+import { MoveCategoryEnum, Pokemon, SubPokemon, TypeEnum } from '@/types/Pokemon';
+
+function MoveCategory({ type, className = 'w-5 h-5' }: { type: string; className?: string }) {
+  const typeName = MoveCategoryEnum[type as keyof typeof MoveCategoryEnum];
+
+  return (
+    <img
+      src={`${process.env.PUBLIC_URL}/image/type/${typeName}.svg`}
+      alt={type}
+      className={className}
+    />
+  );
+}
 
 function Type({ type, className = 'w-5 h-5' }: { type: string; className?: string }) {
   const typeName = TypeEnum[type as keyof typeof TypeEnum];
@@ -24,4 +36,4 @@ function PmIcon({ pm }: { pm: Pokemon | SubPokemon }) {
   );
 }
 
-export { Type, PmIcon };
+export { Type, MoveCategory, PmIcon };

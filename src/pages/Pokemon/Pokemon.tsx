@@ -1,11 +1,11 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { SubTitleSlide } from '@/newComponents';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { usePokemonInfo } from './api';
-import { BaseInfo, Evolution, Header, Statistic } from './components';
-import { useState } from 'react';
+import { BaseInfo, Evolution, Header, Moves, Statistic } from './components';
 
 function TabButtom({
   title,
@@ -104,10 +104,7 @@ function PokemonInfo() {
         {tab === '招式清單' && (
           <>
             <SubTitleSlide title="招式清單" />
-            <details>
-              <summary>招式</summary>
-              <pre>{JSON.stringify(pm.moves, null, 2)}</pre>
-            </details>
+            <Moves pm={pm} />
           </>
         )}
 
