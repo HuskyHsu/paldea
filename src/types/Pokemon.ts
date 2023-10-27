@@ -46,7 +46,7 @@ type TM = Move & {
   }[];
 };
 
-export type PMMove = LevelingUp | EggMove;
+export type PMMove = LevelingUp | EggMove | TM;
 
 type MoveInfo = {
   levelingUps: LevelingUp[];
@@ -105,6 +105,17 @@ export enum MoveCategoryEnum {
   '物理' = 'Physical',
   '特殊' = 'Special',
   '變化' = 'Status',
+}
+
+export enum LevelMap {
+  '進化' = 0,
+  '遺傳' = -1,
+  '回憶' = -2,
+}
+
+export enum Accuracy {
+  '變化' = -1,
+  '—' = 0,
 }
 
 export enum EVIndex {
