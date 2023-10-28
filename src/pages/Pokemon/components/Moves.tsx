@@ -1,6 +1,8 @@
-import { Icon } from '@/newComponents';
-import { Accuracy, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
+import { useState } from 'react';
 import clsx from 'clsx';
+
+import { Accuracy, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
+import { Icon } from '@/newComponents';
 
 type Props = {
   pm: FullPokemon;
@@ -36,9 +38,9 @@ const columns = [
         href={`https://wiki.52poke.com/zh-hant/${row.nameZh}（招式）`}
         target="_blank"
         rel="noreferrer"
-        className="ml-2 font-bold text-blue-800 underline"
+        className="whitespace-nowrap font-bold text-blue-800 underline"
       >
-        <span className="whitespace-nowrap">{row.nameZh}</span>
+        {row.nameZh}
       </a>
     ),
     meta: 'w-2/12',
@@ -77,16 +79,22 @@ export function Moves({ pm }: Props) {
     .concat(pm.moves.eggMoves as PMMove[])
     .concat(pm.moves.TMs as PMMove[]);
 
+  const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
+
+  const handleClick = (panelKey: string) => {
+    const updatedPanels = new Set(expandedPanels);
+    if (updatedPanels.has(panelKey)) {
+      updatedPanels.delete(panelKey);
+    } else {
+      updatedPanels.add(panelKey);
+    }
+    setExpandedPanels(updatedPanels);
+  };
+
   return (
-    <div>
+    <div className="-mx-4 md:mx-0">
       <ul className="text-sm">
-        <li
-          className={clsx(
-            'sticky top-0 flex bg-custom-gold/50',
-            'py-1 uppercase text-gray-100 md:-top-4'
-          )}
-          key="header"
-        >
+        <li className={clsx('sticky top-0 flex bg-custom-gold/50', 'py-1 text-gray-100 md:-top-4')}>
           {columns.map((col) => (
             <span
               className={clsx('whitespace-nowrap py-1 px-2 text-center', col.meta)}
@@ -96,30 +104,43 @@ export function Moves({ pm }: Props) {
             </span>
           ))}
         </li>
-        {allMoves.map((move) => {
-          return [
-            <li
-              className="flex border-b-[1px] py-1"
-              key={`${move.pid}-${'level' in move ? move.level : move.TMPid}`}
-              onClick={() => {}}
-            >
-              {columns.map((col) => (
-                <span
-                  className={clsx('whitespace-nowrap py-1 px-2 text-center leading-6', col.meta)}
-                  key={col.header}
-                >
-                  {col.value(move)}
-                </span>
-              ))}
-            </li>,
-            <li
-              className={clsx('flex border-b-[1px] py-1 px-2', 'hidden')}
-              key={`${move.pid}-${'level' in move ? move.level : move.TMPid}-d`}
-            >
-              {move.description}
-            </li>,
-          ].flat();
-        })}
+        {allMoves
+          .map((move) => {
+            const key = `${move.pid}-${'level' in move ? move.level : move.TMPid}`;
+            const lilist = [
+              <li
+                className="flex cursor-pointer border-b-[1px] py-1"
+                key={key}
+                onClick={() => {
+                  handleClick(key);
+                }}
+              >
+                {columns.map((col) => (
+                  <span
+                    className={clsx(
+                      'whitespace-nowrap py-1 px-2 text-center leading-6',
+                      'flex justify-center',
+                      col.meta
+                    )}
+                    key={col.header}
+                  >
+                    {col.value(move)}
+                  </span>
+                ))}
+              </li>,
+            ];
+
+            if (expandedPanels.has(key)) {
+              lilist.push(
+                <li className={clsx('flex border-b-[1px] p-4')} key={`${key}-d`}>
+                  {move.description}
+                </li>
+              );
+            }
+
+            return lilist;
+          })
+          .flat()}
       </ul>
     </div>
   );
