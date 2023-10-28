@@ -38,7 +38,7 @@ const columns = [
         href={`https://wiki.52poke.com/zh-hant/${row.nameZh}（招式）`}
         target="_blank"
         rel="noreferrer"
-        className="whitespace-nowrap font-bold text-blue-800 underline"
+        className="text-blue-800 underline"
       >
         {row.nameZh}
       </a>
