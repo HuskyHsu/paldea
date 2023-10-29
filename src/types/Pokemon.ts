@@ -109,7 +109,7 @@ type material = {
 export type FullMove = Move & {
   levelingUps: (SubPokemon & { level: number })[];
   egg: SubPokemon[];
-  TM: {
+  TM?: {
     materials: material[];
     pid: number;
     leaguePoint: number;

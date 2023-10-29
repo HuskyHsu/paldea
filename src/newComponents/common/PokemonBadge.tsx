@@ -22,7 +22,8 @@ export function PokemonBadge({ pm, size = 'text-xs', text }: Props) {
       to={`/pokedex/${pm.link}`}
     >
       {pm.nameZh}
-      {text}
+      {pm.altForm && `-${pm.altForm}`}
+      {text && `: ${text}`}
     </Link>
   );
 }
