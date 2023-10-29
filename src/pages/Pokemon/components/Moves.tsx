@@ -77,8 +77,8 @@ const columns = [
 
 function MoveDetail({ move }: { move: FullMove }) {
   return (
-    <div className="text-gray-500">
-      <h6 className="text-lg font-bold">升等/進化學習</h6>
+    <div className="flex flex-col gap-y-4 text-gray-500">
+      <h6 className="text-lg font-bold">升等/進化/回憶招式</h6>
       <div className="flex flex-wrap gap-2">
         {move.levelingUps.map((pm) => {
           let text = `-Lv${pm.level}`;
@@ -89,7 +89,7 @@ function MoveDetail({ move }: { move: FullMove }) {
           return <PokemonBadge pm={pm} key={pm.link} text={text} />;
         })}
       </div>
-      <h6 className="text-lg font-bold">遺傳學習(模仿香草)</h6>
+      <h6 className="text-lg font-bold">遺傳招式(模仿香草)</h6>
       <div className="flex flex-wrap gap-2">
         {move.egg.map((pm) => {
           return <PokemonBadge pm={pm} key={pm.link} />;
