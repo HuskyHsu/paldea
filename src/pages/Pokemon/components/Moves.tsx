@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 
-import { Accuracy, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
-import { Icon } from '@/newComponents';
+import { Accuracy, FullMove, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
+import { Icon, PokemonBadge } from '@/newComponents';
+import { api } from '@/utils';
 
 type Props = {
   pm: FullPokemon;
@@ -74,20 +75,53 @@ const columns = [
   },
 ];
 
+function MoveDetail({ move }: { move: FullMove }) {
+  return (
+    <div className="text-gray-500">
+      <h6 className="text-lg font-bold">升等/進化學習</h6>
+      <div className="flex flex-wrap gap-2">
+        {move.levelingUps.map((pm) => {
+          let text = `-Lv${pm.level}`;
+          if (pm.level < 1) {
+            text = `-${LevelMap[pm.level]}`;
+          }
+
+          return <PokemonBadge pm={pm} key={pm.link} text={text} />;
+        })}
+      </div>
+      <h6 className="text-lg font-bold">遺傳學習(模仿香草)</h6>
+      <div className="flex flex-wrap gap-2">
+        {move.egg.map((pm) => {
+          return <PokemonBadge pm={pm} key={pm.link} />;
+        })}
+      </div>
+    </div>
+  );
+}
+
 export function Moves({ pm }: Props) {
   const allMoves: PMMove[] = (pm.moves.levelingUps as PMMove[])
     .concat(pm.moves.eggMoves as PMMove[])
     .concat(pm.moves.TMs as PMMove[]);
 
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
+  const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
 
-  const handleClick = (panelKey: string) => {
+  const handleClick = async (panelKey: string, nameZh: string) => {
     const updatedPanels = new Set(expandedPanels);
     if (updatedPanels.has(panelKey)) {
       updatedPanels.delete(panelKey);
     } else {
       updatedPanels.add(panelKey);
     }
+
+    const moveData = await api<FullMove>(`/data/move/${nameZh}.json`);
+
+    setMoveMap((prev) => {
+      prev[nameZh] = moveData;
+      return prev;
+    });
+
     setExpandedPanels(updatedPanels);
   };
 
@@ -112,7 +146,7 @@ export function Moves({ pm }: Props) {
                 className="flex cursor-pointer border-b-[1px] py-1"
                 key={key}
                 onClick={() => {
-                  handleClick(key);
+                  handleClick(key, move.nameZh);
                 }}
               >
                 {columns.map((col) => (
@@ -133,7 +167,7 @@ export function Moves({ pm }: Props) {
             if (expandedPanels.has(key)) {
               lilist.push(
                 <li className={clsx('flex border-b-[1px] p-4')} key={`${key}-d`}>
-                  {move.description}
+                  <MoveDetail move={moveMap[move.nameZh as keyof typeof moveMap]} />
                 </li>
               );
             }

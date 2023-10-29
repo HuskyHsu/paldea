@@ -19,6 +19,35 @@ export type Pokemon = {
   eggGroups: string[];
 };
 
+export type SubPokemon = {
+  link: string;
+  nameZh: string;
+  altForm: string | null;
+  types: string[];
+};
+
+export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
+
+export const PokedexList = ['kitakami', 'paldea', 'hisui'];
+
+export enum EVIndex {
+  HP = 0,
+  Atk = 1,
+  Def = 2,
+  SpA = 3,
+  SpD = 4,
+  Spe = 5,
+}
+
+export enum EVName {
+  'HP' = 'HP',
+  'Atk' = '攻擊',
+  'Def' = '防禦',
+  'SpA' = '特攻',
+  'SpD' = '特防',
+  'Spe' = '速度',
+}
+// Move
 type Move = {
   pid: number;
   nameZh: string;
@@ -54,20 +83,51 @@ type MoveInfo = {
   TMs: TM[];
 };
 
-export type SubPokemon = {
-  link: string;
-  nameZh: string;
-  altForm: string | null;
-  types: string[];
+export enum MoveCategoryEnum {
+  '物理' = 'Physical',
+  '特殊' = 'Special',
+  '變化' = 'Status',
+}
+
+export enum LevelMap {
+  '進化' = 0,
+  '遺傳' = -1,
+  '回憶' = -2,
+}
+
+export enum Accuracy {
+  '變化' = -1,
+  '—' = 0,
+}
+
+type material = {
+  part: string;
+  count: number;
+  link: number;
+};
+
+export type FullMove = Move & {
+  levelingUps: (SubPokemon & { level: number })[];
+  egg: SubPokemon[];
+  TM: {
+    materials: material[];
+    pid: number;
+    leaguePoint: number;
+    pm: SubPokemon[];
+  };
+};
+
+// Evolve
+export type Evolve = SubPokemon & {
   condition: string;
 };
 
-type MidEvolve = SubPokemon & {
-  to?: SubPokemon[];
+type MidEvolve = Evolve & {
+  to?: Evolve[];
 };
 
 type StartEvolve = {
-  from: SubPokemon;
+  from: Evolve;
   to: MidEvolve[];
 };
 
@@ -76,10 +136,7 @@ export type FullPokemon = Pokemon & {
   evolves?: StartEvolve;
 };
 
-export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
-
-export const PokedexList = ['kitakami', 'paldea', 'hisui'];
-
+// type
 export enum TypeEnum {
   '鋼' = 'Steel',
   '幽靈' = 'Ghost',
@@ -99,41 +156,6 @@ export enum TypeEnum {
   '岩石' = 'Rock',
   '惡' = 'Dark',
   '龍' = 'Dragon',
-}
-
-export enum MoveCategoryEnum {
-  '物理' = 'Physical',
-  '特殊' = 'Special',
-  '變化' = 'Status',
-}
-
-export enum LevelMap {
-  '進化' = 0,
-  '遺傳' = -1,
-  '回憶' = -2,
-}
-
-export enum Accuracy {
-  '變化' = -1,
-  '—' = 0,
-}
-
-export enum EVIndex {
-  HP = 0,
-  Atk = 1,
-  Def = 2,
-  SpA = 3,
-  SpD = 4,
-  Spe = 5,
-}
-
-export enum EVName {
-  'HP' = 'HP',
-  'Atk' = '攻擊',
-  'Def' = '防禦',
-  'SpA' = '特攻',
-  'SpD' = '特防',
-  'Spe' = '速度',
 }
 
 export enum BgType {

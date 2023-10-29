@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -20,7 +20,7 @@ function TabButtom({
     <li className="mr-2">
       <button
         className={clsx(
-          'inline-block rounded-t-lg border-b-2 p-4',
+          'inline-block rounded-t-lg border-b-2 p-2 md:p-4',
           selectTab === title
             ? 'border-custom-gold text-custom-gold'
             : 'border-transparent hover:border-gray-300 hover:text-gray-600'
@@ -34,11 +34,20 @@ function TabButtom({
 }
 
 function PokemonInfo() {
+  const localStorageKey = 'pokemonPage';
+
   const navigate = useNavigate();
   const { nameId = '噴火龍' } = useParams();
   const [name, altForm] = nameId.split('-');
   const { pokemonList } = usePokemonListContext();
-  const [tab, setTab] = useState('基本資訊');
+  const [tab, setTab] = useState(() => {
+    const savedData = localStorage.getItem(localStorageKey) || '基本資訊';
+    return savedData;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, tab);
+  }, [tab]);
 
   let { link } = pokemonList.find(
     (pm) => pm.nameZh === name && (altForm !== undefined ? pm.altForm === altForm : true)
