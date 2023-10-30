@@ -1,10 +1,19 @@
 # 帕底亞圖鑑
 
-### Todo List
+### v2.0 Todo List
 
 - pokedex page:
+
   1. [x] 洗翠圖鑑
   2. [ ] tags (傳說, 幻獸, 悖謬, 地區)
+
+- pokemon page:
+
+  1. [ ] 形態差異
+  2. [ ] 招式關閉進化前清單
+  3. [ ] 只有進化前可學招式
+  4. [ ] 勾選招式
+  5. [ ] home 圖示
 
 ### Issues
 
