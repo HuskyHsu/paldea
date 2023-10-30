@@ -75,24 +75,48 @@ const columns = [
   },
 ];
 
-function MoveDetail({ move }: { move: FullMove }) {
+function MoveDetail({
+  move,
+  onlyEvolve,
+  setOnlyEvolve,
+}: {
+  move: FullMove;
+  onlyEvolve: boolean;
+  setOnlyEvolve: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
-    <div className="flex flex-col text-gray-500">
-      <h6 className="py-2 text-lg font-bold">說明</h6>
+    <div className="flex w-full flex-col text-gray-500">
+      <h6 className="flex justify-between py-2 text-lg font-bold">
+        <span>說明</span>
+        <div className="flex items-center">
+          <input
+            id={'showChild'}
+            type="checkbox"
+            checked={onlyEvolve}
+            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-800 focus:ring-1 focus:ring-blue-800"
+            onChange={(e) => setOnlyEvolve(e.target.checked)}
+          />
+          <label htmlFor={'showChild'} className="ml-2 text-sm">
+            僅顯示進化型
+          </label>
+        </div>
+      </h6>
       <p>{move.description}</p>
       {move.levelingUps.length > 0 && (
         <>
           <hr className="my-3 h-px border-0 bg-gray-200" />
           <h6 className="py-2 text-lg font-bold">升等 / 進化 / 回憶招式</h6>
           <div className="flex flex-wrap gap-2">
-            {move.levelingUps.map((pm) => {
-              let text = `Lv${pm.level}`;
-              if (pm.level < 1) {
-                text = LevelMap[pm.level];
-              }
+            {move.levelingUps
+              .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
+              .map((pm) => {
+                let text = `Lv${pm.level}`;
+                if (pm.level < 1) {
+                  text = LevelMap[pm.level];
+                }
 
-              return <PokemonBadge pm={pm} key={pm.link} text={text} />;
-            })}
+                return <PokemonBadge pm={pm} key={pm.link} text={text} />;
+              })}
           </div>
         </>
       )}
@@ -101,9 +125,11 @@ function MoveDetail({ move }: { move: FullMove }) {
           <hr className="my-3 h-px border-0 bg-gray-200" />
           <h6 className="py-2 text-lg font-bold">遺傳招式(模仿香草)</h6>
           <div className="flex flex-wrap gap-2">
-            {move.egg.map((pm) => {
-              return <PokemonBadge pm={pm} key={pm.link} />;
-            })}
+            {move.egg
+              .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
+              .map((pm) => {
+                return <PokemonBadge pm={pm} key={pm.link} />;
+              })}
           </div>
         </>
       )}
@@ -117,9 +143,11 @@ function MoveDetail({ move }: { move: FullMove }) {
             <li>材料：{move.TM.materials.map((pm) => `${pm.part}x${pm.count}`).join('; ')}</li>
           </ul>
           <div className="flex flex-wrap gap-2">
-            {move.TM?.pm.map((pm) => {
-              return <PokemonBadge pm={pm} key={pm.link} />;
-            })}
+            {move.TM?.pm
+              .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
+              .map((pm) => {
+                return <PokemonBadge pm={pm} key={pm.link} />;
+              })}
           </div>
         </>
       )}
@@ -134,6 +162,7 @@ export function Moves({ pm }: Props) {
 
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
   const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
+  const [onlyEvolve, setOnlyEvolve] = useState<boolean>(true);
 
   const handleClick = async (panelKey: string, nameZh: string) => {
     const updatedPanels = new Set(expandedPanels);
@@ -196,7 +225,11 @@ export function Moves({ pm }: Props) {
             if (expandedPanels.has(key)) {
               lilist.push(
                 <li className={clsx('flex border-b-[1px] p-4', 'bg-slate-50')} key={`${key}-d`}>
-                  <MoveDetail move={moveMap[move.nameZh as keyof typeof moveMap]} />
+                  <MoveDetail
+                    move={moveMap[move.nameZh as keyof typeof moveMap]}
+                    onlyEvolve={onlyEvolve}
+                    setOnlyEvolve={setOnlyEvolve}
+                  />
                 </li>
               );
             }
