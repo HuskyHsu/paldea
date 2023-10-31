@@ -24,12 +24,24 @@ const columns = [
   //   },
   {
     header: '來源',
-    value: (row: PMMove) =>
-      'level' in row
-        ? row.level < 1
+    value: (row: PMMove) => {
+      if ('TMPid' in row) {
+        return `TM${row.TMPid.toString().padStart(3, '0')}`;
+      }
+
+      if ('level' in row && !('pm' in row)) {
+        return row.level < 1
           ? LevelMap[row.level.toString() as keyof typeof LevelMap]
-          : `Lv${row.level.toString().padStart(2, '0')}`
-        : `TM${row.TMPid.toString().padStart(3, '0')}`,
+          : `Lv${row.level.toString().padStart(2, '0')}`;
+      }
+
+      const level =
+        row.level < 1
+          ? LevelMap[row.level.toString() as keyof typeof LevelMap]
+          : `Lv${row.level.toString().padStart(2, '0')}`;
+
+      return `${row.pm.nameZh}${row.pm.altForm ? '(' + row.pm.altForm + ')' : ''}-${level}`;
+    },
     meta: 'w-2/12',
   },
   {
@@ -157,6 +169,7 @@ function MoveDetail({
 
 export function Moves({ pm }: Props) {
   const allMoves: PMMove[] = (pm.moves.levelingUps as PMMove[])
+    .concat(pm.moves.beforeEvolve as PMMove[])
     .concat(pm.moves.eggMoves as PMMove[])
     .concat(pm.moves.TMs as PMMove[]);
 

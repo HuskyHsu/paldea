@@ -71,17 +71,29 @@ function PokemonInfo() {
     <div className="flex w-full justify-center">
       <div className="-mt-4 flex w-full max-w-3xl flex-col gap-4">
         <Header pm={pm} />
-        <h2 className="-my-2 text-2xl">
+        <h2 className="-my-2 flex items-end gap-x-2 whitespace-nowrap text-2xl">
           #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
           {pm.altForm && <span className="text-sm">({pm.altForm})</span>}
           <a
             href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
             target="_blank"
             rel="noreferrer"
-            className="ml-2 font-bold text-blue-800 underline"
+            className="ml-2 text-base font-bold text-blue-800 underline"
           >
             wiki
           </a>
+          {pm.hisui && (
+            <a
+              href={`https://huskyhsu.github.io/arceus/#/${pm.hisui.toString().padStart(3, '0')}${
+                pm.altForm === '洗翠' ? 'H' : ''
+              }`}
+              target="_blank"
+              rel="noreferrer"
+              className="ml-2 text-base font-bold text-blue-800 underline"
+            >
+              洗翠圖鑑
+            </a>
+          )}
         </h2>
 
         <div className="border-b border-gray-200 text-center text-sm font-medium text-gray-500">

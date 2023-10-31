@@ -26,6 +26,11 @@ export type SubPokemon = {
   types: string[];
 };
 
+export type FullPokemon = Pokemon & {
+  moves: MoveInfo;
+  evolves?: StartEvolve;
+};
+
 export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
 
 export const PokedexList = ['kitakami', 'paldea', 'hisui'];
@@ -75,12 +80,15 @@ type TM = Move & {
   }[];
 };
 
-export type PMMove = LevelingUp | EggMove | TM;
+type beforeEvolveMove = Move & { level: number; pm: SubPokemon };
+
+export type PMMove = LevelingUp | EggMove | TM | beforeEvolveMove;
 
 type MoveInfo = {
   levelingUps: LevelingUp[];
   eggMoves: EggMove[];
   TMs: TM[];
+  beforeEvolve: beforeEvolveMove[];
 };
 
 export enum MoveCategoryEnum {
@@ -129,11 +137,6 @@ type MidEvolve = Evolve & {
 type StartEvolve = {
   from: Evolve;
   to: MidEvolve[];
-};
-
-export type FullPokemon = Pokemon & {
-  moves: MoveInfo;
-  evolves?: StartEvolve;
 };
 
 // type
