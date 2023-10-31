@@ -40,7 +40,7 @@ const columns = [
           ? LevelMap[row.level.toString() as keyof typeof LevelMap]
           : `Lv${row.level.toString().padStart(2, '0')}`;
 
-      return `${row.pm.nameZh}${row.pm.altForm ? '(' + row.pm.altForm + ')' : ''}-${level}`;
+      return `${row.pm.nameZh}${row.pm.altForm ? '(' + row.pm.altForm + ')' : ''}: ${level}`;
     },
     meta: 'w-2/12',
   },
@@ -211,7 +211,9 @@ export function Moves({ pm }: Props) {
         </li>
         {allMoves
           .map((move) => {
-            const key = `${move.pid}-${'level' in move ? move.level : move.TMPid}`;
+            const key = `${move.pid}-${
+              'level' in move ? ('pm' in move ? move.pm.link : move.level) : move.TMPid
+            }`;
             const lilist = [
               <li
                 className="flex cursor-pointer border-b-[1px] py-1"
