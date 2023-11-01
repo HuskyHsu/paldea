@@ -99,7 +99,6 @@ function PokemonInfo() {
         <div className="border-b border-gray-200 text-center text-sm font-medium text-gray-500">
           <ul className="-mb-px flex flex-wrap">
             <TabButtom title="基本資訊" selectTab={tab} setTab={setTab} />
-            <TabButtom title="進化途徑" selectTab={tab} setTab={setTab} />
             <TabButtom title="招式清單" selectTab={tab} setTab={setTab} />
           </ul>
         </div>
@@ -107,18 +106,13 @@ function PokemonInfo() {
         {tab === '基本資訊' && (
           <>
             <BaseInfo pm={pm} />
-            <Statistic pokemon={pm} />
-          </>
-        )}
-
-        {tab === '進化途徑' && (
-          <>
             {pm.evolves !== undefined && (
               <>
                 <SubTitleSlide title="進化途徑" />
                 <Evolution pm={pm} />
               </>
             )}
+            <Statistic pokemon={pm} />
           </>
         )}
 

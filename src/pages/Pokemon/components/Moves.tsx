@@ -216,16 +216,8 @@ export function Moves({ pm }: Props) {
           ))}
         </li>
         {allMoves
-          .map((move) => {
-            const key = `${move.pid}-${
-              'level' in move
-                ? 'pm' in move
-                  ? move.pm.link
-                  : move.level
-                : 'pm' in move
-                ? move.pm.link + move.TMPid
-                : move.TMPid
-            }`;
+          .map((move, i) => {
+            const key = `${move.pid}-${i}`;
             const lilist = [
               <li
                 className="flex cursor-pointer border-b-[1px] py-1"
