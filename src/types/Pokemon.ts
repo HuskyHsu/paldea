@@ -72,6 +72,8 @@ type EggMove = Move & { level: number };
 
 type beforeEvolveMove = Move & { level: number; pm: SubPokemon };
 
+type beforeEvolveTMMove = Move & TM & { pm: SubPokemon };
+
 type TM = Move & {
   TMPid: number;
   leaguePoint: number;
@@ -82,12 +84,13 @@ type TM = Move & {
   }[];
 };
 
-export type PMMove = LevelingUp | EggMove | beforeEvolveMove | TM;
+export type PMMove = LevelingUp | EggMove | beforeEvolveMove | TM | beforeEvolveTMMove;
 
 type MoveInfo = {
   levelingUps: LevelingUp[];
   eggMoves: EggMove[];
   beforeEvolve: beforeEvolveMove[];
+  beforeEvolveTMs: beforeEvolveTMMove[];
   TMs: TM[];
 };
 

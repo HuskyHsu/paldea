@@ -12,6 +12,7 @@ const rowSpanMap = {
   1: 'row-span-1',
   2: 'row-span-2',
   3: 'row-span-3',
+  4: 'row-span-4',
   8: 'row-[span_8_/_span_8]',
 };
 

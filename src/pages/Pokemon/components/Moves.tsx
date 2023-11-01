@@ -26,6 +26,11 @@ const columns = [
     header: '來源',
     value: (row: PMMove) => {
       if ('TMPid' in row) {
+        if ('pm' in row) {
+          return `${row.pm.nameZh}${
+            row.pm.altForm ? '(' + row.pm.altForm + ')' : ''
+          }: TM${row.TMPid.toString().padStart(3, '0')}`;
+        }
         return `TM${row.TMPid.toString().padStart(3, '0')}`;
       }
 
@@ -171,7 +176,8 @@ export function Moves({ pm }: Props) {
   const allMoves: PMMove[] = (pm.moves.levelingUps as PMMove[])
     .concat(pm.moves.beforeEvolve as PMMove[])
     .concat(pm.moves.eggMoves as PMMove[])
-    .concat(pm.moves.TMs as PMMove[]);
+    .concat(pm.moves.TMs as PMMove[])
+    .concat(pm.moves.beforeEvolveTMs as PMMove[]);
 
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
   const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
@@ -212,7 +218,13 @@ export function Moves({ pm }: Props) {
         {allMoves
           .map((move) => {
             const key = `${move.pid}-${
-              'level' in move ? ('pm' in move ? move.pm.link : move.level) : move.TMPid
+              'level' in move
+                ? 'pm' in move
+                  ? move.pm.link
+                  : move.level
+                : 'pm' in move
+                ? move.pm.link + move.TMPid
+                : move.TMPid
             }`;
             const lilist = [
               <li
