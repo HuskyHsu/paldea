@@ -2,11 +2,16 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { Accuracy, FullMove, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
-import { Icon, PokemonBadge } from '@/newComponents';
-import { api } from '@/utils';
+import { Buttons, Icon, PokemonBadge, SubTitleSlide } from '@/newComponents';
+import { ValueKeys, api } from '@/utils';
 
 type Props = {
   pm: FullPokemon;
+};
+
+type Filter = {
+  types: Set<string>;
+  category: Set<string>;
 };
 
 const columns = [
@@ -179,9 +184,12 @@ export function Moves({ pm }: Props) {
     .concat(pm.moves.TMs as PMMove[])
     .concat(pm.moves.beforeEvolveTMs as PMMove[]);
 
+  const allMoveType = [...new Set(allMoves.map((move) => move.type))];
+
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
   const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
   const [onlyEvolve, setOnlyEvolve] = useState<boolean>(true);
+  const [filter, setFilter] = useState<Filter>({ types: new Set(), category: new Set() });
 
   const handleClick = async (panelKey: string, nameZh: string) => {
     const updatedPanels = new Set(expandedPanels);
@@ -202,9 +210,69 @@ export function Moves({ pm }: Props) {
     setExpandedPanels(updatedPanels);
   };
 
+  const updateSetState = (key: ValueKeys<Filter, Set<string>>[keyof Filter]) => {
+    return (val: string) => {
+      setFilter((prev) => {
+        if (prev[key].has(val)) {
+          prev[key].delete(val);
+        } else {
+          prev[key].add(val);
+        }
+
+        return {
+          ...prev,
+          [key]: prev[key],
+        };
+      });
+    };
+  };
+
+  const typeUpdate = updateSetState('types');
+
   return (
-    <div className="-mx-4 md:mx-0">
-      <ul className="text-sm">
+    <div className="-mx-4 flex flex-col gap-2 md:mx-0">
+      <SubTitleSlide title="屬性" />
+      <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
+        {allMoveType.map((type) => (
+          <button onClick={() => typeUpdate(type)} key={type}>
+            <Icon.Game.Type
+              type={type}
+              className={clsx(
+                'h-8 w-8',
+                filter.types.size > 0 && !filter.types.has(type) && 'opacity-30'
+              )}
+            />
+          </button>
+        ))}
+      </div>
+      <SubTitleSlide title="分類" />
+      <Buttons
+        list={[
+          { name: '物理', val: '物理' },
+          { name: '特殊', val: '特殊' },
+          { name: '變化', val: '變化' },
+        ]}
+        currVal={filter.category.size === 1 ? [...filter.category][0] : ''}
+        updateState={(val) => {
+          setFilter((prev) => {
+            if (prev.category.size === 0) {
+              prev.category.add(val);
+            } else {
+              if (prev.category.has(val)) {
+                prev.category.delete(val);
+              } else {
+                prev.category.clear();
+                prev.category.add(val);
+              }
+            }
+            return {
+              ...prev,
+              category: prev.category,
+            };
+          });
+        }}
+      />
+      <ul className="mt-4 text-sm">
         <li className={clsx('sticky top-0 flex bg-custom-gold/50', 'py-1 text-gray-100 md:-top-4')}>
           {columns.map((col) => (
             <span
@@ -216,6 +284,18 @@ export function Moves({ pm }: Props) {
           ))}
         </li>
         {allMoves
+          .filter((move) => {
+            let display = true;
+            if (filter.types.size > 0) {
+              display = display && filter.types.has(move.type);
+            }
+
+            if (filter.category.size > 0) {
+              display = display && filter.category.has(move.category);
+            }
+
+            return display;
+          })
           .map((move, i) => {
             const key = `${move.pid}-${i}`;
             const lilist = [

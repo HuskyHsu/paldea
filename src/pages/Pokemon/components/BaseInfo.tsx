@@ -67,18 +67,22 @@ const renderData: Render[] = [
     Content: ({ pm }: ContentProps) => (
       <span className="flex flex-wrap justify-center gap-2 md:justify-start">
         {pm.abilities.map((ability) => (
-          <span
+          <a
             key={ability}
+            href={`https://wiki.52poke.com/zh-hant/${ability}（特性）`}
+            target="_blank"
+            rel="noreferrer"
             className={clsx(
               'py-px',
               'h-7 w-full md:w-2/5',
               'border-2 border-solid border-secondary',
-              'rounded-full bg-secondary/30 text-center text-sm text-black',
-              'whitespace-nowrap'
+              'rounded-full bg-secondary/30 text-center text-sm',
+              'whitespace-nowrap',
+              'text-blue-800 underline'
             )}
           >
             {ability}
-          </span>
+          </a>
         ))}
       </span>
     ),
@@ -91,17 +95,21 @@ const renderData: Render[] = [
       }
       return (
         <span className="flex flex-wrap justify-center gap-2 md:justify-start">
-          <span
+          <a
+            href={`https://wiki.52poke.com/zh-hant/${pm.hiddenAbility}（特性）`}
+            target="_blank"
+            rel="noreferrer"
             className={clsx(
               'py-px',
               'h-7 w-full md:w-2/5',
               'border-2 border-solid border-scarlet',
-              'rounded-full bg-scarlet/30 text-center text-sm text-black',
-              'whitespace-nowrap'
+              'rounded-full bg-scarlet/30 text-center text-sm',
+              'whitespace-nowrap',
+              'text-blue-800 underline'
             )}
           >
             {pm.hiddenAbility}
-          </span>
+          </a>
         </span>
       );
     },

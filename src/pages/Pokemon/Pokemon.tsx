@@ -116,12 +116,7 @@ function PokemonInfo() {
           </>
         )}
 
-        {tab === '招式清單' && (
-          <>
-            <SubTitleSlide title="招式清單" />
-            <Moves pm={pm} />
-          </>
-        )}
+        {tab === '招式清單' && <Moves pm={pm} />}
 
         <button onClick={() => navigate(-1)}>back</button>
       </div>
