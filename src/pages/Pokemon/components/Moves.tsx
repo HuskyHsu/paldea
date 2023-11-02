@@ -15,18 +15,18 @@ type Filter = {
 };
 
 const columns = [
-  //   {
-  //     header: '挑選',
-  //     value: (row: PMMove) => (
-  //       <input
-  //         type="checkbox"
-  //         checked={false}
-  //         onChange={(e) => {}}
-  //         className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
-  //       />
-  //     ),
-  //     meta: 'w-1/12',
-  //   },
+  {
+    header: '挑選',
+    value: (row: PMMove) => (
+      <input
+        type="checkbox"
+        checked={false}
+        onChange={(e) => {}}
+        className="h-5 w-5 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
+      />
+    ),
+    meta: 'w-1/12',
+  },
   {
     header: '來源',
     value: (row: PMMove) => {
@@ -71,24 +71,24 @@ const columns = [
   {
     header: '屬性',
     value: (row: PMMove) => <Icon.Game.Type type={row.type} className="h-6 w-full" />,
-    meta: 'w-1/12',
+    meta: 'w-2/12',
   },
   {
     header: '分類',
     value: (row: PMMove) => <Icon.Game.MoveCategory type={row.category} className="h-6 w-full" />,
-    meta: 'w-1/12',
+    meta: 'w-2/12',
   },
   {
     header: '威力',
     value: (row: PMMove) =>
       row.power < 1 ? Accuracy[row.power.toString() as keyof typeof Accuracy] : row.power,
-    meta: 'w-2/12',
+    meta: 'w-1/12',
   },
   {
     header: '命中',
     value: (row: PMMove) =>
       row.accuracy < 1 ? Accuracy[row.accuracy.toString() as keyof typeof Accuracy] : row.accuracy,
-    meta: 'w-2/12',
+    meta: 'w-1/12',
   },
   {
     header: 'PP',
@@ -187,6 +187,7 @@ export function Moves({ pm }: Props) {
   const allMoveType = [...new Set(allMoves.map((move) => move.type))];
 
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
+  // const [pick, setPick] = useState<Set<string>>(new Set());
   const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
   const [onlyEvolve, setOnlyEvolve] = useState<boolean>(true);
   const [filter, setFilter] = useState<Filter>({ types: new Set(), category: new Set() });
@@ -230,55 +231,54 @@ export function Moves({ pm }: Props) {
   const typeUpdate = updateSetState('types');
 
   return (
-    <div className="-mx-4 flex flex-col gap-2 md:mx-0">
-      <SubTitleSlide title="屬性" />
-      <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
-        {allMoveType.map((type) => (
-          <button onClick={() => typeUpdate(type)} key={type}>
-            <Icon.Game.Type
-              type={type}
-              className={clsx(
-                'h-8 w-8',
-                filter.types.size > 0 && !filter.types.has(type) && 'opacity-30'
-              )}
-            />
-          </button>
-        ))}
-      </div>
-      <SubTitleSlide title="分類" />
-      <Buttons
-        list={[
-          { name: '物理', val: '物理' },
-          { name: '特殊', val: '特殊' },
-          { name: '變化', val: '變化' },
-        ]}
-        currVal={filter.category.size === 1 ? [...filter.category][0] : ''}
-        updateState={(val) => {
-          setFilter((prev) => {
-            if (prev.category.size === 0) {
-              prev.category.add(val);
-            } else {
-              if (prev.category.has(val)) {
-                prev.category.delete(val);
-              } else {
-                prev.category.clear();
+    <div className="-mx-4 flex flex-col gap-4 md:mx-0">
+      <div className="mx-4 flex flex-col md:mx-0">
+        <SubTitleSlide title="屬性" />
+        <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
+          {allMoveType.map((type) => (
+            <button onClick={() => typeUpdate(type)} key={type}>
+              <Icon.Game.Type
+                type={type}
+                className={clsx(
+                  'h-8 w-8',
+                  filter.types.size > 0 && !filter.types.has(type) && 'opacity-30'
+                )}
+              />
+            </button>
+          ))}
+        </div>
+        <SubTitleSlide title="分類" />
+        <Buttons
+          list={[
+            { name: '物理', val: '物理' },
+            { name: '特殊', val: '特殊' },
+            { name: '變化', val: '變化' },
+          ]}
+          currVal={filter.category.size === 1 ? [...filter.category][0] : ''}
+          updateState={(val) => {
+            setFilter((prev) => {
+              if (prev.category.size === 0) {
                 prev.category.add(val);
+              } else {
+                if (prev.category.has(val)) {
+                  prev.category.delete(val);
+                } else {
+                  prev.category.clear();
+                  prev.category.add(val);
+                }
               }
-            }
-            return {
-              ...prev,
-              category: prev.category,
-            };
-          });
-        }}
-      />
-      <ul className="mt-4 text-sm">
+              return {
+                ...prev,
+                category: prev.category,
+              };
+            });
+          }}
+        />
+      </div>
+      <ul className="text-sm">
         <li className={clsx('sticky top-0 flex bg-custom-gold/50', 'py-1 text-gray-100 md:-top-4')}>
           {columns.map((col) => (
-            <span
-              className={clsx('whitespace-nowrap py-1 px-2 text-center', col.meta)}
-              key={col.header}
-            >
+            <span className={clsx('whitespace-nowrap py-1 text-center', col.meta)} key={col.header}>
               {col.header}
             </span>
           ))}
@@ -309,7 +309,7 @@ export function Moves({ pm }: Props) {
                 {columns.map((col) => (
                   <span
                     className={clsx(
-                      'whitespace-nowrap py-1 px-2 text-center leading-6',
+                      'whitespace-nowrap py-1 text-center leading-6',
                       'flex justify-center',
                       col.meta
                     )}
