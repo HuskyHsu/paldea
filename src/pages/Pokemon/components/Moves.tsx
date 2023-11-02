@@ -14,22 +14,32 @@ type Filter = {
   category: Set<string>;
 };
 
+type colValue = {
+  row: PMMove;
+  fn?: () => void;
+  checked?: boolean;
+};
+
 const columns = [
   {
     header: '挑選',
-    value: (row: PMMove) => (
+    value: ({ row, fn = () => {}, checked = false }: colValue) => (
       <input
         type="checkbox"
-        checked={false}
-        onChange={(e) => {}}
+        checked={checked}
+        onChange={() => {}}
+        onClick={(e) => {
+          e.stopPropagation();
+          fn();
+        }}
         className="h-5 w-5 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
       />
     ),
-    meta: 'w-1/12',
+    meta: 'w-[12.5%]',
   },
   {
     header: '來源',
-    value: (row: PMMove) => {
+    value: ({ row }: colValue) => {
       if ('TMPid' in row) {
         if ('pm' in row) {
           return `${row.pm.nameZh}${
@@ -52,48 +62,51 @@ const columns = [
 
       return `${row.pm.nameZh}${row.pm.altForm ? '(' + row.pm.altForm + ')' : ''}: ${level}`;
     },
-    meta: 'w-2/12',
+    meta: 'w-[13.5%]',
   },
   {
     header: '招式名稱',
-    value: (row: PMMove) => (
+    value: ({ row }: colValue) => (
       <a
         href={`https://wiki.52poke.com/zh-hant/${row.nameZh}（招式）`}
         target="_blank"
         rel="noreferrer"
         className="text-blue-800 underline"
+        onClick={(e) => e.stopPropagation()}
       >
         {row.nameZh}
       </a>
     ),
-    meta: 'w-2/12',
+    meta: 'w-[17%]',
   },
   {
     header: '屬性',
-    value: (row: PMMove) => <Icon.Game.Type type={row.type} className="h-6 w-full" />,
-    meta: 'w-2/12',
+    value: ({ row }: colValue) => <Icon.Game.Type type={row.type} className="h-6 w-full" />,
+    meta: 'w-[12%]',
   },
   {
     header: '分類',
-    value: (row: PMMove) => <Icon.Game.MoveCategory type={row.category} className="h-6 w-full" />,
-    meta: 'w-2/12',
+    value: ({ row }: colValue) => (
+      <Icon.Game.MoveCategory type={row.category} className="h-6 w-full" />
+    ),
+    meta: 'w-[12%]',
   },
   {
     header: '威力',
-    value: (row: PMMove) =>
+    value: ({ row }: colValue) =>
       row.power < 1 ? Accuracy[row.power.toString() as keyof typeof Accuracy] : row.power,
-    meta: 'w-1/12',
+    meta: 'w-[11%]',
   },
   {
     header: '命中',
-    value: (row: PMMove) =>
+    value: ({ row }: colValue) =>
       row.accuracy < 1 ? Accuracy[row.accuracy.toString() as keyof typeof Accuracy] : row.accuracy,
-    meta: 'w-1/12',
+    meta: 'w-[11%]',
   },
   {
     header: 'PP',
-    value: (row: PMMove) => row.PP,
-    meta: 'w-1/12',
+    value: ({ row }: colValue) => row.PP,
+    meta: 'w-[11%]',
   },
 ];
 
@@ -187,7 +200,7 @@ export function Moves({ pm }: Props) {
   const allMoveType = [...new Set(allMoves.map((move) => move.type))];
 
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
-  // const [pick, setPick] = useState<Set<string>>(new Set());
+  const [pick, setPick] = useState<Set<string>>(new Set());
   const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
   const [onlyEvolve, setOnlyEvolve] = useState<boolean>(true);
   const [filter, setFilter] = useState<Filter>({ types: new Set(), category: new Set() });
@@ -276,16 +289,23 @@ export function Moves({ pm }: Props) {
         />
       </div>
       <ul className="text-sm">
-        <li className={clsx('sticky top-0 flex bg-custom-gold/50', 'py-1 text-gray-100 md:-top-4')}>
+        <li
+          className={clsx(
+            'sticky top-0 flex bg-custom-gold/50',
+            'py-1 px-2 text-gray-100 md:-top-4 md:px-0'
+          )}
+        >
           {columns.map((col) => (
             <span className={clsx('whitespace-nowrap py-1 text-center', col.meta)} key={col.header}>
               {col.header}
             </span>
           ))}
         </li>
+
         {allMoves
           .filter((move) => {
             let display = true;
+
             if (filter.types.size > 0) {
               display = display && filter.types.has(move.type);
             }
@@ -296,11 +316,37 @@ export function Moves({ pm }: Props) {
 
             return display;
           })
-          .map((move, i) => {
-            const key = `${move.pid}-${i}`;
+          .map((move) => {
+            let key = `${move.pid}`;
+            if ('level' in move) {
+              key += `:${move.level}`;
+            }
+            if ('pm' in move) {
+              key += `:${move.pm.link}`;
+            }
+            if ('TMPid' in move) {
+              key += `:${move.TMPid}`;
+            }
+
+            return {
+              move,
+              key,
+            };
+          })
+          .sort((a, b) => {
+            if (pick.has(a.key) && pick.has(b.key)) {
+              return 0;
+            } else if (pick.has(a.key)) {
+              return -1;
+            } else if (pick.has(b.key)) {
+              return 1;
+            }
+            return 0;
+          })
+          .map(({ move, key }) => {
             const lilist = [
               <li
-                className="flex cursor-pointer border-b-[1px] py-1"
+                className="flex cursor-pointer border-b-[1px] py-1 px-2 md:px-0"
                 key={key}
                 onClick={() => {
                   handleClick(key, move.nameZh);
@@ -315,7 +361,20 @@ export function Moves({ pm }: Props) {
                     )}
                     key={col.header}
                   >
-                    {col.value(move)}
+                    {col.value({
+                      row: move,
+                      checked: pick.has(key),
+                      fn: () => {
+                        setPick((prev) => {
+                          if (prev.has(key)) {
+                            prev.delete(key);
+                          } else {
+                            prev.add(key);
+                          }
+                          return new Set([...prev]);
+                        });
+                      },
+                    })}
                   </span>
                 ))}
               </li>,
