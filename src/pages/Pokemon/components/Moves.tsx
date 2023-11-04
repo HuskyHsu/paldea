@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { Accuracy, FullMove, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
 import { Buttons, SubTitleSlide } from '@/newComponents/common';
-import { PokemonBadge } from '@/newComponents/game';
+import { AttackRange, PokemonBadge } from '@/newComponents/game';
 import { Icon } from '@/newComponents';
 import { ValueKeys, api } from '@/utils';
 
@@ -193,13 +193,30 @@ function MoveDetail({
 }
 
 export function Moves({ pm }: Props) {
-  const allMoves: PMMove[] = (pm.moves.levelingUps as PMMove[])
+  const allMoves: { move: PMMove; key: string }[] = (pm.moves.levelingUps as PMMove[])
     .concat(pm.moves.beforeEvolve as PMMove[])
     .concat(pm.moves.eggMoves as PMMove[])
     .concat(pm.moves.TMs as PMMove[])
-    .concat(pm.moves.beforeEvolveTMs as PMMove[]);
+    .concat(pm.moves.beforeEvolveTMs as PMMove[])
+    .map((move) => {
+      let key = `${move.pid}`;
+      if ('level' in move) {
+        key += `:${move.level}`;
+      }
+      if ('pm' in move) {
+        key += `:${move.pm.link}`;
+      }
+      if ('TMPid' in move) {
+        key += `:${move.TMPid}`;
+      }
 
-  const allMoveType = [...new Set(allMoves.map((move) => move.type))];
+      return {
+        move,
+        key,
+      };
+    });
+
+  const allMoveType = [...new Set(allMoves.map((move) => move.move.type))];
 
   const [expandedPanels, setExpandedPanels] = useState<Set<string>>(new Set());
   const [pick, setPick] = useState<Set<string>>(new Set());
@@ -244,10 +261,32 @@ export function Moves({ pm }: Props) {
   };
 
   const typeUpdate = updateSetState('types');
+  const categoryUpdate = (val: string) => {
+    setFilter((prev) => {
+      if (prev.category.size === 0) {
+        prev.category.add(val);
+      } else {
+        if (prev.category.has(val)) {
+          prev.category.delete(val);
+        } else {
+          prev.category.clear();
+          prev.category.add(val);
+        }
+      }
+      return {
+        ...prev,
+        category: prev.category,
+      };
+    });
+  };
+
+  const atkTypes = allMoves
+    .filter(({ move, key }) => pick.has(key) && move.category !== '變化')
+    .map(({ move }) => move.type);
 
   return (
     <div className="-mx-4 flex flex-col gap-4 md:mx-0">
-      <div className="mx-4 flex flex-col md:mx-0">
+      <div className="mx-4 flex flex-col gap-y-2 md:mx-0">
         <SubTitleSlide title="屬性" />
         <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
           {allMoveType.map((type) => (
@@ -270,25 +309,14 @@ export function Moves({ pm }: Props) {
             { name: '變化', val: '變化' },
           ]}
           currVal={filter.category.size === 1 ? [...filter.category][0] : ''}
-          updateState={(val) => {
-            setFilter((prev) => {
-              if (prev.category.size === 0) {
-                prev.category.add(val);
-              } else {
-                if (prev.category.has(val)) {
-                  prev.category.delete(val);
-                } else {
-                  prev.category.clear();
-                  prev.category.add(val);
-                }
-              }
-              return {
-                ...prev,
-                category: prev.category,
-              };
-            });
-          }}
+          updateState={(val) => categoryUpdate(val)}
         />
+        {atkTypes.length > 0 && (
+          <>
+            <SubTitleSlide title="勾選招式打點" />
+            <AttackRange types={atkTypes} />
+          </>
+        )}
       </div>
       <ul className="text-sm">
         <li
@@ -305,7 +333,7 @@ export function Moves({ pm }: Props) {
         </li>
 
         {allMoves
-          .filter((move) => {
+          .filter(({ move }) => {
             let display = true;
 
             if (filter.types.size > 0) {
@@ -317,23 +345,6 @@ export function Moves({ pm }: Props) {
             }
 
             return display;
-          })
-          .map((move) => {
-            let key = `${move.pid}`;
-            if ('level' in move) {
-              key += `:${move.level}`;
-            }
-            if ('pm' in move) {
-              key += `:${move.pm.link}`;
-            }
-            if ('TMPid' in move) {
-              key += `:${move.TMPid}`;
-            }
-
-            return {
-              move,
-              key,
-            };
           })
           .sort((a, b) => {
             if (pick.has(a.key) && pick.has(b.key)) {
@@ -348,7 +359,11 @@ export function Moves({ pm }: Props) {
           .map(({ move, key }) => {
             const lilist = [
               <li
-                className="flex cursor-pointer border-b-[1px] py-1 px-2 md:px-0"
+                className={clsx(
+                  'flex cursor-pointer border-b-[1px] py-1 px-2 md:px-0',
+                  'hover:bg-gray-50',
+                  pick.has(key) && 'bg-gray-100'
+                )}
                 key={key}
                 onClick={() => {
                   handleClick(key, move.nameZh);
