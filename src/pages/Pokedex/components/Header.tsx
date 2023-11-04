@@ -40,7 +40,7 @@ export function Header({
     <header>
       <div className="flex flex-col justify-between gap-x-2 md:flex-row md:items-center">
         <div className="flex items-center gap-2">
-          <div className={clsx('rounded-xl p-2', 'bg-custom-blue', 'hidden md:block')}>
+          <div className={clsx('rounded-xl p-2', 'bg-custom-red', 'hidden md:block')}>
             <Icon.Books className="h-5 w-5 fill-current" />
           </div>
           <h2 className="text-xl">圖鑑清單</h2>

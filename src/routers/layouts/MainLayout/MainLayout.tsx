@@ -60,7 +60,7 @@ function MainLayout() {
           <Item
             text={'圖鑑清單'}
             color="bg-custom-red"
-            selected={hash === ''}
+            selected={hash === 'pokedex' || hash === ''}
             onClick={() => updateNav('')}
           >
             <Icon.Books className="h-5 w-5 fill-current" />
@@ -72,14 +72,6 @@ function MainLayout() {
             onClick={() => updateNav('moves')}
           >
             <Icon.Book className="h-5 w-5 fill-current" />
-          </Item>
-          <Item
-            text={'施工圖鑑'}
-            color="bg-custom-blue"
-            selected={hash === 'pokedex'}
-            onClick={() => updateNav('pokedex')}
-          >
-            <Icon.Books className="h-5 w-5 fill-current" />
           </Item>
         </div>
       </aside>
