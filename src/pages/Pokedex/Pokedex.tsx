@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 import { EVIndex, PokedexFrom, PokedexList, Pokemon } from '@/types/Pokemon';
-import { Hr, Loading } from '@/newComponents';
+import { Hr, Loading } from '@/newComponents/common';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { Card, Pagination, PaginationMobile, Header } from './components';
 import { UseFilter } from './UseFilter';

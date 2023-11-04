@@ -2,7 +2,9 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { Accuracy, FullMove, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
-import { Buttons, Icon, PokemonBadge, SubTitleSlide } from '@/newComponents';
+import { Buttons, SubTitleSlide } from '@/newComponents/common';
+import { PokemonBadge } from '@/newComponents/game';
+import { Icon } from '@/newComponents';
 import { ValueKeys, api } from '@/utils';
 
 type Props = {

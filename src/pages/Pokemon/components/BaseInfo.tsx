@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
-import { Icon, SubTitleSlide } from '@/newComponents';
+import { SubTitleSlide } from '@/newComponents/common';
+import { Icon } from '@/newComponents';
 import { BgType, FullPokemon } from '@/types/Pokemon';
 
 type Props = {

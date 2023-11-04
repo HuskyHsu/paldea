@@ -2,10 +2,18 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 
-import { SubTitleSlide } from '@/newComponents';
+import { SubTitleSlide } from '@/newComponents/common';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { usePokemonInfo } from './api';
-import { BaseInfo, Evolution, Header, Moves, Statistic } from './components';
+import {
+  BaseInfo,
+  Evolution,
+  Header,
+  HeaderName,
+  Moves,
+  Statistic,
+  TypeWeakness,
+} from './components';
 
 function TabButtom({
   title,
@@ -40,8 +48,9 @@ function PokemonInfo() {
   const { nameId = '噴火龍' } = useParams();
   const [name, altForm] = nameId.split('-');
   const { pokemonList } = usePokemonListContext();
+  const tabList = ['基本資訊', '屬性與能力值', '招式清單'];
   const [tab, setTab] = useState(() => {
-    const savedData = localStorage.getItem(localStorageKey) || '基本資訊';
+    const savedData = localStorage.getItem(localStorageKey) || tabList[0];
     return savedData;
   });
 
@@ -71,35 +80,13 @@ function PokemonInfo() {
     <div className="flex w-full justify-center">
       <div className="-mt-4 flex w-full max-w-3xl flex-col gap-4">
         <Header pm={pm} />
-        <h2 className="-my-2 flex items-end gap-x-2 whitespace-nowrap text-2xl">
-          #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
-          {pm.altForm && <span className="text-sm">({pm.altForm})</span>}
-          <a
-            href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
-            target="_blank"
-            rel="noreferrer"
-            className="ml-2 text-base font-bold text-blue-800 underline"
-          >
-            wiki
-          </a>
-          {pm.hisui && (
-            <a
-              href={`https://huskyhsu.github.io/arceus/#/${pm.hisui.toString().padStart(3, '0')}${
-                pm.altForm === '洗翠' ? 'H' : ''
-              }`}
-              target="_blank"
-              rel="noreferrer"
-              className="ml-2 text-base font-bold text-blue-800 underline"
-            >
-              洗翠圖鑑
-            </a>
-          )}
-        </h2>
+        <HeaderName pm={pm} />
 
         <div className="border-b border-gray-200 text-center text-sm font-medium text-gray-500">
           <ul className="-mb-px flex flex-wrap">
-            <TabButtom title="基本資訊" selectTab={tab} setTab={setTab} />
-            <TabButtom title="招式清單" selectTab={tab} setTab={setTab} />
+            {tabList.map((tabName) => {
+              return <TabButtom title={tabName} selectTab={tab} setTab={setTab} key={tabName} />;
+            })}
           </ul>
         </div>
 
@@ -112,7 +99,13 @@ function PokemonInfo() {
                 <Evolution pm={pm} />
               </>
             )}
+          </>
+        )}
+
+        {tab === tabList[1] && (
+          <>
             <Statistic pokemon={pm} />
+            <TypeWeakness pm={pm} />
           </>
         )}
 

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { RadarChart } from './RadarChart';
 import { FillType, FullPokemon } from '@/types/Pokemon';
-import { SubTitleSlide } from '@/newComponents';
+import { SubTitleSlide } from '@/newComponents/common';
 
 type Props = {
   pokemon: FullPokemon;

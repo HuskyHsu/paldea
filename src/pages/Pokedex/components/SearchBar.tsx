@@ -1,7 +1,9 @@
 import clsx from 'clsx';
 
-import { Icon, Indicator } from '@/newComponents';
+import { Indicator } from '@/newComponents/common';
+import { Icon } from '@/newComponents';
 import { BoolKeys } from '@/utils';
+
 import { FilterButton } from '.';
 import { Display } from '../Pokedex';
 

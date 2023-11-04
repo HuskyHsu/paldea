@@ -29,3 +29,32 @@ export function Header({ pm }: Props) {
     </header>
   );
 }
+
+export function HeaderName({ pm }: Props) {
+  return (
+    <h2 className="-my-2 flex items-end gap-x-2 whitespace-nowrap text-2xl">
+      #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
+      {pm.altForm && <span className="text-sm">({pm.altForm})</span>}
+      <a
+        href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
+        target="_blank"
+        rel="noreferrer"
+        className="ml-2 text-base font-bold text-blue-800 underline"
+      >
+        wiki
+      </a>
+      {pm.hisui && (
+        <a
+          href={`https://huskyhsu.github.io/arceus/#/${pm.hisui.toString().padStart(3, '0')}${
+            pm.altForm === '洗翠' ? 'H' : ''
+          }`}
+          target="_blank"
+          rel="noreferrer"
+          className="ml-2 text-base font-bold text-blue-800 underline"
+        >
+          洗翠圖鑑
+        </a>
+      )}
+    </h2>
+  );
+}

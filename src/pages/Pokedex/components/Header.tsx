@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
-import { Icon, SubTitleSlide, TitleSlide, Toggle } from '@/newComponents';
+import { SubTitleSlide, TitleSlide, Toggle } from '@/newComponents/common';
+import { Icon } from '@/newComponents';
 import { EVName, TypeEnum } from '@/types/Pokemon';
 import { BoolKeys, ValueKeys } from '@/utils';
 

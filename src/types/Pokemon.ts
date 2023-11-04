@@ -164,6 +164,8 @@ export enum TypeEnum {
   '龍' = 'Dragon',
 }
 
+export const TYPE_MAP = Object.keys(TypeEnum);
+
 export enum BgType {
   '蟲' = 'bg-type-bug',
   '惡' = 'bg-type-dark',
