@@ -6,5 +6,6 @@ import { ReactComponent as Filter } from '@/assets/icon/Filter.svg';
 import { ReactComponent as BackToTop } from '@/assets/icon/BackToTop.svg';
 import { ReactComponent as Close } from '@/assets/icon/Close.svg';
 import { ReactComponent as Books } from '@/assets/icon/Books.svg';
+import { ReactComponent as Book } from '@/assets/icon/Book.svg';
 
-export { Game, ArrowForward, ArrowBack, Search, Filter, BackToTop, Close, Books };
+export { Game, ArrowForward, ArrowBack, Search, Filter, BackToTop, Close, Books, Book };

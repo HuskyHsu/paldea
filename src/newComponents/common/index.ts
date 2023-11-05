@@ -5,3 +5,5 @@ export * from './TitleSlide';
 export * from './Indicator';
 export * from './Toggle';
 export * from './Buttons';
+export * from './Filter';
+export * from './SearchBar';
