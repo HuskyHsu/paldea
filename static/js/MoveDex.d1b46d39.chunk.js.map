@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/MoveDex.d1b46d39.chunk.js","mappings":"wHAIA,UAJA,WACE,OAAO,gBAAKA,UAAU,6BAA4B,gEACpD,C","sources":["pages/MoveDex/MoveDex.tsx"],"sourcesContent":["function MoveDex() {\n  return <div className=\"mb-4 flex flex-col gap-y-4\">新的招式清單施工ing</div>;\n}\n\nexport default MoveDex;\n"],"names":["className"],"sourceRoot":""}
