@@ -7,6 +7,7 @@ import { PokemonListProvider, BackToTopProvider } from '@/newComponents/contexts
 
 const Pokedex = lazy(() => import(/* webpackChunkName: "Pokedex" */ '@/pages/Pokedex/Pokedex'));
 const Pokemon = lazy(() => import(/* webpackChunkName: "Pokemon" */ '@/pages/Pokemon/Pokemon'));
+const MoveDex = lazy(() => import(/* webpackChunkName: "MoveDex" */ '@/pages/MoveDex/MoveDex'));
 
 export function Router() {
   return (
@@ -19,6 +20,7 @@ export function Router() {
               <Route index element={<Pokedex />} />
               <Route path="pokedex" element={<Pokedex />} />
               <Route path="pokedex/:nameId" element={<Pokemon />} />
+              <Route path="movedex" element={<MoveDex />} />
 
               <Route path="oldList" element={<List />} />
               <Route path="moves" element={<Moves />} />

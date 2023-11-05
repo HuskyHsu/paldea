@@ -73,6 +73,14 @@ function MainLayout() {
           >
             <Icon.Book className="h-5 w-5 fill-current" />
           </Item>
+          <Item
+            text={'招式清單'}
+            color="bg-custom-blue"
+            selected={hash === 'movedex'}
+            onClick={() => updateNav('movedex')}
+          >
+            <Icon.Book className="h-5 w-5 fill-current" />
+          </Item>
         </div>
       </aside>
       <div
