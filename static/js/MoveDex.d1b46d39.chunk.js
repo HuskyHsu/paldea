@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkpaldea=self.webpackChunkpaldea||[]).push([[842],{616:function(e,a,l){l.r(a);var n=l(184);a.default=function(){return(0,n.jsx)("div",{className:"mb-4 flex flex-col gap-y-4",children:"\u65b0\u7684\u62db\u5f0f\u6e05\u55ae\u65bd\u5de5ing"})}}}]);
-//# sourceMappingURL=MoveDex.d1b46d39.chunk.js.map
