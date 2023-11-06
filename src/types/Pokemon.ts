@@ -53,7 +53,7 @@ export enum EVName {
   'Spe' = '速度',
 }
 // Move
-type Move = {
+export type Move = {
   pid: number;
   nameZh: string;
   nameJp: string;

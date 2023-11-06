@@ -25,7 +25,7 @@ type colValue = {
 const columns = [
   {
     header: '挑選',
-    value: ({ row, fn = () => {}, checked = false }: colValue) => (
+    value: ({ fn = () => {}, checked = false }: colValue) => (
       <input
         type="checkbox"
         checked={checked}
