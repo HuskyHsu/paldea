@@ -1,2 +1,2 @@
 export * from './Header';
-export * from './MoveDetail';
+export * from './Intersection';

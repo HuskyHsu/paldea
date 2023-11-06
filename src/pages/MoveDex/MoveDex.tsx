@@ -3,11 +3,12 @@ import { useSearchParams } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { Hr } from '@/newComponents/common';
+import { MoveDetail } from '@/newComponents/game';
 import { Icon } from '@/newComponents';
 import { Accuracy, FullMove, Move } from '@/types/Pokemon';
 import { ValueKeys, api } from '@/utils';
 
-import { Header, MoveDetail } from './components';
+import { Header } from './components';
 import { useMoveListInfo } from './api';
 
 export type Filter = {
@@ -128,6 +129,18 @@ function MoveDex() {
     };
   };
 
+  const updateMoveMap = async (key: number, nameZh: string) => {
+    if (moveMap[key] !== undefined) {
+      return;
+    }
+
+    const moveData = await api<FullMove>(`/data/move/${nameZh}.json`);
+    setMoveMap((prev) => {
+      prev[key] = moveData;
+      return prev;
+    });
+  };
+
   const handleClick = async (panelKey: number, nameZh: string) => {
     const updatedPanels = new Set(expandedPanels);
     if (updatedPanels.has(panelKey)) {
@@ -136,11 +149,7 @@ function MoveDex() {
       updatedPanels.add(panelKey);
 
       if (moveMap[panelKey] === undefined) {
-        const moveData = await api<FullMove>(`/data/move/${nameZh}.json`);
-        setMoveMap((prev) => {
-          prev[panelKey] = moveData;
-          return prev;
-        });
+        updateMoveMap(panelKey, nameZh);
       }
     }
 
@@ -151,6 +160,7 @@ function MoveDex() {
     <div className="mb-4 flex flex-col gap-y-4">
       <Header filter={filter} updateState={updateState} />
       <Hr />
+      {/* <Intersection fullMoves={[...pick].map((pid) => moveMap[pid])} /> */}
       <div className="-mx-4 flex flex-col gap-4 md:mx-0">
         <ul className="text-sm">
           <li
@@ -171,6 +181,10 @@ function MoveDex() {
           {allMoves
             .filter((move) => {
               let display = true;
+
+              if (pick.has(move.pid)) {
+                return display;
+              }
 
               if (filter.keyword !== '') {
                 display =
@@ -236,6 +250,7 @@ function MoveDex() {
                             }
                             return new Set([...prev]);
                           });
+                          updateMoveMap(move.pid, move.nameZh);
                         },
                       })}
                     </span>
