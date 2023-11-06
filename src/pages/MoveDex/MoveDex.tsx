@@ -38,7 +38,7 @@ const columns = [
         className="h-5 w-5 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500"
       />
     ),
-    meta: 'w-[10%]',
+    meta: 'w-[10%] md:w-[6%]',
   },
   {
     header: '招式名稱',
@@ -53,36 +53,41 @@ const columns = [
         {row.nameZh}
       </a>
     ),
-    meta: 'w-[21%]',
+    meta: 'w-[21%] md:w-[18%]',
   },
   {
     header: '屬性',
     value: ({ row }: colValue) => <Icon.Game.Type type={row.type} className="h-6 w-full" />,
-    meta: 'w-[15%]',
+    meta: 'w-[15%] md:w-[8%]',
   },
   {
     header: '分類',
     value: ({ row }: colValue) => (
       <Icon.Game.MoveCategory type={row.category} className="h-6 w-full" />
     ),
-    meta: 'w-[15%]',
+    meta: 'w-[15%] md:w-[8%]',
   },
   {
     header: '威力',
     value: ({ row }: colValue) =>
       row.power < 1 ? Accuracy[row.power.toString() as keyof typeof Accuracy] : row.power,
-    meta: 'w-[13%]',
+    meta: 'w-[13%] md:w-[8%]',
   },
   {
     header: '命中',
     value: ({ row }: colValue) =>
       row.accuracy < 1 ? Accuracy[row.accuracy.toString() as keyof typeof Accuracy] : row.accuracy,
-    meta: 'w-[13%]',
+    meta: 'w-[13%] md:w-[8%]',
   },
   {
     header: 'PP',
     value: ({ row }: colValue) => row.PP,
-    meta: 'w-[13%]',
+    meta: 'w-[13%] md:w-[8%]',
+  },
+  {
+    header: '說明',
+    value: ({ row }: colValue) => <span className="whitespace-normal">{row.description}</span>,
+    meta: 'hidden md:block md:w-[36%]',
   },
 ];
 
@@ -202,6 +207,7 @@ function MoveDex() {
                   className={clsx(
                     'flex cursor-pointer border-b-[1px] py-1 px-2 md:px-0',
                     'hover:bg-gray-50',
+                    'items-center',
                     pick.has(move.pid) && 'bg-gray-100'
                   )}
                   key={move.pid}
