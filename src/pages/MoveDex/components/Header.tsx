@@ -1,8 +1,9 @@
 import clsx from 'clsx';
-import { SearchBar } from '@/newComponents/common';
+import { Buttons, SearchBar, SubTitleSlide } from '@/newComponents/common';
 import { Icon } from '@/newComponents';
 import { ValueKeys } from '@/utils';
 import { Filter } from '../MoveDex';
+import { TYPE_MAP } from '@/types/Pokemon';
 
 type Props = {
   filter: Filter;
@@ -10,6 +11,9 @@ type Props = {
 };
 
 export function Header({ filter, updateState }: Props) {
+  const typeUpdate = updateState('type');
+  const categoryUpdate = updateState('category');
+
   return (
     <header>
       <div className="flex flex-col justify-between gap-x-2 md:flex-row md:items-center">
@@ -26,6 +30,32 @@ export function Header({ filter, updateState }: Props) {
             onChange={updateState('keyword')}
           />
         </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <SubTitleSlide title="屬性" />
+        <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
+          {TYPE_MAP.map((type) => (
+            <button onClick={() => typeUpdate(type)} key={type}>
+              <Icon.Game.Type
+                type={type}
+                className={clsx(
+                  'h-8 w-8',
+                  filter.type !== '' && filter.type !== type && 'opacity-30'
+                )}
+              />
+            </button>
+          ))}
+        </div>
+        <SubTitleSlide title="分類" />
+        <Buttons
+          list={[
+            { name: '物理', val: '物理' },
+            { name: '特殊', val: '特殊' },
+            { name: '變化', val: '變化' },
+          ]}
+          currVal={filter.category}
+          updateState={(val) => categoryUpdate(val)}
+        />
       </div>
     </header>
   );
