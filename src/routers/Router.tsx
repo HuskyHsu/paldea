@@ -2,7 +2,6 @@ import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import { QueryProvider } from '@/components';
-import { List, Moves } from '@/pages';
 import { PokemonListProvider, BackToTopProvider } from '@/newComponents/contexts';
 
 const Pokedex = lazy(() => import(/* webpackChunkName: "Pokedex" */ '@/pages/Pokedex/Pokedex'));
@@ -21,9 +20,6 @@ export function Router() {
               <Route path="pokedex" element={<Pokedex />} />
               <Route path="pokedex/:nameId" element={<Pokemon />} />
               <Route path="movedex" element={<MoveDex />} />
-
-              <Route path="oldList" element={<List />} />
-              <Route path="moves" element={<Moves />} />
             </Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
