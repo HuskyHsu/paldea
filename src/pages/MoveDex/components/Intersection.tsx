@@ -1,6 +1,6 @@
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { PokemonBadge } from '@/newComponents/game';
-import { FullMove, Move, SubPokemon } from '@/types/Pokemon';
+import { FullMove, Move } from '@/types/Pokemon';
 
 type Props = {
   fullMoves: FullMove[];
