@@ -67,14 +67,6 @@ function MainLayout() {
           </Item>
           <Item
             text={'招式清單'}
-            color="bg-custom-green"
-            selected={hash === 'moves'}
-            onClick={() => updateNav('moves')}
-          >
-            <Icon.Book className="h-5 w-5 fill-current" />
-          </Item>
-          <Item
-            text={'招式清單'}
             color="bg-custom-blue"
             selected={hash === 'movedex'}
             onClick={() => updateNav('movedex')}

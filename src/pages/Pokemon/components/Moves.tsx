@@ -121,13 +121,13 @@ export function Moves({ pm }: Props) {
     .map((move) => {
       let key = `${move.pid}`;
       if ('level' in move) {
-        key += `:${move.level}`;
+        key += `:level${move.level}`;
       }
       if ('pm' in move) {
-        key += `:${move.pm.link}`;
+        key += `:PM${move.pm.link}`;
       }
       if ('TMPid' in move) {
-        key += `:${move.TMPid}`;
+        key += `:TM${move.TMPid}`;
       }
 
       return {

@@ -8,7 +8,7 @@ import { Icon } from '@/newComponents';
 import { Accuracy, FullMove, Move } from '@/types/Pokemon';
 import { ValueKeys, api } from '@/utils';
 
-import { Header } from './components';
+import { Header, Intersection } from './components';
 import { useMoveListInfo } from './api';
 
 export type Filter = {
@@ -148,9 +148,7 @@ function MoveDex() {
     } else {
       updatedPanels.add(panelKey);
 
-      if (moveMap[panelKey] === undefined) {
-        updateMoveMap(panelKey, nameZh);
-      }
+      await updateMoveMap(panelKey, nameZh);
     }
 
     setExpandedPanels(updatedPanels);
@@ -160,7 +158,10 @@ function MoveDex() {
     <div className="mb-4 flex flex-col gap-y-4">
       <Header filter={filter} updateState={updateState} />
       <Hr />
-      {/* <Intersection fullMoves={[...pick].map((pid) => moveMap[pid])} /> */}
+      {pick.size >= 2 && pick.size <= 4 && (
+        <Intersection fullMoves={[...pick].map((pid) => moveMap[pid])} />
+      )}
+
       <div className="-mx-4 flex flex-col gap-4 md:mx-0">
         <ul className="text-sm">
           <li
@@ -241,7 +242,9 @@ function MoveDex() {
                       {col.value({
                         row: move,
                         checked: pick.has(move.pid),
-                        fn: () => {
+                        fn: async () => {
+                          await updateMoveMap(move.pid, move.nameZh);
+
                           setPick((prev) => {
                             if (prev.has(move.pid)) {
                               prev.delete(move.pid);
@@ -250,7 +253,6 @@ function MoveDex() {
                             }
                             return new Set([...prev]);
                           });
-                          updateMoveMap(move.pid, move.nameZh);
                         },
                       })}
                     </span>

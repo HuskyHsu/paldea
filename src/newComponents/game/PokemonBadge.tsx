@@ -19,7 +19,7 @@ export function PokemonBadge({ pm, size = 'text-xs', text }: Props) {
         BgFromType[pm.types[0] as keyof typeof BgFromType],
         BgToType[pm.types[pm.types.length - 1] as keyof typeof BgToType]
       )}
-      to={`/pokedex/${pm.link}`}
+      to={`/pokedex/${pm.nameZh}${pm.altForm ? '-' + pm.altForm : ''}`}
     >
       {pm.nameZh}
       {pm.altForm && `-${pm.altForm}`}
