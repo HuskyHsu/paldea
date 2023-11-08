@@ -25,15 +25,34 @@ function Type({ type, className = 'w-5 h-5' }: { type: string; className?: strin
   );
 }
 
-function PmIcon({ pm }: { pm: Pokemon | SubPokemon }) {
+function PmIcon({ pm, className = '' }: { pm: Pokemon | SubPokemon; className?: string }) {
   return (
     <img
-      className={clsx('pointer-events-none w-auto')}
-      src={`${process.env.PUBLIC_URL}/image/home_pick/${pm.link}.png`}
+      className={clsx('pointer-events-none w-auto', className)}
+      src={`${process.env.PUBLIC_URL}/image/pmIcon/${pm.link}.png`}
       alt={pm.nameZh}
       loading="lazy"
     />
   );
 }
 
-export { Type, MoveCategory, PmIcon };
+function PmHome({
+  pm,
+  shiny = false,
+  className = '',
+}: {
+  pm: Pokemon | SubPokemon;
+  shiny?: boolean;
+  className?: string;
+}) {
+  return (
+    <img
+      className={clsx('pointer-events-none w-auto', className)}
+      src={`${process.env.PUBLIC_URL}/image/home/${pm.link}${shiny ? '-s' : ''}.png`}
+      alt={pm.nameZh}
+      loading="lazy"
+    />
+  );
+}
+
+export { Type, MoveCategory, PmIcon, PmHome };

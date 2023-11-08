@@ -19,7 +19,8 @@
 
 - bug:
 
-  1.  [ ] PokemonBadge
+  1. [ ] PokemonBadge
+  2. [ ] 赫月熊遺傳招式
 
 ### Guide
 

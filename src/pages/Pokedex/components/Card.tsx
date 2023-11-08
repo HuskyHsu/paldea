@@ -60,8 +60,6 @@ export function Card({ pokemon, filter, display }: Props) {
     ? (pokemon[filter.pokedex as PokedexFrom] || 0).toString().padStart(3, '0')
     : pokemon.pid.toString().padStart(4, '0');
 
-  const link = pokemon.link;
-
   return (
     <div
       className={clsx(
@@ -75,12 +73,7 @@ export function Card({ pokemon, filter, display }: Props) {
     >
       <header className={'relative h-6 md:h-auto'}>
         <span className="hidden whitespace-nowrap md:block">#{pid}</span>
-        <img
-          className={clsx('pointer-events-none w-auto', 'absolute bottom-0 md:-right-8')}
-          src={`${process.env.PUBLIC_URL}/image/icons/${link}.png`}
-          alt={pokemon.nameZh}
-          loading="lazy"
-        />
+        <Icon.Game.PmIcon pm={pokemon} className="absolute bottom-0 md:-right-8" />
       </header>
       <hr className="border-0 border-t-[1px] border-[#A29834]" />
       <div className="flex h-full flex-col justify-between gap-y-2">
