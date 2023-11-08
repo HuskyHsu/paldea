@@ -29,7 +29,7 @@ function PmIcon({ pm }: { pm: Pokemon | SubPokemon }) {
   return (
     <img
       className={clsx('pointer-events-none w-auto')}
-      src={`${process.env.PUBLIC_URL}/image/icons/${pm.link}.png`}
+      src={`${process.env.PUBLIC_URL}/image/home_pick/${pm.link}.png`}
       alt={pm.nameZh}
       loading="lazy"
     />
