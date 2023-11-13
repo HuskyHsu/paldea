@@ -19,8 +19,9 @@
 
 - bug:
 
-  1. [ ] PokemonBadge
+  1. [x] PokemonBadge
   2. [x] 赫月熊遺傳招式
+  3. [x] 單一招式的打擊面
 
 ### Guide
 

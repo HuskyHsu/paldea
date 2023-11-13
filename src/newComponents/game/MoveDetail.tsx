@@ -1,4 +1,4 @@
-import { AttackRange, PokemonBadge } from '@/newComponents/game';
+import { AttackRange, MoveEffective, PokemonBadge } from '@/newComponents/game';
 import { FullMove, LevelMap } from '@/types/Pokemon';
 
 type Prop = {
@@ -101,9 +101,11 @@ export function MoveDetail({
       <p>{move.description}</p>
       {move.category !== '變化' && (
         <>
-          {/* <hr className="my-3 h-px border-0 bg-gray-200" /> */}
-          <h6 className="py-2 text-lg font-bold">招式打點</h6>
-          <AttackRange types={[move.type]} />
+          <div className="flex gap-4">
+            <MoveEffective title={'效果絕佳'} type={move.type} targetRate={2} />
+            <MoveEffective title={'效果不好'} type={move.type} targetRate={0.5} />
+            <MoveEffective title={'沒有效果'} type={move.type} targetRate={0} />
+          </div>
         </>
       )}
       <LevelingUps move={move} onlyEvolve={onlyEvolve} />

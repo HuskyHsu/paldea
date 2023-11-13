@@ -12,6 +12,12 @@ function MainLayout() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const hash = location.pathname.split('/')[1];
+
+  const updateNav = (to: string) => {
+    navigate(to);
+  };
+
   useEffect(() => {
     if (!ref.current) return;
 
@@ -38,15 +44,6 @@ function MainLayout() {
     }
   }, [location, navigate]);
 
-  const [hash, setHash] = useState(
-    window.location.hash.replace('#/', '').split('?')[0].split('/')[0]
-  );
-
-  const updateNav = (to: string) => {
-    setHash(to);
-    navigate(to);
-  };
-
   return (
     <div className="flex h-screen max-h-screen flex-col md:max-h-full md:flex-row">
       <aside className="flex w-screen flex-col space-y-2 md:h-screen md:w-64 md:p-4">
@@ -60,7 +57,7 @@ function MainLayout() {
           <Item
             text={'圖鑑清單'}
             color="bg-custom-red"
-            selected={hash === 'pokedex' || hash === ''}
+            selected={['pokedex', ''].includes(hash)}
             onClick={() => updateNav('')}
           >
             <Icon.Books className="h-5 w-5 fill-current" />
