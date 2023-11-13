@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';

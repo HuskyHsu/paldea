@@ -1,4 +1,4 @@
-import { AttackRange, MoveEffective, PokemonBadge } from '@/newComponents/game';
+import { MoveEffective, PokemonBadge } from '@/newComponents/game';
 import { FullMove, LevelMap } from '@/types/Pokemon';
 
 type Prop = {
