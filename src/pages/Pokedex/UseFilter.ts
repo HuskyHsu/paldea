@@ -1,19 +1,47 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { BoolKeys, ValueKeys } from '@/utils';
 import { Filter, Display } from './Pokedex';
 import { PokedexFrom } from '@/types/Pokemon';
 
+const localStorageKey = 'pokeDexPage';
+
+function getCache() {
+  const cacheStr = localStorage.getItem(localStorageKey);
+  let cacheObj = {};
+  if (cacheStr !== null) {
+    cacheObj = JSON.parse(cacheStr);
+  }
+
+  return cacheObj;
+}
+
+function getCacheValue(obj: Record<string, string>, key: string): any | null {
+  if (key in obj) {
+    return obj[key];
+  }
+  return null;
+}
+
+function FindVal(searchParams: URLSearchParams, cacheObj: Record<string, string>, key: string) {
+  return searchParams.get(key) || getCacheValue(cacheObj, key);
+}
+
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
+  let cacheObj = getCache();
+
   const filter: Filter = {
-    keyword: searchParams.get('keyword') || '',
-    pokedex: (searchParams.get('pokedex') || 'paldea') as PokedexFrom | 'home' | 'national',
-    page: Number(searchParams.get('page') || 1),
-    types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
-    ability: searchParams.get('ability') || '',
-    EV: searchParams.get('EV') || '',
+    keyword: FindVal(searchParams, cacheObj, 'keyword') || '',
+    pokedex: (FindVal(searchParams, cacheObj, 'pokedex') || 'paldea') as
+      | PokedexFrom
+      | 'home'
+      | 'national',
+    page: Number(FindVal(searchParams, cacheObj, 'page') || 1),
+    types: new Set((FindVal(searchParams, cacheObj, 'types') || '').split('-').filter(Boolean)),
+    ability: FindVal(searchParams, cacheObj, 'ability') || '',
+    EV: FindVal(searchParams, cacheObj, 'EV') || '',
   };
 
   const [display, setDisplay] = useState<Display>({
@@ -88,6 +116,17 @@ export function UseFilter() {
       });
     };
   };
+
+  useEffect(() => {
+    const cacheObj: Record<string, string> = {};
+    searchParams.forEach((val, key) => {
+      cacheObj[key] = val;
+    });
+
+    if (Object.keys(cacheObj).length > 0) {
+      localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
+    }
+  }, [searchParams]);
 
   return {
     filter,
