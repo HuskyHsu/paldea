@@ -1,11 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { BoolKeys, ValueKeys } from '@/utils';
 import { Filter, Display } from './Pokedex';
 import { PokedexFrom } from '@/types/Pokemon';
 
+const localStorageKey = 'pokeDexPage';
+
+function getCache(): Record<string, string> {
+  const cacheStr = localStorage.getItem(localStorageKey);
+  let cacheObj = {};
+  if (cacheStr !== null) {
+    cacheObj = JSON.parse(cacheStr);
+  }
+
+  return cacheObj;
+}
+
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  let cacheObj = getCache();
+  useEffect(() => {
+    for (const key of Object.keys(cacheObj)) {
+      if (searchParams.get(key) === null) {
+        setSearchParams((prev) => {
+          prev.set(key, cacheObj[key as keyof typeof cacheObj]);
+          return prev;
+        });
+      } else {
+      }
+    }
+  }, [cacheObj, searchParams, setSearchParams]);
 
   const filter: Filter = {
     keyword: searchParams.get('keyword') || '',
@@ -27,16 +52,24 @@ export function UseFilter() {
       if (val === '') {
         setSearchParams((prev) => {
           prev.delete(key);
+          delete cacheObj[key as keyof typeof cacheObj];
+
+          localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
           return prev;
         });
       } else {
         setSearchParams((prev) => {
           if (prev.has(key) && prev.get(key) === val) {
             prev.delete(key);
+            delete cacheObj[key as keyof typeof cacheObj];
           } else {
             prev.set(key, val);
+            cacheObj[key as keyof typeof cacheObj] = val;
           }
           prev.delete('page');
+          delete cacheObj['page'];
+
+          localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
           return prev;
         });
       }
@@ -55,10 +88,13 @@ export function UseFilter() {
 
         if (vals.size === 0) {
           prev.delete(key);
+          delete cacheObj[key as keyof typeof cacheObj];
         } else {
           prev.set(key, [...vals].join('-'));
+          cacheObj[key as keyof typeof cacheObj] = [...vals].join('-');
         }
 
+        localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
         return prev;
       });
     };
@@ -88,6 +124,17 @@ export function UseFilter() {
       });
     };
   };
+
+  useEffect(() => {
+    const cacheObj: Record<string, string> = {};
+    searchParams.forEach((val, key) => {
+      cacheObj[key] = val;
+    });
+
+    if (Object.keys(cacheObj).length > 0) {
+      localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
+    }
+  }, [searchParams]);
 
   return {
     filter,

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -107,6 +107,10 @@ function MoveDex() {
   };
 
   const { data: allMoves } = useMoveListInfo();
+
+  useEffect(() => {
+    document.title = `Move Pokédex`;
+  }, []);
 
   const updateState = (key: ValueKeys<Filter, string>[keyof Filter]) => {
     return (val: string) => {
