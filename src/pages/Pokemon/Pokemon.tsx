@@ -72,6 +72,10 @@ function PokemonInfo() {
 
   const { data: pm, status } = usePokemonInfo(link);
 
+  useEffect(() => {
+    document.title = `${nameId} Pokédex`;
+  }, [nameId]);
+
   if (pokemonList.length === 0 || status !== 'success') {
     return <></>;
   }

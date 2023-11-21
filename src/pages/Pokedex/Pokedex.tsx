@@ -5,6 +5,7 @@ import { Hr, Loading } from '@/newComponents/common';
 import { usePokemonListContext } from '@/newComponents/contexts';
 import { Card, Pagination, PaginationMobile, Header } from './components';
 import { UseFilter } from './UseFilter';
+import { useEffect } from 'react';
 
 export type Filter = {
   keyword: string;
@@ -28,6 +29,10 @@ function Pokedex() {
     UseFilter();
 
   let { pokemonList: data } = usePokemonListContext();
+
+  useEffect(() => {
+    document.title = `${filter.pokedex} Pokédex`;
+  }, [filter.pokedex]);
 
   if (data.length === 0) {
     return <Loading />;

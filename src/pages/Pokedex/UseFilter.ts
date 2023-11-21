@@ -6,7 +6,7 @@ import { PokedexFrom } from '@/types/Pokemon';
 
 const localStorageKey = 'pokeDexPage';
 
-function getCache() {
+function getCache(): Record<string, string> {
   const cacheStr = localStorage.getItem(localStorageKey);
   let cacheObj = {};
   if (cacheStr !== null) {
@@ -16,32 +16,29 @@ function getCache() {
   return cacheObj;
 }
 
-function getCacheValue(obj: Record<string, string>, key: string): any | null {
-  if (key in obj) {
-    return obj[key];
-  }
-  return null;
-}
-
-function FindVal(searchParams: URLSearchParams, cacheObj: Record<string, string>, key: string) {
-  return searchParams.get(key) || getCacheValue(cacheObj, key);
-}
-
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   let cacheObj = getCache();
+  useEffect(() => {
+    for (const key of Object.keys(cacheObj)) {
+      if (searchParams.get(key) === null) {
+        setSearchParams((prev) => {
+          prev.set(key, cacheObj[key as keyof typeof cacheObj]);
+          return prev;
+        });
+      } else {
+      }
+    }
+  }, [cacheObj, searchParams, setSearchParams]);
 
   const filter: Filter = {
-    keyword: FindVal(searchParams, cacheObj, 'keyword') || '',
-    pokedex: (FindVal(searchParams, cacheObj, 'pokedex') || 'paldea') as
-      | PokedexFrom
-      | 'home'
-      | 'national',
-    page: Number(FindVal(searchParams, cacheObj, 'page') || 1),
-    types: new Set((FindVal(searchParams, cacheObj, 'types') || '').split('-').filter(Boolean)),
-    ability: FindVal(searchParams, cacheObj, 'ability') || '',
-    EV: FindVal(searchParams, cacheObj, 'EV') || '',
+    keyword: searchParams.get('keyword') || '',
+    pokedex: (searchParams.get('pokedex') || 'paldea') as PokedexFrom | 'home' | 'national',
+    page: Number(searchParams.get('page') || 1),
+    types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
+    ability: searchParams.get('ability') || '',
+    EV: searchParams.get('EV') || '',
   };
 
   const [display, setDisplay] = useState<Display>({
@@ -55,16 +52,24 @@ export function UseFilter() {
       if (val === '') {
         setSearchParams((prev) => {
           prev.delete(key);
+          delete cacheObj[key as keyof typeof cacheObj];
+
+          localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
           return prev;
         });
       } else {
         setSearchParams((prev) => {
           if (prev.has(key) && prev.get(key) === val) {
             prev.delete(key);
+            delete cacheObj[key as keyof typeof cacheObj];
           } else {
             prev.set(key, val);
+            cacheObj[key as keyof typeof cacheObj] = val;
           }
           prev.delete('page');
+          delete cacheObj['page'];
+
+          localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
           return prev;
         });
       }
@@ -83,10 +88,13 @@ export function UseFilter() {
 
         if (vals.size === 0) {
           prev.delete(key);
+          delete cacheObj[key as keyof typeof cacheObj];
         } else {
           prev.set(key, [...vals].join('-'));
+          cacheObj[key as keyof typeof cacheObj] = [...vals].join('-');
         }
 
+        localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
         return prev;
       });
     };
