@@ -22,38 +22,26 @@ def dict_factory(cursor, row):
     return {key: value for key, value in zip(fields, row)}
 
 
-names_dict = get_dict("names", 3, 1)
-type_dict = get_dict("types", 0, 1)
-ability_dict = get_dict("abilities", 3, 1)
-ability_dict["Mind’s Eye"] = ability_dict["Mind's Eye"]
-ability_id_dict = get_dict("abilities", 1, 0)
-altForm_dict = get_dict("altForm", 0, 1)
-evolutionItem_dict = get_dict("evolutionItem", 0, 1)
-evolutionMethod_dict = get_dict("evolutionMethod", 0, 1)
+def nameEnToZh(names_dict, raw_data):
+    for nameEn, nameZh in list(names_dict.items())[::-1]:
+        raw_data = raw_data.replace(f" - {nameEn}", f" - {nameZh}")
+        raw_data = raw_data.replace(f"{nameEn}-", f"{nameZh}-")
 
-move_dict = get_dict("moves", 3, 1)
-move_id_dict = get_dict("moves", 1, 0)
-egg_group_dict = get_dict("eggGroup", 1, 0)
-hisui_dict = get_dict("hisui", 2, 0)
+    return raw_data
 
-with open("rawdata/2.0.1.txt", "r") as file:
-    raw_data = file.read()
 
-if __name__ == "__main__":
+def rowsToJsonArray(raw_data):
     new_data = []
+    name_link_map = {}
+
     curr = {}
     curr_index = 0
     list_key = None
 
-    TM_moves = {}
+    # 匯出所有進化條件用來要翻譯的，過程產物
+    # 對應到 evolutionItem.csv, evolutionMethod.csv
     evolutionItem = set()
     evolutionMethod = set()
-    name_link_map = {}
-    source_map = {}
-
-    for nameEn, nameZh in list(names_dict.items())[::-1]:
-        raw_data = raw_data.replace(f" - {nameEn}", f" - {nameZh}")
-        raw_data = raw_data.replace(f"{nameEn}-", f"{nameZh}-")
 
     raw_data = raw_data.split("\n")
     for i, line in enumerate(raw_data):
@@ -190,7 +178,6 @@ if __name__ == "__main__":
                 for move in curr["TMLearn"]:
                     [tm, name] = move[1:].split("] ")
                     moves_.append({"tm": tm, "name": move_dict[name]})
-                    TM_moves[tm] = move_dict[name]
 
                 curr["TMLearn"] = moves_
 
@@ -202,6 +189,12 @@ if __name__ == "__main__":
 
             new_data.append(curr)
             curr = {}
+
+    return new_data, name_link_map
+
+
+def updateEvolves(new_data):
+    source_map = {}
 
     for data in new_data:
         if "Evolves" in data:
@@ -223,10 +216,10 @@ if __name__ == "__main__":
         if data["source"] in source_map:
             data["source"] = source_map[data["source"]]
 
-    # 将处理后的数据写入新文件
-    # with open("rawdata/2.0.1_zh.json", "w") as output_file:
-    #     output_file.write(json.dumps(new_data, indent=4, ensure_ascii=False))
+    return source_map
 
+
+def init_db():
     conn = sqlite3.connect("rawdata/mapping/sv.db")
     conn.row_factory = dict_factory
 
@@ -237,6 +230,40 @@ if __name__ == "__main__":
     cursor.execute("DELETE FROM pokemon_TMs;")
     cursor.execute("DELETE FROM pokemon_evolves;")
     conn.commit()
+
+    return conn, cursor
+
+
+names_dict = get_dict("names", 3, 1)
+type_dict = get_dict("types", 0, 1)
+ability_dict = get_dict("abilities", 3, 1)
+ability_dict["Mind’s Eye"] = ability_dict["Mind's Eye"]
+ability_id_dict = get_dict("abilities", 1, 0)
+altForm_dict = get_dict("altForm", 0, 1)
+evolutionItem_dict = get_dict("evolutionItem", 0, 1)
+evolutionMethod_dict = get_dict("evolutionMethod", 0, 1)
+
+move_dict = get_dict("moves", 3, 1)
+move_id_dict = get_dict("moves", 1, 0)
+egg_group_dict = get_dict("eggGroup", 1, 0)
+hisui_dict = get_dict("hisui", 2, 0)
+
+with open("rawdata/2.0.1.txt", "r") as file:
+    raw_data = file.read()
+
+if __name__ == "__main__":
+    source_map = {}
+
+    raw_data = nameEnToZh(names_dict, raw_data)
+    new_data, name_link_map = rowsToJsonArray(raw_data)
+
+    source_map = updateEvolves(new_data)
+
+    # 將初步整理成json的檔案會出查看
+    # with open("rawdata/2.0.1_zh.json", "w") as output_file:
+    #     output_file.write(json.dumps(new_data, indent=4, ensure_ascii=False))
+
+    conn, cursor = init_db()
 
     for data in new_data:
         if "-" in data["Name"] and data["Name"] not in altForm_dict:
