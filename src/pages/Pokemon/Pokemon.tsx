@@ -47,7 +47,7 @@ function PokemonInfo() {
   const navigate = useNavigate();
   const { nameId = '噴火龍' } = useParams();
   const [name, ...altFormList] = nameId.split('-');
-  const altForm = altFormList.join('-');
+  const altForm = altFormList.length > 0 ? altFormList.join('-') : undefined;
   const { pokemonList } = usePokemonListContext();
   const tabList = ['基本資訊', '屬性與能力值', '招式清單'];
   const [tab, setTab] = useState(() => {
