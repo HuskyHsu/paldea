@@ -94,6 +94,9 @@ export function UseFilter() {
           cacheObj[key as keyof typeof cacheObj] = [...vals].join('-');
         }
 
+        prev.delete('page');
+        delete cacheObj['page'];
+
         localStorage.setItem(localStorageKey, JSON.stringify(cacheObj));
         return prev;
       });
