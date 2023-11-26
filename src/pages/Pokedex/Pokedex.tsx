@@ -14,6 +14,7 @@ export type Filter = {
   types: Set<string>;
   ability: string;
   EV: string;
+  tags: Set<string>;
 };
 
 export type Display = {
@@ -80,6 +81,10 @@ function Pokedex() {
     if (display && filter.EV !== '') {
       const index = EVIndex[filter.EV as keyof typeof EVIndex];
       display = display && pm.EVs.every((ev, i) => (i === index ? ev > 0 : ev === 0));
+    }
+
+    if (display && filter.tags.size > 0) {
+      display = display && pm.tags.some((tag) => filter.tags.has(tag));
     }
 
     return display;

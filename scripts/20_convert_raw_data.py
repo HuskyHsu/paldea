@@ -219,6 +219,63 @@ def updateEvolves(new_data):
     return source_map
 
 
+def addLevelUpMoves(data, cursor):
+    if "LevelUpMoves" in data:
+        for move in data["LevelUpMoves"]:
+            cursor.execute(
+                f"INSERT INTO pokemon_moves (pokemon_link, move_id, level) VALUES (?, ?, ?)",
+                (link, move_id_dict[move["name"]], move["level"]),
+            )
+
+
+def addTMLean(data, cursor):
+    if "TMLearn" in data:
+        for move in data["TMLearn"]:
+            cursor.execute(
+                f"INSERT INTO pokemon_TMs (pokemon_link, tm_id) VALUES (?, ?)",
+                (link, int(move["tm"].replace("TM", ""))),
+            )
+
+
+def addEggMoves(data, cursor):
+    if "EggMoves" in data:
+        for move in data["EggMoves"]:
+            cursor.execute(
+                f"INSERT INTO pokemon_moves (pokemon_link, move_id, level) VALUES (?, ?, ?)",
+                (link, move_id_dict[move], -1),
+            )
+
+
+def addReminder(data, cursor):
+    if "Reminder" in data:
+        for move in data["Reminder"]:
+            cursor.execute(
+                f"INSERT INTO pokemon_moves (pokemon_link, move_id, level) VALUES (?, ?, ?)",
+                (link, move_id_dict[move], -2),
+            )
+
+
+def addEvolves(data, cursor):
+    if "Evolves" in data:
+        for evolve in data["Evolves"]:
+            cursor.execute(
+                f"INSERT INTO pokemon_evolves (pokemon_from_link, pokemon_to_link, condition) VALUES (?, ?, ?)",
+                (link, evolve["link"], evolve["condition"]),
+            )
+
+
+def addTags(cursor):
+    with open("rawdata/mapping/tags.json") as f:
+        tags = json.load(f)
+
+    for tag, pokemon_ids in tags.items():
+        for pokemon_id in pokemon_ids:
+            cursor.execute(
+                "INSERT INTO pokemon_tags (pokemon_link, tag) VALUES (?, ?)",
+                (pokemon_id, tag),
+            )
+
+
 def init_db():
     conn = sqlite3.connect("rawdata/mapping/sv.db")
     conn.row_factory = dict_factory
@@ -229,6 +286,7 @@ def init_db():
     cursor.execute("DELETE FROM pokemon_moves;")
     cursor.execute("DELETE FROM pokemon_TMs;")
     cursor.execute("DELETE FROM pokemon_evolves;")
+    cursor.execute("DELETE FROM pokemon_tags;")
     conn.commit()
 
     return conn, cursor
@@ -344,52 +402,14 @@ if __name__ == "__main__":
 
         # conn.commit()
 
-        if "LevelUpMoves" in data:
-            for move in data["LevelUpMoves"]:
-                cursor.execute(
-                    f"INSERT INTO pokemon_moves (pokemon_link, move_id, level) VALUES (?, ?, ?)",
-                    (link, move_id_dict[move["name"]], move["level"]),
-                )
+        addLevelUpMoves(data, cursor)
+        addTMLean(data, cursor)
+        addEggMoves(data, cursor)
+        addReminder(data, cursor)
+        addEvolves(data, cursor)
 
-                # conn.commit()
-
-        if "TMLearn" in data:
-            for move in data["TMLearn"]:
-                cursor.execute(
-                    f"INSERT INTO pokemon_TMs (pokemon_link, tm_id) VALUES (?, ?)",
-                    (link, int(move["tm"].replace("TM", ""))),
-                )
-
-                # conn.commit()
-
-        if "EggMoves" in data:
-            for move in data["EggMoves"]:
-                cursor.execute(
-                    f"INSERT INTO pokemon_moves (pokemon_link, move_id, level) VALUES (?, ?, ?)",
-                    (link, move_id_dict[move], -1),
-                )
-
-                # conn.commit()
-
-        if "Reminder" in data:
-            for move in data["Reminder"]:
-                cursor.execute(
-                    f"INSERT INTO pokemon_moves (pokemon_link, move_id, level) VALUES (?, ?, ?)",
-                    (link, move_id_dict[move], -2),
-                )
-
-                # conn.commit()
-
-        if "Evolves" in data:
-            for evolve in data["Evolves"]:
-                cursor.execute(
-                    f"INSERT INTO pokemon_evolves (pokemon_from_link, pokemon_to_link, condition) VALUES (?, ?, ?)",
-                    (link, evolve["link"], evolve["condition"]),
-                )
-
-                # conn.commit()
-
-        conn.commit()
+    addTags(cursor)
+    conn.commit()
 
     sourceMap = {}
     eggMoveList = []
@@ -1025,6 +1045,20 @@ ORDER BY
 
         if len(row["evolves"]["to"]) == 0:
             del row["evolves"]
+
+        row["tags"] = []
+        for tag in cursor.execute(
+            """
+SELECT
+	tag
+FROM
+	pokemon_tags
+WHERE
+	pokemon_tags.pokemon_link = ?
+""",
+            (row["link"],),
+        ):
+            row["tags"].append(tag["tag"])
 
         with open(f"../public/data/pm/{row['link']}.json", "w") as output_file:
             output_file.write(json.dumps(row))

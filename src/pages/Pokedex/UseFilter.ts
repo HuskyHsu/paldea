@@ -39,6 +39,7 @@ export function UseFilter() {
     types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
     ability: searchParams.get('ability') || '',
     EV: searchParams.get('EV') || '',
+    tags: new Set((searchParams.get('tags') || '').split('-').filter(Boolean)),
   };
 
   const [display, setDisplay] = useState<Display>({

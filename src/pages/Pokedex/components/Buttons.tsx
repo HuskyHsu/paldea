@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 type Props = {
   list: { name: string; val: string }[];
-  currVal: string;
+  currVal: string | Set<string>;
   updateState: (val: string) => void;
 };
 
@@ -16,7 +16,13 @@ export function Buttons({ list, currVal, updateState }: Props) {
             className={clsx(
               'rounded-xl px-2 py-1',
               'whitespace-nowrap shadow-list-items',
-              currVal === item.val ? 'bg-secondary' : 'bg-secondary/40'
+              typeof currVal === 'string'
+                ? currVal === item.val
+                  ? 'bg-secondary'
+                  : 'bg-secondary/40'
+                : currVal.has(item.val)
+                ? 'bg-secondary'
+                : 'bg-secondary/40'
             )}
             onClick={() => {
               updateState(item.val);

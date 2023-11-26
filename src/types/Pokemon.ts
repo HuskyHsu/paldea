@@ -17,6 +17,7 @@ export type Pokemon = {
   source: string;
   genderRatio: number;
   eggGroups: string[];
+  tags: string[];
 };
 
 export type SubPokemon = {

@@ -29,12 +29,16 @@ export function Header({
   const typeUpdate = updateSetState('types');
   const abilityUpdate = updateState('ability');
 
-  const hasFilter = [filter.ability, filter.EV].filter(Boolean).length > 0;
+  const hasFilter = [filter.ability, filter.EV].filter(Boolean).length > 0 || filter.tags.size > 0;
 
   const filterList = [
     { value: filter.ability, name: '特性', key: 'ability' },
     { value: EVName[filter.EV as keyof typeof EVName] || '', name: '努力值', key: 'EV' },
   ];
+
+  const filterListSet = [
+    [...filter.tags].map((tag) => ({ value: tag, name: 'tag', key: 'tags' })),
+  ].flat();
 
   return (
     <header>
@@ -134,6 +138,19 @@ export function Header({
           currVal={filter.EV}
           updateState={updateState('EV')}
         />
+        <SubTitleSlide title="tags" />
+        <Buttons
+          list={[
+            { name: '傳說的寶可夢', val: '傳說的寶可夢' },
+            { name: '幻之寶可夢', val: '幻之寶可夢' },
+            { name: '悖謬寶可夢', val: '悖謬寶可夢' },
+            { name: '准傳說的寶可夢', val: '准傳說的寶可夢' },
+            { name: '朱版限定', val: '朱版限定' },
+            { name: '紫版限定', val: '紫版限定' },
+          ]}
+          currVal={filter.tags}
+          updateState={updateSetState('tags')}
+        />
       </div>
       <div
         className={clsx(
@@ -142,7 +159,7 @@ export function Header({
         )}
       >
         <SubTitleSlide title="進階篩選項目：" />
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {filterList
             .filter(({ value }) => value !== '')
             .map(({ value, name, key }) => (
@@ -162,6 +179,24 @@ export function Header({
                 />
               </span>
             ))}
+          {filterListSet.map(({ value, name, key }) => (
+            <span
+              key={`${name}-${value}`}
+              className={clsx(
+                'flex items-center gap-x-2',
+                'rounded-xl bg-amber-100 px-2 py-1 shadow-list-items',
+                'whitespace-nowrap'
+              )}
+            >
+              {name}：{value}
+              <Icon.Close
+                className="h-3 w-3 cursor-pointer"
+                onClick={() => {
+                  updateSetState(key as keyof typeof updateSetState)(value);
+                }}
+              />
+            </span>
+          ))}
         </div>
       </div>
     </header>
