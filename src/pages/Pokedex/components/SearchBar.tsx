@@ -28,7 +28,8 @@ export function SearchBar({ value, onChange, display, toggleDisplay, hasFilter }
           type="search"
           className={clsx(
             'block w-full rounded-full border border-gray-300',
-            'bg-gray-50 p-2 pl-10 text-sm text-gray-900'
+            'bg-gray-50 p-2 pl-10 text-sm text-gray-900',
+            'search'
           )}
           placeholder="搜尋 名稱(中/英/日), 樣子"
           value={value}
