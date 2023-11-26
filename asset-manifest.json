@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.9d424a9c.css",
-    "main.js": "/paldea/static/js/main.c6d814f8.js",
+    "main.css": "/paldea/static/css/main.5a114968.css",
+    "main.js": "/paldea/static/js/main.cabbfecb.js",
     "Pokedex.css": "/paldea/static/css/Pokedex.ef49c2a7.chunk.css",
-    "Pokedex.js": "/paldea/static/js/Pokedex.9581a67d.chunk.js",
+    "Pokedex.js": "/paldea/static/js/Pokedex.4180a082.chunk.js",
     "Pokemon.css": "/paldea/static/css/Pokemon.ef49c2a7.chunk.css",
     "Pokemon.js": "/paldea/static/js/Pokemon.ec33b211.chunk.js",
     "MoveDex.css": "/paldea/static/css/MoveDex.ef49c2a7.chunk.css",
@@ -24,10 +24,10 @@
     "static/media/Search.svg": "/paldea/static/media/Search.70618b7533946d2ab5e393dce8e77709.svg",
     "static/media/ArrowBack.svg": "/paldea/static/media/ArrowBack.ec2c7f911771dddea2422db143e0cceb.svg",
     "static/media/ArrowForward.svg": "/paldea/static/media/ArrowForward.204ac83ab34908a616d745a4a46e7d3e.svg",
-    "main.9d424a9c.css.map": "/paldea/static/css/main.9d424a9c.css.map",
-    "main.c6d814f8.js.map": "/paldea/static/js/main.c6d814f8.js.map",
+    "main.5a114968.css.map": "/paldea/static/css/main.5a114968.css.map",
+    "main.cabbfecb.js.map": "/paldea/static/js/main.cabbfecb.js.map",
     "Pokedex.ef49c2a7.chunk.css.map": "/paldea/static/css/Pokedex.ef49c2a7.chunk.css.map",
-    "Pokedex.9581a67d.chunk.js.map": "/paldea/static/js/Pokedex.9581a67d.chunk.js.map",
+    "Pokedex.4180a082.chunk.js.map": "/paldea/static/js/Pokedex.4180a082.chunk.js.map",
     "Pokemon.ef49c2a7.chunk.css.map": "/paldea/static/css/Pokemon.ef49c2a7.chunk.css.map",
     "Pokemon.ec33b211.chunk.js.map": "/paldea/static/js/Pokemon.ec33b211.chunk.js.map",
     "MoveDex.ef49c2a7.chunk.css.map": "/paldea/static/css/MoveDex.ef49c2a7.chunk.css.map",
@@ -35,7 +35,7 @@
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d424a9c.css",
-    "static/js/main.c6d814f8.js"
+    "static/css/main.5a114968.css",
+    "static/js/main.cabbfecb.js"
   ]
 }
