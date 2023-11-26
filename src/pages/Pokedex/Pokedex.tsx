@@ -84,7 +84,8 @@ function Pokedex() {
     }
 
     if (display && filter.tags.size > 0) {
-      display = display && pm.tags.some((tag) => filter.tags.has(tag));
+      display =
+        display && pm.tags.length > 0 && [...filter.tags].every((tab) => pm.tags.includes(tab));
     }
 
     return display;

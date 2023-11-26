@@ -138,7 +138,7 @@ export function Header({
           currVal={filter.EV}
           updateState={updateState('EV')}
         />
-        <SubTitleSlide title="tags" />
+        <SubTitleSlide title="tags(複選，交集)" />
         <Buttons
           list={[
             { name: '傳說的寶可夢', val: '傳說的寶可夢' },
