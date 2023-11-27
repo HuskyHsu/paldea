@@ -136,6 +136,39 @@ const renderData: Render[] = [
       </span>
     ),
   },
+  {
+    title: '地區圖鑑',
+    Content: ({ pm }: ContentProps) => (
+      <span className="flex gap-2">
+        {pm.paldea && (
+          <span
+            className={clsx(
+              'py-px',
+              'h-7 w-1/2 md:w-2/5',
+              'border-2 border-solid border-custom-gold',
+              'rounded-full bg-custom-gold/30 text-center text-sm text-black',
+              'whitespace-nowrap'
+            )}
+          >
+            帕底亞#{pm.paldea.toString().padStart(3, '0')}
+          </span>
+        )}
+        {pm.kitakami && (
+          <span
+            className={clsx(
+              'py-px',
+              'h-7 w-1/2 md:w-2/5',
+              'border-2 border-solid border-custom-blue',
+              'rounded-full bg-custom-blue/30 text-center text-sm text-black',
+              'whitespace-nowrap'
+            )}
+          >
+            北上#{pm.kitakami.toString().padStart(3, '0')}
+          </span>
+        )}
+      </span>
+    ),
+  },
 ];
 
 export function BaseInfo({ pm }: Props) {
