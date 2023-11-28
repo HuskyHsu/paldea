@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import { SubTitleSlide } from '@/newComponents/common';
 import { usePokemonListContext } from '@/newComponents/contexts';
+import { SubCard } from '@/newComponents/game';
 import { usePokemonInfo } from './api';
 import {
   BaseInfo,
@@ -102,6 +103,16 @@ function PokemonInfo() {
               <>
                 <SubTitleSlide title="進化途徑" />
                 <Evolution pm={pm} />
+              </>
+            )}
+            {pm.formChangin && (
+              <>
+                <SubTitleSlide title="型態變化" />
+                <div className="mt-4 flex flex-wrap justify-around gap-4">
+                  {pm.formChangin.map((subPm) => (
+                    <SubCard pm={subPm} key={subPm.link} />
+                  ))}
+                </div>
               </>
             )}
           </>

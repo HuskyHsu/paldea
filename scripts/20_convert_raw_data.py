@@ -1060,6 +1060,38 @@ WHERE
         ):
             row["tags"].append(tag["tag"])
 
+        row["formChangin"] = []
+        for pm in cursor.execute(
+            """
+SELECT
+	pokemons. "link",
+	names.nameZh,
+	pokemons.altForm,
+	pokemons.type_1,
+	pokemons.type_2
+FROM
+	pokemons
+	JOIN names ON pokemons.pid = "names".pid
+WHERE
+	pokemons.pid = ?
+ORDER BY
+	pokemons.pid,
+	pokemons.link;
+""",
+            (row["pid"],),
+        ):
+            pm["types"] = [pm["type_1"]]
+            if pm["type_2"] != None:
+                pm["types"].append(pm["type_2"])
+
+            del pm["type_1"]
+            del pm["type_2"]
+
+            row["formChangin"].append(pm)
+
+        if len(row["formChangin"]) == 1:
+            del row["formChangin"]
+
         with open(f"../public/data/pm/{row['link']}.json", "w") as output_file:
             output_file.write(json.dumps(row))
 
@@ -1254,7 +1286,9 @@ ORDER BY
     conn.close()
 
     for row in new_data:
-        del row["moves"]
+        for key in ["moves", "formChangin", "eggGroups", "genderRatio"]:
+            if key in row:
+                del row[key]
 
     with open("../public/data/base_list_201.json", "w") as output_file:
         output_file.write(json.dumps(new_data))

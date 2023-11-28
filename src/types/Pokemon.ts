@@ -15,8 +15,6 @@ export type Pokemon = {
   baseStatsTotal: number;
   EVs: number[];
   source: string;
-  genderRatio: number;
-  eggGroups: string[];
   tags: string[];
 };
 
@@ -30,6 +28,9 @@ export type SubPokemon = {
 export type FullPokemon = Pokemon & {
   moves: MoveInfo;
   evolves?: StartEvolve;
+  formChangin?: SubPokemon[];
+  eggGroups: string[];
+  genderRatio: number;
 };
 
 export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui';
