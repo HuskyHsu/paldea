@@ -2,6 +2,9 @@
 
 ### v2.0 Todo List
 
+1. [ ] release note api
+2. [ ] feature tutorial
+
 - pokedex page:
 
   1. [x] 洗翠圖鑑
@@ -17,6 +20,8 @@
   4. [x] 勾選招式
   5. [x] home 圖示
   6. [ ] 前後頁
+  7. [ ] 圖像優化
+  8. [ ] back 按鈕
 
 - bug:
 
