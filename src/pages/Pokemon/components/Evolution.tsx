@@ -99,9 +99,15 @@ export function Evolution({ pm }: Props) {
     return acc;
   }, [] as JSX.Element[]);
 
-  pm.evolves?.to.forEach((evolution) => {
+  pm.evolves?.to.forEach((evolution, ii) => {
     if (evolution.to) {
       evolution.to.forEach((evolution_, i, list) => {
+        if (ii === 0 && i === 0) {
+          evolutionPath?.push(
+            <span key={9999} className="col-span-3 h-2 w-full border-b-2 md:hidden" />
+          );
+        }
+
         evolutionPath?.push(
           <SubCard
             key={keyId}
