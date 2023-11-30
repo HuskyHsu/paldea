@@ -85,7 +85,11 @@ export function Evolution({ pm }: Props) {
     if (evolution.to) {
       evolution.to.forEach((evolution_) => {
         acc = acc.concat([
-          <Condition key={keyId} condition={evolution_.condition} className="hidden md:block" />,
+          <Condition
+            key={keyId}
+            condition={evolution_.condition}
+            className={clsx('hidden md:block')}
+          />,
           <SubCard key={keyId + 1} pm={evolution_} className={clsx('hidden text-xs md:block')} />,
         ]);
         keyId += 2;
@@ -97,9 +101,16 @@ export function Evolution({ pm }: Props) {
 
   pm.evolves?.to.forEach((evolution) => {
     if (evolution.to) {
-      evolution.to.forEach((evolution_) => {
+      evolution.to.forEach((evolution_, i, list) => {
         evolutionPath?.push(
-          <SubCard key={keyId} pm={evolution} className={clsx('text-xs md:hidden')} />,
+          <SubCard
+            key={keyId}
+            pm={evolution}
+            className={clsx(
+              'text-xs md:hidden',
+              list.length > 1 ? (i === 0 ? 'row-span-2' : 'hidden') : ''
+            )}
+          />,
           <Condition key={keyId + 1} condition={evolution_.condition} className="md:hidden" />,
           <SubCard key={keyId + 2} pm={evolution_} className={clsx('text-xs md:hidden')} />
         );
