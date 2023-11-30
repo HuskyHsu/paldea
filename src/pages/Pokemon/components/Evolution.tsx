@@ -47,7 +47,9 @@ export function Evolution({ pm }: Props) {
   // mobile case:
   // if cols >= 3 => transpose grid
 
-  const cols = pm.evolves?.to.find((evolve) => evolve.to) ? 'grid-cols-5' : 'grid-cols-3';
+  const cols = pm.evolves?.to.find((evolve) => evolve.to)
+    ? 'grid-cols-3 md:grid-cols-5'
+    : 'grid-cols-3';
   const rows = rowSpanMap[(pm.evolves?.to.length || 1) as keyof typeof rowSpanMap];
 
   let keyId = 0;
@@ -74,7 +76,7 @@ export function Evolution({ pm }: Props) {
     }
 
     rowElement = rowElement.concat([
-      <Condition condition={evolution.condition} className={rowsClass} key={keyId + 1} />,
+      <Condition key={keyId + 1} condition={evolution.condition} className={rowsClass} />,
       <SubCard key={keyId + 2} pm={evolution} className={clsx('text-xs', rowsClass)} />,
     ]);
 
@@ -83,8 +85,8 @@ export function Evolution({ pm }: Props) {
     if (evolution.to) {
       evolution.to.forEach((evolution_) => {
         acc = acc.concat([
-          <Condition condition={evolution_.condition} key={keyId} />,
-          <SubCard key={keyId + 1} pm={evolution_} className={clsx('text-xs')} />,
+          <Condition key={keyId} condition={evolution_.condition} className="hidden md:block" />,
+          <SubCard key={keyId + 1} pm={evolution_} className={clsx('hidden text-xs md:block')} />,
         ]);
         keyId += 2;
       });
@@ -92,6 +94,19 @@ export function Evolution({ pm }: Props) {
 
     return acc;
   }, [] as JSX.Element[]);
+
+  pm.evolves?.to.forEach((evolution) => {
+    if (evolution.to) {
+      evolution.to.forEach((evolution_) => {
+        evolutionPath?.push(
+          <SubCard key={keyId} pm={evolution} className={clsx('text-xs md:hidden')} />,
+          <Condition key={keyId + 1} condition={evolution_.condition} className="md:hidden" />,
+          <SubCard key={keyId + 2} pm={evolution_} className={clsx('text-xs md:hidden')} />
+        );
+        keyId += 3;
+      });
+    }
+  });
 
   return (
     <div

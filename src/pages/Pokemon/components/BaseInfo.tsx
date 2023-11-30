@@ -42,7 +42,7 @@ const renderData: Render[] = [
         {pm.types.map((type) => (
           <span
             className={clsx(
-              'flex items-center gap-1 rounded-xl pl-2 pr-3 text-sm',
+              'flex items-center gap-1 whitespace-nowrap rounded-xl pl-2 pr-3 text-sm',
               BgType[type as keyof typeof BgType]
             )}
             key={type}
