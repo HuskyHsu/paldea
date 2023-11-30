@@ -6496,6 +6496,7 @@ Egg Moves:
 - Spit Up
 - Swallow
 Evolves into Weezing-0 @ lv35 (LevelUp) [0]
+Evolves into Weezing-1 @ lv35 (Galar) [0]
 
 ======
 110 - Weezing K#136 (Stage: 2)
