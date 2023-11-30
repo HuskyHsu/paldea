@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.a4bd7a7f.css",
-    "main.js": "/paldea/static/js/main.6ecb591c.js",
+    "main.css": "/paldea/static/css/main.bda58686.css",
+    "main.js": "/paldea/static/js/main.f95b9f48.js",
     "Pokedex.css": "/paldea/static/css/Pokedex.ef49c2a7.chunk.css",
     "Pokedex.js": "/paldea/static/js/Pokedex.4180a082.chunk.js",
     "Pokemon.css": "/paldea/static/css/Pokemon.ef49c2a7.chunk.css",
-    "Pokemon.js": "/paldea/static/js/Pokemon.de3a2235.chunk.js",
+    "Pokemon.js": "/paldea/static/js/Pokemon.e70a1925.chunk.js",
     "MoveDex.css": "/paldea/static/css/MoveDex.ef49c2a7.chunk.css",
     "MoveDex.js": "/paldea/static/js/MoveDex.5bfe1da9.chunk.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
@@ -24,18 +24,18 @@
     "static/media/Search.svg": "/paldea/static/media/Search.70618b7533946d2ab5e393dce8e77709.svg",
     "static/media/ArrowBack.svg": "/paldea/static/media/ArrowBack.ec2c7f911771dddea2422db143e0cceb.svg",
     "static/media/ArrowForward.svg": "/paldea/static/media/ArrowForward.204ac83ab34908a616d745a4a46e7d3e.svg",
-    "main.a4bd7a7f.css.map": "/paldea/static/css/main.a4bd7a7f.css.map",
-    "main.6ecb591c.js.map": "/paldea/static/js/main.6ecb591c.js.map",
+    "main.bda58686.css.map": "/paldea/static/css/main.bda58686.css.map",
+    "main.f95b9f48.js.map": "/paldea/static/js/main.f95b9f48.js.map",
     "Pokedex.ef49c2a7.chunk.css.map": "/paldea/static/css/Pokedex.ef49c2a7.chunk.css.map",
     "Pokedex.4180a082.chunk.js.map": "/paldea/static/js/Pokedex.4180a082.chunk.js.map",
     "Pokemon.ef49c2a7.chunk.css.map": "/paldea/static/css/Pokemon.ef49c2a7.chunk.css.map",
-    "Pokemon.de3a2235.chunk.js.map": "/paldea/static/js/Pokemon.de3a2235.chunk.js.map",
+    "Pokemon.e70a1925.chunk.js.map": "/paldea/static/js/Pokemon.e70a1925.chunk.js.map",
     "MoveDex.ef49c2a7.chunk.css.map": "/paldea/static/css/MoveDex.ef49c2a7.chunk.css.map",
     "MoveDex.5bfe1da9.chunk.js.map": "/paldea/static/js/MoveDex.5bfe1da9.chunk.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4bd7a7f.css",
-    "static/js/main.6ecb591c.js"
+    "static/css/main.bda58686.css",
+    "static/js/main.f95b9f48.js"
   ]
 }
