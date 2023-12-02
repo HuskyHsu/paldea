@@ -74,11 +74,10 @@ const renderData: Render[] = [
             target="_blank"
             rel="noreferrer"
             className={clsx(
-              'py-px',
               'h-7 w-full md:w-2/5',
               'border-2 border-solid border-secondary',
               'rounded-full bg-secondary/30 text-center text-sm',
-              'whitespace-nowrap',
+              'whitespace-nowrap leading-6',
               'text-blue-800 underline'
             )}
           >
@@ -101,11 +100,10 @@ const renderData: Render[] = [
             target="_blank"
             rel="noreferrer"
             className={clsx(
-              'py-px',
               'h-7 w-full md:w-2/5',
               'border-2 border-solid border-scarlet',
               'rounded-full bg-scarlet/30 text-center text-sm',
-              'whitespace-nowrap',
+              'whitespace-nowrap leading-6',
               'text-blue-800 underline'
             )}
           >
@@ -123,11 +121,10 @@ const renderData: Render[] = [
           <span
             key={egg}
             className={clsx(
-              'py-px',
               'h-7 w-1/2 md:w-2/5',
               'border-2 border-solid border-secondary',
               'rounded-full bg-secondary/30 text-center text-sm text-black',
-              'whitespace-nowrap'
+              'whitespace-nowrap leading-6'
             )}
           >
             {egg}
@@ -143,11 +140,10 @@ const renderData: Render[] = [
         {pm.paldea && (
           <span
             className={clsx(
-              'py-px',
               'h-7 w-1/2 md:w-2/5',
               'border-2 border-solid border-custom-gold',
               'rounded-full bg-custom-gold/30 text-center text-sm text-black',
-              'whitespace-nowrap'
+              'whitespace-nowrap leading-6'
             )}
           >
             帕底亞#{pm.paldea.toString().padStart(3, '0')}
@@ -156,11 +152,10 @@ const renderData: Render[] = [
         {pm.kitakami && (
           <span
             className={clsx(
-              'py-px',
               'h-7 w-1/2 md:w-2/5',
               'border-2 border-solid border-custom-blue',
               'rounded-full bg-custom-blue/30 text-center text-sm text-black',
-              'whitespace-nowrap'
+              'whitespace-nowrap leading-6'
             )}
           >
             北上#{pm.kitakami.toString().padStart(3, '0')}

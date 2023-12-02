@@ -103,7 +103,7 @@ export function Evolution({ pm }: Props) {
     if (evolution.to) {
       evolution.to.forEach((evolution_, i, list) => {
         if (ii === 0 && i === 0) {
-          evolutionPath?.push(<hr className="col-span-3 w-full" />);
+          evolutionPath?.push(<hr className="col-span-3 w-full" key={999} />);
         }
 
         evolutionPath?.push(
