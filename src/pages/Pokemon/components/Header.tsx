@@ -1,11 +1,16 @@
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { Icon } from '@/newComponents';
-import { BgFromType, BgToType, FullPokemon } from '@/types/Pokemon';
+import { BgFromType, BgToType, FullPokemon, Pokemon } from '@/types/Pokemon';
+import { SubCard } from '@/newComponents/game';
+import { filterPokemonList, getFilter, getJsonCache } from '@/store';
 
 type Props = {
   pm: FullPokemon;
 };
+
+const localStorageKey = 'pokeDexPage';
 
 export function Header({ pm }: Props) {
   return (
@@ -53,5 +58,53 @@ export function HeaderName({ pm }: Props) {
         </a>
       )}
     </h2>
+  );
+}
+
+export function QuickLink({ pokemonList, link }: { pokemonList: Pokemon[]; link: string }) {
+  // const isMobile = window.screen.width < 768;
+  const range = 2;
+
+  const cacheObj = getJsonCache(localStorageKey);
+  const filter = getFilter(cacheObj);
+  pokemonList = filterPokemonList(pokemonList, filter);
+
+  const linkIndex = pokemonList.findIndex((pm) => pm.link === link);
+
+  let quickLink =
+    linkIndex < range
+      ? pokemonList.slice(linkIndex - range).concat(pokemonList.slice(0, linkIndex))
+      : pokemonList.slice(linkIndex - range, linkIndex);
+  quickLink.push(...pokemonList.slice(linkIndex, linkIndex + range + 1));
+  if (linkIndex > pokemonList.length - range - 1) {
+    quickLink.push(...pokemonList.slice(0, range - pokemonList.length + linkIndex + 1));
+  }
+
+  const prePm = quickLink[range - 1];
+  const preName = `${prePm.nameZh}${prePm.altForm ? '-' + prePm.altForm : ''}`;
+
+  const nextPm = quickLink[range + 1];
+  const nextName = `${nextPm.nameZh}${nextPm.altForm ? '-' + nextPm.altForm : ''}`;
+
+  return (
+    <div className="flex items-center justify-around gap-2">
+      <Link to={`/pokedex/${preName}`}>
+        <Icon.ArrowBack />
+      </Link>
+      {quickLink.map((pm, i) => (
+        <SubCard
+          pm={pm}
+          className={clsx(
+            'scale-75',
+            pm.link === link && 'text-custom-gold',
+            [0, 4].includes(i) && 'hidden md:block'
+          )}
+          key={pm.link}
+        />
+      ))}
+      <Link to={`/pokedex/${nextName}`}>
+        <Icon.ArrowForward />
+      </Link>
+    </div>
   );
 }

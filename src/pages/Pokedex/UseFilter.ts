@@ -1,25 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
 import { BoolKeys, ValueKeys } from '@/utils';
-import { Filter, Display } from './Pokedex';
 import { PokedexFrom } from '@/types/Pokemon';
+import { getJsonCache } from '@/store';
+
+import { Filter, Display } from './Pokedex';
 
 const localStorageKey = 'pokeDexPage';
-
-function getCache(): Record<string, string> {
-  const cacheStr = localStorage.getItem(localStorageKey);
-  let cacheObj = {};
-  if (cacheStr !== null) {
-    cacheObj = JSON.parse(cacheStr);
-  }
-
-  return cacheObj;
-}
 
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  let cacheObj = getCache();
+  let cacheObj = getJsonCache(localStorageKey);
   useEffect(() => {
     for (const key of Object.keys(cacheObj)) {
       if (searchParams.get(key) === null) {

@@ -29,7 +29,9 @@ export function PokemonBadge({ pm, size = 'text-xs', text }: Props) {
   );
 }
 
-export function SubCard({ pm, className = '' }: { pm: SubPokemon; className?: string }) {
+type SubCardProps = { pm: SubPokemon; className?: string };
+
+export function SubCard({ pm, className = '' }: SubCardProps) {
   return (
     <div className={clsx(className, 'h-24 w-24 md:h-28 md:w-28', 'relative -mt-6')}>
       <span

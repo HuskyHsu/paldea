@@ -12,6 +12,7 @@ import {
   Header,
   HeaderName,
   Moves,
+  QuickLink,
   Statistic,
   TypeWeakness,
 } from './components';
@@ -29,7 +30,7 @@ function TabButtom({
     <li className="mr-2">
       <button
         className={clsx(
-          'inline-block rounded-t-lg border-b-2 p-2 md:p-4',
+          'inline-block rounded-t-lg border-b-2 p-2',
           selectTab === title
             ? 'border-custom-gold text-custom-gold'
             : 'border-transparent hover:border-gray-300 hover:text-gray-600'
@@ -71,7 +72,6 @@ function PokemonInfo() {
   if (link === undefined) {
     link = '4';
   }
-
   const { data: pm, status } = usePokemonInfo(link);
 
   useEffect(() => {
@@ -87,6 +87,7 @@ function PokemonInfo() {
       <div className="-mt-4 flex w-full max-w-3xl flex-col gap-4">
         <Header pm={pm} />
         <HeaderName pm={pm} />
+        <QuickLink pokemonList={pokemonList} link={link} />
 
         <div className="border-b border-gray-200 text-center text-sm font-medium text-gray-500">
           <ul className="-mb-px flex flex-wrap">
