@@ -62,12 +62,11 @@ export function HeaderName({ pm }: Props) {
 }
 
 export function QuickLink({ pokemonList, link }: { pokemonList: Pokemon[]; link: string }) {
-  // const isMobile = window.screen.width < 768;
   const range = 2;
 
   const cacheObj = getJsonCache(localStorageKey);
   const filter = getFilter(cacheObj);
-  pokemonList = filterPokemonList(pokemonList, filter);
+  pokemonList = filterPokemonList(pokemonList, filter, true);
 
   const linkIndex = pokemonList.findIndex((pm) => pm.link === link);
 
@@ -87,7 +86,7 @@ export function QuickLink({ pokemonList, link }: { pokemonList: Pokemon[]; link:
   const nextName = `${nextPm.nameZh}${nextPm.altForm ? '-' + nextPm.altForm : ''}`;
 
   return (
-    <div className="flex items-center justify-around gap-2">
+    <div className="mt-4 -mb-4 flex items-center justify-around gap-2">
       <Link to={`/pokedex/${preName}`}>
         <Icon.ArrowBack />
       </Link>

@@ -88,9 +88,13 @@ function orderBy(a: Pokemon, b: Pokemon, filter: Filter) {
   }
 }
 
-export function filterPokemonList(pokemonList: Pokemon[], filter: Filter) {
+export function filterPokemonList(
+  pokemonList: Pokemon[],
+  filter: Filter,
+  onlyPokedex: boolean = false
+) {
   return pokemonList
-    .filter((pm) => filterFn(pm, filter))
+    .filter((pm) => onlyPokedex || filterFn(pm, filter))
     .filter((pm) => filterPokedex(pm, filter))
     .sort((a, b) => orderBy(a, b, filter));
 }
