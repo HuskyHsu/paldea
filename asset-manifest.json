@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.12c4fa30.css",
-    "main.js": "/paldea/static/js/main.7defd259.js",
+    "main.css": "/paldea/static/css/main.3df2c4c7.css",
+    "main.js": "/paldea/static/js/main.b80a275b.js",
     "Pokedex.js": "/paldea/static/js/Pokedex.2ae50d95.chunk.js",
-    "Pokemon.js": "/paldea/static/js/Pokemon.67be9a6e.chunk.js",
+    "Pokemon.js": "/paldea/static/js/Pokemon.ba2bc2b1.chunk.js",
     "MoveDex.js": "/paldea/static/js/MoveDex.54a59217.chunk.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
     "static/media/bg.png": "/paldea/static/media/bg.7b5a0204a10fa00ccff3.png",
@@ -21,15 +21,15 @@
     "static/media/Search.svg": "/paldea/static/media/Search.70618b7533946d2ab5e393dce8e77709.svg",
     "static/media/ArrowBack.svg": "/paldea/static/media/ArrowBack.ec2c7f911771dddea2422db143e0cceb.svg",
     "static/media/ArrowForward.svg": "/paldea/static/media/ArrowForward.204ac83ab34908a616d745a4a46e7d3e.svg",
-    "main.12c4fa30.css.map": "/paldea/static/css/main.12c4fa30.css.map",
-    "main.7defd259.js.map": "/paldea/static/js/main.7defd259.js.map",
+    "main.3df2c4c7.css.map": "/paldea/static/css/main.3df2c4c7.css.map",
+    "main.b80a275b.js.map": "/paldea/static/js/main.b80a275b.js.map",
     "Pokedex.2ae50d95.chunk.js.map": "/paldea/static/js/Pokedex.2ae50d95.chunk.js.map",
-    "Pokemon.67be9a6e.chunk.js.map": "/paldea/static/js/Pokemon.67be9a6e.chunk.js.map",
+    "Pokemon.ba2bc2b1.chunk.js.map": "/paldea/static/js/Pokemon.ba2bc2b1.chunk.js.map",
     "MoveDex.54a59217.chunk.js.map": "/paldea/static/js/MoveDex.54a59217.chunk.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12c4fa30.css",
-    "static/js/main.7defd259.js"
+    "static/css/main.3df2c4c7.css",
+    "static/js/main.b80a275b.js"
   ]
 }
