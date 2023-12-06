@@ -1,27 +1,30 @@
-import { useQuery } from '@tanstack/react-query';
-import { api } from '@/utils';
-import { FullMove, FullPokemon } from '@/types/Pokemon';
+import { FullPokemon } from '@/types/Pokemon';
 
-export const usePokemonInfo = (link: string = '906') => {
-  const { data, status, ...rest } = useQuery<FullPokemon>([`pokemon:${link}`], () =>
-    api<FullPokemon>(`/data/pm/${link}.json`)
-  );
-
-  return {
-    status,
-    data: data as FullPokemon,
-    ...rest,
-  };
-};
-
-export const useMoveInfo = (name: string) => {
-  const { data, status, ...rest } = useQuery<FullMove>([`move:${name}`], () =>
-    api<FullMove>(`/data/move/${name}.json`)
-  );
-
-  return {
-    status,
-    data: data as FullMove,
-    ...rest,
-  };
+export const defaultPokemon: FullPokemon = {
+  pid: 0,
+  link: '0',
+  paldea: null,
+  kitakami: null,
+  hisui: null,
+  nameZh: '',
+  nameJp: '',
+  nameEn: '',
+  altForm: null,
+  hiddenAbility: '',
+  baseStatsTotal: 600,
+  genderRatio: 0,
+  source: '0',
+  types: [],
+  abilities: [],
+  eggGroups: [],
+  baseStats: [100, 100, 100, 100, 100, 100],
+  EVs: [0, 0, 0, 0, 0, 0],
+  moves: {
+    levelingUps: [],
+    eggMoves: [],
+    TMs: [],
+    beforeEvolve: [],
+    beforeEvolveTMs: [],
+  },
+  tags: [],
 };

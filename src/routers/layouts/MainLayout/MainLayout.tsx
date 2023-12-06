@@ -3,7 +3,8 @@ import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
 import ReactGA from 'react-ga4';
 
-import { Icon, Loading } from '@/components';
+import { Icon } from '@/newComponents';
+import { Loading } from '@/newComponents/common';
 import { useBackToTopContext } from '@/newComponents/contexts';
 import { Item } from './Item';
 

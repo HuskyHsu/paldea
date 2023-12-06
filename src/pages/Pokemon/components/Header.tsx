@@ -2,12 +2,17 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import { Icon } from '@/newComponents';
-import { BgFromType, BgToType, FullPokemon, Pokemon } from '@/types/Pokemon';
 import { SubCard } from '@/newComponents/game';
+import { BgFromType, BgToType, FullPokemon, Pokemon } from '@/types/Pokemon';
 import { filterPokemonList, getFilter, getJsonCache } from '@/store';
 
 type Props = {
   pm: FullPokemon;
+};
+
+type QuickLinkProps = {
+  pokemonList: Pokemon[];
+  link: string;
 };
 
 const localStorageKey = 'pokeDexPage';
@@ -61,7 +66,7 @@ export function HeaderName({ pm }: Props) {
   );
 }
 
-export function QuickLink({ pokemonList, link }: { pokemonList: Pokemon[]; link: string }) {
+export function QuickLink({ pokemonList, link }: QuickLinkProps) {
   const range = 2;
 
   const cacheObj = getJsonCache(localStorageKey);
