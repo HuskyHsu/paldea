@@ -45,14 +45,18 @@ function PmHome({
   shiny?: boolean;
   className?: string;
 }) {
-  return (
-    <img
-      className={clsx('pointer-events-none w-auto', className)}
-      src={`${process.env.PUBLIC_URL}/image/home/${pm.link}${shiny ? '-s' : ''}.png`}
-      alt={pm.nameZh}
-      loading="lazy"
-    />
-  );
+  const imageUrl = `${process.env.PUBLIC_URL}/image/home/${pm.link}${shiny ? '-s' : ''}.png`;
+
+  const divStyle = {
+    backgroundImage: `url(${imageUrl})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center center',
+    width: '100%',
+    height: '100%',
+  };
+
+  return <div className={clsx('pointer-events-none', className)} style={divStyle} />;
 }
 
 export { Type, MoveCategory, PmIcon, PmHome };
