@@ -19,9 +19,9 @@ const localStorageKey = 'pokeDexPage';
 
 export function Header({ pm }: Props) {
   return (
-    <header className="relative flex h-[180px] justify-around px-4 md:h-[273px]">
-      <Icon.Game.PmHome pm={pm} className="z-10 h-[90%]" />
-      <Icon.Game.PmHome pm={pm} className="z-10 h-[90%]" shiny={true} />
+    <header className="relative flex h-[180px] items-center justify-around px-4 md:h-[273px]">
+      <Icon.Game.PmHome pm={pm} className="z-10 h-[80%]" />
+      <Icon.Game.PmHome pm={pm} className="z-10 h-[80%]" shiny={true} />
 
       {/* bg banner */}
       <div
