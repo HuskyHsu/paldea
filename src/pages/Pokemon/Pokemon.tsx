@@ -68,9 +68,11 @@ function PokemonInfo() {
   }
 
   return (
-    <div className="flex w-full justify-center">
-      <div className="-mt-4 flex w-full max-w-3xl flex-col gap-4">
+    <div className="flex w-full flex-col items-center justify-center">
+      <div className="-mx-4 -mt-4 w-full">
         <Header pm={pm} />
+      </div>
+      <div className="mt-4 flex w-full max-w-3xl flex-col gap-4">
         <HeaderName pm={pm} />
         <QuickLink pokemonList={pokemonList} link={link} />
 

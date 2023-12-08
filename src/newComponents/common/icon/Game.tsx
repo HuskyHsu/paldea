@@ -47,16 +47,14 @@ function PmHome({
 }) {
   const imageUrl = `${process.env.PUBLIC_URL}/image/home/${pm.link}${shiny ? '-s' : ''}.png`;
 
-  const divStyle = {
-    backgroundImage: `url(${imageUrl})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    width: '100%',
-    height: '100%',
-  };
-
-  return <div className={clsx('pointer-events-none', className)} style={divStyle} />;
+  return (
+    <img
+      className={clsx('pointer-events-none h-auto w-auto', className)}
+      src={imageUrl}
+      alt={pm.nameZh}
+      loading="lazy"
+    />
+  );
 }
 
 export { Type, MoveCategory, PmIcon, PmHome };
