@@ -54,18 +54,6 @@ export function HeaderName({ pm }: Props) {
       >
         wiki
       </a>
-      {pm.hisui && (
-        <a
-          href={`https://huskyhsu.github.io/arceus/#/${pm.hisui.toString().padStart(3, '0')}${
-            pm.altForm === '洗翠' ? 'H' : ''
-          }`}
-          target="_blank"
-          rel="noreferrer"
-          className="ml-2 text-base font-bold text-blue-800 underline"
-        >
-          洗翠圖鑑
-        </a>
-      )}
     </h2>
   );
 }

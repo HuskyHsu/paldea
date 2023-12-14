@@ -173,6 +173,27 @@ const renderData: Render[] = [
             藍莓#{pm.blueberry.toString().padStart(3, '0')}
           </span>
         )}
+        {pm.hisui && (
+          <span
+            className={clsx(
+              'h-7 w-full md:w-2/5',
+              'border-2 border-solid border-custom-orange',
+              'rounded-full bg-custom-orange/30 text-center text-sm',
+              'whitespace-nowrap leading-6',
+              'text-blue-800 underline'
+            )}
+          >
+            <a
+              href={`https://huskyhsu.github.io/arceus/#/${pm.hisui.toString().padStart(3, '0')}${
+                pm.altForm === '洗翠' ? 'H' : ''
+              }`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              洗翠#{pm.hisui.toString().padStart(3, '0')}
+            </a>
+          </span>
+        )}
       </span>
     ),
   },
