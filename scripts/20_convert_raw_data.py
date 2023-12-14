@@ -54,6 +54,10 @@ def rowsToJsonArray(raw_data):
             line = line.split(" (")[0].split(" - ")
             curr["pid"] = int(line[0])
             line = line[1]
+
+            if " B#" in line:
+                [line, curr["Blueberry"]] = line.split(" B#")
+
             if " K#" in line:
                 [line, curr["Kitakami"]] = line.split(" K#")
 
