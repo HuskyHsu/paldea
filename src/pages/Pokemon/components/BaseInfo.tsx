@@ -136,11 +136,11 @@ const renderData: Render[] = [
   {
     title: '地區圖鑑',
     Content: ({ pm }: ContentProps) => (
-      <span className="flex gap-2">
+      <span className="flex flex-wrap gap-2">
         {pm.paldea && (
           <span
             className={clsx(
-              'h-7 w-1/2 md:w-2/5',
+              'h-7 w-full md:w-2/5',
               'border-2 border-solid border-custom-gold',
               'rounded-full bg-custom-gold/30 text-center text-sm text-black',
               'whitespace-nowrap leading-6'
@@ -152,9 +152,9 @@ const renderData: Render[] = [
         {pm.kitakami && (
           <span
             className={clsx(
-              'h-7 w-1/2 md:w-2/5',
-              'border-2 border-solid border-custom-blue',
-              'rounded-full bg-custom-blue/30 text-center text-sm text-black',
+              'h-7 w-full md:w-2/5',
+              'border-2 border-solid border-custom-green',
+              'rounded-full bg-custom-green/30 text-center text-sm text-black',
               'whitespace-nowrap leading-6'
             )}
           >
@@ -164,7 +164,7 @@ const renderData: Render[] = [
         {pm.blueberry && (
           <span
             className={clsx(
-              'h-7 w-1/2 md:w-2/5',
+              'h-7 w-full md:w-2/5',
               'border-2 border-solid border-custom-blue',
               'rounded-full bg-custom-blue/30 text-center text-sm text-black',
               'whitespace-nowrap leading-6'
