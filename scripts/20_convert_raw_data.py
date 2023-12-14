@@ -306,7 +306,7 @@ move_id_dict = get_dict("moves", 1, 0)
 egg_group_dict = get_dict("eggGroup", 1, 0)
 hisui_dict = get_dict("hisui", 2, 0)
 
-with open("rawdata/2.0.1.txt", "r") as file:
+with open("rawdata/3.0.0.txt", "r") as file:
     raw_data = file.read()
 
 if __name__ == "__main__":
@@ -1155,7 +1155,7 @@ SELECT
 	names.nameZh || '的' || TM_materials.part as "materials_part",
 	TM_materials."count" as "materials_count",
 	names.pid as "materials_link"
-	
+
 FROM
 	TMs
 	join TM_materials on TM_materials.tm_id = TMs.pid
@@ -1264,7 +1264,7 @@ FROM
 WHERE
 	moves.pid in( SELECT DISTINCT
 			move_id FROM pokemon_moves)
-	OR moves.pid in(  
+	OR moves.pid in(
 		SELECT
 			moves.pid FROM TMs
 			JOIN moves ON TMs.move_id = moves.pid
