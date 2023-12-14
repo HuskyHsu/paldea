@@ -32,6 +32,9 @@ function PmIcon({ pm, className = '' }: { pm: Pokemon | SubPokemon; className?: 
       src={`${process.env.PUBLIC_URL}/image/pmIcon/${pm.link}.png`}
       alt={pm.nameZh}
       loading="lazy"
+      onError={(event) => {
+        event.currentTarget.src = `${process.env.PUBLIC_URL}/image/pmIcon/0.png`;
+      }}
     />
   );
 }
@@ -53,6 +56,9 @@ function PmHome({
       src={imageUrl}
       alt={pm.nameZh}
       loading="lazy"
+      onError={(event) => {
+        event.currentTarget.src = `${process.env.PUBLIC_URL}/image/home/0.png`;
+      }}
     />
   );
 }

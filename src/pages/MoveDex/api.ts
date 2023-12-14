@@ -4,7 +4,7 @@ import { Move } from '@/types/Pokemon';
 
 export const useMoveListInfo = () => {
   const { data, status, ...rest } = useQuery<Move[]>(['move'], () =>
-    api<Move[]>(`/data/move_list_201.json`)
+    api<Move[]>(`/data/move_list_300.json`)
   );
 
   return {

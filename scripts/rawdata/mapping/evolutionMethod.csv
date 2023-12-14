@@ -8,6 +8,7 @@ LevelUpCollect999,等級提升(收集999個硬幣以上)
 LevelUpDefeatEquals,等級提升(擊倒3隻群體中攜帶有頭領憑證的劈斬司令後)
 LevelUpFemale,雌性
 LevelUpMale,雄性
+LevelUpFormFemale1,雌性
 LevelUpMorning,白天
 LevelUpNight,夜晚
 LevelUpDusk,黃昏
@@ -30,6 +31,11 @@ LevelUpSummit,等級提升(來到拉納基拉山附近)
 LevelUpUnionCircle,等級提升(聯盟集友圈)
 LevelUpUseMoveSpecial,等級提升(使出<ITEM>次憤怒之拳後)
 LevelUpWalkStepsWith,等級提升(在Let's Go模式中行走<ITEM>步後)
+LevelUpDEF,等級提升(攻擊 < 防禦)
+LevelUpATK,等級提升(攻擊 > 防禦)
+LevelUpAeqD,等級提升(攻擊 = 防禦)
+LevelUpInverted,等級提升(倒置主機)
+LevelUpVersion,等級提升(指定版本)
 TowerOfDarkness,查看惡之掛軸
 TowerOfWaters,查看水之掛軸
 Trade,連線交換
@@ -39,3 +45,4 @@ UseItemAlola,在阿羅拉地區使用<ITEM>道具
 UseItemHisui,在洗翠地區使用<ITEM>道具
 UseItemFemale,使用<ITEM>道具(雌性)
 UseItemMale,使用<ITEM>道具(雄性)
+Spin,主角結束原地旋轉

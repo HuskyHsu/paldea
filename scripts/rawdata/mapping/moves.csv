@@ -292,7 +292,7 @@
 291,潛水,ダイビング,Dive,水,物理,80,100,10,使用後的第１回合潛入水中，並於第２回合浮上來進行攻擊。
 292,猛推,つっぱり,Arm Thrust,格鬥,物理,15,100,20,用張開的雙手猛推對手進行攻擊。連續攻擊２～５次。
 293,保護色,ほごしょく,Camouflage,一般,變化,-999,-999,-999,可以因應所在的地點如水邊、草叢和洞窟等，改變自己的屬性。
-294,螢火,ほたるび,Tail Glow,蟲,變化,-999,-999,-999,凝視閃爍的光芒，集中精神，極大幅提高自己的特攻。
+294,螢火,ほたるび,Tail Glow,蟲,變化,0,0,20,凝視閃爍的光芒，集中精神，極大幅提高自己的特攻。
 295,潔淨光芒,ラスターパージ,Luster Purge,超能力,特殊,70,100,5,放出耀眼的光芒進行攻擊。有時會降低對手的特防。
 296,薄霧球,ミストボール,Mist Ball,超能力,特殊,70,100,5,將霧狀的羽毛聚集成團進行攻擊。有時會降低對手的特攻。
 297,羽毛舞,フェザーダンス,Feather Dance,飛行,變化,0,100,15,撒出羽毛，纏住對手的身體。大幅降低對手的攻擊。
@@ -351,8 +351,8 @@
 350,岩石爆擊,ロックブラスト,Rock Blast,岩石,物理,25,90,10,向對手發射堅硬的岩石進行攻擊。連續攻擊２～５次。
 351,電擊波,でんげきは,Shock Wave,電,特殊,60,0,20,向對手迅速放出電流。攻擊一定會命中。
 352,水之波動,みずのはどう,Water Pulse,水,特殊,60,100,20,用水的震動攻擊對手。有時會使對手混亂。
-353,破滅之願,はめつのねがい,Doom Desire,鋼,特殊,-999,-999,-999,使用招式的２回合後，向對手發射無數道光束進行攻擊。
-354,精神突進,サイコブースト,Psycho Boost,超能力,特殊,-999,-999,-999,釋放全部能量攻擊對手。使用後因為反作用力，自己的特攻會大幅降低。
+353,破滅之願,はめつのねがい,Doom Desire,鋼,特殊,140,100,5,使用招式的２回合後，向對手發射無數道光束進行攻擊。
+354,精神突進,サイコブースト,Psycho Boost,超能力,特殊,140,90,5,釋放全部能量攻擊對手。使用後因為反作用力，自己的特攻會大幅降低。
 355,羽棲,はねやすめ,Roost,飛行,變化,0,0,5,降落到地面，讓身體休息。回復自己最大ＨＰ的一半。
 356,重力,じゅうりょく,Gravity,超能力,變化,0,0,5,在５回合內，飄浮特性和飛行屬性的寶可夢會被地面屬性的招式擊中。且無法使用飛向空中的招式。
 357,奇跡之眼,ミラクルアイ,Miracle Eye,超能力,變化,-999,-999,-999,讓對惡屬性寶可夢無效的招式能夠發揮效果，也可不顧對手提高後的閃避率進行攻擊。
@@ -389,7 +389,7 @@
 388,煩惱種子,なやみのタネ,Worry Seed,草,變化,0,100,10,埋下令人心煩意亂的種子，讓對手睡不著，將對手的特性變成不眠。
 389,突襲,ふいうち,Sucker Punch,惡,物理,70,100,5,可以搶先對手一步進行攻擊。若對手使用的不是攻擊招式則會失敗。
 390,毒菱,どくびし,Toxic Spikes,毒,變化,0,0,20,在對手腳下散布毒菱。讓對手替換出場的寶可夢陷入中毒狀態。
-391,心靈互換,ハートスワップ,Heart Swap,超能力,變化,-999,-999,-999,用超能力將自己和對手的能力變化互相交換。
+391,心靈互換,ハートスワップ,Heart Swap,超能力,變化,0,0,10,用超能力將自己和對手的能力變化互相交換。
 392,水流環,アクアリング,Aqua Ring,水,變化,0,0,20,在自己的身邊套上水流環。每回合會回復自己的ＨＰ。
 393,電磁飄浮,でんじふゆう,Magnet Rise,電,變化,0,0,10,利用電氣產生的磁力浮在空中。在５回合內可以飄浮。
 394,閃焰衝鋒,フレアドライブ,Flare Blitz,火,物理,120,100,15,將火焰圍繞全身後猛撞對手。自己也會受到不小的傷害。有時會讓對手陷入灼傷狀態。
@@ -690,7 +690,7 @@
 689,號令,さいはい,Instruct,超能力,變化,0,0,15,對手使出招式之後，能夠透過指令讓對手再次使出相同招式。
 690,鳥嘴加農炮,くちばしキャノン,Beak Blast,飛行,物理,100,100,15,先加熱鳥嘴後再進行攻擊。若對手在加熱時觸碰的話，就會灼傷。
 691,鱗片噪音,スケイルノイズ,Clanging Scales,龍,特殊,110,100,5,摩擦全身鱗片，發出響亮的聲音並進行攻擊。攻擊後自己的防禦會降低。
-692,龍錘,ドラゴンハンマー,Dragon Hammer,龍,物理,-999,-999,-999,像錘子般地使用身體向對手發動襲擊，給予傷害。
+692,龍錘,ドラゴンハンマー,Dragon Hammer,龍,物理,90,100,15,像錘子般地使用身體向對手發動襲擊，給予傷害。
 693,狂舞揮打,ぶんまわす,Brutal Swing,惡,物理,60,100,20,用自己的身體狂舞揮打，給予對手傷害。
 694,極光幕,オーロラベール,Aurora Veil,冰,變化,0,0,20,在５回合內減弱物理和特殊的傷害。在下雪時才有效果。
 695,遮天蔽日暗影箭,シャドーアローズストライク,Sinister Arrow Raid,幽靈,物理,-999,-999,-999,透過Ｚ力量製造出無數箭的狙射樹梟全力射穿對手進行攻擊。
@@ -903,3 +903,18 @@
 902,刷刷茶炮,シャカシャカほう,Matcha Gotcha,草,特殊,80,90,15,像大炮般發射攪拌過的茶。可以回復給予對手傷害的一半ＨＰ，有時還會讓對手陷入灼傷狀態。
 903,糖漿炸彈,みずあめボム,Syrup Bomb,草,特殊,60,85,10,使黏稠的糖漿爆炸，使對手陷入滿身糖狀態，在３回合內持續降低對手的速度。
 904,棘藤棒,ツタこんぼう,Ivy Cudgel,草,物理,100,100,10,用纏繞著藤蔓的棍棒毆打。屬性會隨著所戴的面具而改變。容易擊中要害。
+905,電光束,エレクトロビーム,Electro Shot,電,特殊,130,100,10,"The user gathers electricity on the first turn, boosting its Sp. Atk stat, then fires a high-voltage shot on the next turn. The shot will be fired immediately in rain."
+906,晶光星群,テラクラスター,Tera Starstorm,一般,特殊,120,100,5,"With the power of its crystals, the user bombards and eliminates the target. When used by Terapagos in its Stellar Form, this move damages all opposing Pokémon."
+907,隨機光,きまぐレーザー,Fickle Beam,龍,特殊,80,100,5,"The user shoots a beam of light to inflict damage. Sometimes all the user’s heads shoot beams in unison, doubling the move’s power."
+908,火焰守護,かえんのまもり,Burning Bulwark,火,變化,0,0,10,The user’s intensely hot fur protects it from attacks and also burns any attacker that makes direct contact with it.
+909,迅雷,じんらい,Thunderclap,電,特殊,70,100,5,This move enables the user to attack first with a jolt of electricity. This move fails if the target is not readying an attack.
+910,強刃攻擊,パワフルエッジ,Mighty Cleave,岩石,物理,95,100,5,The user wields the light that has accumulated atop its head to cleave the target. This move hits even if the target protects itself.
+911,迅子利刃,タキオンカッター,Tachyon Cutter,鋼,特殊,50,0,10,The user attacks by launching particle blades at the target twice in a row. This attack never misses.
+912,硬壓,ハードプレス,Hard Press,鋼,物理,0,100,10,"The target is crushed with an arm, a claw, or the like to inflict damage. The more HP the target has left, the greater the move’s power."
+913,龍聲鼓舞,ドラゴンエール,Dragon Cheer,龍,變化,0,0,15,The user raises its allies’ morale with a draconic cry so that their future attacks have a heightened chance of landing critical hits. This rouses Dragon types more.
+914,魅誘之聲,みわくのボイス,Alluring Voice,妖精,特殊,80,100,10,The user attacks the target using its angelic voice. This also confuses the target if its stats have been boosted during the turn.
+915,豁出去,やけっぱち,Temper Flare,火,物理,75,100,10,"Spurred by desperation, the user attacks the target. This move’s power is doubled if the user’s previous move failed."
+916,閃電強襲,サンダーダイブ,Supercell Slam,電,物理,100,95,15,"The user electrifies its body and drops onto the target to inflict damage. If this move misses, the user takes damage instead."
+917,精神噪音,サイコノイズ,Psychic Noise,超能力,特殊,75,100,10,"The user attacks the target with unpleasant sound waves. For two turns, the target is prevented from recovering HP through moves, Abilities, or held items."
+918,快手還擊,はやてがえし,Upper Hand,格鬥,物理,65,100,15,"The user reacts to the target’s movement and strikes with the heel of its palm, making the target flinch. This move fails if the target is not readying a priority move."
+919,邪毒鎖鏈,じゃどくのくさり,Malignant Chain,毒,特殊,100,100,5,"The user pours toxins into the target by wrapping them in a toxic, corrosive chain. This may also leave the target badly poisoned."

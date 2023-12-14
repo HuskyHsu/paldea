@@ -54,6 +54,10 @@ def rowsToJsonArray(raw_data):
             line = line.split(" (")[0].split(" - ")
             curr["pid"] = int(line[0])
             line = line[1]
+
+            if " B#" in line:
+                [line, curr["Blueberry"]] = line.split(" B#")
+
             if " K#" in line:
                 [line, curr["Kitakami"]] = line.split(" K#")
 
@@ -129,6 +133,9 @@ def rowsToJsonArray(raw_data):
             )
 
             name_link_map[curr["Name"]] = curr["link"]
+
+            if "Blueberry" in curr:
+                curr["Blueberry"] = int(curr["Blueberry"])
 
             if "Kitakami" in curr:
                 curr["Kitakami"] = int(curr["Kitakami"])
@@ -306,7 +313,7 @@ move_id_dict = get_dict("moves", 1, 0)
 egg_group_dict = get_dict("eggGroup", 1, 0)
 hisui_dict = get_dict("hisui", 2, 0)
 
-with open("rawdata/2.0.1.txt", "r") as file:
+with open("rawdata/3.0.0.txt", "r") as file:
     raw_data = file.read()
 
 if __name__ == "__main__":
@@ -318,7 +325,7 @@ if __name__ == "__main__":
     source_map = updateEvolves(new_data)
 
     # 將初步整理成json的檔案會出查看
-    # with open("rawdata/2.0.1_zh.json", "w") as output_file:
+    # with open("rawdata/3.0.0_zh.json", "w") as output_file:
     #     output_file.write(json.dumps(new_data, indent=4, ensure_ascii=False))
 
     conn, cursor = init_db()
@@ -1155,7 +1162,7 @@ SELECT
 	names.nameZh || '的' || TM_materials.part as "materials_part",
 	TM_materials."count" as "materials_count",
 	names.pid as "materials_link"
-	
+
 FROM
 	TMs
 	join TM_materials on TM_materials.tm_id = TMs.pid
@@ -1264,7 +1271,7 @@ FROM
 WHERE
 	moves.pid in( SELECT DISTINCT
 			move_id FROM pokemon_moves)
-	OR moves.pid in(  
+	OR moves.pid in(
 		SELECT
 			moves.pid FROM TMs
 			JOIN moves ON TMs.move_id = moves.pid
@@ -1279,7 +1286,7 @@ ORDER BY
     # for move in all_moves:
     #     del move["description"]
 
-    with open(f"../public/data/move_list_201.json", "w") as output_file:
+    with open(f"../public/data/move_list_300.json", "w") as output_file:
         output_file.write(json.dumps(all_moves))
 
     cursor.close()
@@ -1290,5 +1297,5 @@ ORDER BY
             if key in row:
                 del row[key]
 
-    with open("../public/data/base_list_201.json", "w") as output_file:
+    with open("../public/data/base_list_300.json", "w") as output_file:
         output_file.write(json.dumps(new_data))
