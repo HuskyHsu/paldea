@@ -1212,7 +1212,7 @@ WHERE
                     TM[key] = row[key]
             TM["materials"].append(material)
 
-        print(TM)
+        # print(TM)
         if "leaguePoint" in TM and TM["leaguePoint"] > 0:
             # move["TM"] = TM
             move["TM"]["pm"] = []

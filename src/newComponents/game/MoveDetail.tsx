@@ -63,7 +63,9 @@ function TMs({ move, onlyEvolve }: Prop) {
       <ul className="text-gray-5000 max-w-md list-inside list-disc space-y-1 pb-2">
         <li>編號：#{move.TM.pid.toString().padStart(3, '0')}</li>
         <li>聯盟點數：{move.TM.leaguePoint}</li>
-        <li>材料：{move.TM.materials.map((pm) => `${pm.part}x${pm.count}`).join('; ')}</li>
+        {move.TM.materials.length > 0 && (
+          <li>材料：{move.TM.materials.map((pm) => `${pm.part}x${pm.count}`).join('; ')}</li>
+        )}
       </ul>
       <div className="flex flex-wrap gap-2">
         {move.TM?.pm
