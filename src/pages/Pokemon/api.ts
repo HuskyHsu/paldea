@@ -5,6 +5,7 @@ export const defaultPokemon: FullPokemon = {
   link: '0',
   paldea: null,
   kitakami: null,
+  blueberry: null,
   hisui: null,
   nameZh: '',
   nameJp: '',

@@ -66,7 +66,7 @@ function filterPokedex(pm: Pokemon, filter: Filter) {
   if (PokedexList.includes(filter.pokedex)) {
     return pm[filter.pokedex as PokedexFrom];
   } else if (filter.pokedex === 'home') {
-    return pm.kitakami === null && pm.paldea === null;
+    return pm.kitakami === null && pm.paldea === null && pm.blueberry === null;
   } else {
     return true;
   }

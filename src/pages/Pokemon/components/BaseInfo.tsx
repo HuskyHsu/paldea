@@ -161,6 +161,18 @@ const renderData: Render[] = [
             北上#{pm.kitakami.toString().padStart(3, '0')}
           </span>
         )}
+        {pm.blueberry && (
+          <span
+            className={clsx(
+              'h-7 w-1/2 md:w-2/5',
+              'border-2 border-solid border-custom-blue',
+              'rounded-full bg-custom-blue/30 text-center text-sm text-black',
+              'whitespace-nowrap leading-6'
+            )}
+          >
+            藍莓#{pm.blueberry.toString().padStart(3, '0')}
+          </span>
+        )}
       </span>
     ),
   },
