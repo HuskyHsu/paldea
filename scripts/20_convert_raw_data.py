@@ -325,7 +325,7 @@ if __name__ == "__main__":
     source_map = updateEvolves(new_data)
 
     # 將初步整理成json的檔案會出查看
-    # with open("rawdata/2.0.1_zh.json", "w") as output_file:
+    # with open("rawdata/3.0.0_zh.json", "w") as output_file:
     #     output_file.write(json.dumps(new_data, indent=4, ensure_ascii=False))
 
     conn, cursor = init_db()

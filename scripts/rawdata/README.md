@@ -9,6 +9,7 @@ Evolves into Lilligant-1 @ lv0 (UseItemHisui) [Sun Stone]
 Evolves into Braviary-1 @ lv54 (Hisui) [0]
 Evolves into Avalugg-1 @ lv37 (Hisui) [0]
 Evolves into Weezing-1 @ lv35 (Galar) [0]
+Evolves into Exeggutor-1 @ lv0 (UseItemAlola) [Leaf Stone]
 
 # 3.0.0 data
 

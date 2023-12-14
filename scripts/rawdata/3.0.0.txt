@@ -7913,6 +7913,7 @@ Egg Moves:
 - Ingrain
 - Block
 Evolves into Exeggutor-0 @ lv0 (UseItem) [Leaf Stone]
+Evolves into Exeggutor-1 @ lv0 (UseItemAlola) [Leaf Stone]
 
 ======
 103 - Exeggutor B#004 (Stage: 2)
