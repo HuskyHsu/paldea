@@ -38,6 +38,8 @@ def rowsToJsonArray(raw_data):
     curr_index = 0
     list_key = None
 
+    TMMap = {}
+
     # 匯出所有進化條件用來要翻譯的，過程產物
     # 對應到 evolutionItem.csv, evolutionMethod.csv
     evolutionItem = set()
@@ -186,6 +188,8 @@ def rowsToJsonArray(raw_data):
                     [tm, name] = move[1:].split("] ")
                     moves_.append({"tm": tm, "name": move_dict[name]})
 
+                    TMMap[tm] = [move_dict[name], move_id_dict[move_dict[name]]]
+
                 curr["TMLearn"] = moves_
 
             if "EggMoves" in curr:
@@ -196,6 +200,11 @@ def rowsToJsonArray(raw_data):
 
             new_data.append(curr)
             curr = {}
+
+    sorted_keys = sorted(TMMap.keys())
+    for key in sorted_keys:
+        value = TMMap[key]
+        print(f"{key},{value[0]},{value[1]}")
 
     return new_data, name_link_map
 
@@ -1161,6 +1170,25 @@ ORDER BY
             """
 SELECT
 	TMs.pid,
+	TMs.leaguePoint
+FROM
+	TMs
+WHERE
+	TMs.move_id = ?
+	AND TMs.leaguePoint NOT NULL
+            """,
+            (i,),
+        ):
+            for key in row:
+                TM[key] = row[key]
+
+        if "pid" in TM:
+            move["TM"] = TM
+
+        for row in cursor.execute(
+            """
+SELECT
+	TMs.pid,
 	TMs.leaguePoint,
 	names.nameZh || '的' || TM_materials.part as "materials_part",
 	TM_materials."count" as "materials_count",
@@ -1184,8 +1212,9 @@ WHERE
                     TM[key] = row[key]
             TM["materials"].append(material)
 
-        if len(TM["materials"]) > 0:
-            move["TM"] = TM
+        print(TM)
+        if "leaguePoint" in TM and TM["leaguePoint"] > 0:
+            # move["TM"] = TM
             move["TM"]["pm"] = []
             for row in cursor.execute(
                 """
