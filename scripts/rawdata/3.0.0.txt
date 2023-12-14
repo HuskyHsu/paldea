@@ -938,6 +938,7 @@ TM Learn:
 - [TM227] Alluring Voice
 - [TM229] Upper Hand
 Evolves into Raichu-0 @ lv0 (UseItem) [Thunder Stone]
+Evolves into Raichu-1 @ lv0 (UseItemAlola) [Thunder Stone]
 
 ======
 1034 - Pikachu-1 #074 K#021 (Stage: 2)
@@ -8331,6 +8332,7 @@ Egg Moves:
 - Spit Up
 - Swallow
 Evolves into Weezing-0 @ lv35 (LevelUp) [0]
+Evolves into Weezing-1 @ lv35 (Galar) [0]
 
 ======
 110 - Weezing K#136 (Stage: 2)
@@ -11557,6 +11559,7 @@ TM Learn:
 - [TM207] Temper Flare
 - [TM224] Curse
 Evolves into Typhlosion-0 @ lv36 (LevelUp) [0]
+Evolves into Typhlosion-1 @ lv36 (Hisui) [0]
 
 ======
 157 - Typhlosion B#178 (Stage: 3)
@@ -36660,6 +36663,7 @@ TM Learn:
 - [TM196] Flip Turn
 - [TM208] Whirlpool
 Evolves into Samurott-0 @ lv36 (LevelUp) [0]
+Evolves into Samurott-1 @ lv36 (Hisui) [0]
 
 ======
 503 - Samurott B#208 (Stage: 3)
@@ -37719,6 +37723,7 @@ Egg Moves:
 - Healing Wish
 - Worry Seed
 Evolves into Lilligant-0 @ lv0 (UseItem) [Sun Stone]
+Evolves into Lilligant-1 @ lv0 (UseItemHisui) [Sun Stone]
 
 ======
 549 - Lilligant #105 K#067 (Stage: 2)
@@ -42025,6 +42030,7 @@ Egg Moves:
 - Rock Smash
 - Roost
 Evolves into Braviary-0 @ lv54 (LevelUp) [0]
+Evolves into Braviary-1 @ lv54 (Hisui) [0]
 
 ======
 628 - Braviary #366 B#033 (Stage: 2)
@@ -49934,7 +49940,7 @@ Egg Moves:
 - Counter
 - Life Dew
 Evolves into Sliggoo-0 @ lv40 (LevelUp) [0]
-Evolves into Sliggoo-0 @ lv0 (Hisui) [1]
+Evolves into Sliggoo-1 @ lv0 (Hisui) [1]
 
 ======
 705 - Sliggoo #173 K#179 (Stage: 2)
@@ -50539,6 +50545,7 @@ Egg Moves:
 - Mirror Coat
 - Aurora Veil
 Evolves into Avalugg-0 @ lv37 (LevelUp) [0]
+Evolves into Avalugg-1 @ lv37 (Hisui) [0]
 
 ======
 713 - Avalugg #364 (Stage: 2)
@@ -51347,6 +51354,7 @@ TM Learn:
 - [TM197] Dual Wingbeat
 - [TM216] Feather Dance
 Evolves into Decidueye-0 @ lv34 (LevelUp) [0]
+Evolves into Decidueye-1 @ lv36 (Hisui) [0]
 
 ======
 724 - Decidueye B#220 (Stage: 3)

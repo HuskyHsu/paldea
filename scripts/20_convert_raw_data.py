@@ -134,6 +134,9 @@ def rowsToJsonArray(raw_data):
 
             name_link_map[curr["Name"]] = curr["link"]
 
+            if "Blueberry" in curr:
+                curr["Blueberry"] = int(curr["Blueberry"])
+
             if "Kitakami" in curr:
                 curr["Kitakami"] = int(curr["Kitakami"])
 
@@ -1283,7 +1286,7 @@ ORDER BY
     # for move in all_moves:
     #     del move["description"]
 
-    with open(f"../public/data/move_list_201.json", "w") as output_file:
+    with open(f"../public/data/move_list_300.json", "w") as output_file:
         output_file.write(json.dumps(all_moves))
 
     cursor.close()
@@ -1294,5 +1297,5 @@ ORDER BY
             if key in row:
                 del row[key]
 
-    with open("../public/data/base_list_201.json", "w") as output_file:
+    with open("../public/data/base_list_300.json", "w") as output_file:
         output_file.write(json.dumps(new_data))

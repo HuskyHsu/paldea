@@ -3,7 +3,7 @@ import shutil
 import os
 
 
-json_file_path = "../public/data/base_list_201.json"
+json_file_path = "../public/data/base_list_300.json"
 target_folder = "/Users/shihchi/Desktop/sleep/[HOME] Pokémon Renders/Normal"
 destination_folder = "../public/image/home"
 

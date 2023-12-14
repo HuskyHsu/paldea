@@ -13,7 +13,7 @@ const PokemonListContext = createContext<PokemonType>({
 });
 
 const usePokemonList = () => {
-  const fetchUserData = () => api<Pokemon[]>(`/data/base_list_201.json`);
+  const fetchUserData = () => api<Pokemon[]>(`/data/base_list_300.json`);
 
   const { data, status, ...rest } = useQuery<Pokemon[]>(['pmList_201_v1'], fetchUserData);
 
