@@ -20,7 +20,6 @@ export function UseFilter() {
           prev.set(key, cacheObj[key as keyof typeof cacheObj]);
           return prev;
         });
-      } else {
       }
     }
   }, [cacheObj, searchParams, setSearchParams]);

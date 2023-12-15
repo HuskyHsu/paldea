@@ -43,13 +43,17 @@ export function Evolution({ pm }: Props) {
   // 1-3
   // 1-8
 
+  // 1-3-1
+  //  ↱O
+  // O-O
+  // ↳-O-O
+
   // const isMobile = window.screen.width < 768;
   // mobile case:
   // if cols >= 3 => transpose grid
 
-  const cols = pm.evolves?.to.find((evolve) => evolve.to)
-    ? 'grid-cols-3 md:grid-cols-5'
-    : 'grid-cols-3';
+  const isThree = pm.evolves?.to.find((evolve) => evolve.to);
+  const cols = isThree ? 'grid-cols-3 md:grid-cols-5' : 'grid-cols-3';
   const rows = rowSpanMap[(pm.evolves?.to.length || 1) as keyof typeof rowSpanMap];
 
   let keyId = 0;
@@ -94,18 +98,25 @@ export function Evolution({ pm }: Props) {
         ]);
         keyId += 2;
       });
+    } else if (isThree) {
+      acc = acc.concat([
+        <span key={keyId + 12345} className={clsx('hidden text-xs md:block')} />,
+        <span key={keyId + 123456} className={clsx('hidden text-xs md:block')} />,
+      ]);
     }
 
     return acc;
   }, [] as JSX.Element[]);
 
-  pm.evolves?.to.forEach((evolution, ii) => {
+  let hasHr = false;
+  pm.evolves?.to.forEach((evolution) => {
     if (evolution.to) {
-      evolution.to.forEach((evolution_, i, list) => {
-        if (ii === 0 && i === 0) {
-          evolutionPath?.push(<hr className="col-span-3 w-full" key={999} />);
-        }
+      if (hasHr === false) {
+        evolutionPath?.push(<hr className="col-span-3 w-full md:hidden" key={999} />);
+        hasHr = true;
+      }
 
+      evolution.to.forEach((evolution_, i, list) => {
         evolutionPath?.push(
           <SubCard
             key={keyId}
