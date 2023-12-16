@@ -27,6 +27,7 @@ export function UseFilter() {
     ability: searchParams.get('ability') || '',
     EV: searchParams.get('EV') || '',
     tags: new Set((searchParams.get('tags') || '').split('-').filter(Boolean)),
+    onlyEvolution: searchParams.get('onlyEvolution') || '',
   };
 
   const updateState = (key: ValueKeys<Filter, string>[keyof Filter]) => {

@@ -28,6 +28,7 @@ export function Header({
 }: Props) {
   const typeUpdate = updateSetState('types');
   const abilityUpdate = updateState('ability');
+  const showChildUpdate = updateState('onlyEvolution');
 
   const hasFilter = [filter.ability, filter.EV].filter(Boolean).length > 0 || filter.tags.size > 0;
 
@@ -86,6 +87,19 @@ export function Header({
               />
             </button>
           ))}
+        </div>
+        <SubTitleSlide title="進化鏈" />
+        <div className="flex items-center">
+          <input
+            id={'showChildDex'}
+            type="checkbox"
+            checked={filter.onlyEvolution === 'yes'}
+            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-800 focus:ring-1 focus:ring-blue-800"
+            onChange={(e) => showChildUpdate(e.target.checked ? 'yes' : '')}
+          />
+          <label htmlFor={'showChildDex'} className="ml-2 text-sm">
+            僅顯示進化型
+          </label>
         </div>
       </div>
       <div className={clsx('mt-2 flex-col gap-2', display.advancedFilter ? 'flex' : 'hidden')}>

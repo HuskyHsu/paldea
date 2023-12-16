@@ -576,6 +576,11 @@ ORDER BY
         for evolves in cursor.execute("SELECT * from pokemon_evolves;")
     }
 
+    evolveMap = {
+        evolves["pokemon_from_link"]: evolves["pokemon_to_link"]
+        for evolves in cursor.execute("SELECT * from pokemon_evolves;")
+    }
+
     for row in new_data:
         moveMap = {
             "levelingUps": [],
@@ -1111,15 +1116,12 @@ ORDER BY
         if len(row["formChangin"]) == 1:
             del row["formChangin"]
 
+        row["hasEvolves"] = row["link"] in evolveMap
+
         with open(f"../public/data/pm/{row['link']}.json", "w") as output_file:
             output_file.write(json.dumps(row))
 
     print("save moves >>>>>>")
-
-    evolveMap = {
-        evolves["pokemon_from_link"]: evolves["pokemon_to_link"]
-        for evolves in cursor.execute("SELECT * from pokemon_evolves;")
-    }
 
     for i in range(1, 1000):
         move = {"levelingUps": [], "egg": []}

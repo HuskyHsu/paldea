@@ -17,6 +17,7 @@ export type Pokemon = {
   EVs: number[];
   source: string;
   tags: string[];
+  hasEvolves: boolean;
 };
 
 export type SubPokemon = {

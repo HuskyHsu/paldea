@@ -20,6 +20,7 @@ export function getFilter(cacheObj: Record<string, string>) {
     ability: cacheObj['ability'] || '',
     EV: cacheObj['EV'] || '',
     tags: new Set((cacheObj['tags'] || '').split('-').filter(Boolean)),
+    onlyEvolution: cacheObj['onlyEvolution'] || '',
   };
 
   return filter;
@@ -57,6 +58,10 @@ function filterFn(pm: Pokemon, filter: Filter) {
   if (display && filter.tags.size > 0) {
     display =
       display && pm.tags.length > 0 && [...filter.tags].every((tab) => pm.tags.includes(tab));
+  }
+
+  if (display && filter.onlyEvolution === 'yes') {
+    display = display && pm.hasEvolves === false;
   }
 
   return display;

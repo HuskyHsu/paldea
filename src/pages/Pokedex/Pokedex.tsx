@@ -16,6 +16,7 @@ export type Filter = {
   ability: string;
   EV: string;
   tags: Set<string>;
+  onlyEvolution: string;
 };
 
 export type Display = {

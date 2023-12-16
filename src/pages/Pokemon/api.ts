@@ -28,4 +28,5 @@ export const defaultPokemon: FullPokemon = {
     beforeEvolveTMs: [],
   },
   tags: [],
+  hasEvolves: true,
 };
