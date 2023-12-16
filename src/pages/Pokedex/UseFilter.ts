@@ -11,18 +11,13 @@ const localStorageKey = 'pokeDexPage';
 
 export function UseFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [display, setDisplay] = useState<Display>({
+    advancedFilter: false,
+    EVs: false,
+    ability: false,
+  });
 
   let cacheObj = getJsonCache(localStorageKey);
-  useEffect(() => {
-    for (const key of Object.keys(cacheObj)) {
-      if (searchParams.get(key) === null) {
-        setSearchParams((prev) => {
-          prev.set(key, cacheObj[key as keyof typeof cacheObj]);
-          return prev;
-        });
-      }
-    }
-  }, [cacheObj, searchParams, setSearchParams]);
 
   const filter: Filter = {
     keyword: searchParams.get('keyword') || '',
@@ -33,12 +28,6 @@ export function UseFilter() {
     EV: searchParams.get('EV') || '',
     tags: new Set((searchParams.get('tags') || '').split('-').filter(Boolean)),
   };
-
-  const [display, setDisplay] = useState<Display>({
-    advancedFilter: false,
-    EVs: false,
-    ability: false,
-  });
 
   const updateState = (key: ValueKeys<Filter, string>[keyof Filter]) => {
     return (val: string) => {

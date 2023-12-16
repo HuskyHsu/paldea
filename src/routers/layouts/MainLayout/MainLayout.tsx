@@ -7,11 +7,19 @@ import { Icon } from '@/newComponents';
 import { Loading } from '@/newComponents/common';
 import { useBackToTopContext } from '@/newComponents/contexts';
 import { Item } from './Item';
+import { getJsonCache } from '@/store';
+
+const localStorageKey = 'pokeDexPage';
 
 function MainLayout() {
   const { ref, toggleVisibility } = useBackToTopContext();
   const location = useLocation();
   const navigate = useNavigate();
+
+  let cacheObj = getJsonCache(localStorageKey);
+  const navLink = Object.entries(cacheObj)
+    .map(([key, val]) => `${key}=${val}`)
+    .join('&');
 
   const hash = location.pathname.split('/')[1];
 
@@ -59,7 +67,7 @@ function MainLayout() {
             text={'圖鑑清單'}
             color="bg-custom-red"
             selected={['pokedex', ''].includes(hash)}
-            onClick={() => updateNav('')}
+            onClick={() => updateNav(`/?${navLink}`)}
           >
             <Icon.Books className="h-5 w-5 fill-current" />
           </Item>
