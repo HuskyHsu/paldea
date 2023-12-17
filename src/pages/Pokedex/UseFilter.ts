@@ -15,6 +15,7 @@ export function UseFilter() {
     advancedFilter: false,
     EVs: false,
     ability: false,
+    pid: false,
   });
 
   let cacheObj = getJsonCache(localStorageKey);

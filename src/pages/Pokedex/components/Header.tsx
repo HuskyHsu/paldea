@@ -74,6 +74,18 @@ export function Header({
           currVal={filter.pokedex}
           updateState={updateState('pokedex')}
         />
+        <div className="flex gap-x-2">
+          <Toggle
+            text="顯示其餘圖鑑編號"
+            checked={display.pid}
+            handleChange={toggleDisplay('pid')}
+          />
+          <Toggle
+            text="僅顯示進化型"
+            checked={filter.onlyEvolution === 'yes'}
+            handleChange={(bool) => showChildUpdate(bool ? 'yes' : '')}
+          />
+        </div>
         <SubTitleSlide title="屬性" />
         <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
           {Object.keys(TypeEnum).map((type) => (
@@ -87,19 +99,6 @@ export function Header({
               />
             </button>
           ))}
-        </div>
-        <SubTitleSlide title="進化鏈" />
-        <div className="flex items-center">
-          <input
-            id={'showChildDex'}
-            type="checkbox"
-            checked={filter.onlyEvolution === 'yes'}
-            className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-800 focus:ring-1 focus:ring-blue-800"
-            onChange={(e) => showChildUpdate(e.target.checked ? 'yes' : '')}
-          />
-          <label htmlFor={'showChildDex'} className="ml-2 text-sm">
-            僅顯示進化型
-          </label>
         </div>
       </div>
       <div className={clsx('mt-2 flex-col gap-2', display.advancedFilter ? 'flex' : 'hidden')}>
@@ -139,7 +138,6 @@ export function Header({
           updateState={abilityUpdate}
         />
         <SubTitleSlide title="努力值" />
-        <Toggle text="顯示努力值" checked={display.EVs} handleChange={toggleDisplay('EVs')} />
         <span className="text-sm">(篩選單獨只有這此項的清單)</span>
         <Buttons
           list={[
@@ -153,6 +151,7 @@ export function Header({
           currVal={filter.EV}
           updateState={updateState('EV')}
         />
+        <Toggle text="顯示努力值" checked={display.EVs} handleChange={toggleDisplay('EVs')} />
         <SubTitleSlide title="tags(複選，交集)" />
         <Buttons
           list={[

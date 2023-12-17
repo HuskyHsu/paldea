@@ -23,6 +23,7 @@ export type Display = {
   advancedFilter: boolean;
   ability: boolean;
   EVs: boolean;
+  pid: boolean;
 };
 
 const itemsPerPage = 30;

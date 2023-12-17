@@ -8,7 +8,7 @@ type Props = {
 
 export function Toggle({ text, checked, handleChange }: Props) {
   return (
-    <div className="pl-2">
+    <div className="h-8 py-1">
       <label className="relative inline-flex cursor-pointer items-center">
         <input
           type="checkbox"
