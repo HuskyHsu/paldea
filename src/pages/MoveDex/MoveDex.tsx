@@ -5,21 +5,22 @@ import clsx from 'clsx';
 import { Hr } from '@/newComponents/common';
 import { MoveDetail } from '@/newComponents/game';
 import { Icon } from '@/newComponents';
-import { Accuracy, FullMove, Move } from '@/types/Pokemon';
+import { Accuracy, FullMove } from '@/types/Pokemon';
 import { ValueKeys, api } from '@/utils';
 
 import { Header, Intersection } from './components';
-import { useMoveListInfo } from './api';
+import { MoveType, useMoveListInfo } from './api';
 
 export type Filter = {
   keyword: string;
   type: string;
   category: string;
   page: number;
+  TM: string;
 };
 
 type colValue = {
-  row: Move;
+  row: MoveType;
   fn?: () => void;
   checked?: boolean;
 };
@@ -54,36 +55,42 @@ const columns = [
         {row.nameZh}
       </a>
     ),
-    meta: 'w-[21%] md:w-[18%]',
+    meta: 'w-[20%] md:w-[10%]',
+  },
+  {
+    header: '招式機',
+    value: ({ row }: colValue) =>
+      row.TMPid !== null ? `${row.TMPid.toString().padStart(3, '0')}` : '',
+    meta: 'w-[12%] md:w-[8%]',
   },
   {
     header: '屬性',
     value: ({ row }: colValue) => <Icon.Game.Type type={row.type} className="h-6 w-full" />,
-    meta: 'w-[15%] md:w-[8%]',
+    meta: 'w-[12%] md:w-[8%]',
   },
   {
     header: '分類',
     value: ({ row }: colValue) => (
       <Icon.Game.MoveCategory type={row.category} className="h-6 w-full" />
     ),
-    meta: 'w-[15%] md:w-[8%]',
+    meta: 'w-[12%] md:w-[8%]',
   },
   {
     header: '威力',
     value: ({ row }: colValue) =>
       row.power < 1 ? Accuracy[row.power.toString() as keyof typeof Accuracy] : row.power,
-    meta: 'w-[13%] md:w-[8%]',
+    meta: 'w-[11%] md:w-[8%]',
   },
   {
     header: '命中',
     value: ({ row }: colValue) =>
       row.accuracy < 1 ? Accuracy[row.accuracy.toString() as keyof typeof Accuracy] : row.accuracy,
-    meta: 'w-[13%] md:w-[8%]',
+    meta: 'w-[11%] md:w-[8%]',
   },
   {
     header: 'PP',
     value: ({ row }: colValue) => row.PP,
-    meta: 'w-[13%] md:w-[8%]',
+    meta: 'w-[11%] md:w-[8%]',
   },
   {
     header: '說明',
@@ -104,6 +111,7 @@ function MoveDex() {
     type: searchParams.get('type') || '',
     category: searchParams.get('category') || '',
     page: Number(searchParams.get('page') || 1),
+    TM: searchParams.get('TM') || '',
   };
 
   const { data: allMoves } = useMoveListInfo();
@@ -208,7 +216,18 @@ function MoveDex() {
                 display = display && filter.category === move.category;
               }
 
+              if (filter.TM === '僅招式機') {
+                display = display && move.TMPid !== null;
+              }
+
               return display;
+            })
+            .sort((a, b) => {
+              if (filter.TM === '僅招式機') {
+                return (a.TMPid || 0) - (b.TMPid || 0);
+              }
+
+              return 1;
             })
             .sort((a, b) => {
               if (pick.has(a.pid) && pick.has(b.pid)) {

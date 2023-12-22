@@ -1299,9 +1299,11 @@ ORDER BY names.pid, pokemons.link;
         for row in cursor.execute(
             """
 SELECT
-	moves.*
+	moves.*,
+	TMs.pid as "TMPid"
 FROM
 	moves
+	FULL OUTER JOIN TMs ON TMs.move_id = moves.pid
 WHERE
 	moves.pid in( SELECT DISTINCT
 			move_id FROM pokemon_moves)
@@ -1317,8 +1319,9 @@ ORDER BY
         )
     ]
 
-    # for move in all_moves:
-    #     del move["description"]
+    for move in all_moves:
+        if move["TMPid"] == 0:
+            move["TMPid"] = None
 
     with open(f"../public/data/move_list_300.json", "w") as output_file:
         output_file.write(json.dumps(all_moves))

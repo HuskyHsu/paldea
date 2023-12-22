@@ -2,9 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import { api } from '@/utils';
 import { Move } from '@/types/Pokemon';
 
+export type MoveType = Move & { TMPid: number | null };
+
 export const useMoveListInfo = () => {
-  const { data, status, ...rest } = useQuery<Move[]>(['move'], () =>
-    api<Move[]>(`/data/move_list_300.json`)
+  const { data, status, ...rest } = useQuery<MoveType[]>(['move'], () =>
+    api<MoveType[]>(`/data/move_list_300.json`)
   );
 
   return {

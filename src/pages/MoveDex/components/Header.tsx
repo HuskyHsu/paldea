@@ -13,6 +13,7 @@ type Props = {
 export function Header({ filter, updateState }: Props) {
   const typeUpdate = updateState('type');
   const categoryUpdate = updateState('category');
+  const TMUpdate = updateState('TM');
 
   return (
     <header>
@@ -55,6 +56,15 @@ export function Header({ filter, updateState }: Props) {
           ]}
           currVal={filter.category}
           updateState={(val) => categoryUpdate(val)}
+        />
+        <SubTitleSlide title="招式學習機" />
+        <Buttons
+          list={[
+            { name: '全部', val: '' },
+            { name: '僅招式機', val: '僅招式機' },
+          ]}
+          currVal={filter.TM}
+          updateState={(val) => TMUpdate(val)}
         />
       </div>
     </header>
