@@ -55333,7 +55333,7 @@ TM Learn:
 - [TM220] Meteor Beam
 
 ======
-1357 - Minior-7 B#106 (Stage: 2)
+1357 - Minior-07 B#106 (Stage: 2)
 ======
 Base Stats: 60.100.60.100.60.120 (BST: 500)
 EV Yield: 0.1.0.1.0.0
@@ -55402,7 +55402,7 @@ TM Learn:
 - [TM220] Meteor Beam
 
 ======
-1358 - Minior-8 B#106 (Stage: 2)
+1358 - Minior-08 B#106 (Stage: 2)
 ======
 Base Stats: 60.100.60.100.60.120 (BST: 500)
 EV Yield: 0.1.0.1.0.0
@@ -55471,7 +55471,7 @@ TM Learn:
 - [TM220] Meteor Beam
 
 ======
-1359 - Minior-9 B#106 (Stage: 2)
+1359 - Minior-09 B#106 (Stage: 2)
 ======
 Base Stats: 60.100.60.100.60.120 (BST: 500)
 EV Yield: 0.1.0.1.0.0

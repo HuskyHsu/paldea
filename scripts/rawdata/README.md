@@ -11,6 +11,10 @@ Evolves into Avalugg-1 @ lv37 (Hisui) [0]
 Evolves into Weezing-1 @ lv35 (Galar) [0]
 Evolves into Exeggutor-1 @ lv0 (UseItemAlola) [Leaf Stone]
 
+Minior-7 -> Minior-07
+Minior-8 -> Minior-08
+Minior-9 -> Minior-09
+
 # 3.0.0 data
 
 ## new ABILITIES, ITEMS, MOVES
