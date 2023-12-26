@@ -13,7 +13,7 @@ type Props = {
   ) => void;
 };
 
-const pagingButtonLength = window.screen.width < 768 ? 1 : 3;
+const pagingButtonLength = window.screen.width < 768 ? 1 : 5;
 
 export function Pagination({ currentPage, totalPages, updateNumberState }: Props) {
   return (
