@@ -2,7 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { RadarChart } from './RadarChart';
-import { FillType, FullPokemon } from '@/types/Pokemon';
+import { FillType, FullPokemon, BasePoint } from '@/types/Pokemon';
 import { SubTitleSlide } from '@/newComponents/common';
 
 type Props = {
@@ -27,19 +27,103 @@ function calStatistic(
   return nature === 'up' ? Math.floor(value * 1.1) : Math.floor(value * 0.9);
 }
 
+function updateBase(prev: BasePoint, key: string, value: number): BasePoint {
+  if (Number.isNaN(value)) {
+    value = 0;
+  }
+
+  if (value < 0) {
+    value = 0;
+  }
+
+  if (value > 252) {
+    value = 252;
+  }
+
+  const preTotal = prev.Hp + prev.Atk + prev.Def + prev.SpA + prev.SpD + prev.Spe;
+
+  if (preTotal - prev[key as keyof typeof prev] + value > 510) {
+    value = 510 - preTotal + prev[key as keyof typeof prev];
+  }
+
+  const newBase = {
+    ...prev,
+    [key as keyof typeof prev]: value,
+  };
+
+  return {
+    ...newBase,
+    Total: newBase.Hp + newBase.Atk + newBase.Def + newBase.SpA + newBase.SpD + newBase.Spe,
+  };
+}
+
+function updateIndividual(prev: BasePoint, key: string, value: number): BasePoint {
+  if (Number.isNaN(value)) {
+    value = 0;
+  }
+
+  if (value < 0) {
+    value = 0;
+  }
+
+  if (value > 31) {
+    value = 31;
+  }
+
+  const newBase = {
+    ...prev,
+    [key as keyof typeof prev]: value,
+  };
+
+  return newBase;
+}
+
+function updateNature(prev: BasePoint, key: string, value: number): BasePoint {
+  for (let curKey in prev) {
+    if (curKey === key) {
+      prev[curKey as keyof typeof prev] = prev[curKey as keyof typeof prev] === value ? 0 : value;
+    } else {
+      if (value > 0 && prev[curKey as keyof typeof prev] > 0) {
+        prev[curKey as keyof typeof prev] = 0;
+      } else if (value < 0 && prev[curKey as keyof typeof prev] < 0) {
+        prev[curKey as keyof typeof prev] = 0;
+      }
+    }
+  }
+
+  return { ...prev };
+}
+
 export function Statistic({ pokemon }: Props) {
   const [lv, setLv] = useState(75);
-  const [targetSpe, setTargetSpe] = useState(
-    calStatistic(pokemon.baseStats[5], 31, 0, lv, false, undefined) - 1
-  );
+  const [customBase, setCustomBase] = useState<BasePoint>({
+    Hp: 0,
+    Atk: 0,
+    Def: 0,
+    SpA: 0,
+    SpD: 0,
+    Spe: 0,
+    Total: 0,
+  });
+  const [customIndividual, setcustomIndividual] = useState<BasePoint>({
+    Hp: 31,
+    Atk: 31,
+    Def: 31,
+    SpA: 31,
+    SpD: 31,
+    Spe: 31,
+    Total: 0,
+  });
 
-  const speEv = Array(253)
-    .fill(0)
-    .map((_, i) => i)
-    .map((ev) => {
-      return calStatistic(pokemon.baseStats[5], 31, ev, lv, false, undefined);
-    })
-    .findIndex((val) => val > targetSpe);
+  const [nature, setNature] = useState<BasePoint>({
+    Hp: 0,
+    Atk: 0,
+    Def: 0,
+    SpA: 0,
+    SpD: 0,
+    Spe: 0,
+    Total: 0,
+  });
 
   const cases = [
     { name: '最高', individual: 31, base: 252, nature: 'up' },
@@ -104,21 +188,163 @@ export function Statistic({ pokemon }: Props) {
                   ))}
                 </tr>
               ))}
+              <tr className={clsx('border-b text-center', 'bg-custom-gold/30')}>
+                <td className="py-1">自訂</td>
+                {['Hp', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'].map((key, i) => {
+                  return (
+                    <td className="py-1" key={key}>
+                      {calStatistic(
+                        pokemon.baseStats[i],
+                        customIndividual[key as keyof typeof customIndividual],
+                        customBase[key as keyof typeof customBase],
+                        lv,
+                        i === 0,
+                        nature[key as keyof typeof nature] === 0
+                          ? undefined
+                          : nature[key as keyof typeof nature] > 0
+                          ? 'up'
+                          : 'down'
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
             </tbody>
           </table>
-          <input
-            type="range"
-            value={targetSpe}
-            min={calStatistic(pokemon.baseStats[5], 31, 0, lv, false, undefined) - 1}
-            max={calStatistic(pokemon.baseStats[5], 31, 252, lv, false, undefined) - 1}
-            step="1"
-            className="h-1 w-full cursor-pointer appearance-none rounded-lg bg-gray-200"
-            onChange={(e) => setTargetSpe(parseInt(e.target.value))}
-          />
-          <p>
-            若對手的速度{targetSpe} ，需要{speEv}點速度努力值才能先攻
-            <span className="block text-sm">(同等級下，我方個體值滿，且無性格影響下)</span>
-          </p>
+          <div>
+            <label className="block font-medium">自訂分配</label>
+            <table className="w-full table-fixed text-center text-sm">
+              <thead className="bg-gray-100 text-xs uppercase">
+                <tr className="bg-custom-gold/50 text-gray-100">
+                  <th scope="col" className="whitespace-nowrap py-1">
+                    {}
+                  </th>
+                  {['Hp', '攻擊', '防禦', '特攻', '特防', '速度'].map((type) => (
+                    <th scope="col" className="whitespace-nowrap py-1" key={type}>
+                      {type}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr className={clsx('border-b text-center')}>
+                  <td className="">個體值</td>
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td>
+                    {
+                      ['Hp', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'].filter((key) => {
+                        return customIndividual[key as keyof typeof customIndividual] === 31;
+                      }).length
+                    }
+                    v
+                  </td>
+                  {['Hp', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'].map((key) => {
+                    return (
+                      <td key={key}>
+                        <input
+                          className={clsx(
+                            'block w-full rounded border border-gray-300',
+                            'bg-gray-50 px-2.5 py-0.5 text-sm text-gray-900',
+                            'text-center'
+                          )}
+                          value={customIndividual[key as keyof typeof customIndividual] ?? ''}
+                          onChange={(e) => {
+                            setcustomIndividual((prev) => {
+                              return updateIndividual(prev, key, Number(e.target.value));
+                            });
+                          }}
+                        />
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td className="">努力值</td>
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td>{customBase.Total}</td>
+                  {['Hp', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'].map((key) => {
+                    return (
+                      <td key={key}>
+                        <input
+                          className={clsx(
+                            'block w-full rounded border border-gray-300',
+                            'bg-gray-50 px-2.5 py-0.5 text-sm text-gray-900',
+                            'text-center'
+                          )}
+                          value={customBase[key as keyof typeof customBase] ?? ''}
+                          onChange={(e) => {
+                            setCustomBase((prev) => {
+                              return updateBase(prev, key, Number(e.target.value));
+                            });
+                          }}
+                        />
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td className="">性格⇧</td>
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td />
+                  <td />
+                  {['Atk', 'Def', 'SpA', 'SpD', 'Spe'].map((key) => {
+                    const value = nature[key as keyof typeof nature] > 0 ? '+' : '';
+                    return (
+                      <td key={key}>
+                        <input
+                          type="checkbox"
+                          className={clsx(
+                            'block w-full rounded border border-gray-300',
+                            'bg-gray-50 py-3 focus:ring-0',
+                            'text-custom-gold/80',
+                            'text-center text-sm'
+                          )}
+                          checked={value === '+'}
+                          onChange={(e) => {
+                            setNature((prev) => {
+                              return updateNature(prev, key, 1);
+                            });
+                          }}
+                        />
+                      </td>
+                    );
+                  })}
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td className="">性格⇩</td>
+                </tr>
+                <tr className={clsx('border-b text-center')}>
+                  <td />
+                  <td />
+                  {['Atk', 'Def', 'SpA', 'SpD', 'Spe'].map((key) => {
+                    const value = nature[key as keyof typeof nature] < 0 ? '-' : '';
+                    return (
+                      <td key={key}>
+                        <input
+                          type="checkbox"
+                          className={clsx(
+                            'block w-full rounded border border-gray-300',
+                            'bg-gray-50 py-3 focus:ring-0',
+                            'text-custom-gold/80',
+                            'text-center text-sm'
+                          )}
+                          checked={value === '-'}
+                          onChange={(e) => {
+                            setNature((prev) => {
+                              return updateNature(prev, key, -1);
+                            });
+                          }}
+                        />
+                      </td>
+                    );
+                  })}
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <ul className="col-span-12 text-center text-sm text-gray-500 md:text-start">
           <li className="px-2">最高：個體值最大、努力值滿、性格⇧</li>

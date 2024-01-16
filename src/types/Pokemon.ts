@@ -48,6 +48,16 @@ export enum EVIndex {
   Spe = 5,
 }
 
+export type BasePoint = {
+  Hp: number;
+  Atk: number;
+  Def: number;
+  SpA: number;
+  SpD: number;
+  Spe: number;
+  Total: number;
+};
+
 export enum EVName {
   'HP' = 'HP',
   'Atk' = '攻擊',
