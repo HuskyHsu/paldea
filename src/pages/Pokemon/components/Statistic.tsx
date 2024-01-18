@@ -95,7 +95,7 @@ function updateNature(prev: BasePoint, key: string, value: number): BasePoint {
 }
 
 export function Statistic({ pokemon }: Props) {
-  const [lv, setLv] = useState(75);
+  const [lv, setLv] = useState(100);
   const [customBase, setCustomBase] = useState<BasePoint>({
     Hp: 0,
     Atk: 0,
@@ -105,6 +105,7 @@ export function Statistic({ pokemon }: Props) {
     Spe: 0,
     Total: 0,
   });
+
   const [customIndividual, setcustomIndividual] = useState<BasePoint>({
     Hp: 31,
     Atk: 31,
@@ -136,10 +137,10 @@ export function Statistic({ pokemon }: Props) {
 
   return (
     <>
-      <SubTitleSlide title="能力值" />
       <div className="grid grid-cols-12 gap-3 text-gray-600">
-        <div className="col-span-full flex justify-center md:col-span-5">
-          <div className="w-10/12 md:w-full">
+        <div className="col-span-full flex-col justify-center md:col-span-5 md:flex md:justify-start">
+          <SubTitleSlide title="個體值" />
+          <div className="mx-auto w-10/12 md:w-full">
             <RadarChart
               stats={pokemon.baseStats}
               EVs={pokemon.EVs}
@@ -148,6 +149,7 @@ export function Statistic({ pokemon }: Props) {
           </div>
         </div>
         <div className="col-span-12 space-y-3 md:col-span-7">
+          <SubTitleSlide title="能力值" />
           <label className="block font-medium">Lv： {lv}</label>
           <input
             type="range"
