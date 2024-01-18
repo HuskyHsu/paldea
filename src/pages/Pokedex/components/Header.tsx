@@ -69,7 +69,7 @@ export function Header({
             { name: '藍莓', val: 'blueberry' },
             { name: '洗翠', val: 'hisui' },
             { name: '全國', val: 'national' },
-            { name: 'HOME入境 / 活動', val: 'home' },
+            { name: 'HOME / 活動 / 點心', val: 'home' },
           ]}
           currVal={filter.pokedex}
           updateState={updateState('pokedex')}
@@ -87,7 +87,7 @@ export function Header({
           />
         </div>
         <SubTitleSlide title="屬性" />
-        <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
+        <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pl-2">
           {Object.keys(TypeEnum).map((type) => (
             <button onClick={() => typeUpdate(type)} key={type}>
               <Icon.Game.Type
@@ -100,8 +100,21 @@ export function Header({
             </button>
           ))}
         </div>
+        <SubTitleSlide title="tags(複選，交集)" />
+        <Buttons
+          list={[
+            { name: '傳說的寶可夢', val: '傳說的寶可夢' },
+            { name: '幻之寶可夢', val: '幻之寶可夢' },
+            { name: '悖謬寶可夢', val: '悖謬寶可夢' },
+            { name: '准傳說的寶可夢', val: '准傳說的寶可夢' },
+            { name: '朱版限定', val: '朱版限定' },
+            { name: '紫版限定', val: '紫版限定' },
+          ]}
+          currVal={filter.tags}
+          updateState={updateSetState('tags')}
+        />
       </div>
-      <div className={clsx('mt-2 flex-col gap-2', display.advancedFilter ? 'flex' : 'hidden')}>
+      <div className={clsx('mt-4 flex-col gap-2', display.advancedFilter ? 'flex' : 'hidden')}>
         <TitleSlide title="進階搜尋" />
         <SubTitleSlide title="特性" />
         <div className="block md:hidden">
@@ -152,19 +165,6 @@ export function Header({
           updateState={updateState('EV')}
         />
         <Toggle text="顯示努力值" checked={display.EVs} handleChange={toggleDisplay('EVs')} />
-        <SubTitleSlide title="tags(複選，交集)" />
-        <Buttons
-          list={[
-            { name: '傳說的寶可夢', val: '傳說的寶可夢' },
-            { name: '幻之寶可夢', val: '幻之寶可夢' },
-            { name: '悖謬寶可夢', val: '悖謬寶可夢' },
-            { name: '准傳說的寶可夢', val: '准傳說的寶可夢' },
-            { name: '朱版限定', val: '朱版限定' },
-            { name: '紫版限定', val: '紫版限定' },
-          ]}
-          currVal={filter.tags}
-          updateState={updateSetState('tags')}
-        />
       </div>
       <div
         className={clsx(
