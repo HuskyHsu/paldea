@@ -22,7 +22,7 @@ export function UseFilter() {
 
   const filter: Filter = {
     keyword: searchParams.get('keyword') || '',
-    pokedex: (searchParams.get('pokedex') || 'paldea') as PokedexFrom | 'home' | 'national',
+    pokedex: (searchParams.get('pokedex') || 'national') as PokedexFrom | 'home' | 'national',
     page: Number(searchParams.get('page') || 1),
     types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
     ability: searchParams.get('ability') || '',

@@ -60,11 +60,11 @@ export function Header({
         <SubTitleSlide title="圖鑑分類" />
         <Buttons
           list={[
+            { name: '全國', val: 'national' },
             { name: '帕底亞', val: 'paldea' },
             { name: '北上', val: 'kitakami' },
             { name: '藍莓', val: 'blueberry' },
             { name: '洗翠', val: 'hisui' },
-            { name: '全國', val: 'national' },
             { name: 'HOME / 活動 / 點心', val: 'home' },
           ]}
           currVal={filter.pokedex}
