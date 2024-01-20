@@ -42,37 +42,35 @@ export function Header({ pm }: Props) {
 }
 
 export function HeaderName({ pm }: Props) {
-  const shareData = {
-    title: `${pm.nameZh}`,
-    text: `${pm.nameZh}圖鑑\n`,
-    url: document.location.href,
-  };
-
   const share = async () => {
+    const shareData = {
+      title: `${pm.nameZh}圖鑑`,
+      text: `${pm.nameZh}圖鑑\n`,
+      url: document.location.href,
+    };
+
     try {
       await navigator.share(shareData);
     } catch (err) {
-      alert(err);
+      console.error(err);
     }
   };
 
   return (
-    <h2 className="-mb-2 flex items-end gap-x-2 whitespace-nowrap text-2xl">
+    <h2 className="-mb-2 flex items-center gap-x-1 whitespace-nowrap text-2xl">
       #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
       {pm.altForm && <span className="text-sm">({pm.altForm})</span>}
-      <a
-        href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
-        target="_blank"
-        rel="noreferrer"
-        className="ml-2 text-base font-bold text-blue-800 underline"
-      >
-        wiki
-      </a>
-      {'share' in navigator && (
-        <button className="ml-2 text-base font-bold text-blue-800 underline" onClick={share}>
-          share
-        </button>
-      )}
+      {'share' in navigator && <Icon.Share className="h-6 w-6" onClick={share} />}
+      <div className="flex h-8 items-end">
+        <a
+          href={`https://wiki.52poke.com/zh-hant/${pm.nameZh}`}
+          target="_blank"
+          rel="noreferrer"
+          className="ml-2 text-base font-bold text-blue-800 underline"
+        >
+          wiki
+        </a>
+      </div>
     </h2>
   );
 }
