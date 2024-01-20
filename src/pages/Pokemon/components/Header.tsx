@@ -42,6 +42,20 @@ export function Header({ pm }: Props) {
 }
 
 export function HeaderName({ pm }: Props) {
+  const shareData = {
+    title: `${pm.nameZh}`,
+    text: `${pm.nameZh}圖鑑\n`,
+    url: document.location.href,
+  };
+
+  const share = async () => {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
   return (
     <h2 className="-mb-2 flex items-end gap-x-2 whitespace-nowrap text-2xl">
       #{pm.pid.toString().padStart(4, '0')} {pm.nameZh}
@@ -54,6 +68,11 @@ export function HeaderName({ pm }: Props) {
       >
         wiki
       </a>
+      {'share' in navigator && (
+        <button className="ml-2 text-base font-bold text-blue-800 underline" onClick={share}>
+          share
+        </button>
+      )}
     </h2>
   );
 }
