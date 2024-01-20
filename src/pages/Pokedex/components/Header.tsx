@@ -58,11 +58,9 @@ export function Header({
           <div className={clsx('rounded-xl p-2', 'bg-custom-red', 'hidden md:block')}>
             <Icon.Books className="h-5 w-5 fill-current" />
           </div>
-          <h2 className="flex gap-x-1 text-xl">
+          <h2 className="flex items-center gap-x-1 text-xl">
             圖鑑清單
-            {'share' in navigator && (
-              <Icon.Share className="h-[1.75rem] w-[1.75rem]" onClick={share} />
-            )}
+            {'share' in navigator && <Icon.Share className="h-6 w-6" onClick={share} />}
           </h2>
         </div>
         <div className="flex w-full items-center gap-x-3 md:w-96">
