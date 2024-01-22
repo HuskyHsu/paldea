@@ -23,7 +23,7 @@ const localStorageKey = 'pokemonPage';
 
 function PokemonInfo() {
   const navigate = useNavigate();
-  const { nameId = '噴火龍' } = useParams();
+  const { nameId = '' } = useParams();
   const [name, ...altFormList] = nameId.split('-');
   const altForm = altFormList.length > 0 ? altFormList.join('-') : undefined;
   const { pokemonList } = usePokemonListContext();
@@ -44,14 +44,12 @@ function PokemonInfo() {
     ({ link } = pokemonList.find((pm) => pm.link === nameId) || { link: undefined });
   }
 
-  if (link === undefined) {
-    link = '4';
-  }
-
   useEffect(() => {
     (async () => {
-      const data = await await api<FullPokemon>(`/data/pm/${link}.json`);
-      setPm(data);
+      if (link !== undefined) {
+        const data = await api<FullPokemon>(`/data/pm/${link}.json`);
+        setPm(data);
+      }
     })();
   }, [link]);
 
@@ -74,7 +72,7 @@ function PokemonInfo() {
       </div>
       <div className="mt-4 flex w-full max-w-3xl flex-col gap-4">
         <HeaderName pm={pm} />
-        <QuickLink pokemonList={pokemonList} link={link} />
+        <QuickLink pokemonList={pokemonList} link={link || '1'} />
 
         <div className="border-b border-gray-200 text-center text-sm font-medium text-gray-500">
           <ul className="-mb-px flex flex-wrap">
