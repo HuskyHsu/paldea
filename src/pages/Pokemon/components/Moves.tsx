@@ -22,6 +22,12 @@ type colValue = {
   checked?: boolean;
 };
 
+const bgColorMap = {
+  TMs: 'bg-custom-orange/10',
+  eggMoves: 'bg-custom-green/10',
+  levelingUps: 'bg-custom-blue/10',
+};
+
 const columns = [
   {
     header: '挑選',
@@ -113,7 +119,7 @@ const columns = [
 ];
 
 export function Moves({ pm }: Props) {
-  const allMoves: { move: PMMove; key: string }[] = (pm.moves.levelingUps as PMMove[])
+  const allMoves: { move: PMMove; key: string; type: string }[] = (pm.moves.levelingUps as PMMove[])
     .concat(pm.moves.beforeEvolve as PMMove[])
     .concat(pm.moves.eggMoves as PMMove[])
     .concat(pm.moves.TMs as PMMove[])
@@ -130,9 +136,21 @@ export function Moves({ pm }: Props) {
         key += `:TM${move.TMPid}`;
       }
 
+      let type = '';
+      if ('TMPid' in move) {
+        type = 'TMs';
+      } else if ('level' in move) {
+        if (move.level < 0) {
+          type = 'eggMoves';
+        } else {
+          type = 'levelingUps';
+        }
+      }
+
       return {
         move,
         key,
+        type,
       };
     });
 
@@ -253,8 +271,12 @@ export function Moves({ pm }: Props) {
         </li>
 
         {allMoves
-          .filter(({ move }) => {
+          .filter(({ move, key }) => {
             let display = true;
+
+            if (pick.has(key)) {
+              return display;
+            }
 
             if (filter.types.size > 0) {
               display = display && filter.types.has(move.type);
@@ -276,13 +298,13 @@ export function Moves({ pm }: Props) {
             }
             return 0;
           })
-          .map(({ move, key }) => {
+          .map(({ move, key, type }) => {
             const lilist = [
               <li
                 className={clsx(
                   'flex cursor-pointer border-b-[1px] py-1 px-2 md:px-0',
                   'hover:bg-gray-50',
-                  pick.has(key) && 'bg-gray-100'
+                  pick.has(key) ? 'bg-gray-100' : bgColorMap[type as keyof typeof bgColorMap]
                 )}
                 key={key}
                 onClick={() => {
