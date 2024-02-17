@@ -2,7 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import { Accuracy, FullMove, FullPokemon, LevelMap, PMMove } from '@/types/Pokemon';
-import { Buttons, SubTitleSlide } from '@/newComponents/common';
+import { Buttons, SearchBar, SubTitleSlide } from '@/newComponents/common';
 import { AttackRange, MoveDetail } from '@/newComponents/game';
 import { Icon } from '@/newComponents';
 import { ValueKeys, api } from '@/utils';
@@ -14,6 +14,7 @@ type Props = {
 type Filter = {
   types: Set<string>;
   category: Set<string>;
+  keyword: string;
 };
 
 type colValue = {
@@ -160,7 +161,11 @@ export function Moves({ pm }: Props) {
   const [pick, setPick] = useState<Set<string>>(new Set());
   const [moveMap, setMoveMap] = useState<Record<string, FullMove>>({});
   const [onlyEvolve, setOnlyEvolve] = useState<boolean>(true);
-  const [filter, setFilter] = useState<Filter>({ types: new Set(), category: new Set() });
+  const [filter, setFilter] = useState<Filter>({
+    types: new Set(),
+    category: new Set(),
+    keyword: '',
+  });
 
   const handleClick = async (panelKey: string, nameZh: string) => {
     const updatedPanels = new Set(expandedPanels);
@@ -218,6 +223,15 @@ export function Moves({ pm }: Props) {
     });
   };
 
+  const keyWordUpdate = (val: string) => {
+    setFilter((prev) => {
+      return {
+        ...prev,
+        keyword: val,
+      };
+    });
+  };
+
   const atkTypes = allMoves
     .filter(({ move, key }) => pick.has(key) && move.category !== '變化')
     .map(({ move }) => move.type);
@@ -225,6 +239,13 @@ export function Moves({ pm }: Props) {
   return (
     <div className="-mx-4 flex flex-col gap-4 md:mx-0">
       <div className="mx-4 flex flex-col gap-y-2 md:mx-0">
+        <div className="flex w-full items-center gap-x-3 md:w-72">
+          <SearchBar
+            placeholder={'搜尋 名稱(中/英/日), 介紹'}
+            value={filter.keyword}
+            onChange={(str) => keyWordUpdate(str)}
+          />
+        </div>
         <SubTitleSlide title="屬性" />
         <div className="flex w-full flex-wrap justify-items-center gap-x-4 gap-y-3 pb-2 pl-2">
           {allMoveType.map((type) => (
@@ -276,6 +297,15 @@ export function Moves({ pm }: Props) {
 
             if (pick.has(key)) {
               return display;
+            }
+
+            if (filter.keyword !== '') {
+              display =
+                display &&
+                (move.nameZh.includes(filter.keyword) ||
+                  move.description.includes(filter.keyword) ||
+                  move.nameEn.includes(filter.keyword) ||
+                  move.nameJp.includes(filter.keyword));
             }
 
             if (filter.types.size > 0) {
