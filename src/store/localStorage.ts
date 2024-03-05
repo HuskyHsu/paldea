@@ -72,7 +72,16 @@ function filterFn(pm: Pokemon, filter: Filter) {
   if (display && filter.region !== '') {
     const region = regionMap[filter.region as keyof typeof regionMap];
     if (pm.pid >= region.since && pm.pid <= region.until) {
-      display = pm.altForm === null || pm.altForm.includes(filter.region);
+      if (pm.altForm === null) {
+        display = true;
+      } else {
+        display = Object.keys(regionMap).every((region) => {
+          if (region === filter.region) {
+            return true;
+          }
+          return !pm.altForm?.includes(region);
+        });
+      }
     } else {
       if (pm.altForm !== null) {
         display = pm.altForm.includes(filter.region);
