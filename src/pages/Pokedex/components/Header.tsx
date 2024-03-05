@@ -30,11 +30,12 @@ export function Header({
   const abilityUpdate = updateState('ability');
   const showChildUpdate = updateState('onlyEvolution');
 
-  const hasFilter = [filter.ability, filter.EV].filter(Boolean).length > 0;
+  const hasFilter = [filter.ability, filter.EV, filter.region].filter(Boolean).length > 0;
 
   const filterList = [
     { value: filter.ability, name: '特性', key: 'ability' },
     { value: EVName[filter.EV as keyof typeof EVName] || '', name: '努力值', key: 'EV' },
+    { value: filter.region, name: '區域', key: 'region' },
   ];
 
   const share = async () => {
