@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 
-import { PokedexFrom } from '@/types/Pokemon';
 import { Hr, Loading } from '@/newComponents/common';
 import { usePokemonListContext } from '@/newComponents/contexts';
-import { Card, Pagination, PaginationMobile, Header } from './components';
-import { UseFilter } from './UseFilter';
-import { useEffect } from 'react';
 import { filterPokemonList } from '@/store';
+import { PokedexFrom } from '@/types/Pokemon';
+import { useEffect } from 'react';
+import { UseFilter } from './UseFilter';
+import { Card, Header, Pagination, PaginationMobile } from './components';
 
 export type Filter = {
   keyword: string;
@@ -15,6 +15,7 @@ export type Filter = {
   types: Set<string>;
   ability: string;
   EV: string;
+  region: string;
   tags: Set<string>;
   onlyEvolution: string;
 };

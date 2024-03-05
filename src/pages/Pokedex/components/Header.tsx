@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 
-import { SubTitleSlide, TitleSlide, Toggle } from '@/newComponents/common';
 import { Icon } from '@/newComponents';
+import { SubTitleSlide, TitleSlide, Toggle } from '@/newComponents/common';
 import { EVName, TypeEnum } from '@/types/Pokemon';
 import { BoolKeys, ValueKeys } from '@/utils';
 
-import { Filter, Display } from '../Pokedex';
-import { SearchBar, Buttons } from '.';
+import { Buttons, SearchBar } from '.';
+import { Display, Filter } from '../Pokedex';
 
 type Props = {
   filter: Filter;
@@ -176,7 +176,23 @@ export function Header({
           currVal={filter.EV}
           updateState={updateState('EV')}
         />
-        <Toggle text="顯示努力值" checked={display.EVs} handleChange={toggleDisplay('EVs')} />
+        <SubTitleSlide title="地區" />
+        <Buttons
+          list={[
+            { name: '關都', val: '關都' },
+            { name: '城都', val: '城都' },
+            { name: '豐緣', val: '豐緣' },
+            { name: '神奧', val: '神奧' },
+            { name: '合眾', val: '合眾' },
+            { name: '卡洛斯', val: '卡洛斯' },
+            { name: '阿羅拉', val: '阿羅拉' },
+            { name: '伽勒爾', val: '伽勒爾' },
+            { name: '洗翠', val: '洗翠' },
+            { name: '帕底亞', val: '帕底亞' },
+          ]}
+          currVal={filter.region}
+          updateState={updateState('region')}
+        />
       </div>
       <div
         className={clsx(

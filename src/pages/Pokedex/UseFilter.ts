@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { BoolKeys, ValueKeys } from '@/utils';
-import { PokedexFrom } from '@/types/Pokemon';
 import { getJsonCache } from '@/store';
+import { PokedexFrom } from '@/types/Pokemon';
+import { BoolKeys, ValueKeys } from '@/utils';
 
-import { Filter, Display } from './Pokedex';
+import { Display, Filter } from './Pokedex';
 
 const localStorageKey = 'pokeDexPage';
 
@@ -27,6 +27,7 @@ export function UseFilter() {
     types: new Set((searchParams.get('types') || '').split('-').filter(Boolean)),
     ability: searchParams.get('ability') || '',
     EV: searchParams.get('EV') || '',
+    region: searchParams.get('region') || '',
     tags: new Set((searchParams.get('tags') || '').split('-').filter(Boolean)),
     onlyEvolution: searchParams.get('onlyEvolution') || '',
   };
