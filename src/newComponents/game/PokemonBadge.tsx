@@ -11,7 +11,7 @@ type Props = {
 
 export function PokemonBadge8Bit({ pm, size = 'text-xs', text }: Props) {
   return (
-    <div className={clsx('flex flex-col items-center', 'relative', 'mb-2')}>
+    <div className={clsx('flex flex-col items-center', 'relative', text ? 'mb-0' : '-mb-2')}>
       <div
         className={clsx(
           'absolute inset-x-0 top-1/2 -translate-y-1/2',
@@ -27,7 +27,8 @@ export function PokemonBadge8Bit({ pm, size = 'text-xs', text }: Props) {
         className={clsx(
           'whitespace-nowrap rounded text-center align-middle',
           'absolute inset-x-0 -bottom-4 -translate-y-1/2',
-          size
+          size,
+          text ? 'block' : 'hidden'
         )}
       >
         {text}
