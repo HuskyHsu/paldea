@@ -1,5 +1,5 @@
 import { usePokemonListContext } from '@/newComponents/contexts';
-import { PokemonBadge } from '@/newComponents/game';
+import { PokemonBadge8Bit } from '@/newComponents/game';
 import { FullMove, Move } from '@/types/Pokemon';
 
 type Props = {
@@ -43,7 +43,7 @@ export function Intersection({ fullMoves }: Props) {
         {pokemonList
           .filter((pm) => intersectionList.has(pm.link))
           .map((pm, i) => (
-            <PokemonBadge pm={pm} key={pm.link + String(i)} />
+            <PokemonBadge8Bit pm={pm} key={pm.link + String(i)} />
           ))}
       </div>
       <hr className="my-3 h-px border-0 bg-gray-200" />

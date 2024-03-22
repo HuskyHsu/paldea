@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { MoveCategoryEnum, Pokemon, SubPokemon, TypeEnum } from '@/types/Pokemon';
+import clsx from 'clsx';
 
 function MoveCategory({ type, className = 'w-5 h-5' }: { type: string; className?: string }) {
   const typeName = MoveCategoryEnum[type as keyof typeof MoveCategoryEnum];
@@ -39,6 +39,18 @@ function PmIcon({ pm, className = '' }: { pm: Pokemon | SubPokemon; className?: 
   );
 }
 
+function PmIcon8Bit({ pm, className = '' }: { pm: Pokemon | SubPokemon; className?: string }) {
+  return (
+    <div
+      className={clsx('pointer-events-none h-16 w-16', 'bg-[length:128px_64px]', className)}
+      style={{
+        backgroundImage: `url('./paldea/image/pmIcon8Bit/${pm.link}.png')`,
+        animation: 'moveBackground 2s steps(2) infinite',
+      }}
+    />
+  );
+}
+
 function PmHome({
   pm,
   shiny = false,
@@ -63,4 +75,4 @@ function PmHome({
   );
 }
 
-export { Type, MoveCategory, PmIcon, PmHome };
+export { MoveCategory, PmHome, PmIcon, PmIcon8Bit, Type };

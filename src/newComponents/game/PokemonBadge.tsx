@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { BgFromType, BgToType, SubPokemon } from '@/types/Pokemon';
 import clsx from 'clsx';
-import { SubPokemon, BgFromType, BgToType } from '@/types/Pokemon';
+import { Link } from 'react-router-dom';
 import { Icon } from '..';
 
 type Props = {
@@ -8,6 +8,37 @@ type Props = {
   size?: string;
   text?: string;
 };
+
+export function PokemonBadge8Bit({ pm, size = 'text-xs', text }: Props) {
+  return (
+    <div className={clsx('flex flex-col items-center', 'relative', 'mb-2')}>
+      <div
+        className={clsx(
+          'absolute inset-x-0 top-1/2 -translate-y-1/2',
+          'h-4 w-full',
+          'rounded-full',
+          'bg-gradient-to-r',
+          BgFromType[pm.types[0] as keyof typeof BgFromType],
+          BgToType[pm.types[pm.types.length - 1] as keyof typeof BgToType]
+        )}
+      />
+      <Icon.Game.PmIcon8Bit pm={pm} className="scale-75" />
+      <p
+        className={clsx(
+          'whitespace-nowrap rounded text-center align-middle font-semibold',
+          'absolute inset-x-0 -bottom-4 -translate-y-1/2',
+          size
+        )}
+      >
+        {text}
+      </p>
+      <Link
+        className={'stretchedLink'}
+        to={`/pokedex/${pm.nameZh}${pm.altForm ? '-' + pm.altForm : ''}`}
+      />
+    </div>
+  );
+}
 
 export function PokemonBadge({ pm, size = 'text-xs', text }: Props) {
   return (

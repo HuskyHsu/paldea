@@ -1047,6 +1047,49 @@ def rename_and_copy_files(source_dir, destination_dir):
             print(file_name)
 
         new_name = file_name.replace(pm_name, str(id_name_map[pm_name])).replace('_', '-')
+
+        if '-' in new_name:
+            pid = new_name.split('-')[0]
+            if pid == '25':
+                sub_id = new_name.split('-')[1].split('.')[0]
+                if sub_id.isnumeric():
+                    sub_id = int(sub_id)
+                    if sub_id <= 7:
+                        sub_id += 14
+                    else:
+                        sub_id -= 7
+
+                    if sub_id == 8:
+                        sub_id = 9
+
+                new_name = f'{pid}-{sub_id}.png'
+
+            elif pid == '80':
+                new_name = '80-2.png' if new_name == '80-1.png' else '80-1.png'
+
+            elif pid == '658':
+                new_name = '658-1.png'
+
+            elif pid == '666':
+                # todo
+                pass
+
+            if pid == '774':
+                sub_id = new_name.split('-')[1].split('.')[0]
+                sub_id = sub_id.zfill(2)
+
+                new_name = f'{pid}-{sub_id}.png'
+
+            if pid == '902':
+                if '-' in new_name:
+                    new_name = f'{pid}-1.png'
+
+        if new_name in ['744.png', '854.png', '855.png', '1012.png', '1013.png']:
+            sName = new_name.replace('.png', '-1.png')
+            shutil.copyfile(old_path, os.path.join(destination_dir, sName))
+        elif new_name == '925.png' or new_name == '925-1.png':
+            new_name = '925.png' if new_name == '925-1.png' else '925-1.png'
+
         new_path = os.path.join(destination_dir, new_name)
 
         # 若是檔案，則進行改名和複製
@@ -1055,9 +1098,18 @@ def rename_and_copy_files(source_dir, destination_dir):
             print(f"已將檔案 {file_name} 複製到 {destination_dir}")
 
 
-# 指定來源資料夾、目標資料夾和新檔案名稱前綴
-source_directory = '/Users/shihchi/Desktop/Generation 9 Pack v3.2.2/Graphics/Pokemon/Icons/'
-destination_directory = '/Users/shihchi/Desktop/Generation 9 Pack v3.2.2/Graphics/Pokemon/Icons_id/'
+def clear_folder(folder_path):
+    # 獲取資料夾中的所有檔案和子資料夾
+    for file_name in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, file_name)
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+        elif os.path.isdir(file_path):
+            clear_folder(file_path)
 
-# 呼叫函式進行改名和複製
+
+source_directory = '/Users/shihchi/Desktop/Generation 9 Pack v3.2.2/Graphics/Pokemon/Icons/'
+destination_directory = '/Users/shihchi/Developer/paldea/public/image/pmIcon8Bit/'
+
+clear_folder(destination_directory)
 rename_and_copy_files(source_directory, destination_directory)

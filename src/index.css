@@ -35,3 +35,12 @@ input.search[type='search']::-webkit-search-results-decoration {
   z-index: 1;
   pointer-events: auto;
 }
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -128px 0;
+  }
+}

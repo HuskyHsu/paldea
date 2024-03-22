@@ -1,4 +1,4 @@
-import { MoveEffective, PokemonBadge } from '@/newComponents/game';
+import { MoveEffective, PokemonBadge8Bit } from '@/newComponents/game';
 import { FullMove, LevelMap } from '@/types/Pokemon';
 
 type Prop = {
@@ -24,7 +24,7 @@ function LevelingUps({ move, onlyEvolve }: Prop) {
               text = LevelMap[pm.level];
             }
 
-            return <PokemonBadge pm={pm} key={pm.link} text={text} />;
+            return <PokemonBadge8Bit pm={pm} key={pm.link} text={text} />;
           })}
       </div>
     </>
@@ -44,7 +44,7 @@ function Eggs({ move, onlyEvolve }: Prop) {
         {move.egg
           .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
           .map((pm) => {
-            return <PokemonBadge pm={pm} key={pm.link} />;
+            return <PokemonBadge8Bit pm={pm} key={pm.link} />;
           })}
       </div>
     </>
@@ -74,7 +74,7 @@ function TMs({ move, onlyEvolve }: Prop) {
         {move.TM?.pm
           .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
           .map((pm) => {
-            return <PokemonBadge pm={pm} key={pm.link} />;
+            return <PokemonBadge8Bit pm={pm} key={pm.link} />;
           })}
       </div>
     </>
