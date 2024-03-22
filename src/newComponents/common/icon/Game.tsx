@@ -42,10 +42,9 @@ function PmIcon({ pm, className = '' }: { pm: Pokemon | SubPokemon; className?: 
 function PmIcon8Bit({ pm, className = '' }: { pm: Pokemon | SubPokemon; className?: string }) {
   return (
     <div
-      className={clsx('pointer-events-none h-16 w-16', 'bg-[length:128px_64px]', className)}
+      className={clsx('pointer-events-none', 'switchingLeftRight', className)}
       style={{
         backgroundImage: `url('${process.env.PUBLIC_URL}/image/pmIcon8Bit/${pm.link}.png')`,
-        animation: 'moveBackground 2s steps(2) infinite',
       }}
     />
   );
