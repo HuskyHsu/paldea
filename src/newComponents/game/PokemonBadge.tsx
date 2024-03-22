@@ -25,7 +25,7 @@ export function PokemonBadge8Bit({ pm, size = 'text-xs', text }: Props) {
       <Icon.Game.PmIcon8Bit pm={pm} className="scale-75" />
       <p
         className={clsx(
-          'whitespace-nowrap rounded text-center align-middle font-semibold',
+          'whitespace-nowrap rounded text-center align-middle',
           'absolute inset-x-0 -bottom-4 -translate-y-1/2',
           size
         )}
