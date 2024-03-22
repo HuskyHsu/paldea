@@ -15,7 +15,7 @@ function LevelingUps({ move, onlyEvolve }: Prop) {
     <>
       <hr className="my-3 h-px border-0 bg-gray-200" />
       <h6 className="py-2 text-lg font-bold">升等 / 進化 / 回憶招式</h6>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2 md:justify-start">
         {move.levelingUps
           .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
           .map((pm) => {
@@ -40,7 +40,7 @@ function Eggs({ move, onlyEvolve }: Prop) {
     <>
       <hr className="my-3 h-px border-0 bg-gray-200" />
       <h6 className="py-2 text-lg font-bold">遺傳招式(模仿香草)</h6>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2 md:justify-start">
         {move.egg
           .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
           .map((pm) => {
@@ -70,7 +70,7 @@ function TMs({ move, onlyEvolve }: Prop) {
             : move.TM.materials.map((pm) => `${pm.part}x${pm.count}`).join('; ')}
         </li>
       </ul>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2 md:justify-start">
         {move.TM?.pm
           .filter((pm) => (onlyEvolve ? pm.child === undefined : true))
           .map((pm) => {
