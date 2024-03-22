@@ -1067,26 +1067,59 @@ def rename_and_copy_files(source_dir, destination_dir):
             elif pid == '80':
                 new_name = '80-2.png' if new_name == '80-1.png' else '80-1.png'
 
+            elif pid == '554':
+                new_name = '554-1.png'
+
             elif pid == '658':
                 new_name = '658-1.png'
 
-            elif pid == '666':
-                # todo
-                pass
-
-            if pid == '774':
+            elif pid == '774':
                 sub_id = new_name.split('-')[1].split('.')[0]
                 sub_id = sub_id.zfill(2)
 
                 new_name = f'{pid}-{sub_id}.png'
 
-            if pid == '902':
+            elif pid == '902':
                 if '-' in new_name:
                     new_name = f'{pid}-1.png'
 
-        if new_name in ['744.png', '854.png', '855.png', '1012.png', '1013.png']:
+        if new_name in ['744.png', '854.png', '855.png', '890.png', '1012.png', '1013.png']:
             sName = new_name.replace('.png', '-1.png')
             shutil.copyfile(old_path, os.path.join(destination_dir, sName))
+
+        if new_name in ['649.png']:
+            for i in range(1, 5):
+                sName = new_name.replace('.png', f'-{i}.png')
+                shutil.copyfile(old_path, os.path.join(destination_dir, sName))
+
+        if new_name.startswith('666'):
+            id666_map = {
+                '666.png': '666-9.png',
+                '666-1.png': '666-3.png',
+                '666-2.png': '666-5.png',
+                '666-3.png': '666-4.png',
+                '666-4.png': '666-10.png',
+                '666-5.png': '666.png',
+                '666-6.png': '666-17.png',
+                '666-7.png': '666-8.png',
+                '666-8.png': '666-6.png',
+                '666-9.png': '666-7.png',
+                '666-10.png': '666-13.png',
+                '666-11.png': '666-16.png',
+                '666-12.png': '666-1.png',
+                '666-13.png': '666-12.png',
+                '666-14.png': '666-11.png',
+                '666-15.png': '666-14.png',
+                '666-16.png': '666-15.png',
+                '666-17.png': '666-2.png',
+                '666-18.png': '666-18.png',
+                '666-19.png': '666-19.png',
+            }
+            if new_name in id666_map:
+                new_name = id666_map[new_name]
+            else:
+                continue
+
         elif new_name == '925.png' or new_name == '925-1.png':
             new_name = '925.png' if new_name == '925-1.png' else '925-1.png'
 
@@ -1109,6 +1142,11 @@ def clear_folder(folder_path):
 
 
 source_directory = '/Users/shihchi/Desktop/Generation 9 Pack v3.2.2/Graphics/Pokemon/Icons/'
+destination_directory = '/Users/shihchi/Developer/galar/public/image/pmIcon8Bit/'
+
+clear_folder(destination_directory)
+rename_and_copy_files(source_directory, destination_directory)
+
 destination_directory = '/Users/shihchi/Developer/paldea/public/image/pmIcon8Bit/'
 
 clear_folder(destination_directory)
