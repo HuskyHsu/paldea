@@ -44,7 +44,7 @@ function PmIcon8Bit({ pm, className = '' }: { pm: Pokemon | SubPokemon; classNam
     <div
       className={clsx('pointer-events-none h-16 w-16', 'bg-[length:128px_64px]', className)}
       style={{
-        backgroundImage: `url('./paldea/image/pmIcon8Bit/${pm.link}.png')`,
+        backgroundImage: `url('./image/pmIcon8Bit/${pm.link}.png')`,
         animation: 'moveBackground 2s steps(2) infinite',
       }}
     />
