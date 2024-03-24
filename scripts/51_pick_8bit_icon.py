@@ -1120,6 +1120,18 @@ def rename_and_copy_files(source_dir, destination_dir):
             else:
                 continue
 
+        elif new_name.startswith('718'):
+            id666_map = {
+                '718.png': '718-3.png',
+                '718-1.png': '718-2.png',
+                '718-2.png': '718.png',
+                '718-3.png': '718-4.png',
+            }
+            if new_name in id666_map:
+                new_name = id666_map[new_name]
+            else:
+                continue
+
         elif new_name == '925.png' or new_name == '925-1.png':
             new_name = '925.png' if new_name == '925-1.png' else '925-1.png'
 
