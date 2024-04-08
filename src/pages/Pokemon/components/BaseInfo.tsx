@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
-import { SubTitleSlide } from '@/newComponents/common';
 import { Icon } from '@/newComponents';
+import { SubTitleSlide } from '@/newComponents/common';
 import { BgType, FullPokemon } from '@/types/Pokemon';
 
 type Props = {
@@ -191,6 +191,69 @@ const renderData: Render[] = [
               rel="noreferrer"
             >
               洗翠#{pm.hisui.toString().padStart(3, '0')}
+            </a>
+          </span>
+        )}
+        {pm.galar && (
+          <span
+            className={clsx(
+              'h-7 w-full md:w-2/5',
+              'border-2 border-solid border-type-ghost',
+              'rounded-full bg-type-ghost/30 text-center text-sm',
+              'whitespace-nowrap leading-6',
+              'text-blue-800 underline'
+            )}
+          >
+            <a
+              href={`https://huskyhsu.github.io/galar/#/pokedex/${pm.nameZh}${
+                pm.altForm ? '-' + pm.altForm : ''
+              }`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              伽勒爾#{pm.galar.toString().padStart(3, '0')}
+            </a>
+          </span>
+        )}
+        {pm.armor && (
+          <span
+            className={clsx(
+              'h-7 w-full md:w-2/5',
+              'border-2 border-solid border-type-ground',
+              'rounded-full bg-type-ground/30 text-center text-sm',
+              'whitespace-nowrap leading-6',
+              'text-blue-800 underline'
+            )}
+          >
+            <a
+              href={`https://huskyhsu.github.io/galar/#/pokedex/${pm.nameZh}${
+                pm.altForm ? '-' + pm.altForm : ''
+              }`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              鎧島#{pm.armor.toString().padStart(3, '0')}
+            </a>
+          </span>
+        )}
+        {pm.crown && (
+          <span
+            className={clsx(
+              'h-7 w-full md:w-2/5',
+              'border-2 border-solid border-type-ice',
+              'rounded-full bg-type-ice/30 text-center text-sm',
+              'whitespace-nowrap leading-6',
+              'text-blue-800 underline'
+            )}
+          >
+            <a
+              href={`https://huskyhsu.github.io/galar/#/pokedex/${pm.nameZh}${
+                pm.altForm ? '-' + pm.altForm : ''
+              }`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              王冠雪原#{pm.crown.toString().padStart(3, '0')}
             </a>
           </span>
         )}

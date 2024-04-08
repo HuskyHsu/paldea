@@ -75,7 +75,7 @@ export function Header({
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <SubTitleSlide title="圖鑑分類" />
+        <SubTitleSlide title="圖鑑來源" />
         <Buttons
           list={[
             { name: '全國', val: 'national' },
@@ -83,6 +83,9 @@ export function Header({
             { name: '北上', val: 'kitakami' },
             { name: '藍莓', val: 'blueberry' },
             { name: '洗翠', val: 'hisui' },
+            { name: '伽勒爾', val: 'galar' },
+            { name: '鎧島', val: 'armor' },
+            { name: '王冠雪原', val: 'crown' },
             { name: 'HOME / 活動 / 點心', val: 'home' },
           ]}
           currVal={filter.pokedex}

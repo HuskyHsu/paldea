@@ -5,6 +5,9 @@ export type Pokemon = {
   kitakami: number | null;
   blueberry: number | null;
   hisui: number | null;
+  galar: number | null;
+  armor: number | null;
+  crown: number | null;
   nameZh: string;
   nameEn: string;
   nameJp: string;
@@ -35,9 +38,16 @@ export type FullPokemon = Pokemon & {
   genderRatio: number;
 };
 
-export type PokedexFrom = 'kitakami' | 'paldea' | 'hisui' | 'blueberry';
+export type PokedexFrom =
+  | 'paldea'
+  | 'kitakami'
+  | 'blueberry'
+  | 'hisui'
+  | 'galar'
+  | 'armor'
+  | 'crown';
 
-export const PokedexList = ['kitakami', 'paldea', 'hisui', 'blueberry'];
+export const PokedexList = ['paldea', 'kitakami', 'blueberry', 'hisui', 'galar', 'armor', 'crown'];
 
 export enum EVIndex {
   HP = 0,

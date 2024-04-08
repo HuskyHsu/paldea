@@ -1,6 +1,6 @@
+import gzip
 import json
 import sqlite3
-import gzip
 
 
 def get_dict(file_name: str, source: int, target: int):
@@ -121,11 +121,7 @@ def rowsToJsonArray(raw_data):
             curr_index = 0
 
             curr["pid"] = (
-                [
-                    row["pid"]
-                    for row in new_data
-                    if row["Name"] == curr["Name"].split("-")[0]
-                ][0]
+                [row["pid"] for row in new_data if row["Name"] == curr["Name"].split("-")[0]][0]
                 if "-" in curr["Name"]
                 else curr["pid"]
             )
@@ -148,10 +144,17 @@ def rowsToJsonArray(raw_data):
             if curr["link"] in hisui_dict:
                 curr["Hisui"] = int(hisui_dict[curr["link"]])
 
+            if curr["link"] in galar_dict:
+                curr["Galar"] = int(galar_dict[curr["link"]])
+
+            if curr["link"] in armor_dict:
+                curr["Armor"] = int(armor_dict[curr["link"]])
+
+            if curr["link"] in crown_dict:
+                curr["Crown"] = int(crown_dict[curr["link"]])
+
             curr["Type"] = [type_dict[t] for t in curr["Type"].split(" / ")]
-            curr["EggGroup"] = [
-                egg_group_dict[t] for t in curr["EggGroup"].split(" / ")
-            ]
+            curr["EggGroup"] = [egg_group_dict[t] for t in curr["EggGroup"].split(" / ")]
 
             abilities_ = []
             for ability in curr["Abilities"].split(" | "):
@@ -165,9 +168,7 @@ def rowsToJsonArray(raw_data):
             if abilities_[0] != abilities_[2]:
                 curr["AbilityHide"] = abilities_[2]
 
-            curr["BaseStats"] = [
-                int(s) for s in curr["BaseStats"].split(" (")[0].split(".")
-            ]
+            curr["BaseStats"] = [int(s) for s in curr["BaseStats"].split(" (")[0].split(".")]
 
             curr["EVYield"] = [int(s) for s in curr["EVYield"].split(".")]
             curr["GenderRatio"] = int(curr["GenderRatio"])
@@ -321,6 +322,9 @@ move_dict = get_dict("moves", 3, 1)
 move_id_dict = get_dict("moves", 1, 0)
 egg_group_dict = get_dict("eggGroup", 1, 0)
 hisui_dict = get_dict("hisui", 2, 0)
+galar_dict = get_dict("galar", 2, 0)
+armor_dict = get_dict("armor", 2, 0)
+crown_dict = get_dict("crown", 2, 0)
 
 with open("rawdata/3.0.0.txt", "r") as file:
     raw_data = file.read()
@@ -357,6 +361,9 @@ if __name__ == "__main__":
             "kitakami",
             "blueberry",
             "hisui",
+            "galar",
+            "armor",
+            "crown",
             "type_1",
             "type_2",
             "abilitiy_1",
@@ -390,14 +397,17 @@ if __name__ == "__main__":
                 data["Kitakami"] if "Kitakami" in data else None,
                 data["Blueberry"] if "Blueberry" in data else None,
                 data["Hisui"] if "Hisui" in data else None,
+                data["Galar"] if "Galar" in data else None,
+                data["Armor"] if "Armor" in data else None,
+                data["Crown"] if "Crown" in data else None,
                 data["Type"][0],
                 data["Type"][1] if len(data["Type"]) > 1 else None,
-                int(data["Name"].split("-")[1]) + 297
-                if "面影輝映" == data["Abilities"][0]
-                else ability_id_dict[data["Abilities"][0]],
-                ability_id_dict[data["Abilities"][1]]
-                if len(data["Abilities"]) > 1
-                else None,
+                (
+                    int(data["Name"].split("-")[1]) + 297
+                    if "面影輝映" == data["Abilities"][0]
+                    else ability_id_dict[data["Abilities"][0]]
+                ),
+                ability_id_dict[data["Abilities"][1]] if len(data["Abilities"]) > 1 else None,
                 ability_id_dict[data["AbilityHide"]] if "AbilityHide" in data else None,
                 data["BaseStats"][0],
                 data["BaseStats"][1],
@@ -481,6 +491,9 @@ SELECT
 	pokemons.kitakami,
     pokemons.blueberry,
 	pokemons.hisui,
+	pokemons.galar,
+    pokemons.armor,
+    pokemons.crown,
 	names.nameZh,
 	names.nameJp,
 	names.nameEn,
@@ -1000,9 +1013,7 @@ ORDER BY
                     if key_.startswith("type"):
                         row["evolves"]["from"]["types"] = [evolve["from_type_1"]]
                         if evolve["from_type_2"] != None:
-                            row["evolves"]["from"]["types"].append(
-                                evolve["from_type_2"]
-                            )
+                            row["evolves"]["from"]["types"].append(evolve["from_type_2"])
                     else:
                         row["evolves"]["from"][key_] = evolve[key]
 
