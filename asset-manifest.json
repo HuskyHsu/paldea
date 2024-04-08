@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/paldea/static/css/main.c86af9e7.css",
-    "main.js": "/paldea/static/js/main.66fd08cc.js",
-    "Pokedex.js": "/paldea/static/js/Pokedex.4cea1f00.chunk.js",
-    "Pokemon.js": "/paldea/static/js/Pokemon.b5ee91c4.chunk.js",
+    "main.css": "/paldea/static/css/main.4fd69dbf.css",
+    "main.js": "/paldea/static/js/main.ac40476e.js",
+    "Pokedex.js": "/paldea/static/js/Pokedex.fe862d41.chunk.js",
+    "Pokemon.js": "/paldea/static/js/Pokemon.14e63e59.chunk.js",
     "MoveDex.js": "/paldea/static/js/MoveDex.b16c007a.chunk.js",
     "static/js/787.1d3bb9bd.chunk.js": "/paldea/static/js/787.1d3bb9bd.chunk.js",
     "static/media/bg.png": "/paldea/static/media/bg.7b5a0204a10fa00ccff3.png",
@@ -22,15 +22,15 @@
     "static/media/Search.svg": "/paldea/static/media/Search.70618b7533946d2ab5e393dce8e77709.svg",
     "static/media/ArrowBack.svg": "/paldea/static/media/ArrowBack.ec2c7f911771dddea2422db143e0cceb.svg",
     "static/media/ArrowForward.svg": "/paldea/static/media/ArrowForward.204ac83ab34908a616d745a4a46e7d3e.svg",
-    "main.c86af9e7.css.map": "/paldea/static/css/main.c86af9e7.css.map",
-    "main.66fd08cc.js.map": "/paldea/static/js/main.66fd08cc.js.map",
-    "Pokedex.4cea1f00.chunk.js.map": "/paldea/static/js/Pokedex.4cea1f00.chunk.js.map",
-    "Pokemon.b5ee91c4.chunk.js.map": "/paldea/static/js/Pokemon.b5ee91c4.chunk.js.map",
+    "main.4fd69dbf.css.map": "/paldea/static/css/main.4fd69dbf.css.map",
+    "main.ac40476e.js.map": "/paldea/static/js/main.ac40476e.js.map",
+    "Pokedex.fe862d41.chunk.js.map": "/paldea/static/js/Pokedex.fe862d41.chunk.js.map",
+    "Pokemon.14e63e59.chunk.js.map": "/paldea/static/js/Pokemon.14e63e59.chunk.js.map",
     "MoveDex.b16c007a.chunk.js.map": "/paldea/static/js/MoveDex.b16c007a.chunk.js.map",
     "787.1d3bb9bd.chunk.js.map": "/paldea/static/js/787.1d3bb9bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c86af9e7.css",
-    "static/js/main.66fd08cc.js"
+    "static/css/main.4fd69dbf.css",
+    "static/js/main.ac40476e.js"
   ]
 }
