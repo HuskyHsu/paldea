@@ -127,7 +127,7 @@ export function Card({ pokemon, filter, display }: Props) {
         </div>
         <div
           className={clsx(
-            'mt-2',
+            'mt-2 flex flex-col gap-2',
             display.EVs || display.ability || display.pid ? 'block' : 'hidden'
           )}
         >

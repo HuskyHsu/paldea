@@ -168,6 +168,13 @@ export function Header({
         />
         <SubTitleSlide title="努力值" />
         <span className="text-sm">(篩選單獨只有這此項的清單)</span>
+        <div>
+          <Toggle
+            text="顯示努力值"
+            checked={display.EVs}
+            handleChange={toggleDisplay('EVs')}
+          />
+        </div>
         <Buttons
           list={[
             { name: 'HP', val: 'HP' },
