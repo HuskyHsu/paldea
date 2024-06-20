@@ -32,6 +32,15 @@ export function UseFilter() {
     onlyEvolution: searchParams.get('onlyEvolution') || '',
   };
 
+  const newCacheObj = Object.fromEntries(
+    Object.entries(filter)
+      .filter(([_, value]) => value !== '' && value !== 1)
+      .filter(([_, value]) => (typeof value === 'object' ? value.size > 0 : true))
+      .map(([key, value]) => [key, typeof value === 'object' ? [...value].join('-') : value])
+  );
+
+  localStorage.setItem(localStorageKey, JSON.stringify(newCacheObj));
+
   const updateState = (key: ValueKeys<Filter, string>[keyof Filter]) => {
     return (val: string) => {
       if (val === '') {
